@@ -93,7 +93,9 @@ void LevelScreen::Enter()
 	ai->addWaypointFileForAI("src//Engines//VehicleAIEngine//level1RightLaneWaypointFile.txt");
 	//ai->activateWriterMode(true);
 	//ai->changeVehicleToWorkOn(&vehicle);
-
+	
+	//This is just to preload the rocket model.
+	ModelManager::LoadMeshs("Models/Powerup/Rocket.obj");
 }
 
 void LevelScreen::Exit()
@@ -160,6 +162,13 @@ bool LevelScreen::HandleEvents()
 	cam->MoveForward(InputEngine::GetInstance()->GetCameraZoom());
 
 #if _DEBUG
+	
+	if(InputEngine::GetInstance()->IsKeyDown(ALLEGRO_KEY_SPACE))
+	{
+		Rocket *r = new Rocket(&this->vehicle.position, VehicleAIEngine::GetInstance()->vehicleBeingControlled_);
+		level.triggers.push_back(r);
+	}
+
 	if(InputEngine::GetInstance()->IsKeyDown(ALLEGRO_KEY_R))
 	{
 		RenderEngine::GetInstance()->ReadParameterFile();
