@@ -1,33 +1,13 @@
+
 #################
-## Eclipse
+## PROJECT SPECIFIC SETTINGS
 #################
 
-*.pydevproject
-.project
-.metadata
-bin/
-tmp/
-*.tmp
-*.bak
-*.swp
-*~.nib
-local.properties
-.classpath
-.settings/
-.loadpath
+TeamCDreamSaver/allegro.log
+TeamCDreamSaver/assimp_log.txt
 
-# External tool builders
-.externalToolBuilders/
-
-# Locally stored "Eclipse launch configurations"
-*.launch
-
-# CDT-specific
-.cproject
-
-# PDT-specific
-.buildpath
-
+TeamCDreamSaver/Debug
+TeamCDreamSaver/Release
 
 #################
 ## Visual Studio
@@ -48,7 +28,8 @@ local.properties
 *_p.c
 *.ilk
 *.meta
-*.obj
+PUT BACK IN IF WE HAVE ALOT OF .OBJ FILES PUSHED UP
+#*.obj
 *.pch
 *.pdb
 *.pgc
