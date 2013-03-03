@@ -26,6 +26,7 @@ FinishTrigger::FinishTrigger()
 	this->updateTransform(pos, orient);
 
 	this->type = FINISH_LINE;
+	aiVehicle_ = NULL;
 }
 
 
@@ -47,11 +48,17 @@ FinishTrigger::FinishTrigger(glm::vec3 position)
 	this->updateTransform(position, orient);
 
 	this->type = FINISH_LINE;
+	aiVehicle_ = NULL;
 }
 
 
 FinishTrigger::~FinishTrigger()
 {
+}
+
+void FinishTrigger::setAiVehicleActor(PxRigidDynamic* aiActor)
+{
+	aiVehicle_ = aiActor;
 }
 
 
@@ -69,14 +76,32 @@ bool FinishTrigger::checkOnTrigger(PxTriggerPair* pairs, PxU32 count)
 			if(( &pairs[pairsIndex].otherShape->getActor() == actorsToTriggerWith_[actorIndex]) &&
 				(&pairs[pairsIndex].triggerShape->getActor() == triggerActor_))
 			{
+				if(actorsToTriggerWith_[actorIndex] == aiVehicle_ && !triggered_)
+				{
+					message.Initialize("Invasion Successful, You Lose!", glm::vec3(-0.95f, -0.0f, 0.0f), 0.5f);
+					AudioEngine::GetInstance()->PlaySoundEffect(eSOUNDEFFECT::LOSEGAME);
+				}
+				else if(!triggered_)
+				{
+					message.Initialize("Track Complete!!!", glm::vec3(-0.45f, -0.0f, 0.0f), 0.5f);
+					//UPDATE CODE
+					AudioEngine::GetInstance()->PlaySoundEffect(eSOUNDEFFECT::GAMEWON);
+					
+				}
 				triggered_ = true;
-				std::cout<<"Finish Line Trigger triggered"<<std::endl;
-				message.Initialize("Track Complete!!!", glm::vec3(-0.45f, -0.0f, 0.0f), 0.5f);
-				//UPDATE CODE
-				AudioEngine::GetInstance()->PlaySoundEffect(eSOUNDEFFECT::GAMEWON);
-				return true;
+				break;
 			}
 		}
 	}
-	return false;
+	return triggered_;
+}
+
+void FinishTrigger::checkAIWinCondition()
+{
+	
+}
+
+void FinishTrigger::checkPlayerWinCondition()
+{
+
 }

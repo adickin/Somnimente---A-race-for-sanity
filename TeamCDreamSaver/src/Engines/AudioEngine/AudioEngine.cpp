@@ -23,8 +23,8 @@ bool	AudioEngine::LoadAudioSample()
 	BGSample[LEV3_TRACK] = BASS_SampleLoad(FALSE, "Audio\\03 Forest.mp3", 0, 0, 3, BASS_SAMPLE_LOOP);
 	BGSample[LEV4_TRACK] = BASS_SampleLoad(FALSE, "Audio\\04 Cabin.mp3", 0, 0, 3, BASS_SAMPLE_LOOP);
 	BGSample[LEV5_TRACK] = BASS_SampleLoad(FALSE, "Audio\\05 The Closet.mp3", 0, 0, 3, BASS_SAMPLE_LOOP);
-	
-	
+
+
 	SFSample[EXPLOSION] = BASS_SampleLoad(FALSE, "Audio\\Explosion.wav", 0, 0, 3, BASS_SAMPLE_MONO);
 	SFSample[CAFFEINE] = BASS_SampleLoad(FALSE, "Audio\\Caffeine.wav", 0, 0, 3, BASS_SAMPLE_MONO);
 	SFSample[POWERUP] = BASS_SampleLoad(FALSE, "Audio\\PowerUp.wav", 0, 0, 3, BASS_SAMPLE_MONO);
@@ -33,6 +33,8 @@ bool	AudioEngine::LoadAudioSample()
 	SFSample[CRASH] = BASS_SampleLoad(FALSE, "Audio\\Car2Car_Crash.wav", 0, 0, 3, BASS_SAMPLE_MONO);
 	SFSample[ENTER_MENU] = BASS_SampleLoad(FALSE, "Audio\\SelectedMenu.mp3", 0, 0, 3, BASS_SAMPLE_MONO);
 	SFSample[MENUSELECTION] = BASS_SampleLoad(FALSE, "Audio\\ChooseMenu.wav", 0, 0, 3, BASS_SAMPLE_MONO);
+	SFSample[NUKELAUNCH] = BASS_SampleLoad(FALSE, "Audio\\NUKELAUNC.wav", 0, 0, 3, BASS_SAMPLE_MONO);
+	SFSample[LOSEGAME] = BASS_SampleLoad(FALSE, "Audio\\AiWin.mp3", 0, 0, 3, BASS_SAMPLE_MONO);
 
 	for(int i = 0; i < MAXBGCOUNT; i++)
 	{
@@ -53,12 +55,12 @@ void	AudioEngine::PlayBg_Audio(eTRACKLEVEL BG)
 
 	switch(BG)
 	{
-		case DEFAULT:
-			Bg_Channel = BASS_SampleGetChannel(Audio_bg[DEFAULT], FALSE);
-			break;
-		case LEV1_TRACK:
-			Bg_Channel = BASS_SampleGetChannel(Audio_bg[LEV1_TRACK], FALSE);
-			break;
+	case DEFAULT:
+		Bg_Channel = BASS_SampleGetChannel(Audio_bg[DEFAULT], FALSE);
+		break;
+	case LEV1_TRACK:
+		Bg_Channel = BASS_SampleGetChannel(Audio_bg[LEV1_TRACK], FALSE);
+		break;
 	}
 
 	BASS_ChannelSetAttribute(Bg_Channel, BASS_ATTRIB_VOL, (Mute) ? 0 : 0.1f);
@@ -74,28 +76,34 @@ void	AudioEngine::PlaySoundEffect(eSOUNDEFFECT SF)
 
 	switch(SF)
 	{
-		case GAMEWON:
-			Sf_Channel = BASS_SampleGetChannel(Audio_sf[GAMEWON], TRUE);
-			break;
-		case EXPLOSION:
-			Sf_Channel = BASS_SampleGetChannel(Audio_sf[EXPLOSION], TRUE);
-			break;
-		case CRASH:
-			Sf_Channel = BASS_SampleGetChannel(Audio_sf[CRASH], TRUE);
-			BASS_ChannelSetAttribute(Sf_Channel, BASS_ATTRIB_MUSIC_SPEED, 255);
-			break;
-		case CAFFEINE:
-			Sf_Channel = BASS_SampleGetChannel(Audio_sf[CAFFEINE], TRUE);
-			break;
-		case SLEEPINGPILL:
-			Sf_Channel = BASS_SampleGetChannel(Audio_sf[SLEEPINGPILL], TRUE);
-			break;
-		case MENUSELECTION:
-			Sf_Channel = BASS_SampleGetChannel(Audio_sf[MENUSELECTION], TRUE);
-			break;
-		case ENTER_MENU:
-			Sf_Channel = BASS_SampleGetChannel(Audio_sf[ENTER_MENU], TRUE);
-			break;
+	case GAMEWON:
+		Sf_Channel = BASS_SampleGetChannel(Audio_sf[GAMEWON], TRUE);
+		break;
+	case EXPLOSION:
+		Sf_Channel = BASS_SampleGetChannel(Audio_sf[EXPLOSION], TRUE);
+		break;
+	case CRASH:
+		Sf_Channel = BASS_SampleGetChannel(Audio_sf[CRASH], TRUE);
+		break;
+	case CAFFEINE:
+		Sf_Channel = BASS_SampleGetChannel(Audio_sf[CAFFEINE], TRUE);
+		break;
+	case SLEEPINGPILL:
+		Sf_Channel = BASS_SampleGetChannel(Audio_sf[SLEEPINGPILL], TRUE);
+		break;
+	case MENUSELECTION:
+		Sf_Channel = BASS_SampleGetChannel(Audio_sf[MENUSELECTION], TRUE);
+		break;
+	case ENTER_MENU:
+		Sf_Channel = BASS_SampleGetChannel(Audio_sf[ENTER_MENU], TRUE);
+		break;
+	case NUKELAUNCH:
+		Sf_Channel = BASS_SampleGetChannel(Audio_sf[NUKELAUNCH], TRUE);
+		break;
+	case LOSEGAME:
+		Sf_Channel = BASS_SampleGetChannel(Audio_sf[LOSEGAME], TRUE);
+		break;
+
 	};
 
 	BASS_ChannelSetAttribute(Sf_Channel, BASS_ATTRIB_VOL, (Mute) ? 0.0f : 0.2f);

@@ -6,6 +6,7 @@ AIVehicle::AIVehicle(vec3 initialPosition, fquat initialOrient, vec3 boxDimensio
 	:Vehicle(initialPosition, initialOrient, boxDimensions)
 {
 	vehicleHealth_ = 100.0f;
+	vehicleDestroyed_ = false;
 	carCurrentlyHit_ = false;
 
 	lastHitTimeInMs_ = (float)al_get_time() * 1000.0f;
@@ -30,7 +31,17 @@ void AIVehicle::updateVehicleHealthText()
 
 void AIVehicle::applyDamageToCar(float damageApplied)
 {
-	vehicleHealth_ -= damageApplied;
+	float tempHealth = vehicleHealth_;
+	tempHealth -= damageApplied;
+	if(tempHealth < 0.1f)
+	{
+		vehicleDestroyed_ = true;
+		vehicleHealth_ = 0.0f;
+	}
+	else
+	{
+		vehicleHealth_ = tempHealth;
+	}
 	updateVehicleHealthText();
 }
 
@@ -77,7 +88,7 @@ bool AIVehicle::isVehicleStillAlive()
 				{
 					if(!carCurrentlyHit_)
 					{
-						vehicleHealth_ -= 25.0f;
+						applyDamageToCar(25.0f);
 						carCurrentlyHit_ = true;
 						hitTime = (float)al_get_time() * 1000.0f;
 						updateVehicleHealthText();
@@ -86,7 +97,7 @@ bool AIVehicle::isVehicleStillAlive()
 					else
 					{
 						hitTime = (float)al_get_time() * 1000.0f;
-						vehicleHealth_ -= 0.1;
+						applyDamageToCar(0.01f);
 						updateVehicleHealthText();
 						PlayCrashSF(true);
 					}
@@ -105,9 +116,5 @@ bool AIVehicle::isVehicleStillAlive()
 		lastHitTimeInMs_ = hitTime;
 	}
 
-	if(vehicleHealth_ > 0.0f)
-	{
-		return true;
-	}
-	return false;
+	return !vehicleDestroyed_;
 }

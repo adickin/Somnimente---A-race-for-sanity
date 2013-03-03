@@ -22,6 +22,7 @@ public:
 
 private:
 	float vehicleHealth_;
+	bool vehicleDestroyed_;
 	std::vector<PxRigidDynamic*> actorsToCollideWith_;
 	bool carCurrentlyHit_;
 
