@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TeamCDreamSaver", "TeamCDreamSaver\TeamCDreamSaver.vcxproj", "{391C8017-52AC-4486-9E88-87AB29BA42B4}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Dependencies", "Dependencies\Dependencies.vcxproj", "{148950E1-50FD-4D30-8BAE-2EBC2F59F1D9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7514E1BA-E20F-4BFC-8DCB-79C96780719B}"
+	ProjectSection(SolutionItems) = preProject
+		Performance1.psess = Performance1.psess
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://cpsc585.dyndns.org:8080/tfs/cpsc%20585
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = TeamCDreamSaver\\TeamCDreamSaver.vcxproj
+		SccProjectName1 = TeamCDreamSaver
+		SccLocalPath1 = TeamCDreamSaver
+		SccProjectUniqueName2 = Dependencies\\Dependencies.vcxproj
+		SccProjectName2 = Dependencies
+		SccLocalPath2 = Dependencies
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{391C8017-52AC-4486-9E88-87AB29BA42B4}.Debug|Win32.ActiveCfg = Debug|Win32
+		{391C8017-52AC-4486-9E88-87AB29BA42B4}.Debug|Win32.Build.0 = Debug|Win32
+		{391C8017-52AC-4486-9E88-87AB29BA42B4}.Release|Win32.ActiveCfg = Release|Win32
+		{391C8017-52AC-4486-9E88-87AB29BA42B4}.Release|Win32.Build.0 = Release|Win32
+		{148950E1-50FD-4D30-8BAE-2EBC2F59F1D9}.Debug|Win32.ActiveCfg = Release|Win32
+		{148950E1-50FD-4D30-8BAE-2EBC2F59F1D9}.Release|Win32.ActiveCfg = Release|Win32
+		{148950E1-50FD-4D30-8BAE-2EBC2F59F1D9}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
+EndGlobal

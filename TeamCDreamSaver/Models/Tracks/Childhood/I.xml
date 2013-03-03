@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <Path>Models/Tracks/Childhood/I-Drop.obj</Path>
+  <Scale>1.0</Scale>
+  <Start x="-2" y="-2.5" z="0"></Start>
+  <End x="0" y="-315.0" z="782"></End>
+  <Orientation x="0" y="0" z="0"></Orientation>
+</root>

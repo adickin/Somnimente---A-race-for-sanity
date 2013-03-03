@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <Path>Models/Tracks/Childhood/L-Zig zag.obj</Path>
+  <Scale>1.0</Scale>
+  <Start x="-300" y="0" z="1260"></Start>
+  <End x="960" y="0" z="2500"></End>
+  <Orientation x="0" y="0" z="0"></Orientation>
+</root>

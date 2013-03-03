@@ -1,0 +1,20 @@
+Track Order
+all rotations (0, 0, 0)
+
+A
+B
+C
+C
+C
+C
+C
+C
+C
+…
+
+
+Track Info
+
+A - (0, 0, -180)
+B - (0, 0, -180)
+C - (0, 0, -240)

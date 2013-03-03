@@ -1,0 +1,531 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Shaders">
+      <UniqueIdentifier>{b1ea203e-5eb9-4d4c-a07b-cb55704c2bcf}</UniqueIdentifier>
+      <Extensions>*.glsl</Extensions>
+    </Filter>
+    <Filter Include="Header Files\Engines">
+      <UniqueIdentifier>{94228124-3869-498a-91f1-5e799cea30c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Engines\RenderEngine">
+      <UniqueIdentifier>{613af909-f5bd-4dfb-89c9-09c5b6d81c1c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Engines">
+      <UniqueIdentifier>{28b61c10-d3d2-4c1d-9411-43e92f87b257}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Engines\RenderEngine">
+      <UniqueIdentifier>{1c3a0373-3bf1-4e23-bd00-53c4d13c22b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Screens">
+      <UniqueIdentifier>{887d64e0-196e-493f-84b5-a54dac8c3d2b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Screens">
+      <UniqueIdentifier>{52a62e70-8006-4832-8749-8ba4e67029cc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Entities">
+      <UniqueIdentifier>{a3b9146d-7ac4-4830-9f44-b26d53fe8177}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Entities">
+      <UniqueIdentifier>{9ae9be7f-3d63-46e8-9298-4f517ee96fe7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Utilities">
+      <UniqueIdentifier>{4e4bfbcf-c35c-4db2-9b86-5771d1bba9e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Utilities">
+      <UniqueIdentifier>{3ac582ff-5157-4293-ac6c-0b75d712d7db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Engines\InputEngine">
+      <UniqueIdentifier>{24409504-8d67-4375-bbdd-8042dce57dca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Engines\InputEngine">
+      <UniqueIdentifier>{b61bcfba-d7e8-4016-a7c4-50e30caa9c20}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Models">
+      <UniqueIdentifier>{cf49cfb4-ed26-4153-85a5-ae5359366ea1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Engines\AIEngine">
+      <UniqueIdentifier>{d5a918be-54f1-4a87-b9ce-d0bbfeb837f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Engines\AIEngine">
+      <UniqueIdentifier>{c11d8454-b6dd-4acd-95e1-a67fe331ac1c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Parameters">
+      <UniqueIdentifier>{3e22935a-4025-4b1a-9c41-eb1f00d7ec7d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Engines\AudioEngine">
+      <UniqueIdentifier>{25f5dc64-f84f-4ed0-99db-c0f799c93d1a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Engines\AudioEngine">
+      <UniqueIdentifier>{f4ac0e82-3d1f-48ea-a4d4-f7987e64b605}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Engines\PhysicsEngine">
+      <UniqueIdentifier>{b02306d9-13bf-4adb-b9ac-4c6ebb71531f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Engines\PhysicsEngine">
+      <UniqueIdentifier>{e41ce1f3-204d-43da-acaa-ac98ec48c145}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Models\Tracks">
+      <UniqueIdentifier>{cb69c4a7-d53c-446a-8be2-ecd13677e259}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Models\Tracks\Childhood">
+      <UniqueIdentifier>{b94eb33e-9be1-41af-bc62-dc52cfc9dd39}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Triggers">
+      <UniqueIdentifier>{eff0181b-f7f3-4582-8743-f41292c47690}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Triggers">
+      <UniqueIdentifier>{b4f41252-efbf-4014-94b3-9b896c2118f3}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Engines\AIEngine\AIEngine.cpp">
+      <Filter>Source Files\Engines\AIEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engines\RenderEngine\Camera.cpp">
+      <Filter>Source Files\Engines\RenderEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Screens\DemoScreen.cpp">
+      <Filter>Source Files\Screens</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engines\AIEngine\IAIThing.cpp">
+      <Filter>Source Files\Engines\AIEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engines\RenderEngine\IHUDRenderable.cpp">
+      <Filter>Source Files\Engines\RenderEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engines\InputEngine\InputEngine.cpp">
+      <Filter>Source Files\Engines\InputEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Screens\IntroScreen.cpp">
+      <Filter>Source Files\Screens</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engines\RenderEngine\IRenderable.cpp">
+      <Filter>Source Files\Engines\RenderEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Screens\IScreen.cpp">
+      <Filter>Source Files\Screens</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Screens\LoadingScreen.cpp">
+      <Filter>Source Files\Screens</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Utilities\ModelManager.cpp">
+      <Filter>Source Files\Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engines\RenderEngine\ObjectMesh.cpp">
+      <Filter>Source Files\Engines\RenderEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engines\RenderEngine\ParticleEmitter.cpp">
+      <Filter>Source Files\Engines\RenderEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engines\RenderEngine\RenderEngine.cpp">
+      <Filter>Source Files\Engines\RenderEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Utilities\ScreenManager.cpp">
+      <Filter>Source Files\Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engines\RenderEngine\Shader.cpp">
+      <Filter>Source Files\Engines\RenderEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Utilities\TextureManager.cpp">
+      <Filter>Source Files\Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Entities\StaticImage.cpp">
+      <Filter>Source Files\Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Entities\StaticProp.cpp">
+      <Filter>Source Files\Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Entities\StaticText.cpp">
+      <Filter>Source Files\Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engines\RenderEngine\TextEngine.cpp">
+      <Filter>Source Files\Engines\RenderEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engines\InputEngine\XboxController.cpp">
+      <Filter>Source Files\Engines\InputEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engines\AudioEngine\AudioEngine.cpp">
+      <Filter>Source Files\Engines\AudioEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Screens\MenuScreen.cpp">
+      <Filter>Source Files\Screens</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engines\PhysicsEngine\PhysicsObject.cpp">
+      <Filter>Source Files\Engines\PhysicsEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Entities\Vehicle.cpp">
+      <Filter>Source Files\Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Entities\Skybox.cpp">
+      <Filter>Source Files\Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engines\PhysicsEngine\PhysicsEngine.cpp">
+      <Filter>Source Files\Engines\PhysicsEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Utilities\LevelLoader.cpp">
+      <Filter>Source Files\Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Utilities\TriggerManager.cpp">
+      <Filter>Source Files\Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Entities\Triggers\FinishTrigger.cpp">
+      <Filter>Source Files\Triggers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Entities\Triggers\I_Trigger.cpp">
+      <Filter>Source Files\Triggers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engines\VehicleAIEngine\VehicleAIEngine.cpp">
+      <Filter>Source Files\Engines\AIEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Utilities\ShaderManager.cpp">
+      <Filter>Source Files\Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Screens\LevelSelectScreen.cpp">
+      <Filter>Source Files\Screens</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Screens\LevelScreen.cpp">
+      <Filter>Source Files\Screens</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Entities\Triggers\SleepingPillPowerup.cpp">
+      <Filter>Source Files\Triggers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Entities\Triggers\Powerup.cpp">
+      <Filter>Source Files\Triggers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Entities\Obstacle.cpp">
+      <Filter>Source Files\Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Entities\RoadBlockObstacle.cpp">
+      <Filter>Source Files\Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Entities\TrackSection.cpp">
+      <Filter>Source Files\Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Utilities\VarLoader.cpp">
+      <Filter>Source Files\Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Entities\Triggers\EnergyDrink.cpp">
+      <Filter>Source Files\Triggers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engines\VehicleAIEngine\WaypointInterpreter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engines\RenderEngine\LineGL3.cpp">
+      <Filter>Source Files\Engines\RenderEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engines\VehicleAIEngine\Waypoint.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engines\VehicleAIEngine\AIDrivingLane.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AIVehicle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\rainbow.jpg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Images\font.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Images\Intro Screen.jpg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Images\Intro Screen.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Images\Loading Screen.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="allegro-5.0.8-monolith-md-debug.dll" />
+    <None Include="Assimp32d.dll" />
+    <None Include="FreeImage.dll" />
+    <None Include="FreeImagePlus.dll" />
+    <None Include="Images\smoke.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Images\smoke2.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="allegro-5.0.8-monolith-md.dll" />
+    <None Include="Parameters\RenderEngine.ini">
+      <Filter>Parameters</Filter>
+    </None>
+    <None Include="blurHVert.glsl">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="vShader.glsl">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="blurVVert.glsl">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="combineFrag.glsl">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="extractBloomFrag.glsl">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="fShader.glsl">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="gaussianBlurFrag.glsl">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="particleVert.glsl">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="passthroughFrag.glsl">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="passthroughVert.glsl">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="shadowFragShader.glsl">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="shadowVertShader.glsl">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="textFragShader.glsl">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="textVertShader.glsl">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="particleFrag.glsl">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="..\Dependencies\bass\bin\bass.dll" />
+    <None Include="Audio\MainTheme.mp3" />
+    <None Include="skyboxFrag.glsl">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="skyboxVert.glsl">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Parameters\Camera.ini">
+      <Filter>Parameters</Filter>
+    </None>
+    <None Include="Parameters\Level1.xml">
+      <Filter>Parameters</Filter>
+    </None>
+    <None Include="Models\Tracks\Childhood\A.xml">
+      <Filter>Models\Tracks\Childhood</Filter>
+    </None>
+    <None Include="Models\Tracks\Childhood\B.xml">
+      <Filter>Models\Tracks\Childhood</Filter>
+    </None>
+    <None Include="Models\Tracks\Childhood\C.xml">
+      <Filter>Models\Tracks\Childhood</Filter>
+    </None>
+    <None Include="Models\Tracks\Childhood\D.xml">
+      <Filter>Models\Tracks\Childhood</Filter>
+    </None>
+    <None Include="Models\Tracks\Childhood\E.xml">
+      <Filter>Models\Tracks\Childhood</Filter>
+    </None>
+    <None Include="Models\Tracks\Childhood\F.xml">
+      <Filter>Models\Tracks\Childhood</Filter>
+    </None>
+    <None Include="Models\Tracks\Childhood\G.xml">
+      <Filter>Models\Tracks\Childhood</Filter>
+    </None>
+    <None Include="Models\Tracks\Childhood\H.xml">
+      <Filter>Models\Tracks\Childhood</Filter>
+    </None>
+    <None Include="Models\Tracks\Childhood\I.xml">
+      <Filter>Models\Tracks\Childhood</Filter>
+    </None>
+    <None Include="Models\Tracks\Childhood\J.xml">
+      <Filter>Models\Tracks\Childhood</Filter>
+    </None>
+    <None Include="Models\Tracks\Childhood\K.xml">
+      <Filter>Models\Tracks\Childhood</Filter>
+    </None>
+    <None Include="Models\Tracks\Childhood\L.xml">
+      <Filter>Models\Tracks\Childhood</Filter>
+    </None>
+    <None Include="Models\Tracks\Childhood\M.xml">
+      <Filter>Models\Tracks\Childhood</Filter>
+    </None>
+    <None Include="Models\Tracks\Childhood\N.xml">
+      <Filter>Models\Tracks\Childhood</Filter>
+    </None>
+    <None Include="Parameters\LevelSelectData.xml">
+      <Filter>Parameters</Filter>
+    </None>
+    <None Include="Level2.xml">
+      <Filter>Parameters</Filter>
+    </None>
+    <None Include="Parameters\TuningVars.ini" />
+    <None Include="src\Engines\VehicleAIEngine\vehicleLocations.txt" />
+    <None Include="src\Engines\VehicleAIEngine\level1CenterLaneWaypointFile.txt" />
+    <None Include="src\Engines\VehicleAIEngine\level1RightLaneWaypointFile.txt" />
+    <None Include="src\Engines\VehicleAIEngine\level1LeftLaneWaypointFile.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Engines\AIEngine\AIEngine.h">
+      <Filter>Header Files\Engines\AIEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Engines\RenderEngine\Camera.h">
+      <Filter>Header Files\Engines\RenderEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Screens\DemoScreen.h">
+      <Filter>Header Files\Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Engines\AIEngine\IAIThing.h">
+      <Filter>Header Files\Engines\AIEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Engines\RenderEngine\IHUDRenderable.h">
+      <Filter>Header Files\Engines\RenderEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Engines\InputEngine\InputEngine.h">
+      <Filter>Header Files\Engines\InputEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Screens\IntroScreen.h">
+      <Filter>Header Files\Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Engines\RenderEngine\IRenderable.h">
+      <Filter>Header Files\Engines\RenderEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Screens\IScreen.h">
+      <Filter>Header Files\Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Screens\LoadingScreen.h">
+      <Filter>Header Files\Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Utilities\ModelManager.h">
+      <Filter>Header Files\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Engines\RenderEngine\ObjectMesh.h">
+      <Filter>Header Files\Engines\RenderEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Engines\RenderEngine\ParticleEmitter.h">
+      <Filter>Header Files\Engines\RenderEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Engines\RenderEngine\RenderEngine.h">
+      <Filter>Header Files\Engines\RenderEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Utilities\ScreenManager.h">
+      <Filter>Header Files\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Engines\RenderEngine\Shader.h">
+      <Filter>Header Files\Engines\RenderEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Utilities\TextureManager.h">
+      <Filter>Header Files\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Entities\StaticText.h">
+      <Filter>Header Files\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Entities\StaticImage.h">
+      <Filter>Header Files\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Entities\StaticProp.h">
+      <Filter>Header Files\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Engines\RenderEngine\TextEngine.h">
+      <Filter>Header Files\Engines\RenderEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Engines\InputEngine\XboxController.h">
+      <Filter>Header Files\Engines\InputEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Engines\AudioEngine\AudioEngine.h">
+      <Filter>Header Files\Engines\AudioEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Screens\MenuScreen.h">
+      <Filter>Header Files\Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Engines\PhysicsEngine\PhysicsObject.h">
+      <Filter>Header Files\Engines\PhysicsEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Entities\Vehicle.h">
+      <Filter>Header Files\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Entities\Skybox.h">
+      <Filter>Header Files\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Engines\PhysicsEngine\PhysicsEngine.h">
+      <Filter>Header Files\Engines\PhysicsEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Utilities\LevelLoader.h">
+      <Filter>Header Files\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Entities\Triggers\I_Trigger.h">
+      <Filter>Header Files\Triggers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Entities\Triggers\FinishTrigger.h">
+      <Filter>Header Files\Triggers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Utilities\TriggerManager.h">
+      <Filter>Header Files\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Engines\VehicleAIEngine\VehicleAIEngine.h">
+      <Filter>Header Files\Engines\AIEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Utilities\ShaderManager.h">
+      <Filter>Header Files\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Screens\LevelSelectScreen.h">
+      <Filter>Header Files\Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Screens\LevelScreen.h">
+      <Filter>Header Files\Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Entities\Triggers\SleepingPillPowerup.h">
+      <Filter>Header Files\Triggers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Entities\Triggers\Powerup.h">
+      <Filter>Header Files\Triggers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Entities\Obstacle.h">
+      <Filter>Header Files\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Entities\RoadBlockObstacle.h">
+      <Filter>Header Files\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Entities\TrackSection.h">
+      <Filter>Header Files\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Utilities\VarLoader.h">
+      <Filter>Header Files\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Entities\Triggers\EnergyDrink.h">
+      <Filter>Header Files\Triggers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Engines\RenderEngine\LineGL3.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Engines\VehicleAIEngine\AIDrivingLane.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Engines\VehicleAIEngine\Waypoint.h">
+      <Filter>Header Files\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Engines\VehicleAIEngine\WaypointInterpreter.h">
+      <Filter>Header Files\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="AIVehicle.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

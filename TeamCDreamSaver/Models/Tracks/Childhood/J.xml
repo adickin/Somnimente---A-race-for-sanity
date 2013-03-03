@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <Path>Models/Tracks/Childhood/J-Left turn.obj</Path>
+  <Scale>1.0</Scale>
+  <Start x="950" y="0" z="-5"></Start>
+  <End x="3220" y="0" z="385"></End>
+  <Orientation x="0" y="90" z="0"></Orientation>
+</root>

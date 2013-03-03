@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <Start x="0" y="0" z="0"></Start>
+  <Orientation x="0" y="0" z="0"></Orientation>
+  <Track>
+    <Piece path="Models/Tracks/Childhood/A.xml"></Piece>
+    <Piece path="Models/Tracks/Childhood/C.xml"></Piece>
+    <Piece path="Models/Tracks/Childhood/B.xml"></Piece>
+    <Piece path="Models/Tracks/Childhood/C.xml"></Piece>
+    <Piece path="Models/Tracks/Childhood/D.xml"></Piece>
+    <Piece path="Models/Tracks/Childhood/C.xml"></Piece>
+    <Piece path="Models/Tracks/Childhood/E.xml"></Piece>
+    <Piece path="Models/Tracks/Childhood/C.xml"></Piece>
+    <Piece path="Models/Tracks/Childhood/F.xml"></Piece>
+    <Piece path="Models/Tracks/Childhood/C.xml"></Piece>
+    <Piece path="Models/Tracks/Childhood/C.xml"></Piece>
+    <Piece path="Models/Tracks/Childhood/G.xml"></Piece>
+    <Piece path="Models/Tracks/Childhood/C.xml"></Piece>
+    <Piece path="Models/Tracks/Childhood/H.xml"></Piece>
+    <Piece path="Models/Tracks/Childhood/C.xml"></Piece>
+    <Piece path="Models/Tracks/Childhood/C.xml"></Piece>
+    <!--
+    <Piece path="Models/Tracks/Childhood/I.xml"></Piece>
+    <Piece path="Models/Tracks/Childhood/I.xml"></Piece>
+    <Piece path="Models/Tracks/Childhood/I.xml"></Piece>
+    <Piece path="Models/Tracks/Childhood/I.xml"></Piece>
+    <Piece path="Models/Tracks/Childhood/I.xml"></Piece>
+    -->
+    <Piece path="Models/Tracks/Childhood/J.xml"></Piece>
+    <Piece path="Models/Tracks/Childhood/C.xml"></Piece>
+    <Piece path="Models/Tracks/Childhood/K.xml"></Piece>
+    <Piece path="Models/Tracks/Childhood/L.xml"></Piece>
+    <Piece path="Models/Tracks/Childhood/L.xml"></Piece>
+    <Piece path="Models/Tracks/Childhood/M.xml"></Piece>
+    <Piece path="Models/Tracks/Childhood/C.xml"></Piece>
+    <Piece path="Models/Tracks/Childhood/N.xml"></Piece>
+  </Track>
+  <Triggers>
+    <Trigger>
+      <Type>FinishLine</Type>
+      <Position x="5000" y="-50" z="5500"></Position>
+    </Trigger>
+  </Triggers>
+  <Props>
+    <StaticProp>
+      <Path>Models/Scenes/1.1 crib/1.1 crib.obj</Path>
+      <Position x="-850" y="20" z="8000"></Position>
+      <Orientation x="0" y="0" z="0"></Orientation>
+    </StaticProp>
+    <StaticProp>
+      <Path>Models/Scenes/1.2 door/1.2 door.obj</Path>
+      <Position x="-2500" y="00" z="7000"></Position>
+      <Orientation x="0" y="180" z="0"></Orientation>
+    </StaticProp>
+    <StaticProp>
+      <Path>Models/Scenes/1.3 tire swing/1.3 tire swing.obj</Path>
+      <Position x="500" y="0" z="12600"></Position>
+      <Orientation x="0" y="00" z="0"></Orientation>
+    </StaticProp>
+    <Powerup>
+      <Type>SleepingPill</Type>
+      <Position x="-50" y="10" z="750"></Position>
+    </Powerup>
+    <Powerup>
+      <Type>SleepingPill</Type>
+      <Position x="-2745" y="10" z="6125"></Position>
+    </Powerup>
+    <Powerup>
+      <Type>EnergyDrink</Type>
+      <Position x="-3500" y="10" z="7600"></Position>
+    </Powerup>
+    <Powerup>
+      <Type>SleepingPill</Type>
+      <Position x="2300" y="10" z="11100"></Position>
+    </Powerup>
+    <Powerup>
+      <Type>EnergyDrink</Type>
+      <Position x="2600" y="10" z="11100"></Position>
+    </Powerup>
+  <Obstacle>
+      <Type>RoadBlock</Type>
+      <Position x="0" y="200" z="2100"></Position>
+      <Rotation x="0" y="0" z="0"></Rotation>
+  </Obstacle>
+  <Obstacle>
+      <Type>RoadBlock</Type>
+      <Position x="-804" y="10" z="3880"></Position>
+      <Rotation x="0" y="0" z="0"></Rotation>
+  </Obstacle>
+  <Obstacle>
+      <Type>RoadBlock</Type>
+      <Position x="-1800" y="10" z="4150"></Position>
+      <Rotation x="0" y="0" z="0"></Rotation>
+  </Obstacle>
+  <Obstacle>
+      <Type>RoadBlock</Type>
+      <Position x="-1675" y="10" z="4150"></Position>
+      <Rotation x="0" y="0" z="0"></Rotation>
+  </Obstacle>
+  <Obstacle>
+      <Type>RoadBlock</Type>
+      <Position x="-1725" y="10" z="3850"></Position>
+      <Rotation x="0" y="0" z="0"></Rotation>
+  </Obstacle>
+  <Obstacle>
+      <Type>RoadBlock</Type>
+      <Position x="-1775" y="10" z="6250"></Position>
+      <Rotation x="0" y="0" z="0"></Rotation>
+  </Obstacle>
+  <Obstacle>
+      <Type>RoadBlock</Type>
+      <Position x="-1675" y="10" z="6250"></Position>
+      <Rotation x="0" y="0" z="0"></Rotation>
+  </Obstacle>
+  <Obstacle>
+      <Type>RoadBlock</Type>
+      <Position x="-1675" y="10" z="6800"></Position>
+      <Rotation x="0" y="0" z="0"></Rotation>
+  </Obstacle>
+  <Obstacle>
+      <Type>RoadBlock</Type>
+      <Position x="-1675" y="10" z="7000"></Position>
+      <Rotation x="0" y="0" z="0"></Rotation>
+  </Obstacle>
+  <Obstacle>
+      <Type>RoadBlock</Type>
+      <Position x="-2200" y="10" z="7400"></Position>
+      <Rotation x="0" y="0" z="0"></Rotation>
+  </Obstacle>
+  <Obstacle>
+      <Type>RoadBlock</Type>
+      <Position x="-2200" y="10" z="7200"></Position>
+      <Rotation x="0" y="0" z="0"></Rotation>
+  </Obstacle>
+  <Obstacle>
+      <Type>RoadBlock</Type>
+      <Position x="565" y="10" z="7000"></Position>
+      <Rotation x="0" y="0" z="0"></Rotation>
+  </Obstacle>
+  <Obstacle>
+      <Type>RoadBlock</Type>
+      <Position x="2450" y="10" z="4300"></Position>
+      <Rotation x="0" y="0" z="0"></Rotation>
+  </Obstacle>
+  <Obstacle>
+      <Type>RoadBlock</Type>
+      <Position x="2575" y="10" z="4300"></Position>
+      <Rotation x="0" y="0" z="0"></Rotation>
+  </Obstacle>
+  <Obstacle>
+      <Type>RoadBlock</Type>
+      <Position x="2515" y="10" z="4000"></Position>
+      <Rotation x="0" y="0" z="0"></Rotation>
+  </Obstacle>  
+  <Obstacle>
+      <Type>RoadBlock</Type>
+      <Position x="2450" y="10" z="3700"></Position>
+      <Rotation x="0" y="0" z="0"></Rotation>
+  </Obstacle>
+  <Obstacle>
+      <Type>RoadBlock</Type>
+      <Position x="2575" y="10" z="3700"></Position>
+      <Rotation x="0" y="0" z="0"></Rotation>
+  </Obstacle>
+  </Props>
+</root>
+

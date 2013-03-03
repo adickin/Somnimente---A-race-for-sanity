@@ -1,0 +1,50 @@
+Childhood info
+
+Track order
+
+A	Start
+B	Uphill
+C	1		obs (1.5, .5, -3)
+D	Downhill
+E	Uturn L
+C	2		obs (.75, .5, -3.75) (2.25, .5, -2.25)
+F	Uturn R
+C	3		obs (.75, .5, -3.75) (1.5, .5, -3) (2.25, .5, -2.25)
+G	Walls		destructObs (1.5, .5, -5) (2, .5, -11.5) (1, .5, -18)
+C	4		obs (.75, .5, -3.75) (.75, .5, -2.25) (2.25, .5, -3.75) (2.25, .5, -2.25)
+H	Circles
+C	Empty
+C	5		obs (.75, .5, -3.75) (.75, .5, -2.25) (1.5, .5, -3) (2.25, .5, -3.75) (2.25, .5, -2.25)
+I	Drop 1
+I	Drop 2
+I	Drop 3
+I	Drop 4
+I	Drop 5
+J	Left turn
+C	6		obs (.75, .5, -3.75) (.75, .5, -3) (.75, .5, -2.25) (2.25, .5, -3.75) (2.25, .5, -3) (2.25, .5, -2.25)
+K	Zig zag begin
+L	Zig zag 1
+L	Zig zag 2
+M	Zig zag end
+C	Empty
+N	Finish
+
+
+
+Track Piece info
+Start is always 0,0,0
+
+A - (0, 0, -180)
+B - (0, 60.085, -239.97)
+C - (0, 0, -120)
+D - (0, -60, -239.97)
+E - (-220, 0, 0)
+F - (220, 0, 0)
+G - (0, 0, -439.887)
+H - (-140, 0, -340)
+I - (0, -80, -199.386)
+J - (-140, 0, -140)
+K - (90, 0, -200)
+L - (-160, 0, -160)
+M - (-200, 0, -90)
+N - Finish (no endpoint)

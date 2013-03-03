@@ -1,0 +1,45 @@
+TODO::
+- physics objects need to deregister themselves.
+- Map Editor?
+- Need to implement track loader.
+	- Either (because the physics is done for the current car scale):
+		- All track pieces need to be scaled by 1000??
+		- OR the loader needs to do the scaling.
+		- OR physics needs to be scales/retuned for the smaller track size.
+- 
+
+Track file representation ideas:
+:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:
+
+Track piece.PieceFile
+:.:.:.:.:.:.:.:.:.:.:.:
+- path to model file.
+- scale (if any)
+- start position
+	- this will be in the exact middle (width wise) of the track at the surface level at the beginning of the piece.
+- end position
+	- this will be in the exact middle (width wise) of the track at the surface level at the end of the piece
+- orientation change (rotation around the center of the object)
+	- any and all rotations that this piece introduces and the next piece needs to be positioned properly
+		- EG:
+			- Straight piece = no orientation change
+			- 90* turn piece = 90 rotation around y axis. (eg: (0, 90, 0) )
+			- 45* trun piece = 45 rotation around y axis. (eg: (0, 45, 0) )
+			- floor to wall transition = 90 rotation around x axis( eg: (90, 0, 0) ) 
+
+			
+Level Track.LevelFile
+:.:.:.:.:.:.:.:.:.:.:.:
+- Start position (Global world space)
+- Start orientation (Global world space)
+- List of track pieces
+	- as track piece files are read in their orientations and positions get added together to get the position of the next piece.
+- list of all triggers
+
+
+Trigger.TriggerFile
+:.:.:.:.:.:.:.:.:.:.:.:
+- Position
+- Size
+- Action / type
+- ...?

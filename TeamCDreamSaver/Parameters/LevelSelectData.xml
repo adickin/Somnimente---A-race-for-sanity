@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root levels="6">
+  <Level>
+    <Name>1: Childhood</Name>
+    <Position x="-0.8125" y="0.15" z="1.0"></Position>
+    <Scale>0.25</Scale>
+    <Image x="-0.625" y="0.5" z="0">Images/childhood-mini.png</Image>
+  </Level> 
+  <Level>
+    <Name>2: Forest</Name>
+    <Position x="-0.125" y="-0.025" z="1.0"></Position>
+    <Scale>0.25</Scale>
+  </Level> 
+  <Level>
+    <Name>3: Cabin</Name>
+    <Position x="0.5125" y="0.15" z="1.0"></Position>
+    <Scale>0.25</Scale>
+  </Level> 
+  <Level>
+    <Name>4: Closet</Name>
+    <Position x="-0.75" y="-0.675" z="1.0"></Position>
+    <Scale>0.25</Scale>
+  </Level> 
+  <Level>
+    <Name>5: ...</Name>
+    <Position x="-0.05" y="-0.85" z="1.0"></Position>
+    <Scale>0.25</Scale>
+  </Level> 
+  <Level>
+    <Name>6: ...</Name>
+    <Position x="0.55" y="-0.675" z="1.0"></Position>
+    <Scale>0.25</Scale>
+  </Level>
+  <Back>
+    <Name>Back</Name>
+    <Position x="0.8" y="-0.8" z="1.0"></Position>
+    <Scale>0.25</Scale>
+  </Back>
+</root>

@@ -1,0 +1,268 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{391C8017-52AC-4486-9E88-87AB29BA42B4}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>TeamCDreamSaver</RootNamespace>
+    <SccProjectName>SAK</SccProjectName>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(SolutionDir)TeamCDreamSaver\src\Engines\AudioEngine;$(SolutionDir)TeamCDreamSaver\src\Engines\RenderEngine;$(SolutionDir)TeamCDreamSaver\src\Engines\InputEngine;$(SolutionDir)TeamCDreamSaver\src\Engines\AIEngine;$(SolutionDir)TeamCDreamSaver\src\Utilities;$(SolutionDir)TeamCDreamSaver\src\Engines;$(SolutionDir)Dependencies\PhysX\Include;$(SolutionDir);$(SolutionDir)TeamCDreamSaver;$(SolutionDir)TeamCDreamSaver\src;$(SolutionDir)TeamCDreamSaver\src\Screens;$(SolutionDir)TeamCDreamSaver\src;$(SolutionDir)TeamCDreamSaver\src\Entities;$(SolutionDir);$(SolutionDir)Dependencies;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(SolutionDir)TeamCDreamSaver\src\Engines\AudioEngine;$(SolutionDir)TeamCDreamSaver\src\Engines\RenderEngine;$(SolutionDir)TeamCDreamSaver\src\Engines\InputEngine;$(SolutionDir)TeamCDreamSaver\src\Engines\AIEngine;$(SolutionDir)TeamCDreamSaver\src\Utilities;$(SolutionDir)TeamCDreamSaver\src\Engines;$(SolutionDir)Dependencies\PhysX\Include;$(SolutionDir);$(SolutionDir)TeamCDreamSaver;$(SolutionDir)TeamCDreamSaver\src;$(SolutionDir)TeamCDreamSaver\src\Screens;$(SolutionDir)TeamCDreamSaver\src\Entities;$(SolutionDir);$(SolutionDir)Dependencies;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>../Dependencies/PhysX/Include</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <BrowseInformation>true</BrowseInformation>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>../Dependencies/bass/lib/bass.lib;../Dependencies/allegro-5.0.8-msvc-10.0/lib/allegro-5.0.8-monolith-md-debug.lib;opengl32.lib;../Dependencies/assimp/lib/assimpd.lib;../Dependencies/FreeImage/lib/FreeImage.lib;../Dependencies/FreeImage/lib/FreeImagePlus.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>../Dependencies/PhysX/Lib/win32</AdditionalLibraryDirectories>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <IgnoreSpecificDefaultLibraries>LIBCMT</IgnoreSpecificDefaultLibraries>
+      <Profile>false</Profile>
+    </Link>
+    <Bscmake>
+      <PreserveSBR>true</PreserveSBR>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>../Dependencies/bass/lib/bass.lib;../Dependencies/allegro-5.0.8-msvc-10.0/lib/allegro-5.0.8-monolith-md.lib;opengl32.lib;../Dependencies/assimp/lib/assimpd.lib;../Dependencies/FreeImage/lib/FreeImage.lib;../Dependencies/FreeImage/lib/FreeImagePlus.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>../Dependencies/PhysX/Lib/win32</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="AIVehicle.cpp" />
+    <ClCompile Include="src\Engines\RenderEngine\LineGL3.cpp" />
+    <ClCompile Include="src\Engines\VehicleAIEngine\AIDrivingLane.cpp" />
+    <ClCompile Include="src\Entities\Obstacle.cpp" />
+    <ClCompile Include="src\Entities\RoadBlockObstacle.cpp" />
+    <ClCompile Include="src\Entities\TrackSection.cpp" />
+    <ClCompile Include="src\Entities\Triggers\EnergyDrink.cpp" />
+    <ClCompile Include="src\Entities\Triggers\FinishTrigger.cpp" />
+    <ClCompile Include="src\Engines\AIEngine\AIEngine.cpp" />
+    <ClCompile Include="src\Engines\AudioEngine\AudioEngine.cpp" />
+    <ClCompile Include="src\Engines\PhysicsEngine\PhysicsEngine.cpp" />
+    <ClCompile Include="src\Engines\PhysicsEngine\PhysicsObject.cpp" />
+    <ClCompile Include="src\Engines\RenderEngine\Camera.cpp" />
+    <ClCompile Include="src\Engines\AIEngine\IAIThing.cpp" />
+    <ClCompile Include="src\Engines\RenderEngine\IHUDRenderable.cpp" />
+    <ClCompile Include="src\Engines\InputEngine\InputEngine.cpp" />
+    <ClCompile Include="src\Entities\Triggers\I_Trigger.cpp" />
+    <ClCompile Include="src\Entities\Triggers\Powerup.cpp" />
+    <ClCompile Include="src\Entities\Triggers\SleepingPillPowerup.cpp" />
+    <ClCompile Include="src\Entities\Vehicle.cpp" />
+    <ClCompile Include="src\Entities\Skybox.cpp" />
+    <ClCompile Include="src\Screens\DemoScreen.cpp" />
+    <ClCompile Include="src\Screens\IntroScreen.cpp" />
+    <ClCompile Include="src\Screens\IScreen.cpp" />
+    <ClCompile Include="src\Screens\LevelScreen.cpp" />
+    <ClCompile Include="src\Screens\LevelSelectScreen.cpp" />
+    <ClCompile Include="src\Screens\LoadingScreen.cpp" />
+    <ClCompile Include="src\Screens\MenuScreen.cpp" />
+    <ClCompile Include="src\Utilities\LevelLoader.cpp" />
+    <ClCompile Include="src\Utilities\ModelManager.cpp" />
+    <ClCompile Include="src\Engines\RenderEngine\ObjectMesh.cpp" />
+    <ClCompile Include="src\Engines\RenderEngine\IRenderable.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\Engines\RenderEngine\ParticleEmitter.cpp" />
+    <ClCompile Include="src\Engines\RenderEngine\RenderEngine.cpp" />
+    <ClCompile Include="src\Engines\RenderEngine\Shader.cpp" />
+    <ClCompile Include="src\Utilities\ScreenManager.cpp" />
+    <ClCompile Include="src\Entities\StaticImage.cpp" />
+    <ClCompile Include="src\Entities\StaticProp.cpp" />
+    <ClCompile Include="src\Entities\StaticText.cpp" />
+    <ClCompile Include="src\Engines\RenderEngine\TextEngine.cpp" />
+    <ClCompile Include="src\Utilities\ShaderManager.cpp" />
+    <ClCompile Include="src\Utilities\TextureManager.cpp" />
+    <ClCompile Include="src\Engines\InputEngine\XboxController.cpp" />
+    <ClCompile Include="src\Utilities\TriggerManager.cpp" />
+    <ClCompile Include="src\Engines\VehicleAIEngine\VehicleAIEngine.cpp" />
+    <ClCompile Include="src\Utilities\VarLoader.cpp" />
+    <ClCompile Include="src\Engines\VehicleAIEngine\WaypointInterpreter.cpp" />
+    <ClCompile Include="src\Engines\VehicleAIEngine\Waypoint.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Dependencies\bass\bin\bass.dll">
+      <FileType>Document</FileType>
+    </None>
+    <None Include="allegro-5.0.8-monolith-md-debug.dll" />
+    <None Include="allegro-5.0.8-monolith-md.dll" />
+    <None Include="Assimp32d.dll" />
+    <None Include="Audio\MainTheme.mp3" />
+    <None Include="blurHVert.glsl" />
+    <None Include="blurVVert.glsl" />
+    <None Include="combineFrag.glsl" />
+    <None Include="extractBloomFrag.glsl" />
+    <None Include="FreeImage.dll" />
+    <None Include="FreeImagePlus.dll" />
+    <None Include="gaussianBlurFrag.glsl" />
+    <None Include="Images\font.png" />
+    <None Include="Images\Intro Screen.jpg" />
+    <None Include="Images\Intro Screen.png" />
+    <None Include="Images\Loading Screen.png" />
+    <None Include="Images\rainbow.jpg" />
+    <None Include="Images\smoke.png" />
+    <None Include="Images\smoke2.png" />
+    <None Include="Level2.xml" />
+    <None Include="Models\Tracks\Childhood\A.xml" />
+    <None Include="Models\Tracks\Childhood\B.xml" />
+    <None Include="Models\Tracks\Childhood\C.xml">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+    </None>
+    <None Include="Models\Tracks\Childhood\D.xml" />
+    <None Include="Models\Tracks\Childhood\E.xml" />
+    <None Include="Models\Tracks\Childhood\F.xml">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Models\Tracks\Childhood\G.xml" />
+    <None Include="Models\Tracks\Childhood\H.xml" />
+    <None Include="Models\Tracks\Childhood\I.xml" />
+    <None Include="Models\Tracks\Childhood\J.xml" />
+    <None Include="Models\Tracks\Childhood\K.xml" />
+    <None Include="Models\Tracks\Childhood\L.xml" />
+    <None Include="Models\Tracks\Childhood\M.xml" />
+    <None Include="Models\Tracks\Childhood\N.xml" />
+    <None Include="Parameters\Camera.ini" />
+    <None Include="Parameters\Level1.xml">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Parameters\LevelSelectData.xml" />
+    <None Include="Parameters\RenderEngine.ini" />
+    <None Include="Parameters\TuningVars.ini" />
+    <None Include="particleFrag.glsl" />
+    <None Include="particleVert.glsl" />
+    <None Include="passthroughFrag.glsl" />
+    <None Include="passthroughVert.glsl" />
+    <None Include="skyboxFrag.glsl" />
+    <None Include="skyboxVert.glsl" />
+    <None Include="src\Engines\VehicleAIEngine\level1CenterLaneWaypointFile.txt" />
+    <None Include="src\Engines\VehicleAIEngine\level1LeftLaneWaypointFile.txt" />
+    <None Include="src\Engines\VehicleAIEngine\level1RightLaneWaypointFile.txt" />
+    <None Include="src\Engines\VehicleAIEngine\vehicleLocations.txt" />
+    <None Include="textFragShader.glsl" />
+    <None Include="fShader.glsl">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="shadowFragShader.glsl" />
+    <None Include="shadowVertShader.glsl" />
+    <None Include="textVertShader.glsl" />
+    <None Include="vShader.glsl">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AIVehicle.h" />
+    <ClInclude Include="src\Engines\RenderEngine\LineGL3.h" />
+    <ClInclude Include="src\Engines\VehicleAIEngine\AIDrivingLane.h" />
+    <ClInclude Include="src\Entities\Obstacle.h" />
+    <ClInclude Include="src\Entities\RoadBlockObstacle.h" />
+    <ClInclude Include="src\Entities\TrackSection.h" />
+    <ClInclude Include="src\Entities\Triggers\EnergyDrink.h" />
+    <ClInclude Include="src\Entities\Triggers\FinishTrigger.h" />
+    <ClInclude Include="src\Engines\AIEngine\AIEngine.h" />
+    <ClInclude Include="src\Engines\AudioEngine\AudioEngine.h" />
+    <ClInclude Include="src\Engines\PhysicsEngine\PhysicsEngine.h" />
+    <ClInclude Include="src\Engines\PhysicsEngine\PhysicsObject.h" />
+    <ClInclude Include="src\Engines\RenderEngine\Camera.h" />
+    <ClInclude Include="src\Engines\AIEngine\IAIThing.h" />
+    <ClInclude Include="src\Engines\RenderEngine\IHUDRenderable.h" />
+    <ClInclude Include="src\Engines\InputEngine\InputEngine.h" />
+    <ClInclude Include="src\Entities\Skybox.h" />
+    <ClInclude Include="src\Entities\Triggers\I_Trigger.h" />
+    <ClInclude Include="src\Entities\Triggers\Powerup.h" />
+    <ClInclude Include="src\Entities\Triggers\SleepingPillPowerup.h" />
+    <ClInclude Include="src\Entities\Vehicle.h" />
+    <ClInclude Include="src\Screens\DemoScreen.h" />
+    <ClInclude Include="src\Screens\IntroScreen.h" />
+    <ClInclude Include="src\Screens\IScreen.h" />
+    <ClInclude Include="src\Screens\LevelScreen.h" />
+    <ClInclude Include="src\Screens\LevelSelectScreen.h" />
+    <ClInclude Include="src\Screens\LoadingScreen.h" />
+    <ClInclude Include="src\Screens\MenuScreen.h" />
+    <ClInclude Include="src\Utilities\LevelLoader.h" />
+    <ClInclude Include="src\Utilities\ModelManager.h" />
+    <ClInclude Include="src\Engines\RenderEngine\ObjectMesh.h" />
+    <ClInclude Include="src\Engines\RenderEngine\IRenderable.h" />
+    <ClInclude Include="src\Engines\RenderEngine\ParticleEmitter.h" />
+    <ClInclude Include="src\Engines\RenderEngine\RenderEngine.h" />
+    <ClInclude Include="src\Engines\RenderEngine\Shader.h" />
+    <ClInclude Include="src\Utilities\ScreenManager.h" />
+    <ClInclude Include="src\Entities\StaticImage.h" />
+    <ClInclude Include="src\Entities\StaticProp.h" />
+    <ClInclude Include="src\Entities\StaticText.h" />
+    <ClInclude Include="src\Engines\RenderEngine\TextEngine.h" />
+    <ClInclude Include="src\Utilities\ShaderManager.h" />
+    <ClInclude Include="src\Utilities\TextureManager.h" />
+    <ClInclude Include="src\Engines\InputEngine\XboxController.h" />
+    <ClInclude Include="src\Utilities\TriggerManager.h" />
+    <ClInclude Include="src\Engines\VehicleAIEngine\VehicleAIEngine.h" />
+    <ClInclude Include="src\Utilities\VarLoader.h" />
+    <ClInclude Include="src\Engines\VehicleAIEngine\WaypointInterpreter.h" />
+    <ClInclude Include="src\Engines\VehicleAIEngine\Waypoint.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

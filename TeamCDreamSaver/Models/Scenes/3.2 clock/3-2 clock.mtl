@@ -1,0 +1,66 @@
+newmtl Clock:_0___Default
+illum 4
+Kd 1.00 0.70 0.20
+Ka 1.00 0.70 0.20
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 1.00 1.00 1.00
+Ns 10.00
+newmtl Clock:wire_000000000
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.30 0.30 0.30
+Ns 10.00
+newmtl Clock:wire_088144225
+illum 4
+Kd 0.30 0.60 0.90
+Ka 0.30 0.60 0.90
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.30 0.30 0.30
+Ns 10.00
+newmtl Clock:wire_127063063
+illum 4
+Kd 0.50 0.20 0.20
+Ka 0.50 0.20 0.20
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.30 0.30 0.30
+Ns 10.00
+newmtl Clock:wire_127079063
+illum 4
+Kd 0.50 0.30 0.20
+Ka 0.50 0.30 0.20
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.30 0.30 0.30
+Ns 10.00
+newmtl Clock:wire_255223127
+illum 4
+Kd 1.00 0.90 0.50
+Ka 1.00 0.90 0.50
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.30 0.30 0.30
+Ns 10.00
+newmtl lambert2SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl lambert3SG
+illum 4
+Kd 0.80 0.02 0.02
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl lambert4SG
+illum 4
+Kd 1.00 1.00 1.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00

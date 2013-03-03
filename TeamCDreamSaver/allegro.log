@@ -1,0 +1,1452 @@
+system   D            wsystem.c:583  maybe_parent_dir                 [   0.00058] Also searching C:\Users\Adam\Documents\GitHub\cpsc585\
+system   D            wsystem.c:633  _al_win_safe_load_library        [   0.00095] PathFindOnPath found: C:\WINDOWS\system32\d3d9.dll
+system   D            wsystem.c:544  load_library_at_path             [   0.00096] Calling LoadLibrary C:\WINDOWS\system32\d3d9.dll
+system   I            wsystem.c:547  load_library_at_path             [   0.00623] Loaded C:\WINDOWS\system32\d3d9.dll
+d3d      I         d3d_disp.cpp:695  _al_d3d_init_display             [   0.04067] Render-to-texture: 1
+system   I             system.c:272  al_install_system                [   0.04071] Allegro version: 5.0.8
+display  I           wgl_disp.c:762  get_available_pixel_formats_ext  [   1.32697] Got 66 visuals.
+display  I           wgl_disp.c:769  get_available_pixel_formats_ext  [   1.32700] -- 
+display  I           wgl_disp.c:770  get_available_pixel_formats_ext  [   1.32701] Decoding visual no. 1...
+display  I           wgl_disp.c:341  decode_pixel_format_attrib       [   1.32702] Decoding:
+display  I           wgl_disp.c:245  display_pixel_format             [   1.32704] Accelarated: yes
+display  I           wgl_disp.c:246  display_pixel_format             [   1.32705] Single-buffer: yes
+display  I           wgl_disp.c:250  display_pixel_format             [   1.32705] Swap method: undefined
+display  I           wgl_disp.c:251  display_pixel_format             [   1.32706] Color format: r8 g8 b8 a8, 32 bit
+display  I           wgl_disp.c:257  display_pixel_format             [   1.32707] Depth buffer: 0 bits
+display  I           wgl_disp.c:258  display_pixel_format             [   1.32708] Sample buffers: no
+display  I           wgl_disp.c:259  display_pixel_format             [   1.32709] Samples: 0
+display  D   display_settings.c:191  debug_display_settings           [   1.32711] color: 32 (rgba 8888), depth: 0, stencil: 0, acc: 0000, samples: 0/0
+display  D   display_settings.c:377  _al_score_display_settings       [   1.32712] Single Buffer requirement not met.
+display  I           wgl_disp.c:769  get_available_pixel_formats_ext  [   1.32713] -- 
+display  I           wgl_disp.c:770  get_available_pixel_formats_ext  [   1.32714] Decoding visual no. 2...
+display  I           wgl_disp.c:341  decode_pixel_format_attrib       [   1.32715] Decoding:
+display  I           wgl_disp.c:245  display_pixel_format             [   1.32716] Accelarated: yes
+display  I           wgl_disp.c:246  display_pixel_format             [   1.32717] Single-buffer: no
+display  I           wgl_disp.c:248  display_pixel_format             [   1.32718] Swap method: flip
+display  I           wgl_disp.c:251  display_pixel_format             [   1.32719] Color format: r8 g8 b8 a8, 32 bit
+display  I           wgl_disp.c:257  display_pixel_format             [   1.32720] Depth buffer: 0 bits
+display  I           wgl_disp.c:258  display_pixel_format             [   1.32721] Sample buffers: no
+display  I           wgl_disp.c:259  display_pixel_format             [   1.32721] Samples: 0
+display  D   display_settings.c:191  debug_display_settings           [   1.32722] color: 32 (rgba 8888), depth: 0, stencil: 0, acc: 16161616, samples: 0/0
+display  D   display_settings.c:506  _al_score_display_settings       [   1.32723] Score is : 1793
+display  I           wgl_disp.c:769  get_available_pixel_formats_ext  [   1.32724] -- 
+display  I           wgl_disp.c:770  get_available_pixel_formats_ext  [   1.32725] Decoding visual no. 3...
+display  I           wgl_disp.c:341  decode_pixel_format_attrib       [   1.32726] Decoding:
+display  I           wgl_disp.c:245  display_pixel_format             [   1.32727] Accelarated: yes
+display  I           wgl_disp.c:246  display_pixel_format             [   1.32728] Single-buffer: yes
+display  I           wgl_disp.c:250  display_pixel_format             [   1.32729] Swap method: undefined
+display  I           wgl_disp.c:251  display_pixel_format             [   1.32730] Color format: r8 g8 b8 a8, 32 bit
+display  I           wgl_disp.c:257  display_pixel_format             [   1.32735] Depth buffer: 24 bits
+display  I           wgl_disp.c:258  display_pixel_format             [   1.32736] Sample buffers: no
+display  I           wgl_disp.c:259  display_pixel_format             [   1.32737] Samples: 0
+display  D   display_settings.c:191  debug_display_settings           [   1.32738] color: 32 (rgba 8888), depth: 24, stencil: 8, acc: 0000, samples: 0/0
+display  D   display_settings.c:377  _al_score_display_settings       [   1.32739] Single Buffer requirement not met.
+display  I           wgl_disp.c:769  get_available_pixel_formats_ext  [   1.32740] -- 
+display  I           wgl_disp.c:770  get_available_pixel_formats_ext  [   1.32741] Decoding visual no. 4...
+display  I           wgl_disp.c:341  decode_pixel_format_attrib       [   1.32742] Decoding:
+display  I           wgl_disp.c:245  display_pixel_format             [   1.32743] Accelarated: yes
+display  I           wgl_disp.c:246  display_pixel_format             [   1.32744] Single-buffer: no
+display  I           wgl_disp.c:248  display_pixel_format             [   1.32745] Swap method: flip
+display  I           wgl_disp.c:251  display_pixel_format             [   1.32746] Color format: r8 g8 b8 a8, 32 bit
+display  I           wgl_disp.c:257  display_pixel_format             [   1.32747] Depth buffer: 24 bits
+display  I           wgl_disp.c:258  display_pixel_format             [   1.32747] Sample buffers: no
+display  I           wgl_disp.c:259  display_pixel_format             [   1.32748] Samples: 0
+display  D   display_settings.c:191  debug_display_settings           [   1.32749] color: 32 (rgba 8888), depth: 24, stencil: 8, acc: 16161616, samples: 0/0
+display  D   display_settings.c:506  _al_score_display_settings       [   1.32750] Score is : 1841
+display  I           wgl_disp.c:769  get_available_pixel_formats_ext  [   1.32751] -- 
+display  I           wgl_disp.c:770  get_available_pixel_formats_ext  [   1.32752] Decoding visual no. 5...
+display  I           wgl_disp.c:341  decode_pixel_format_attrib       [   1.32753] Decoding:
+display  I           wgl_disp.c:245  display_pixel_format             [   1.32754] Accelarated: yes
+display  I           wgl_disp.c:246  display_pixel_format             [   1.32755] Single-buffer: yes
+display  I           wgl_disp.c:250  display_pixel_format             [   1.32756] Swap method: undefined
+display  I           wgl_disp.c:251  display_pixel_format             [   1.32756] Color format: r8 g8 b8 a8, 32 bit
+display  I           wgl_disp.c:257  display_pixel_format             [   1.32757] Depth buffer: 16 bits
+display  I           wgl_disp.c:258  display_pixel_format             [   1.32758] Sample buffers: no
+display  I           wgl_disp.c:259  display_pixel_format             [   1.32759] Samples: 0
+display  D   display_settings.c:191  debug_display_settings           [   1.32760] color: 32 (rgba 8888), depth: 16, stencil: 0, acc: 0000, samples: 0/0
+display  D   display_settings.c:377  _al_score_display_settings       [   1.32761] Single Buffer requirement not met.
+display  I           wgl_disp.c:769  get_available_pixel_formats_ext  [   1.32762] -- 
+display  I           wgl_disp.c:770  get_available_pixel_formats_ext  [   1.32762] Decoding visual no. 6...
+display  I           wgl_disp.c:341  decode_pixel_format_attrib       [   1.32764] Decoding:
+display  I           wgl_disp.c:245  display_pixel_format             [   1.32765] Accelarated: yes
+display  I           wgl_disp.c:246  display_pixel_format             [   1.32766] Single-buffer: no
+display  I           wgl_disp.c:248  display_pixel_format             [   1.32766] Swap method: flip
+display  I           wgl_disp.c:251  display_pixel_format             [   1.32767] Color format: r8 g8 b8 a8, 32 bit
+display  I           wgl_disp.c:257  display_pixel_format             [   1.32768] Depth buffer: 16 bits
+display  I           wgl_disp.c:258  display_pixel_format             [   1.32769] Sample buffers: no
+display  I           wgl_disp.c:259  display_pixel_format             [   1.32770] Samples: 0
+display  D   display_settings.c:191  debug_display_settings           [   1.32771] color: 32 (rgba 8888), depth: 16, stencil: 0, acc: 16161616, samples: 0/0
+display  D   display_settings.c:506  _al_score_display_settings       [   1.32772] Score is : 1825
+display  I           wgl_disp.c:769  get_available_pixel_formats_ext  [   1.32773] -- 
+display  I           wgl_disp.c:770  get_available_pixel_formats_ext  [   1.32773] Decoding visual no. 7...
+display  I           wgl_disp.c:341  decode_pixel_format_attrib       [   1.32775] Decoding:
+display  I           wgl_disp.c:245  display_pixel_format             [   1.32776] Accelarated: yes
+display  I           wgl_disp.c:246  display_pixel_format             [   1.32777] Single-buffer: no
+display  I           wgl_disp.c:248  display_pixel_format             [   1.32777] Swap method: copy
+display  I           wgl_disp.c:251  display_pixel_format             [   1.32778] Color format: r8 g8 b8 a8, 32 bit
+display  I           wgl_disp.c:257  display_pixel_format             [   1.32779] Depth buffer: 0 bits
+display  I           wgl_disp.c:258  display_pixel_format             [   1.32780] Sample buffers: no
+display  I           wgl_disp.c:259  display_pixel_format             [   1.32781] Samples: 0
+display  D   display_settings.c:191  debug_display_settings           [   1.32782] color: 32 (rgba 8888), depth: 0, stencil: 0, acc: 16161616, samples: 0/0
+display  D   display_settings.c:506  _al_score_display_settings       [   1.32783] Score is : 1793
+display  I           wgl_disp.c:769  get_available_pixel_formats_ext  [   1.32783] -- 
+display  I           wgl_disp.c:770  get_available_pixel_formats_ext  [   1.32784] Decoding visual no. 8...
+display  I           wgl_disp.c:341  decode_pixel_format_attrib       [   1.32786] Decoding:
+display  I           wgl_disp.c:245  display_pixel_format             [   1.32786] Accelarated: yes
+display  I           wgl_disp.c:246  display_pixel_format             [   1.32787] Single-buffer: no
+display  I           wgl_disp.c:248  display_pixel_format             [   1.32788] Swap method: copy
+display  I           wgl_disp.c:251  display_pixel_format             [   1.32789] Color format: r8 g8 b8 a8, 32 bit
+display  I           wgl_disp.c:257  display_pixel_format             [   1.32790] Depth buffer: 16 bits
+display  I           wgl_disp.c:258  display_pixel_format             [   1.32791] Sample buffers: no
+display  I           wgl_disp.c:259  display_pixel_format             [   1.32791] Samples: 0
+display  D   display_settings.c:191  debug_display_settings           [   1.32792] color: 32 (rgba 8888), depth: 16, stencil: 0, acc: 16161616, samples: 0/0
+display  D   display_settings.c:506  _al_score_display_settings       [   1.32793] Score is : 1825
+display  I           wgl_disp.c:769  get_available_pixel_formats_ext  [   1.32794] -- 
+display  I           wgl_disp.c:770  get_available_pixel_formats_ext  [   1.32795] Decoding visual no. 9...
+display  I           wgl_disp.c:341  decode_pixel_format_attrib       [   1.32796] Decoding:
+display  I           wgl_disp.c:245  display_pixel_format             [   1.32797] Accelarated: yes
+display  I           wgl_disp.c:246  display_pixel_format             [   1.32798] Single-buffer: no
+display  I           wgl_disp.c:248  display_pixel_format             [   1.32799] Swap method: copy
+display  I           wgl_disp.c:251  display_pixel_format             [   1.32800] Color format: r8 g8 b8 a8, 32 bit
+display  I           wgl_disp.c:257  display_pixel_format             [   1.32801] Depth buffer: 24 bits
+display  I           wgl_disp.c:258  display_pixel_format             [   1.32801] Sample buffers: no
+display  I           wgl_disp.c:259  display_pixel_format             [   1.32802] Samples: 0
+display  D   display_settings.c:191  debug_display_settings           [   1.32803] color: 32 (rgba 8888), depth: 24, stencil: 8, acc: 16161616, samples: 0/0
+display  D   display_settings.c:506  _al_score_display_settings       [   1.32804] Score is : 1841
+display  I           wgl_disp.c:769  get_available_pixel_formats_ext  [   1.32805] -- 
+display  I           wgl_disp.c:770  get_available_pixel_formats_ext  [   1.32806] Decoding visual no. 10...
+display  I           wgl_disp.c:341  decode_pixel_format_attrib       [   1.32807] Decoding:
+display  I           wgl_disp.c:245  display_pixel_format             [   1.32808] Accelarated: yes
+display  I           wgl_disp.c:246  display_pixel_format             [   1.32809] Single-buffer: yes
+display  I           wgl_disp.c:250  display_pixel_format             [   1.32810] Swap method: undefined
+display  I           wgl_disp.c:251  display_pixel_format             [   1.32811] Color format: r8 g8 b8 a8, 32 bit
+display  I           wgl_disp.c:257  display_pixel_format             [   1.32812] Depth buffer: 0 bits
+display  I           wgl_disp.c:258  display_pixel_format             [   1.32812] Sample buffers: yes
+display  I           wgl_disp.c:259  display_pixel_format             [   1.32813] Samples: 4
+display  D   display_settings.c:191  debug_display_settings           [   1.32814] color: 32 (rgba 8888), depth: 0, stencil: 0, acc: 0000, samples: 4/1
+display  D   display_settings.c:377  _al_score_display_settings       [   1.32815] Single Buffer requirement not met.
+display  I           wgl_disp.c:769  get_available_pixel_formats_ext  [   1.32816] -- 
+display  I           wgl_disp.c:770  get_available_pixel_formats_ext  [   1.32817] Decoding visual no. 11...
+display  I           wgl_disp.c:341  decode_pixel_format_attrib       [   1.32818] Decoding:
+display  I           wgl_disp.c:245  display_pixel_format             [   1.32819] Accelarated: yes
+display  I           wgl_disp.c:246  display_pixel_format             [   1.32820] Single-buffer: no
+display  I           wgl_disp.c:248  display_pixel_format             [   1.32821] Swap method: flip
+display  I           wgl_disp.c:251  display_pixel_format             [   1.32822] Color format: r8 g8 b8 a8, 32 bit
+display  I           wgl_disp.c:257  display_pixel_format             [   1.32823] Depth buffer: 0 bits
+display  I           wgl_disp.c:258  display_pixel_format             [   1.32823] Sample buffers: yes
+display  I           wgl_disp.c:259  display_pixel_format             [   1.32824] Samples: 4
+display  D   display_settings.c:191  debug_display_settings           [   1.32825] color: 32 (rgba 8888), depth: 0, stencil: 0, acc: 16161616, samples: 4/1
+display  D   display_settings.c:506  _al_score_display_settings       [   1.32826] Score is : 1613
+display  I           wgl_disp.c:769  get_available_pixel_formats_ext  [   1.32827] -- 
+display  I           wgl_disp.c:770  get_available_pixel_formats_ext  [   1.32828] Decoding visual no. 12...
+display  I           wgl_disp.c:341  decode_pixel_format_attrib       [   1.32829] Decoding:
+display  I           wgl_disp.c:245  display_pixel_format             [   1.32830] Accelarated: yes
+display  I           wgl_disp.c:246  display_pixel_format             [   1.32831] Single-buffer: yes
+display  I           wgl_disp.c:250  display_pixel_format             [   1.32832] Swap method: undefined
+display  I           wgl_disp.c:251  display_pixel_format             [   1.32832] Color format: r8 g8 b8 a8, 32 bit
+display  I           wgl_disp.c:257  display_pixel_format             [   1.32833] Depth buffer: 16 bits
+display  I           wgl_disp.c:258  display_pixel_format             [   1.32834] Sample buffers: yes
+display  I           wgl_disp.c:259  display_pixel_format             [   1.32835] Samples: 4
+display  D   display_settings.c:191  debug_display_settings           [   1.32836] color: 32 (rgba 8888), depth: 16, stencil: 0, acc: 0000, samples: 4/1
+display  D   display_settings.c:377  _al_score_display_settings       [   1.32837] Single Buffer requirement not met.
+display  I           wgl_disp.c:769  get_available_pixel_formats_ext  [   1.32838] -- 
+display  I           wgl_disp.c:770  get_available_pixel_formats_ext  [   1.32839] Decoding visual no. 13...
+display  I           wgl_disp.c:341  decode_pixel_format_attrib       [   1.32842] Decoding:
+display  I           wgl_disp.c:245  display_pixel_format             [   1.32844] Accelarated: yes
+display  I           wgl_disp.c:246  display_pixel_format             [   1.32844] Single-buffer: no
+display  I           wgl_disp.c:248  display_pixel_format             [   1.32845] Swap method: flip
+display  I           wgl_disp.c:251  display_pixel_format             [   1.32846] Color format: r8 g8 b8 a8, 32 bit
+display  I           wgl_disp.c:257  display_pixel_format             [   1.32847] Depth buffer: 16 bits
+display  I           wgl_disp.c:258  display_pixel_format             [   1.32848] Sample buffers: yes
+display  I           wgl_disp.c:259  display_pixel_format             [   1.32849] Samples: 4
+display  D   display_settings.c:191  debug_display_settings           [   1.32849] color: 32 (rgba 8888), depth: 16, stencil: 0, acc: 16161616, samples: 4/1
+display  D   display_settings.c:506  _al_score_display_settings       [   1.32850] Score is : 1645
+display  I           wgl_disp.c:769  get_available_pixel_formats_ext  [   1.32851] -- 
+display  I           wgl_disp.c:770  get_available_pixel_formats_ext  [   1.32852] Decoding visual no. 14...
+display  I           wgl_disp.c:341  decode_pixel_format_attrib       [   1.32853] Decoding:
+display  I           wgl_disp.c:245  display_pixel_format             [   1.32854] Accelarated: yes
+display  I           wgl_disp.c:246  display_pixel_format             [   1.32855] Single-buffer: yes
+display  I           wgl_disp.c:250  display_pixel_format             [   1.32856] Swap method: undefined
+display  I           wgl_disp.c:251  display_pixel_format             [   1.32857] Color format: r8 g8 b8 a8, 32 bit
+display  I           wgl_disp.c:257  display_pixel_format             [   1.32858] Depth buffer: 24 bits
+display  I           wgl_disp.c:258  display_pixel_format             [   1.32859] Sample buffers: yes
+display  I           wgl_disp.c:259  display_pixel_format             [   1.32859] Samples: 4
+display  D   display_settings.c:191  debug_display_settings           [   1.32860] color: 32 (rgba 8888), depth: 24, stencil: 8, acc: 0000, samples: 4/1
+display  D   display_settings.c:377  _al_score_display_settings       [   1.32861] Single Buffer requirement not met.
+display  I           wgl_disp.c:769  get_available_pixel_formats_ext  [   1.32862] -- 
+display  I           wgl_disp.c:770  get_available_pixel_formats_ext  [   1.32863] Decoding visual no. 15...
+display  I           wgl_disp.c:341  decode_pixel_format_attrib       [   1.32864] Decoding:
+display  I           wgl_disp.c:245  display_pixel_format             [   1.32865] Accelarated: yes
+display  I           wgl_disp.c:246  display_pixel_format             [   1.32866] Single-buffer: no
+display  I           wgl_disp.c:248  display_pixel_format             [   1.32867] Swap method: flip
+display  I           wgl_disp.c:251  display_pixel_format             [   1.32868] Color format: r8 g8 b8 a8, 32 bit
+display  I           wgl_disp.c:257  display_pixel_format             [   1.32869] Depth buffer: 24 bits
+display  I           wgl_disp.c:258  display_pixel_format             [   1.32870] Sample buffers: yes
+display  I           wgl_disp.c:259  display_pixel_format             [   1.32870] Samples: 4
+display  D   display_settings.c:191  debug_display_settings           [   1.32871] color: 32 (rgba 8888), depth: 24, stencil: 8, acc: 16161616, samples: 4/1
+display  D   display_settings.c:506  _al_score_display_settings       [   1.32872] Score is : 1661
+display  I           wgl_disp.c:769  get_available_pixel_formats_ext  [   1.32873] -- 
+display  I           wgl_disp.c:770  get_available_pixel_formats_ext  [   1.32874] Decoding visual no. 16...
+display  I           wgl_disp.c:341  decode_pixel_format_attrib       [   1.32875] Decoding:
+display  I           wgl_disp.c:245  display_pixel_format             [   1.32876] Accelarated: yes
+display  I           wgl_disp.c:246  display_pixel_format             [   1.32877] Single-buffer: yes
+display  I           wgl_disp.c:250  display_pixel_format             [   1.32878] Swap method: undefined
+display  I           wgl_disp.c:251  display_pixel_format             [   1.32879] Color format: r8 g8 b8 a8, 32 bit
+display  I           wgl_disp.c:257  display_pixel_format             [   1.32880] Depth buffer: 0 bits
+display  I           wgl_disp.c:258  display_pixel_format             [   1.32880] Sample buffers: yes
+display  I           wgl_disp.c:259  display_pixel_format             [   1.32881] Samples: 8
+display  D   display_settings.c:191  debug_display_settings           [   1.32882] color: 32 (rgba 8888), depth: 0, stencil: 0, acc: 0000, samples: 8/1
+display  D   display_settings.c:377  _al_score_display_settings       [   1.32883] Single Buffer requirement not met.
+display  I           wgl_disp.c:769  get_available_pixel_formats_ext  [   1.32884] -- 
+display  I           wgl_disp.c:770  get_available_pixel_formats_ext  [   1.32885] Decoding visual no. 17...
+display  I           wgl_disp.c:341  decode_pixel_format_attrib       [   1.32886] Decoding:
+display  I           wgl_disp.c:245  display_pixel_format             [   1.32887] Accelarated: yes
+display  I           wgl_disp.c:246  display_pixel_format             [   1.32888] Single-buffer: no
+display  I           wgl_disp.c:248  display_pixel_format             [   1.32889] Swap method: flip
+display  I           wgl_disp.c:251  display_pixel_format             [   1.32890] Color format: r8 g8 b8 a8, 32 bit
+display  I           wgl_disp.c:257  display_pixel_format             [   1.32890] Depth buffer: 0 bits
+display  I           wgl_disp.c:258  display_pixel_format             [   1.32891] Sample buffers: yes
+display  I           wgl_disp.c:259  display_pixel_format             [   1.32892] Samples: 8
+display  D   display_settings.c:191  debug_display_settings           [   1.32893] color: 32 (rgba 8888), depth: 0, stencil: 0, acc: 16161616, samples: 8/1
+display  D   display_settings.c:506  _al_score_display_settings       [   1.32894] Score is : 1608
+display  I           wgl_disp.c:769  get_available_pixel_formats_ext  [   1.32895] -- 
+display  I           wgl_disp.c:770  get_available_pixel_formats_ext  [   1.32895] Decoding visual no. 18...
+display  I           wgl_disp.c:341  decode_pixel_format_attrib       [   1.32897] Decoding:
+display  I           wgl_disp.c:245  display_pixel_format             [   1.32898] Accelarated: yes
+display  I           wgl_disp.c:246  display_pixel_format             [   1.32899] Single-buffer: yes
+display  I           wgl_disp.c:250  display_pixel_format             [   1.32899] Swap method: undefined
+display  I           wgl_disp.c:251  display_pixel_format             [   1.32900] Color format: r8 g8 b8 a8, 32 bit
+display  I           wgl_disp.c:257  display_pixel_format             [   1.32901] Depth buffer: 16 bits
+display  I           wgl_disp.c:258  display_pixel_format             [   1.32902] Sample buffers: yes
+display  I           wgl_disp.c:259  display_pixel_format             [   1.32903] Samples: 8
+display  D   display_settings.c:191  debug_display_settings           [   1.32903] color: 32 (rgba 8888), depth: 16, stencil: 0, acc: 0000, samples: 8/1
+display  D   display_settings.c:377  _al_score_display_settings       [   1.32904] Single Buffer requirement not met.
+display  I           wgl_disp.c:769  get_available_pixel_formats_ext  [   1.32905] -- 
+display  I           wgl_disp.c:770  get_available_pixel_formats_ext  [   1.32906] Decoding visual no. 19...
+display  I           wgl_disp.c:341  decode_pixel_format_attrib       [   1.32908] Decoding:
+display  I           wgl_disp.c:245  display_pixel_format             [   1.32909] Accelarated: yes
+display  I           wgl_disp.c:246  display_pixel_format             [   1.32909] Single-buffer: no
+display  I           wgl_disp.c:248  display_pixel_format             [   1.32910] Swap method: flip
+display  I           wgl_disp.c:251  display_pixel_format             [   1.32911] Color format: r8 g8 b8 a8, 32 bit
+display  I           wgl_disp.c:257  display_pixel_format             [   1.32912] Depth buffer: 16 bits
+display  I           wgl_disp.c:258  display_pixel_format             [   1.32913] Sample buffers: yes
+display  I           wgl_disp.c:259  display_pixel_format             [   1.32914] Samples: 8
+display  D   display_settings.c:191  debug_display_settings           [   1.32915] color: 32 (rgba 8888), depth: 16, stencil: 0, acc: 16161616, samples: 8/1
+display  D   display_settings.c:506  _al_score_display_settings       [   1.32916] Score is : 1640
+display  I           wgl_disp.c:769  get_available_pixel_formats_ext  [   1.32916] -- 
+display  I           wgl_disp.c:770  get_available_pixel_formats_ext  [   1.32917] Decoding visual no. 20...
+display  I           wgl_disp.c:341  decode_pixel_format_attrib       [   1.32919] Decoding:
+display  I           wgl_disp.c:245  display_pixel_format             [   1.32920] Accelarated: yes
+display  I           wgl_disp.c:246  display_pixel_format             [   1.32920] Single-buffer: yes
+display  I           wgl_disp.c:250  display_pixel_format             [   1.32921] Swap method: undefined
+display  I           wgl_disp.c:251  display_pixel_format             [   1.32922] Color format: r8 g8 b8 a8, 32 bit
+display  I           wgl_disp.c:257  display_pixel_format             [   1.32923] Depth buffer: 24 bits
+display  I           wgl_disp.c:258  display_pixel_format             [   1.32924] Sample buffers: yes
+display  I           wgl_disp.c:259  display_pixel_format             [   1.32924] Samples: 8
+display  D   display_settings.c:191  debug_display_settings           [   1.32925] color: 32 (rgba 8888), depth: 24, stencil: 8, acc: 0000, samples: 8/1
+display  D   display_settings.c:377  _al_score_display_settings       [   1.32926] Single Buffer requirement not met.
+display  I           wgl_disp.c:769  get_available_pixel_formats_ext  [   1.32927] -- 
+display  I           wgl_disp.c:770  get_available_pixel_formats_ext  [   1.32928] Decoding visual no. 21...
+display  I           wgl_disp.c:341  decode_pixel_format_attrib       [   1.32929] Decoding:
+display  I           wgl_disp.c:245  display_pixel_format             [   1.32930] Accelarated: yes
+display  I           wgl_disp.c:246  display_pixel_format             [   1.32931] Single-buffer: no
+display  I           wgl_disp.c:248  display_pixel_format             [   1.32932] Swap method: flip
+display  I           wgl_disp.c:251  display_pixel_format             [   1.32933] Color format: r8 g8 b8 a8, 32 bit
+display  I           wgl_disp.c:257  display_pixel_format             [   1.32934] Depth buffer: 24 bits
+display  I           wgl_disp.c:258  display_pixel_format             [   1.32935] Sample buffers: yes
+display  I           wgl_disp.c:259  display_pixel_format             [   1.32935] Samples: 8
+display  D   display_settings.c:191  debug_display_settings           [   1.32936] color: 32 (rgba 8888), depth: 24, stencil: 8, acc: 16161616, samples: 8/1
+display  D   display_settings.c:506  _al_score_display_settings       [   1.32937] Score is : 1656
+display  I           wgl_disp.c:769  get_available_pixel_formats_ext  [   1.32938] -- 
+display  I           wgl_disp.c:770  get_available_pixel_formats_ext  [   1.32939] Decoding visual no. 22...
+display  I           wgl_disp.c:341  decode_pixel_format_attrib       [   1.32940] Decoding:
+display  I           wgl_disp.c:245  display_pixel_format             [   1.32941] Accelarated: no
+display  I           wgl_disp.c:246  display_pixel_format             [   1.32942] Single-buffer: yes
+display  I           wgl_disp.c:250  display_pixel_format             [   1.32943] Swap method: undefined
+display  I           wgl_disp.c:251  display_pixel_format             [   1.32944] Color format: r8 g8 b8 a0, 32 bit
+display  I           wgl_disp.c:257  display_pixel_format             [   1.32944] Depth buffer: 32 bits
+display  I           wgl_disp.c:258  display_pixel_format             [   1.32945] Sample buffers: no
+display  I           wgl_disp.c:259  display_pixel_format             [   1.32946] Samples: 0
+display  D   display_settings.c:191  debug_display_settings           [   1.32947] color: 32 (rgba 8880), depth: 32, stencil: 8, acc: 16161616, samples: 0/0
+display  D   display_settings.c:377  _al_score_display_settings       [   1.32948] Single Buffer requirement not met.
+display  I           wgl_disp.c:769  get_available_pixel_formats_ext  [   1.32949] -- 
+display  I           wgl_disp.c:770  get_available_pixel_formats_ext  [   1.32950] Decoding visual no. 23...
+display  I           wgl_disp.c:341  decode_pixel_format_attrib       [   1.32951] Decoding:
+display  I           wgl_disp.c:245  display_pixel_format             [   1.32952] Accelarated: no
+display  I           wgl_disp.c:246  display_pixel_format             [   1.32953] Single-buffer: yes
+display  I           wgl_disp.c:250  display_pixel_format             [   1.32954] Swap method: undefined
+display  I           wgl_disp.c:251  display_pixel_format             [   1.32955] Color format: r8 g8 b8 a0, 32 bit
+display  I           wgl_disp.c:257  display_pixel_format             [   1.32955] Depth buffer: 16 bits
+display  I           wgl_disp.c:258  display_pixel_format             [   1.32956] Sample buffers: no
+display  I           wgl_disp.c:259  display_pixel_format             [   1.32957] Samples: 0
+display  D   display_settings.c:191  debug_display_settings           [   1.32958] color: 32 (rgba 8880), depth: 16, stencil: 8, acc: 16161616, samples: 0/0
+display  D   display_settings.c:377  _al_score_display_settings       [   1.32959] Single Buffer requirement not met.
+display  I           wgl_disp.c:769  get_available_pixel_formats_ext  [   1.32960] -- 
+display  I           wgl_disp.c:770  get_available_pixel_formats_ext  [   1.32961] Decoding visual no. 24...
+display  I           wgl_disp.c:341  decode_pixel_format_attrib       [   1.32962] Decoding:
+display  I           wgl_disp.c:245  display_pixel_format             [   1.32963] Accelarated: no
+display  I           wgl_disp.c:246  display_pixel_format             [   1.32964] Single-buffer: no
+display  I           wgl_disp.c:248  display_pixel_format             [   1.32965] Swap method: copy
+display  I           wgl_disp.c:251  display_pixel_format             [   1.32965] Color format: r8 g8 b8 a0, 32 bit
+display  I           wgl_disp.c:257  display_pixel_format             [   1.32966] Depth buffer: 32 bits
+display  I           wgl_disp.c:258  display_pixel_format             [   1.32967] Sample buffers: no
+display  I           wgl_disp.c:259  display_pixel_format             [   1.32968] Samples: 0
+display  D   display_settings.c:191  debug_display_settings           [   1.32969] color: 32 (rgba 8880), depth: 32, stencil: 8, acc: 16161616, samples: 0/0
+display  D   display_settings.c:506  _al_score_display_settings       [   1.32970] Score is : 897
+display  I           wgl_disp.c:769  get_available_pixel_formats_ext  [   1.32971] -- 
+display  I           wgl_disp.c:770  get_available_pixel_formats_ext  [   1.32971] Decoding visual no. 25...
+display  I           wgl_disp.c:341  decode_pixel_format_attrib       [   1.32973] Decoding:
+display  I           wgl_disp.c:245  display_pixel_format             [   1.32974] Accelarated: no
+display  I           wgl_disp.c:246  display_pixel_format             [   1.32974] Single-buffer: no
+display  I           wgl_disp.c:248  display_pixel_format             [   1.32975] Swap method: copy
+display  I           wgl_disp.c:251  display_pixel_format             [   1.32976] Color format: r8 g8 b8 a0, 32 bit
+display  I           wgl_disp.c:257  display_pixel_format             [   1.32977] Depth buffer: 16 bits
+display  I           wgl_disp.c:258  display_pixel_format             [   1.32978] Sample buffers: no
+display  I           wgl_disp.c:259  display_pixel_format             [   1.32979] Samples: 0
+display  D   display_settings.c:191  debug_display_settings           [   1.32979] color: 32 (rgba 8880), depth: 16, stencil: 8, acc: 16161616, samples: 0/0
+display  D   display_settings.c:506  _al_score_display_settings       [   1.32982] Score is : 801
+display  I           wgl_disp.c:769  get_available_pixel_formats_ext  [   1.32984] -- 
+display  I           wgl_disp.c:770  get_available_pixel_formats_ext  [   1.32984] Decoding visual no. 26...
+display  I           wgl_disp.c:341  decode_pixel_format_attrib       [   1.32986] Decoding:
+display  I           wgl_disp.c:245  display_pixel_format             [   1.32987] Accelarated: no
+display  I           wgl_disp.c:246  display_pixel_format             [   1.32988] Single-buffer: yes
+display  I           wgl_disp.c:250  display_pixel_format             [   1.32989] Swap method: undefined
+display  I           wgl_disp.c:251  display_pixel_format             [   1.32989] Color format: r8 g8 b8 a8, 32 bit
+display  I           wgl_disp.c:257  display_pixel_format             [   1.32990] Depth buffer: 32 bits
+display  I           wgl_disp.c:258  display_pixel_format             [   1.32991] Sample buffers: no
+display  I           wgl_disp.c:259  display_pixel_format             [   1.32992] Samples: 0
+display  D   display_settings.c:191  debug_display_settings           [   1.32993] color: 32 (rgba 8888), depth: 32, stencil: 8, acc: 16161616, samples: 0/0
+display  D   display_settings.c:377  _al_score_display_settings       [   1.32994] Single Buffer requirement not met.
+display  I           wgl_disp.c:769  get_available_pixel_formats_ext  [   1.32995] -- 
+display  I           wgl_disp.c:770  get_available_pixel_formats_ext  [   1.32996] Decoding visual no. 27...
+display  I           wgl_disp.c:341  decode_pixel_format_attrib       [   1.32997] Decoding:
+display  I           wgl_disp.c:245  display_pixel_format             [   1.32998] Accelarated: no
+display  I           wgl_disp.c:246  display_pixel_format             [   1.32999] Single-buffer: yes
+display  I           wgl_disp.c:250  display_pixel_format             [   1.32999] Swap method: undefined
+display  I           wgl_disp.c:251  display_pixel_format             [   1.33000] Color format: r8 g8 b8 a8, 32 bit
+display  I           wgl_disp.c:257  display_pixel_format             [   1.33001] Depth buffer: 16 bits
+display  I           wgl_disp.c:258  display_pixel_format             [   1.33002] Sample buffers: no
+display  I           wgl_disp.c:259  display_pixel_format             [   1.33003] Samples: 0
+display  D   display_settings.c:191  debug_display_settings           [   1.33004] color: 32 (rgba 8888), depth: 16, stencil: 8, acc: 16161616, samples: 0/0
+display  D   display_settings.c:377  _al_score_display_settings       [   1.33005] Single Buffer requirement not met.
+display  I           wgl_disp.c:769  get_available_pixel_formats_ext  [   1.33006] -- 
+display  I           wgl_disp.c:770  get_available_pixel_formats_ext  [   1.33006] Decoding visual no. 28...
+display  I           wgl_disp.c:341  decode_pixel_format_attrib       [   1.33008] Decoding:
+display  I           wgl_disp.c:245  display_pixel_format             [   1.33009] Accelarated: no
+display  I           wgl_disp.c:246  display_pixel_format             [   1.33010] Single-buffer: no
+display  I           wgl_disp.c:248  display_pixel_format             [   1.33010] Swap method: copy
+display  I           wgl_disp.c:251  display_pixel_format             [   1.33011] Color format: r8 g8 b8 a8, 32 bit
+display  I           wgl_disp.c:257  display_pixel_format             [   1.33012] Depth buffer: 32 bits
+display  I           wgl_disp.c:258  display_pixel_format             [   1.33013] Sample buffers: no
+display  I           wgl_disp.c:259  display_pixel_format             [   1.33014] Samples: 0
+display  D   display_settings.c:191  debug_display_settings           [   1.33014] color: 32 (rgba 8888), depth: 32, stencil: 8, acc: 16161616, samples: 0/0
+display  D   display_settings.c:506  _al_score_display_settings       [   1.33016] Score is : 897
+display  I           wgl_disp.c:769  get_available_pixel_formats_ext  [   1.33016] -- 
+display  I           wgl_disp.c:770  get_available_pixel_formats_ext  [   1.33017] Decoding visual no. 29...
+display  I           wgl_disp.c:341  decode_pixel_format_attrib       [   1.33019] Decoding:
+display  I           wgl_disp.c:245  display_pixel_format             [   1.33020] Accelarated: no
+display  I           wgl_disp.c:246  display_pixel_format             [   1.33021] Single-buffer: no
+display  I           wgl_disp.c:248  display_pixel_format             [   1.33021] Swap method: copy
+display  I           wgl_disp.c:251  display_pixel_format             [   1.33022] Color format: r8 g8 b8 a8, 32 bit
+display  I           wgl_disp.c:257  display_pixel_format             [   1.33023] Depth buffer: 16 bits
+display  I           wgl_disp.c:258  display_pixel_format             [   1.33024] Sample buffers: no
+display  I           wgl_disp.c:259  display_pixel_format             [   1.33025] Samples: 0
+display  D   display_settings.c:191  debug_display_settings           [   1.33025] color: 32 (rgba 8888), depth: 16, stencil: 8, acc: 16161616, samples: 0/0
+display  D   display_settings.c:506  _al_score_display_settings       [   1.33027] Score is : 801
+display  I           wgl_disp.c:769  get_available_pixel_formats_ext  [   1.33027] -- 
+display  I           wgl_disp.c:770  get_available_pixel_formats_ext  [   1.33028] Decoding visual no. 30...
+display  I           wgl_disp.c:341  decode_pixel_format_attrib       [   1.33029] Decoding:
+display  I           wgl_disp.c:361  decode_pixel_format_attrib       [   1.33030] Not RGBA mode
+display  I           wgl_disp.c:769  get_available_pixel_formats_ext  [   1.33031] -- 
+display  I           wgl_disp.c:770  get_available_pixel_formats_ext  [   1.33032] Decoding visual no. 31...
+display  I           wgl_disp.c:341  decode_pixel_format_attrib       [   1.33033] Decoding:
+display  I           wgl_disp.c:361  decode_pixel_format_attrib       [   1.33034] Not RGBA mode
+display  I           wgl_disp.c:769  get_available_pixel_formats_ext  [   1.33035] -- 
+display  I           wgl_disp.c:770  get_available_pixel_formats_ext  [   1.33036] Decoding visual no. 32...
+display  I           wgl_disp.c:341  decode_pixel_format_attrib       [   1.33037] Decoding:
+display  I           wgl_disp.c:361  decode_pixel_format_attrib       [   1.33038] Not RGBA mode
+display  I           wgl_disp.c:769  get_available_pixel_formats_ext  [   1.33039] -- 
+display  I           wgl_disp.c:770  get_available_pixel_formats_ext  [   1.33040] Decoding visual no. 33...
+display  I           wgl_disp.c:341  decode_pixel_format_attrib       [   1.33041] Decoding:
+display  I           wgl_disp.c:361  decode_pixel_format_attrib       [   1.33042] Not RGBA mode
+display  I           wgl_disp.c:769  get_available_pixel_formats_ext  [   1.33043] -- 
+display  I           wgl_disp.c:770  get_available_pixel_formats_ext  [   1.33044] Decoding visual no. 34...
+display  I           wgl_disp.c:341  decode_pixel_format_attrib       [   1.33045] Decoding:
+display  I           wgl_disp.c:356  decode_pixel_format_attrib       [   1.33046] Can't draw to window
+display  I           wgl_disp.c:769  get_available_pixel_formats_ext  [   1.33047] -- 
+display  I           wgl_disp.c:770  get_available_pixel_formats_ext  [   1.33048] Decoding visual no. 35...
+display  I           wgl_disp.c:341  decode_pixel_format_attrib       [   1.33049] Decoding:
+display  I           wgl_disp.c:356  decode_pixel_format_attrib       [   1.33050] Can't draw to window
+display  I           wgl_disp.c:769  get_available_pixel_formats_ext  [   1.33051] -- 
+display  I           wgl_disp.c:770  get_available_pixel_formats_ext  [   1.33052] Decoding visual no. 36...
+display  I           wgl_disp.c:341  decode_pixel_format_attrib       [   1.33053] Decoding:
+display  I           wgl_disp.c:356  decode_pixel_format_attrib       [   1.33054] Can't draw to window
+display  I           wgl_disp.c:769  get_available_pixel_formats_ext  [   1.33055] -- 
+display  I           wgl_disp.c:770  get_available_pixel_formats_ext  [   1.33056] Decoding visual no. 37...
+display  I           wgl_disp.c:341  decode_pixel_format_attrib       [   1.33057] Decoding:
+display  I           wgl_disp.c:356  decode_pixel_format_attrib       [   1.33058] Can't draw to window
+display  I           wgl_disp.c:769  get_available_pixel_formats_ext  [   1.33059] -- 
+display  I           wgl_disp.c:770  get_available_pixel_formats_ext  [   1.33060] Decoding visual no. 38...
+display  I           wgl_disp.c:341  decode_pixel_format_attrib       [   1.33061] Decoding:
+display  I           wgl_disp.c:356  decode_pixel_format_attrib       [   1.33062] Can't draw to window
+display  I           wgl_disp.c:769  get_available_pixel_formats_ext  [   1.33063] -- 
+display  I           wgl_disp.c:770  get_available_pixel_formats_ext  [   1.33064] Decoding visual no. 39...
+display  I           wgl_disp.c:341  decode_pixel_format_attrib       [   1.33065] Decoding:
+display  I           wgl_disp.c:356  decode_pixel_format_attrib       [   1.33066] Can't draw to window
+display  I           wgl_disp.c:769  get_available_pixel_formats_ext  [   1.33067] -- 
+display  I           wgl_disp.c:770  get_available_pixel_formats_ext  [   1.33067] Decoding visual no. 40...
+display  I           wgl_disp.c:341  decode_pixel_format_attrib       [   1.33069] Decoding:
+display  I           wgl_disp.c:356  decode_pixel_format_attrib       [   1.33070] Can't draw to window
+display  I           wgl_disp.c:769  get_available_pixel_formats_ext  [   1.33071] -- 
+display  I           wgl_disp.c:770  get_available_pixel_formats_ext  [   1.33071] Decoding visual no. 41...
+display  I           wgl_disp.c:341  decode_pixel_format_attrib       [   1.33073] Decoding:
+display  I           wgl_disp.c:356  decode_pixel_format_attrib       [   1.33073] Can't draw to window
+display  I           wgl_disp.c:769  get_available_pixel_formats_ext  [   1.33074] -- 
+display  I           wgl_disp.c:770  get_available_pixel_formats_ext  [   1.33075] Decoding visual no. 42...
+display  I           wgl_disp.c:341  decode_pixel_format_attrib       [   1.33077] Decoding:
+display  I           wgl_disp.c:356  decode_pixel_format_attrib       [   1.33077] Can't draw to window
+display  I           wgl_disp.c:769  get_available_pixel_formats_ext  [   1.33078] -- 
+display  I           wgl_disp.c:770  get_available_pixel_formats_ext  [   1.33079] Decoding visual no. 43...
+display  I           wgl_disp.c:341  decode_pixel_format_attrib       [   1.33080] Decoding:
+display  I           wgl_disp.c:356  decode_pixel_format_attrib       [   1.33081] Can't draw to window
+display  I           wgl_disp.c:769  get_available_pixel_formats_ext  [   1.33082] -- 
+display  I           wgl_disp.c:770  get_available_pixel_formats_ext  [   1.33083] Decoding visual no. 44...
+display  I           wgl_disp.c:341  decode_pixel_format_attrib       [   1.33084] Decoding:
+display  I           wgl_disp.c:356  decode_pixel_format_attrib       [   1.33085] Can't draw to window
+display  I           wgl_disp.c:769  get_available_pixel_formats_ext  [   1.33086] -- 
+display  I           wgl_disp.c:770  get_available_pixel_formats_ext  [   1.33087] Decoding visual no. 45...
+display  I           wgl_disp.c:341  decode_pixel_format_attrib       [   1.33088] Decoding:
+display  I           wgl_disp.c:356  decode_pixel_format_attrib       [   1.33089] Can't draw to window
+display  I           wgl_disp.c:769  get_available_pixel_formats_ext  [   1.33090] -- 
+display  I           wgl_disp.c:770  get_available_pixel_formats_ext  [   1.33091] Decoding visual no. 46...
+display  I           wgl_disp.c:341  decode_pixel_format_attrib       [   1.33092] Decoding:
+display  I           wgl_disp.c:356  decode_pixel_format_attrib       [   1.33093] Can't draw to window
+display  I           wgl_disp.c:769  get_available_pixel_formats_ext  [   1.33094] -- 
+display  I           wgl_disp.c:770  get_available_pixel_formats_ext  [   1.33095] Decoding visual no. 47...
+display  I           wgl_disp.c:341  decode_pixel_format_attrib       [   1.33096] Decoding:
+display  I           wgl_disp.c:356  decode_pixel_format_attrib       [   1.33097] Can't draw to window
+display  I           wgl_disp.c:769  get_available_pixel_formats_ext  [   1.33098] -- 
+display  I           wgl_disp.c:770  get_available_pixel_formats_ext  [   1.33099] Decoding visual no. 48...
+display  I           wgl_disp.c:341  decode_pixel_format_attrib       [   1.33100] Decoding:
+display  I           wgl_disp.c:356  decode_pixel_format_attrib       [   1.33101] Can't draw to window
+display  I           wgl_disp.c:769  get_available_pixel_formats_ext  [   1.33102] -- 
+display  I           wgl_disp.c:770  get_available_pixel_formats_ext  [   1.33103] Decoding visual no. 49...
+display  I           wgl_disp.c:341  decode_pixel_format_attrib       [   1.33104] Decoding:
+display  I           wgl_disp.c:356  decode_pixel_format_attrib       [   1.33105] Can't draw to window
+display  I           wgl_disp.c:769  get_available_pixel_formats_ext  [   1.33106] -- 
+display  I           wgl_disp.c:770  get_available_pixel_formats_ext  [   1.33107] Decoding visual no. 50...
+display  I           wgl_disp.c:341  decode_pixel_format_attrib       [   1.33108] Decoding:
+display  I           wgl_disp.c:356  decode_pixel_format_attrib       [   1.33109] Can't draw to window
+display  I           wgl_disp.c:769  get_available_pixel_formats_ext  [   1.33110] -- 
+display  I           wgl_disp.c:770  get_available_pixel_formats_ext  [   1.33111] Decoding visual no. 51...
+display  I           wgl_disp.c:341  decode_pixel_format_attrib       [   1.33112] Decoding:
+display  I           wgl_disp.c:356  decode_pixel_format_attrib       [   1.33113] Can't draw to window
+display  I           wgl_disp.c:769  get_available_pixel_formats_ext  [   1.33114] -- 
+display  I           wgl_disp.c:770  get_available_pixel_formats_ext  [   1.33114] Decoding visual no. 52...
+display  I           wgl_disp.c:341  decode_pixel_format_attrib       [   1.33116] Decoding:
+display  I           wgl_disp.c:356  decode_pixel_format_attrib       [   1.33117] Can't draw to window
+display  I           wgl_disp.c:769  get_available_pixel_formats_ext  [   1.33118] -- 
+display  I           wgl_disp.c:770  get_available_pixel_formats_ext  [   1.33118] Decoding visual no. 53...
+display  I           wgl_disp.c:341  decode_pixel_format_attrib       [   1.33120] Decoding:
+display  I           wgl_disp.c:356  decode_pixel_format_attrib       [   1.33121] Can't draw to window
+display  I           wgl_disp.c:769  get_available_pixel_formats_ext  [   1.33122] -- 
+display  I           wgl_disp.c:770  get_available_pixel_formats_ext  [   1.33122] Decoding visual no. 54...
+display  I           wgl_disp.c:341  decode_pixel_format_attrib       [   1.33124] Decoding:
+display  I           wgl_disp.c:356  decode_pixel_format_attrib       [   1.33124] Can't draw to window
+display  I           wgl_disp.c:769  get_available_pixel_formats_ext  [   1.33125] -- 
+display  I           wgl_disp.c:770  get_available_pixel_formats_ext  [   1.33126] Decoding visual no. 55...
+display  I           wgl_disp.c:341  decode_pixel_format_attrib       [   1.33128] Decoding:
+display  I           wgl_disp.c:356  decode_pixel_format_attrib       [   1.33128] Can't draw to window
+display  I           wgl_disp.c:769  get_available_pixel_formats_ext  [   1.33129] -- 
+display  I           wgl_disp.c:770  get_available_pixel_formats_ext  [   1.33130] Decoding visual no. 56...
+display  I           wgl_disp.c:341  decode_pixel_format_attrib       [   1.33131] Decoding:
+display  I           wgl_disp.c:356  decode_pixel_format_attrib       [   1.33132] Can't draw to window
+display  I           wgl_disp.c:769  get_available_pixel_formats_ext  [   1.33133] -- 
+display  I           wgl_disp.c:770  get_available_pixel_formats_ext  [   1.33134] Decoding visual no. 57...
+display  I           wgl_disp.c:341  decode_pixel_format_attrib       [   1.33135] Decoding:
+display  I           wgl_disp.c:356  decode_pixel_format_attrib       [   1.33136] Can't draw to window
+display  I           wgl_disp.c:769  get_available_pixel_formats_ext  [   1.33137] -- 
+display  I           wgl_disp.c:770  get_available_pixel_formats_ext  [   1.33138] Decoding visual no. 58...
+display  I           wgl_disp.c:341  decode_pixel_format_attrib       [   1.33139] Decoding:
+display  I           wgl_disp.c:356  decode_pixel_format_attrib       [   1.33140] Can't draw to window
+display  I           wgl_disp.c:769  get_available_pixel_formats_ext  [   1.33141] -- 
+display  I           wgl_disp.c:770  get_available_pixel_formats_ext  [   1.33142] Decoding visual no. 59...
+display  I           wgl_disp.c:341  decode_pixel_format_attrib       [   1.33143] Decoding:
+display  I           wgl_disp.c:356  decode_pixel_format_attrib       [   1.33144] Can't draw to window
+display  I           wgl_disp.c:769  get_available_pixel_formats_ext  [   1.33145] -- 
+display  I           wgl_disp.c:770  get_available_pixel_formats_ext  [   1.33146] Decoding visual no. 60...
+display  I           wgl_disp.c:341  decode_pixel_format_attrib       [   1.33147] Decoding:
+display  I           wgl_disp.c:356  decode_pixel_format_attrib       [   1.33148] Can't draw to window
+display  I           wgl_disp.c:769  get_available_pixel_formats_ext  [   1.33149] -- 
+display  I           wgl_disp.c:770  get_available_pixel_formats_ext  [   1.33150] Decoding visual no. 61...
+display  I           wgl_disp.c:341  decode_pixel_format_attrib       [   1.33151] Decoding:
+display  I           wgl_disp.c:356  decode_pixel_format_attrib       [   1.33152] Can't draw to window
+display  I           wgl_disp.c:769  get_available_pixel_formats_ext  [   1.33153] -- 
+display  I           wgl_disp.c:770  get_available_pixel_formats_ext  [   1.33154] Decoding visual no. 62...
+display  I           wgl_disp.c:341  decode_pixel_format_attrib       [   1.33155] Decoding:
+display  I           wgl_disp.c:356  decode_pixel_format_attrib       [   1.33156] Can't draw to window
+display  I           wgl_disp.c:769  get_available_pixel_formats_ext  [   1.33157] -- 
+display  I           wgl_disp.c:770  get_available_pixel_formats_ext  [   1.33158] Decoding visual no. 63...
+display  I           wgl_disp.c:341  decode_pixel_format_attrib       [   1.33159] Decoding:
+display  I           wgl_disp.c:356  decode_pixel_format_attrib       [   1.33160] Can't draw to window
+display  I           wgl_disp.c:769  get_available_pixel_formats_ext  [   1.33161] -- 
+display  I           wgl_disp.c:770  get_available_pixel_formats_ext  [   1.33161] Decoding visual no. 64...
+display  I           wgl_disp.c:341  decode_pixel_format_attrib       [   1.33163] Decoding:
+display  I           wgl_disp.c:356  decode_pixel_format_attrib       [   1.33164] Can't draw to window
+display  I           wgl_disp.c:769  get_available_pixel_formats_ext  [   1.33165] -- 
+display  I           wgl_disp.c:770  get_available_pixel_formats_ext  [   1.33165] Decoding visual no. 65...
+display  I           wgl_disp.c:341  decode_pixel_format_attrib       [   1.33167] Decoding:
+display  I           wgl_disp.c:356  decode_pixel_format_attrib       [   1.33168] Can't draw to window
+display  I           wgl_disp.c:769  get_available_pixel_formats_ext  [   1.33169] -- 
+display  I           wgl_disp.c:770  get_available_pixel_formats_ext  [   1.33169] Decoding visual no. 66...
+display  I           wgl_disp.c:341  decode_pixel_format_attrib       [   1.33171] Decoding:
+display  I           wgl_disp.c:356  decode_pixel_format_attrib       [   1.33171] Can't draw to window
+display  I           wgl_disp.c:788  get_available_pixel_formats_ext  [   1.33172] 16 visuals are good enough.
+display  I           wgl_disp.c:894  select_pixel_format              [   1.36050] Chose visual no. 4
+
+display  I           wgl_disp.c:245  display_pixel_format             [   1.36053] Accelarated: yes
+display  I           wgl_disp.c:246  display_pixel_format             [   1.36054] Single-buffer: no
+display  I           wgl_disp.c:248  display_pixel_format             [   1.36055] Swap method: flip
+display  I           wgl_disp.c:251  display_pixel_format             [   1.36056] Color format: r8 g8 b8 a8, 32 bit
+display  I           wgl_disp.c:257  display_pixel_format             [   1.36057] Depth buffer: 24 bits
+display  I           wgl_disp.c:258  display_pixel_format             [   1.36058] Sample buffers: no
+display  I           wgl_disp.c:259  display_pixel_format             [   1.36059] Samples: 0
+opengl   D         extensions.c:702  _al_ogl_manage_extensions        [   1.48113] OpenGL Extensions:
+opengl   D         extensions.c:202  print_extensions                 [   1.48122] GL_EXT_blend_minmax
+opengl   D         extensions.c:202  print_extensions                 [   1.48123] GL_EXT_blend_subtract
+opengl   D         extensions.c:202  print_extensions                 [   1.48124] GL_EXT_blend_color
+opengl   D         extensions.c:202  print_extensions                 [   1.48125] GL_EXT_abgr
+opengl   D         extensions.c:202  print_extensions                 [   1.48125] GL_EXT_texture3D
+opengl   D         extensions.c:202  print_extensions                 [   1.48126] GL_EXT_clip_volume_hint
+opengl   D         extensions.c:202  print_extensions                 [   1.48127] GL_EXT_compiled_vertex_array
+opengl   D         extensions.c:202  print_extensions                 [   1.48128] GL_SGIS_texture_edge_clamp
+opengl   D         extensions.c:202  print_extensions                 [   1.48128] GL_SGIS_generate_mipmap
+opengl   D         extensions.c:202  print_extensions                 [   1.48129] GL_EXT_draw_range_elements
+opengl   D         extensions.c:202  print_extensions                 [   1.48130] GL_SGIS_texture_lod
+opengl   D         extensions.c:202  print_extensions                 [   1.48131] GL_EXT_rescale_normal
+opengl   D         extensions.c:202  print_extensions                 [   1.48131] GL_EXT_packed_pixels
+opengl   D         extensions.c:202  print_extensions                 [   1.48132] GL_EXT_texture_edge_clamp
+opengl   D         extensions.c:202  print_extensions                 [   1.48133] GL_EXT_separate_specular_color
+opengl   D         extensions.c:202  print_extensions                 [   1.48134] GL_ARB_multitexture
+opengl   D         extensions.c:202  print_extensions                 [   1.48134] GL_EXT_texture_env_combine
+opengl   D         extensions.c:202  print_extensions                 [   1.48135] GL_EXT_bgra
+opengl   D         extensions.c:202  print_extensions                 [   1.48136] GL_EXT_blend_func_separate
+opengl   D         extensions.c:202  print_extensions                 [   1.48137] GL_EXT_secondary_color
+opengl   D         extensions.c:202  print_extensions                 [   1.48137] GL_EXT_fog_coord
+opengl   D         extensions.c:202  print_extensions                 [   1.48138] GL_EXT_texture_env_add
+opengl   D         extensions.c:202  print_extensions                 [   1.48139] GL_ARB_texture_cube_map
+opengl   D         extensions.c:202  print_extensions                 [   1.48140] GL_ARB_transpose_matrix
+opengl   D         extensions.c:202  print_extensions                 [   1.48140] GL_ARB_texture_env_add
+opengl   D         extensions.c:202  print_extensions                 [   1.48141] GL_IBM_texture_mirrored_repeat
+opengl   D         extensions.c:202  print_extensions                 [   1.48142] GL_EXT_multi_draw_arrays
+opengl   D         extensions.c:202  print_extensions                 [   1.48142] GL_SUN_multi_draw_arrays
+opengl   D         extensions.c:202  print_extensions                 [   1.48143] GL_NV_blend_square
+opengl   D         extensions.c:202  print_extensions                 [   1.48144] GL_ARB_texture_compression
+opengl   D         extensions.c:202  print_extensions                 [   1.48145] GL_3DFX_texture_compression_FXT1
+opengl   D         extensions.c:202  print_extensions                 [   1.48145] GL_EXT_texture_filter_anisotropic
+opengl   D         extensions.c:202  print_extensions                 [   1.48146] GL_ARB_texture_border_clamp
+opengl   D         extensions.c:202  print_extensions                 [   1.48147] GL_ARB_point_parameters
+opengl   D         extensions.c:202  print_extensions                 [   1.48148] GL_ARB_texture_env_combine
+opengl   D         extensions.c:202  print_extensions                 [   1.48149] GL_ARB_texture_env_dot3
+opengl   D         extensions.c:202  print_extensions                 [   1.48150] GL_ARB_texture_env_crossbar
+opengl   D         extensions.c:202  print_extensions                 [   1.48150] GL_EXT_texture_compression_s3tc
+opengl   D         extensions.c:202  print_extensions                 [   1.48151] GL_ARB_shadow
+opengl   D         extensions.c:202  print_extensions                 [   1.48153] GL_ARB_window_pos
+opengl   D         extensions.c:202  print_extensions                 [   1.48154] GL_EXT_shadow_funcs
+opengl   D         extensions.c:202  print_extensions                 [   1.48155] GL_EXT_stencil_wrap
+opengl   D         extensions.c:202  print_extensions                 [   1.48156] GL_ARB_vertex_program
+opengl   D         extensions.c:202  print_extensions                 [   1.48157] GL_EXT_texture_rectangle
+opengl   D         extensions.c:202  print_extensions                 [   1.48158] GL_ARB_fragment_program
+opengl   D         extensions.c:202  print_extensions                 [   1.48159] GL_EXT_stencil_two_side
+opengl   D         extensions.c:202  print_extensions                 [   1.48159] GL_ATI_separate_stencil
+opengl   D         extensions.c:202  print_extensions                 [   1.48161] GL_ARB_vertex_buffer_object
+opengl   D         extensions.c:202  print_extensions                 [   1.48162] GL_EXT_texture_lod_bias
+opengl   D         extensions.c:202  print_extensions                 [   1.48163] GL_ARB_occlusion_query
+opengl   D         extensions.c:202  print_extensions                 [   1.48163] GL_ARB_fragment_shader
+opengl   D         extensions.c:202  print_extensions                 [   1.48164] GL_ARB_shader_objects
+opengl   D         extensions.c:202  print_extensions                 [   1.48165] GL_ARB_shading_language_100
+opengl   D         extensions.c:202  print_extensions                 [   1.48166] GL_ARB_texture_non_power_of_two
+opengl   D         extensions.c:202  print_extensions                 [   1.48166] GL_ARB_vertex_shader
+opengl   D         extensions.c:202  print_extensions                 [   1.48167] GL_NV_texgen_reflection
+opengl   D         extensions.c:202  print_extensions                 [   1.48168] GL_ARB_point_sprite
+opengl   D         extensions.c:202  print_extensions                 [   1.48169] GL_ARB_fragment_program_shadow
+opengl   D         extensions.c:202  print_extensions                 [   1.48169] GL_EXT_blend_equation_separate
+opengl   D         extensions.c:202  print_extensions                 [   1.48170] GL_ARB_depth_texture
+opengl   D         extensions.c:202  print_extensions                 [   1.48171] GL_ARB_texture_rectangle
+opengl   D         extensions.c:202  print_extensions                 [   1.48172] GL_ARB_draw_buffers
+opengl   D         extensions.c:202  print_extensions                 [   1.48172] GL_ARB_color_buffer_float
+opengl   D         extensions.c:202  print_extensions                 [   1.48173] GL_ARB_half_float_pixel
+opengl   D         extensions.c:202  print_extensions                 [   1.48174] GL_ARB_texture_float
+opengl   D         extensions.c:202  print_extensions                 [   1.48174] GL_ARB_pixel_buffer_object
+opengl   D         extensions.c:202  print_extensions                 [   1.48175] GL_EXT_framebuffer_object
+opengl   D         extensions.c:202  print_extensions                 [   1.48176] GL_ARB_draw_instanced
+opengl   D         extensions.c:202  print_extensions                 [   1.48177] GL_ARB_half_float_vertex
+opengl   D         extensions.c:202  print_extensions                 [   1.48177] GL_ARB_occlusion_query2
+opengl   D         extensions.c:202  print_extensions                 [   1.48178] GL_EXT_draw_buffers2
+opengl   D         extensions.c:202  print_extensions                 [   1.48179] GL_WIN_swap_hint
+opengl   D         extensions.c:202  print_extensions                 [   1.48180] GL_EXT_texture_sRGB
+opengl   D         extensions.c:202  print_extensions                 [   1.48180] GL_ARB_multisample
+opengl   D         extensions.c:202  print_extensions                 [   1.48181] GL_EXT_packed_float
+opengl   D         extensions.c:202  print_extensions                 [   1.48182] GL_EXT_texture_shared_exponent
+opengl   D         extensions.c:202  print_extensions                 [   1.48183] GL_ARB_texture_rg
+opengl   D         extensions.c:202  print_extensions                 [   1.48183] GL_ARB_texture_compression_rgtc
+opengl   D         extensions.c:202  print_extensions                 [   1.48184] GL_NV_conditional_render
+opengl   D         extensions.c:202  print_extensions                 [   1.48185] GL_EXT_texture_swizzle
+opengl   D         extensions.c:202  print_extensions                 [   1.48186] GL_ARB_texture_gather
+opengl   D         extensions.c:202  print_extensions                 [   1.48186] GL_ARB_sync
+opengl   D         extensions.c:202  print_extensions                 [   1.48187] GL_ARB_framebuffer_sRGB
+opengl   D         extensions.c:202  print_extensions                 [   1.48188] GL_EXT_packed_depth_stencil
+opengl   D         extensions.c:202  print_extensions                 [   1.48189] GL_ARB_depth_buffer_float
+opengl   D         extensions.c:202  print_extensions                 [   1.48189] GL_EXT_transform_feedback
+opengl   D         extensions.c:202  print_extensions                 [   1.48190] GL_ARB_transform_feedback2
+opengl   D         extensions.c:202  print_extensions                 [   1.48191] GL_ARB_draw_indirect
+opengl   D         extensions.c:202  print_extensions                 [   1.48191] GL_EXT_framebuffer_blit
+opengl   D         extensions.c:202  print_extensions                 [   1.48192] GL_EXT_framebuffer_multisample
+opengl   D         extensions.c:202  print_extensions                 [   1.48193] GL_ARB_framebuffer_object
+opengl   D         extensions.c:202  print_extensions                 [   1.48194] GL_EXT_texture_array
+opengl   D         extensions.c:202  print_extensions                 [   1.48194] GL_EXT_texture_integer
+opengl   D         extensions.c:202  print_extensions                 [   1.48195] GL_ARB_map_buffer_range
+opengl   D         extensions.c:202  print_extensions                 [   1.48196] GL_EXT_texture_snorm
+opengl   D         extensions.c:202  print_extensions                 [   1.48197] GL_ARB_blend_func_extended
+opengl   D         extensions.c:202  print_extensions                 [   1.48197] GL_INTEL_performance_queries
+opengl   D         extensions.c:202  print_extensions                 [   1.48198] GL_ARB_copy_buffer
+opengl   D         extensions.c:202  print_extensions                 [   1.48199] GL_ARB_sampler_objects
+opengl   D         extensions.c:202  print_extensions                 [   1.48200] GL_NV_primitive_restart
+opengl   D         extensions.c:202  print_extensions                 [   1.48200] GL_ARB_seamless_cube_map
+opengl   D         extensions.c:202  print_extensions                 [   1.48201] GL_ARB_uniform_buffer_object
+opengl   D         extensions.c:202  print_extensions                 [   1.48202] GL_ARB_depth_clamp
+opengl   D         extensions.c:202  print_extensions                 [   1.48203] GL_ARB_vertex_array_bgra
+opengl   D         extensions.c:202  print_extensions                 [   1.48203] GL_ARB_shader_bit_encoding
+opengl   D         extensions.c:202  print_extensions                 [   1.48204] GL_ARB_draw_buffers_blend
+opengl   D         extensions.c:202  print_extensions                 [   1.48205] GL_ARB_geometry_shader4
+opengl   D         extensions.c:202  print_extensions                 [   1.48206] GL_ARB_texture_query_lod
+opengl   D         extensions.c:202  print_extensions                 [   1.48207] GL_ARB_explicit_attrib_location
+opengl   D         extensions.c:202  print_extensions                 [   1.48213] GL_ARB_draw_elements_base_vertex
+opengl   D         extensions.c:202  print_extensions                 [   1.48214] GL_ARB_instanced_arrays
+opengl   D         extensions.c:202  print_extensions                 [   1.48215] GL_ARB_fragment_coord_conventions
+opengl   D         extensions.c:202  print_extensions                 [   1.48216] GL_EXT_gpu_program_parameters
+opengl   D         extensions.c:202  print_extensions                 [   1.48217] GL_ARB_texture_buffer_object_rgb32
+opengl   D         extensions.c:202  print_extensions                 [   1.48217] GL_ARB_compatibility
+opengl   D         extensions.c:202  print_extensions                 [   1.48218] GL_ARB_texture_rgb10_a2ui
+opengl   D         extensions.c:202  print_extensions                 [   1.48219] GL_ARB_texture_multisample
+opengl   D         extensions.c:202  print_extensions                 [   1.48220] GL_ARB_vertex_type_2_10_10_10_rev
+opengl   D         extensions.c:202  print_extensions                 [   1.48220] GL_ARB_timer_query
+opengl   D         extensions.c:202  print_extensions                 [   1.48221] GL_INTEL_map_texture
+opengl   D         extensions.c:202  print_extensions                 [   1.48222] GL_ARB_tessellation_shader
+opengl   D         extensions.c:202  print_extensions                 [   1.48223] GL_ARB_vertex_array_object
+opengl   D         extensions.c:202  print_extensions                 [   1.48223] GL_ARB_provoking_vertex
+opengl   D         extensions.c:202  print_extensions                 [   1.48224] GL_ARB_sample_shading
+opengl   D         extensions.c:202  print_extensions                 [   1.48225] GL_ARB_texture_cube_map_array
+opengl   D         extensions.c:202  print_extensions                 [   1.48226] GL_ARB_gpu_shader5
+opengl   D         extensions.c:202  print_extensions                 [   1.48226] GL_ARB_gpu_shader_fp64
+opengl   D         extensions.c:202  print_extensions                 [   1.48227] GL_ARB_shader_subroutine
+opengl   D         extensions.c:202  print_extensions                 [   1.48228] GL_ARB_transform_feedback3
+opengl   D         extensions.c:120  parse_opengl_version             [   1.48231] Parsed '3.0.0 - Build 9.17.10.2867' as 0x03000000
+opengl   I         extensions.c:673  fill_in_info_struct              [   1.48232] Assumed OpenGL version: 3.0.0.0
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:4    load_extensions                  [   1.48234] glBlendColor successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:5    load_extensions                  [   1.48235] glBlendEquation successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:6    load_extensions                  [   1.48668] glDrawRangeElements successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:16   load_extensions                  [   1.49196] glTexImage3D successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:17   load_extensions                  [   1.49200] glTexSubImage3D successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:18   load_extensions                  [   1.49201] glCopyTexSubImage3D successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:48   load_extensions                  [   1.49203] glActiveTexture successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:49   load_extensions                  [   1.49204] glClientActiveTexture successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:50   load_extensions                  [   1.49205] glMultiTexCoord1d successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:51   load_extensions                  [   1.49206] glMultiTexCoord1dv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:52   load_extensions                  [   1.49207] glMultiTexCoord1f successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:53   load_extensions                  [   1.49208] glMultiTexCoord1fv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:54   load_extensions                  [   1.49209] glMultiTexCoord1i successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:55   load_extensions                  [   1.49210] glMultiTexCoord1iv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:56   load_extensions                  [   1.49211] glMultiTexCoord1s successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:57   load_extensions                  [   1.49212] glMultiTexCoord1sv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:58   load_extensions                  [   1.49213] glMultiTexCoord2d successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:59   load_extensions                  [   1.49214] glMultiTexCoord2dv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:60   load_extensions                  [   1.49215] glMultiTexCoord2f successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:61   load_extensions                  [   1.49216] glMultiTexCoord2fv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:62   load_extensions                  [   1.49217] glMultiTexCoord2i successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:63   load_extensions                  [   1.49218] glMultiTexCoord2iv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:64   load_extensions                  [   1.49219] glMultiTexCoord2s successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:65   load_extensions                  [   1.49220] glMultiTexCoord2sv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:66   load_extensions                  [   1.49221] glMultiTexCoord3d successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:67   load_extensions                  [   1.49222] glMultiTexCoord3dv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:68   load_extensions                  [   1.49223] glMultiTexCoord3f successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:69   load_extensions                  [   1.49224] glMultiTexCoord3fv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:70   load_extensions                  [   1.49225] glMultiTexCoord3i successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:71   load_extensions                  [   1.49225] glMultiTexCoord3iv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:72   load_extensions                  [   1.49228] glMultiTexCoord3s successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:73   load_extensions                  [   1.49229] glMultiTexCoord3sv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:74   load_extensions                  [   1.49230] glMultiTexCoord4d successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:75   load_extensions                  [   1.49231] glMultiTexCoord4dv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:76   load_extensions                  [   1.49232] glMultiTexCoord4f successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:77   load_extensions                  [   1.49232] glMultiTexCoord4fv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:78   load_extensions                  [   1.49233] glMultiTexCoord4i successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:79   load_extensions                  [   1.49234] glMultiTexCoord4iv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:80   load_extensions                  [   1.49235] glMultiTexCoord4s successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:81   load_extensions                  [   1.49236] glMultiTexCoord4sv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:82   load_extensions                  [   1.49237] glLoadTransposeMatrixf successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:83   load_extensions                  [   1.49238] glLoadTransposeMatrixd successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:84   load_extensions                  [   1.49239] glMultTransposeMatrixf successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:85   load_extensions                  [   1.49240] glMultTransposeMatrixd successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:86   load_extensions                  [   1.49241] glSampleCoverage successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:87   load_extensions                  [   1.49242] glCompressedTexImage3D successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:88   load_extensions                  [   1.49243] glCompressedTexImage2D successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:89   load_extensions                  [   1.49244] glCompressedTexImage1D successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:90   load_extensions                  [   1.49245] glCompressedTexSubImage3D successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:91   load_extensions                  [   1.49246] glCompressedTexSubImage2D successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:92   load_extensions                  [   1.49247] glCompressedTexSubImage1D successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:93   load_extensions                  [   1.49248] glGetCompressedTexImage successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:97   load_extensions                  [   1.49249] glBlendFuncSeparate successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:98   load_extensions                  [   1.49250] glFogCoordf successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:99   load_extensions                  [   1.49251] glFogCoordfv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:100  load_extensions                  [   1.49252] glFogCoordd successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:101  load_extensions                  [   1.49252] glFogCoorddv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:102  load_extensions                  [   1.49253] glFogCoordPointer successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:103  load_extensions                  [   1.49254] glMultiDrawArrays successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:104  load_extensions                  [   1.49255] glMultiDrawElements successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:105  load_extensions                  [   1.49256] glPointParameterf successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:106  load_extensions                  [   1.49257] glPointParameterfv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:107  load_extensions                  [   1.49258] glPointParameteri successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:108  load_extensions                  [   1.49259] glPointParameteriv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:109  load_extensions                  [   1.49260] glSecondaryColor3b successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:110  load_extensions                  [   1.49261] glSecondaryColor3bv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:111  load_extensions                  [   1.49261] glSecondaryColor3d successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:112  load_extensions                  [   1.49262] glSecondaryColor3dv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:113  load_extensions                  [   1.49264] glSecondaryColor3f successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:114  load_extensions                  [   1.49265] glSecondaryColor3fv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:115  load_extensions                  [   1.49266] glSecondaryColor3i successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:116  load_extensions                  [   1.49266] glSecondaryColor3iv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:117  load_extensions                  [   1.49267] glSecondaryColor3s successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:118  load_extensions                  [   1.49268] glSecondaryColor3sv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:119  load_extensions                  [   1.49269] glSecondaryColor3ub successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:120  load_extensions                  [   1.49270] glSecondaryColor3ubv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:121  load_extensions                  [   1.49271] glSecondaryColor3ui successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:122  load_extensions                  [   1.49272] glSecondaryColor3uiv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:123  load_extensions                  [   1.49273] glSecondaryColor3us successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:124  load_extensions                  [   1.49274] glSecondaryColor3usv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:125  load_extensions                  [   1.49275] glSecondaryColorPointer successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:126  load_extensions                  [   1.49277] glWindowPos2d successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:127  load_extensions                  [   1.49278] glWindowPos2dv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:128  load_extensions                  [   1.49279] glWindowPos2f successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:129  load_extensions                  [   1.49280] glWindowPos2fv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:130  load_extensions                  [   1.49281] glWindowPos2i successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:131  load_extensions                  [   1.49282] glWindowPos2iv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:132  load_extensions                  [   1.49283] glWindowPos2s successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:133  load_extensions                  [   1.49284] glWindowPos2sv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:134  load_extensions                  [   1.49285] glWindowPos3d successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:135  load_extensions                  [   1.49286] glWindowPos3dv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:136  load_extensions                  [   1.49287] glWindowPos3f successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:137  load_extensions                  [   1.49288] glWindowPos3fv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:138  load_extensions                  [   1.49289] glWindowPos3i successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:139  load_extensions                  [   1.49290] glWindowPos3iv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:140  load_extensions                  [   1.49291] glWindowPos3s successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:141  load_extensions                  [   1.49292] glWindowPos3sv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:146  load_extensions                  [   1.49292] glBindBuffer successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:147  load_extensions                  [   1.49293] glDeleteBuffers successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:148  load_extensions                  [   1.49294] glGenBuffers successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:149  load_extensions                  [   1.49295] glIsBuffer successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:150  load_extensions                  [   1.49296] glBufferData successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:151  load_extensions                  [   1.49297] glBufferSubData successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:152  load_extensions                  [   1.49298] glGetBufferSubData successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:153  load_extensions                  [   1.49299] glMapBuffer successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:154  load_extensions                  [   1.49300] glUnmapBuffer successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:155  load_extensions                  [   1.49301] glGetBufferParameteriv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:156  load_extensions                  [   1.49302] glGetBufferPointerv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:157  load_extensions                  [   1.49303] glGenQueries successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:158  load_extensions                  [   1.49304] glDeleteQueries successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:159  load_extensions                  [   1.49305] glIsQuery successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:160  load_extensions                  [   1.49306] glBeginQuery successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:161  load_extensions                  [   1.49307] glEndQuery successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:162  load_extensions                  [   1.49308] glGetQueryiv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:163  load_extensions                  [   1.49308] glGetQueryObjectiv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:164  load_extensions                  [   1.49310] glGetQueryObjectuiv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:169  load_extensions                  [   1.49311] glBlendEquationSeparate successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:170  load_extensions                  [   1.49312] glCreateProgram successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:171  load_extensions                  [   1.49313] glCreateShader successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:172  load_extensions                  [   1.49314] glDeleteProgram successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:173  load_extensions                  [   1.49315] glDeleteShader successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:174  load_extensions                  [   1.49315] glAttachShader successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:175  load_extensions                  [   1.49316] glDetachShader successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:176  load_extensions                  [   1.49317] glShaderSource successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:177  load_extensions                  [   1.49318] glCompileShader successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:178  load_extensions                  [   1.49319] glIsProgram successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:179  load_extensions                  [   1.49320] glIsShader successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:180  load_extensions                  [   1.49322] glLinkProgram successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:181  load_extensions                  [   1.49323] glUseProgram successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:182  load_extensions                  [   1.49324] glValidateProgram successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:183  load_extensions                  [   1.49325] glUniform1f successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:184  load_extensions                  [   1.49326] glUniform2f successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:185  load_extensions                  [   1.49327] glUniform3f successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:186  load_extensions                  [   1.49328] glUniform4f successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:187  load_extensions                  [   1.49329] glUniform1i successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:188  load_extensions                  [   1.49330] glUniform2i successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:189  load_extensions                  [   1.49331] glUniform3i successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:190  load_extensions                  [   1.49332] glUniform4i successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:191  load_extensions                  [   1.49333] glUniform1fv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:192  load_extensions                  [   1.49334] glUniform2fv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:193  load_extensions                  [   1.49335] glUniform3fv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:194  load_extensions                  [   1.49336] glUniform4fv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:195  load_extensions                  [   1.49337] glUniform1iv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:196  load_extensions                  [   1.49338] glUniform2iv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:197  load_extensions                  [   1.49339] glUniform3iv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:198  load_extensions                  [   1.49340] glUniform4iv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:199  load_extensions                  [   1.49340] glUniformMatrix2fv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:200  load_extensions                  [   1.49341] glUniformMatrix3fv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:201  load_extensions                  [   1.49342] glUniformMatrix4fv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:203  load_extensions                  [   1.49343] glGetShaderiv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:205  load_extensions                  [   1.49344] glGetProgramiv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:206  load_extensions                  [   1.49345] glGetShaderInfoLog successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:207  load_extensions                  [   1.49346] glGetProgramInfoLog successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:208  load_extensions                  [   1.49347] glGetAttachedShaders successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:209  load_extensions                  [   1.49348] glGetUniformLocation successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:210  load_extensions                  [   1.49349] glGetActiveUniform successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:211  load_extensions                  [   1.49350] glGetUniformfv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:212  load_extensions                  [   1.49351] glGetUniformiv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:213  load_extensions                  [   1.49352] glGetShaderSource successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:214  load_extensions                  [   1.49353] glVertexAttrib1f successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:215  load_extensions                  [   1.49354] glVertexAttrib1s successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:216  load_extensions                  [   1.49355] glVertexAttrib1d successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:217  load_extensions                  [   1.49356] glVertexAttrib2f successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:218  load_extensions                  [   1.49357] glVertexAttrib2s successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:219  load_extensions                  [   1.49358] glVertexAttrib2d successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:220  load_extensions                  [   1.49359] glVertexAttrib3f successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:221  load_extensions                  [   1.49360] glVertexAttrib3s successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:222  load_extensions                  [   1.49361] glVertexAttrib3d successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:223  load_extensions                  [   1.49362] glVertexAttrib4f successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:224  load_extensions                  [   1.49363] glVertexAttrib4s successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:225  load_extensions                  [   1.49364] glVertexAttrib4d successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:226  load_extensions                  [   1.49365] glVertexAttrib4Nub successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:227  load_extensions                  [   1.49365] glVertexAttrib1fv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:228  load_extensions                  [   1.49367] glVertexAttrib1sv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:229  load_extensions                  [   1.49368] glVertexAttrib1dv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:230  load_extensions                  [   1.49369] glVertexAttrib2fv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:231  load_extensions                  [   1.49370] glVertexAttrib2sv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:232  load_extensions                  [   1.49371] glVertexAttrib2dv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:233  load_extensions                  [   1.49372] glVertexAttrib3fv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:234  load_extensions                  [   1.49373] glVertexAttrib3sv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:235  load_extensions                  [   1.49374] glVertexAttrib3dv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:236  load_extensions                  [   1.49374] glVertexAttrib4fv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:237  load_extensions                  [   1.49375] glVertexAttrib4sv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:238  load_extensions                  [   1.49376] glVertexAttrib4dv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:239  load_extensions                  [   1.49377] glVertexAttrib4iv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:240  load_extensions                  [   1.49379] glVertexAttrib4bv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:241  load_extensions                  [   1.49380] glVertexAttrib4ubv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:242  load_extensions                  [   1.49380] glVertexAttrib4usv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:243  load_extensions                  [   1.49381] glVertexAttrib4uiv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:244  load_extensions                  [   1.49382] glVertexAttrib4Nbv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:245  load_extensions                  [   1.49383] glVertexAttrib4Nsv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:246  load_extensions                  [   1.49384] glVertexAttrib4Niv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:247  load_extensions                  [   1.49385] glVertexAttrib4Nubv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:248  load_extensions                  [   1.49386] glVertexAttrib4Nusv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:249  load_extensions                  [   1.49387] glVertexAttrib4Nuiv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:250  load_extensions                  [   1.49388] glVertexAttribPointer successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:251  load_extensions                  [   1.49389] glEnableVertexAttribArray successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:252  load_extensions                  [   1.49390] glDisableVertexAttribArray successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:254  load_extensions                  [   1.49391] glBindAttribLocation successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:255  load_extensions                  [   1.49392] glGetActiveAttrib successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:256  load_extensions                  [   1.49393] glGetAttribLocation successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:257  load_extensions                  [   1.49394] glGetVertexAttribdv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:258  load_extensions                  [   1.49395] glGetVertexAttribfv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:259  load_extensions                  [   1.49396] glGetVertexAttribiv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:260  load_extensions                  [   1.49397] glGetVertexAttribPointerv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:262  load_extensions                  [   1.49398] glDrawBuffers successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:264  load_extensions                  [   1.49399] glStencilOpSeparate successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:265  load_extensions                  [   1.49400] glStencilFuncSeparate successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:271  load_extensions                  [   1.49401] glUniformMatrix2x3fv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:272  load_extensions                  [   1.49402] glUniformMatrix3x2fv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:273  load_extensions                  [   1.49403] glUniformMatrix2x4fv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:274  load_extensions                  [   1.49404] glUniformMatrix4x2fv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:275  load_extensions                  [   1.49405] glUniformMatrix3x4fv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:276  load_extensions                  [   1.49406] glUniformMatrix4x3fv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:284  load_extensions                  [   1.49407] glColorMaski successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:285  load_extensions                  [   1.49408] glGetBooleani_v successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:286  load_extensions                  [   1.49409] glGetIntegeri_v successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:287  load_extensions                  [   1.49409] glEnablei successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:288  load_extensions                  [   1.49410] glDisablei successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:289  load_extensions                  [   1.49411] glIsEnabledi successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:290  load_extensions                  [   1.49412] glBeginTransformFeedback successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:291  load_extensions                  [   1.49414] glEndTransformFeedback successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:292  load_extensions                  [   1.49415] glBindBufferRange successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:293  load_extensions                  [   1.49416] glBindBufferBase successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:294  load_extensions                  [   1.49417] glTransformFeedbackVaryings successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:295  load_extensions                  [   1.49418] glGetTransformFeedbackVarying successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:296  load_extensions                  [   1.49419] glClampColor successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:297  load_extensions                  [   1.49420] glBeginConditionalRender successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:298  load_extensions                  [   1.49421] glEndConditionalRender successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:299  load_extensions                  [   1.49422] glVertexAttribI1i successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:300  load_extensions                  [   1.49423] glVertexAttribI2i successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:301  load_extensions                  [   1.49424] glVertexAttribI3i successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:302  load_extensions                  [   1.49425] glVertexAttribI4i successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:303  load_extensions                  [   1.49426] glVertexAttribI1ui successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:304  load_extensions                  [   1.49427] glVertexAttribI2ui successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:305  load_extensions                  [   1.49428] glVertexAttribI3ui successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:306  load_extensions                  [   1.49429] glVertexAttribI4ui successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:307  load_extensions                  [   1.49430] glVertexAttribI1iv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:308  load_extensions                  [   1.49431] glVertexAttribI2iv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:309  load_extensions                  [   1.49431] glVertexAttribI3iv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:310  load_extensions                  [   1.49432] glVertexAttribI4iv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:311  load_extensions                  [   1.49433] glVertexAttribI1uiv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:312  load_extensions                  [   1.49434] glVertexAttribI2uiv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:313  load_extensions                  [   1.49435] glVertexAttribI3uiv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:314  load_extensions                  [   1.49436] glVertexAttribI4uiv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:315  load_extensions                  [   1.49437] glVertexAttribI4bv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:316  load_extensions                  [   1.49438] glVertexAttribI4sv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:317  load_extensions                  [   1.49439] glVertexAttribI4ubv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:318  load_extensions                  [   1.49440] glVertexAttribI4usv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:319  load_extensions                  [   1.49441] glVertexAttribIPointer successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:320  load_extensions                  [   1.49442] glGetVertexAttribIiv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:321  load_extensions                  [   1.49443] glGetVertexAttribIuiv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:322  load_extensions                  [   1.49444] glGetUniformuiv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:323  load_extensions                  [   1.49445] glBindFragDataLocation successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:324  load_extensions                  [   1.49446] glGetFragDataLocation successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:325  load_extensions                  [   1.49447] glUniform1ui successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:326  load_extensions                  [   1.49448] glUniform2ui successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:327  load_extensions                  [   1.49449] glUniform3ui successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:328  load_extensions                  [   1.49450] glUniform4ui successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:329  load_extensions                  [   1.49451] glUniform1uiv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:330  load_extensions                  [   1.49452] glUniform2uiv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:331  load_extensions                  [   1.49453] glUniform3uiv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:332  load_extensions                  [   1.49454] glUniform4uiv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:333  load_extensions                  [   1.49455] glTexParameterIiv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:334  load_extensions                  [   1.49456] glTexParameterIuiv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:335  load_extensions                  [   1.49457] glGetTexParameterIiv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:336  load_extensions                  [   1.49457] glGetTexParameterIuiv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:337  load_extensions                  [   1.49458] glClearBufferiv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:338  load_extensions                  [   1.49459] glClearBufferuiv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:339  load_extensions                  [   1.49461] glClearBufferfv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:340  load_extensions                  [   1.49462] glClearBufferfi successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:341  load_extensions                  [   1.49463] glGetStringi successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:349  load_extensions                  [   1.49464] glDrawArraysInstanced successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:350  load_extensions                  [   1.49465] glDrawElementsInstanced successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:351  load_extensions                  [   1.49465] glTexBuffer successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:352  load_extensions                  [   1.49466] glPrimitiveRestartIndex successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:361  load_extensions                  [   1.49468] glGetInteger64i_v successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:362  load_extensions                  [   1.49469] glGetBufferParameteri64v successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:363  load_extensions                  [   1.49470] glProgramParameteri successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:364  load_extensions                  [   1.49471] glFramebufferTexture successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:385  load_extensions                  [   1.49472] glActiveTextureARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:386  load_extensions                  [   1.49473] glClientActiveTextureARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:387  load_extensions                  [   1.49474] glMultiTexCoord1dARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:388  load_extensions                  [   1.49475] glMultiTexCoord1dvARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:389  load_extensions                  [   1.49476] glMultiTexCoord1fARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:390  load_extensions                  [   1.49477] glMultiTexCoord1fvARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:391  load_extensions                  [   1.49477] glMultiTexCoord1iARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:392  load_extensions                  [   1.49479] glMultiTexCoord1ivARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:393  load_extensions                  [   1.49479] glMultiTexCoord1sARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:394  load_extensions                  [   1.49480] glMultiTexCoord1svARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:395  load_extensions                  [   1.49481] glMultiTexCoord2dARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:396  load_extensions                  [   1.49482] glMultiTexCoord2dvARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:397  load_extensions                  [   1.49483] glMultiTexCoord2fARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:398  load_extensions                  [   1.49484] glMultiTexCoord2fvARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:399  load_extensions                  [   1.49485] glMultiTexCoord2iARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:400  load_extensions                  [   1.49486] glMultiTexCoord2ivARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:401  load_extensions                  [   1.49487] glMultiTexCoord2sARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:402  load_extensions                  [   1.49488] glMultiTexCoord2svARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:403  load_extensions                  [   1.49489] glMultiTexCoord3dARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:404  load_extensions                  [   1.49490] glMultiTexCoord3dvARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:405  load_extensions                  [   1.49491] glMultiTexCoord3fARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:406  load_extensions                  [   1.49492] glMultiTexCoord3fvARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:407  load_extensions                  [   1.49493] glMultiTexCoord3iARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:408  load_extensions                  [   1.49494] glMultiTexCoord3ivARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:409  load_extensions                  [   1.49495] glMultiTexCoord3sARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:410  load_extensions                  [   1.49496] glMultiTexCoord3svARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:411  load_extensions                  [   1.49497] glMultiTexCoord4dARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:412  load_extensions                  [   1.49498] glMultiTexCoord4dvARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:413  load_extensions                  [   1.49499] glMultiTexCoord4fARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:414  load_extensions                  [   1.49500] glMultiTexCoord4fvARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:415  load_extensions                  [   1.49501] glMultiTexCoord4iARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:416  load_extensions                  [   1.49502] glMultiTexCoord4ivARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:417  load_extensions                  [   1.49502] glMultiTexCoord4sARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:418  load_extensions                  [   1.49504] glMultiTexCoord4svARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:422  load_extensions                  [   1.49505] glLoadTransposeMatrixfARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:423  load_extensions                  [   1.49506] glLoadTransposeMatrixdARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:424  load_extensions                  [   1.49507] glMultTransposeMatrixfARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:425  load_extensions                  [   1.49508] glMultTransposeMatrixdARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:429  load_extensions                  [   1.49509] glSampleCoverageARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:433  load_extensions                  [   1.49510] glCompressedTexImage3DARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:434  load_extensions                  [   1.49511] glCompressedTexImage2DARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:435  load_extensions                  [   1.49512] glCompressedTexImage1DARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:436  load_extensions                  [   1.49513] glCompressedTexSubImage3DARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:437  load_extensions                  [   1.49514] glCompressedTexSubImage2DARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:438  load_extensions                  [   1.49515] glCompressedTexSubImage1DARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:439  load_extensions                  [   1.49516] glGetCompressedTexImageARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:443  load_extensions                  [   1.49517] glPointParameterfARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:444  load_extensions                  [   1.49518] glPointParameterfvARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:469  load_extensions                  [   1.49520] glWindowPos2dARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:470  load_extensions                  [   1.49521] glWindowPos2dvARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:471  load_extensions                  [   1.49522] glWindowPos2fARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:472  load_extensions                  [   1.49523] glWindowPos2fvARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:473  load_extensions                  [   1.49524] glWindowPos2iARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:474  load_extensions                  [   1.49525] glWindowPos2ivARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:475  load_extensions                  [   1.49526] glWindowPos2sARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:476  load_extensions                  [   1.49526] glWindowPos2svARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:477  load_extensions                  [   1.49527] glWindowPos3dARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:478  load_extensions                  [   1.49528] glWindowPos3dvARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:479  load_extensions                  [   1.49529] glWindowPos3fARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:480  load_extensions                  [   1.49530] glWindowPos3fvARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:481  load_extensions                  [   1.49531] glWindowPos3iARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:482  load_extensions                  [   1.49532] glWindowPos3ivARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:483  load_extensions                  [   1.49533] glWindowPos3sARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:484  load_extensions                  [   1.49534] glWindowPos3svARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:488  load_extensions                  [   1.49535] glVertexAttrib1dARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:489  load_extensions                  [   1.49536] glVertexAttrib1dvARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:490  load_extensions                  [   1.49537] glVertexAttrib1fARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:491  load_extensions                  [   1.49538] glVertexAttrib1fvARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:492  load_extensions                  [   1.49539] glVertexAttrib1sARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:493  load_extensions                  [   1.49540] glVertexAttrib1svARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:494  load_extensions                  [   1.49541] glVertexAttrib2dARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:495  load_extensions                  [   1.49542] glVertexAttrib2dvARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:496  load_extensions                  [   1.49544] glVertexAttrib2fARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:497  load_extensions                  [   1.49545] glVertexAttrib2fvARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:498  load_extensions                  [   1.49546] glVertexAttrib2sARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:499  load_extensions                  [   1.49547] glVertexAttrib2svARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:500  load_extensions                  [   1.49547] glVertexAttrib3dARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:501  load_extensions                  [   1.49548] glVertexAttrib3dvARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:502  load_extensions                  [   1.49549] glVertexAttrib3fARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:503  load_extensions                  [   1.49550] glVertexAttrib3fvARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:504  load_extensions                  [   1.49551] glVertexAttrib3sARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:505  load_extensions                  [   1.49552] glVertexAttrib3svARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:506  load_extensions                  [   1.49553] glVertexAttrib4NbvARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:507  load_extensions                  [   1.49554] glVertexAttrib4NivARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:508  load_extensions                  [   1.49555] glVertexAttrib4NsvARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:509  load_extensions                  [   1.49556] glVertexAttrib4NubARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:510  load_extensions                  [   1.49557] glVertexAttrib4NubvARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:511  load_extensions                  [   1.49558] glVertexAttrib4NuivARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:512  load_extensions                  [   1.49559] glVertexAttrib4NusvARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:513  load_extensions                  [   1.49560] glVertexAttrib4bvARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:514  load_extensions                  [   1.49561] glVertexAttrib4dARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:515  load_extensions                  [   1.49562] glVertexAttrib4dvARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:516  load_extensions                  [   1.49563] glVertexAttrib4fARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:517  load_extensions                  [   1.49564] glVertexAttrib4fvARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:518  load_extensions                  [   1.49565] glVertexAttrib4ivARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:519  load_extensions                  [   1.49566] glVertexAttrib4sARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:520  load_extensions                  [   1.49567] glVertexAttrib4svARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:521  load_extensions                  [   1.49568] glVertexAttrib4ubvARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:522  load_extensions                  [   1.49569] glVertexAttrib4uivARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:523  load_extensions                  [   1.49570] glVertexAttrib4usvARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:524  load_extensions                  [   1.49571] glVertexAttribPointerARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:525  load_extensions                  [   1.49572] glEnableVertexAttribArrayARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:526  load_extensions                  [   1.49573] glDisableVertexAttribArrayARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:527  load_extensions                  [   1.49574] glProgramStringARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:528  load_extensions                  [   1.49575] glBindProgramARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:529  load_extensions                  [   1.49575] glDeleteProgramsARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:530  load_extensions                  [   1.49576] glGenProgramsARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:531  load_extensions                  [   1.49577] glProgramEnvParameter4dARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:532  load_extensions                  [   1.49578] glProgramEnvParameter4dvARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:533  load_extensions                  [   1.49579] glProgramEnvParameter4fARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:534  load_extensions                  [   1.49580] glProgramEnvParameter4fvARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:535  load_extensions                  [   1.49581] glProgramLocalParameter4dARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:536  load_extensions                  [   1.49582] glProgramLocalParameter4dvARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:537  load_extensions                  [   1.49583] glProgramLocalParameter4fARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:538  load_extensions                  [   1.49584] glProgramLocalParameter4fvARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:539  load_extensions                  [   1.49585] glGetProgramEnvParameterdvARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:540  load_extensions                  [   1.49586] glGetProgramEnvParameterfvARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:541  load_extensions                  [   1.49587] glGetProgramLocalParameterdvARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:542  load_extensions                  [   1.49589] glGetProgramLocalParameterfvARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:543  load_extensions                  [   1.49590] glGetProgramivARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:544  load_extensions                  [   1.49591] glGetProgramStringARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:545  load_extensions                  [   1.49592] glGetVertexAttribdvARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:546  load_extensions                  [   1.49593] glGetVertexAttribfvARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:547  load_extensions                  [   1.49594] glGetVertexAttribivARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:548  load_extensions                  [   1.49595] glGetVertexAttribPointervARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:549  load_extensions                  [   1.49596] glIsProgramARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:553  load_extensions                  [   1.49597] glBindBufferARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:554  load_extensions                  [   1.49598] glDeleteBuffersARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:555  load_extensions                  [   1.49599] glGenBuffersARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:556  load_extensions                  [   1.49600] glIsBufferARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:557  load_extensions                  [   1.49601] glBufferDataARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:558  load_extensions                  [   1.49601] glBufferSubDataARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:559  load_extensions                  [   1.49602] glGetBufferSubDataARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:560  load_extensions                  [   1.49603] glMapBufferARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:561  load_extensions                  [   1.49604] glUnmapBufferARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:562  load_extensions                  [   1.49605] glGetBufferParameterivARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:563  load_extensions                  [   1.49606] glGetBufferPointervARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:567  load_extensions                  [   1.49607] glGenQueriesARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:568  load_extensions                  [   1.49609] glDeleteQueriesARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:569  load_extensions                  [   1.49609] glIsQueryARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:570  load_extensions                  [   1.49610] glBeginQueryARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:571  load_extensions                  [   1.49611] glEndQueryARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:572  load_extensions                  [   1.49612] glGetQueryivARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:573  load_extensions                  [   1.49613] glGetQueryObjectivARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:574  load_extensions                  [   1.49614] glGetQueryObjectuivARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:578  load_extensions                  [   1.49615] glDeleteObjectARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:579  load_extensions                  [   1.49616] glGetHandleARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:580  load_extensions                  [   1.49617] glDetachObjectARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:581  load_extensions                  [   1.49618] glCreateShaderObjectARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:582  load_extensions                  [   1.49619] glShaderSourceARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:583  load_extensions                  [   1.49620] glCompileShaderARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:584  load_extensions                  [   1.49622] glCreateProgramObjectARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:585  load_extensions                  [   1.49623] glAttachObjectARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:586  load_extensions                  [   1.49624] glLinkProgramARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:587  load_extensions                  [   1.49625] glUseProgramObjectARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:588  load_extensions                  [   1.49625] glValidateProgramARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:589  load_extensions                  [   1.49626] glUniform1fARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:590  load_extensions                  [   1.49627] glUniform2fARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:591  load_extensions                  [   1.49628] glUniform3fARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:592  load_extensions                  [   1.49629] glUniform4fARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:593  load_extensions                  [   1.49630] glUniform1iARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:594  load_extensions                  [   1.49631] glUniform2iARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:595  load_extensions                  [   1.49632] glUniform3iARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:596  load_extensions                  [   1.49633] glUniform4iARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:597  load_extensions                  [   1.49634] glUniform1fvARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:598  load_extensions                  [   1.49635] glUniform2fvARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:599  load_extensions                  [   1.49636] glUniform3fvARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:600  load_extensions                  [   1.49637] glUniform4fvARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:601  load_extensions                  [   1.49638] glUniform1ivARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:602  load_extensions                  [   1.49639] glUniform2ivARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:603  load_extensions                  [   1.49640] glUniform3ivARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:604  load_extensions                  [   1.49641] glUniform4ivARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:605  load_extensions                  [   1.49642] glUniformMatrix2fvARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:606  load_extensions                  [   1.49643] glUniformMatrix3fvARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:607  load_extensions                  [   1.49643] glUniformMatrix4fvARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:608  load_extensions                  [   1.49644] glGetObjectParameterfvARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:609  load_extensions                  [   1.49645] glGetObjectParameterivARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:610  load_extensions                  [   1.49646] glGetInfoLogARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:611  load_extensions                  [   1.49647] glGetAttachedObjectsARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:612  load_extensions                  [   1.49648] glGetUniformLocationARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:613  load_extensions                  [   1.49651] glGetActiveUniformARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:614  load_extensions                  [   1.49653] glGetUniformfvARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:615  load_extensions                  [   1.49654] glGetUniformivARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:616  load_extensions                  [   1.49655] glGetShaderSourceARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:661  load_extensions                  [   1.49656] glBindAttribLocationARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:662  load_extensions                  [   1.49657] glGetActiveAttribARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:663  load_extensions                  [   1.49658] glGetAttribLocationARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:673  load_extensions                  [   1.49659] glDrawBuffersARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:677  load_extensions                  [   1.49660] glClampColorARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:681  load_extensions                  [   1.49660] glDrawArraysInstancedARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:682  load_extensions                  [   1.49661] glDrawElementsInstancedARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:686  load_extensions                  [   1.49662] glIsRenderbuffer successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:687  load_extensions                  [   1.49663] glBindRenderbuffer successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:688  load_extensions                  [   1.49664] glDeleteRenderbuffers successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:689  load_extensions                  [   1.49665] glGenRenderbuffers successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:690  load_extensions                  [   1.49666] glRenderbufferStorage successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:691  load_extensions                  [   1.49667] glGetRenderbufferParameteriv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:692  load_extensions                  [   1.49668] glIsFramebuffer successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:693  load_extensions                  [   1.49669] glBindFramebuffer successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:694  load_extensions                  [   1.49670] glDeleteFramebuffers successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:695  load_extensions                  [   1.49671] glGenFramebuffers successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:696  load_extensions                  [   1.49673] glCheckFramebufferStatus successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:697  load_extensions                  [   1.49674] glFramebufferTexture1D successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:698  load_extensions                  [   1.49675] glFramebufferTexture2D successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:699  load_extensions                  [   1.49677] glFramebufferTexture3D successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:700  load_extensions                  [   1.49678] glFramebufferRenderbuffer successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:701  load_extensions                  [   1.49679] glGetFramebufferAttachmentParameteriv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:702  load_extensions                  [   1.49680] glGenerateMipmap successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:703  load_extensions                  [   1.49681] glBlitFramebuffer successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:704  load_extensions                  [   1.49682] glRenderbufferStorageMultisample successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:705  load_extensions                  [   1.49683] glFramebufferTextureLayer successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:709  load_extensions                  [   1.49684] glProgramParameteriARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:710  load_extensions                  [   1.49685] glFramebufferTextureARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:711  load_extensions                  [   1.49687] glFramebufferTextureLayerARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:712  load_extensions                  [   1.49690] glFramebufferTextureFaceARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:716  load_extensions                  [   1.49691] glVertexAttribDivisor successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:720  load_extensions                  [   1.49692] glMapBufferRange successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:721  load_extensions                  [   1.49694] glFlushMappedBufferRange successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:725  load_extensions                  [   1.49695] glTexBufferARB successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:729  load_extensions                  [   1.49696] glBindVertexArray successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:730  load_extensions                  [   1.49697] glDeleteVertexArrays successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:731  load_extensions                  [   1.49698] glGenVertexArrays successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:732  load_extensions                  [   1.49699] glIsVertexArray successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:736  load_extensions                  [   1.49700] glGetUniformIndices successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:737  load_extensions                  [   1.49701] glGetActiveUniformsiv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:738  load_extensions                  [   1.49702] glGetActiveUniformName successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:739  load_extensions                  [   1.49703] glGetUniformBlockIndex successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:740  load_extensions                  [   1.49704] glGetActiveUniformBlockiv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:741  load_extensions                  [   1.49706] glGetActiveUniformBlockName successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:742  load_extensions                  [   1.49708] glUniformBlockBinding successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:746  load_extensions                  [   1.49709] glCopyBufferSubData successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:751  load_extensions                  [   1.49710] glDrawElementsBaseVertex successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:752  load_extensions                  [   1.49711] glDrawRangeElementsBaseVertex successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:753  load_extensions                  [   1.49712] glDrawElementsInstancedBaseVertex successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:754  load_extensions                  [   1.49713] glMultiDrawElementsBaseVertex successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:758  load_extensions                  [   1.49714] glProvokingVertex successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:762  load_extensions                  [   1.49715] glFenceSync successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:763  load_extensions                  [   1.49716] glIsSync successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:764  load_extensions                  [   1.49716] glDeleteSync successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:765  load_extensions                  [   1.49717] glClientWaitSync successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:766  load_extensions                  [   1.49718] glWaitSync successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:767  load_extensions                  [   1.49719] glGetInteger64v successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:768  load_extensions                  [   1.49720] glGetSynciv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:772  load_extensions                  [   1.49721] glTexImage2DMultisample successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:773  load_extensions                  [   1.49722] glTexImage3DMultisample successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:774  load_extensions                  [   1.49723] glGetMultisamplefv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:775  load_extensions                  [   1.49724] glSampleMaski successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:779  load_extensions                  [   1.49725] glBlendEquationi successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:780  load_extensions                  [   1.49726] glBlendEquationSeparatei successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:781  load_extensions                  [   1.49727] glBlendFunci successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:782  load_extensions                  [   1.49728] glBlendFuncSeparatei successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:786  load_extensions                  [   1.49729] glMinSampleShading successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:799  load_extensions                  [   1.49730] glBindFragDataLocationIndexed successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:800  load_extensions                  [   1.49731] glGetFragDataIndex successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:804  load_extensions                  [   1.49732] glGenSamplers successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:805  load_extensions                  [   1.49733] glDeleteSamplers successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:806  load_extensions                  [   1.49734] glIsSampler successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:807  load_extensions                  [   1.49735] glBindSampler successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:808  load_extensions                  [   1.49736] glSamplerParameteri successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:809  load_extensions                  [   1.49737] glSamplerParameteriv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:810  load_extensions                  [   1.49738] glSamplerParameterf successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:811  load_extensions                  [   1.49739] glSamplerParameterfv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:812  load_extensions                  [   1.49740] glSamplerParameterIiv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:813  load_extensions                  [   1.49741] glSamplerParameterIuiv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:814  load_extensions                  [   1.49742] glGetSamplerParameteriv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:815  load_extensions                  [   1.49743] glGetSamplerParameterIiv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:816  load_extensions                  [   1.49744] glGetSamplerParameterfv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:821  load_extensions                  [   1.49745] glQueryCounter successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:822  load_extensions                  [   1.49746] glGetQueryObjecti64v successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:823  load_extensions                  [   1.49747] glGetQueryObjectui64v successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:827  load_extensions                  [   1.49748] glVertexP2ui successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:828  load_extensions                  [   1.49749] glVertexP2uiv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:829  load_extensions                  [   1.49749] glVertexP3ui successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:830  load_extensions                  [   1.49750] glVertexP3uiv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:831  load_extensions                  [   1.49751] glVertexP4ui successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:832  load_extensions                  [   1.49752] glVertexP4uiv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:833  load_extensions                  [   1.49753] glTexCoordP1ui successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:834  load_extensions                  [   1.49754] glTexCoordP1uiv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:835  load_extensions                  [   1.49755] glTexCoordP2ui successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:836  load_extensions                  [   1.49756] glTexCoordP2uiv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:837  load_extensions                  [   1.49758] glTexCoordP3ui successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:838  load_extensions                  [   1.49759] glTexCoordP3uiv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:839  load_extensions                  [   1.49760] glTexCoordP4ui successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:840  load_extensions                  [   1.49762] glTexCoordP4uiv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:841  load_extensions                  [   1.49764] glMultiTexCoordP1ui successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:842  load_extensions                  [   1.49765] glMultiTexCoordP1uiv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:843  load_extensions                  [   1.49766] glMultiTexCoordP2ui successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:844  load_extensions                  [   1.49767] glMultiTexCoordP2uiv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:845  load_extensions                  [   1.49768] glMultiTexCoordP3ui successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:846  load_extensions                  [   1.49769] glMultiTexCoordP3uiv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:847  load_extensions                  [   1.49770] glMultiTexCoordP4ui successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:848  load_extensions                  [   1.49771] glMultiTexCoordP4uiv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:849  load_extensions                  [   1.49772] glNormalP3ui successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:850  load_extensions                  [   1.49773] glNormalP3uiv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:851  load_extensions                  [   1.49774] glColorP3ui successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:852  load_extensions                  [   1.49775] glColorP3uiv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:853  load_extensions                  [   1.49776] glColorP4ui successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:854  load_extensions                  [   1.49777] glColorP4uiv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:855  load_extensions                  [   1.49777] glSecondaryColorP3ui successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:856  load_extensions                  [   1.49778] glSecondaryColorP3uiv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:857  load_extensions                  [   1.49779] glVertexAttribP1ui successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:858  load_extensions                  [   1.49780] glVertexAttribP1uiv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:859  load_extensions                  [   1.49782] glVertexAttribP2ui successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:860  load_extensions                  [   1.49783] glVertexAttribP2uiv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:861  load_extensions                  [   1.49784] glVertexAttribP3ui successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:862  load_extensions                  [   1.49785] glVertexAttribP3uiv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:863  load_extensions                  [   1.49786] glVertexAttribP4ui successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:864  load_extensions                  [   1.49786] glVertexAttribP4uiv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:868  load_extensions                  [   1.49787] glDrawArraysIndirect successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:869  load_extensions                  [   1.49788] glDrawElementsIndirect successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:873  load_extensions                  [   1.49789] glUniform1d successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:874  load_extensions                  [   1.49790] glUniform2d successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:875  load_extensions                  [   1.49791] glUniform3d successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:876  load_extensions                  [   1.49792] glUniform4d successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:877  load_extensions                  [   1.49793] glUniform1dv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:878  load_extensions                  [   1.49794] glUniform2dv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:879  load_extensions                  [   1.49795] glUniform3dv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:880  load_extensions                  [   1.49796] glUniform4dv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:881  load_extensions                  [   1.49797] glUniformMatrix2dv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:882  load_extensions                  [   1.49798] glUniformMatrix3dv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:883  load_extensions                  [   1.49799] glUniformMatrix4dv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:884  load_extensions                  [   1.49800] glUniformMatrix2x3dv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:885  load_extensions                  [   1.49800] glUniformMatrix2x4dv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:886  load_extensions                  [   1.49801] glUniformMatrix3x2dv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:887  load_extensions                  [   1.49802] glUniformMatrix3x4dv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:888  load_extensions                  [   1.49803] glUniformMatrix4x2dv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:889  load_extensions                  [   1.49804] glUniformMatrix4x3dv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:890  load_extensions                  [   1.49806] glGetUniformdv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:911  load_extensions                  [   1.49809] glGetSubroutineUniformLocation successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:912  load_extensions                  [   1.49810] glGetSubroutineIndex successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:913  load_extensions                  [   1.49811] glGetActiveSubroutineUniformiv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:914  load_extensions                  [   1.49812] glGetActiveSubroutineUniformName successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:915  load_extensions                  [   1.49813] glGetActiveSubroutineName successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:916  load_extensions                  [   1.49814] glUniformSubroutinesuiv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:917  load_extensions                  [   1.49815] glGetUniformSubroutineuiv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:918  load_extensions                  [   1.49816] glGetProgramStageiv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:922  load_extensions                  [   1.49817] glPatchParameteri successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:923  load_extensions                  [   1.49818] glPatchParameterfv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:927  load_extensions                  [   1.49819] glBindTransformFeedback successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:928  load_extensions                  [   1.49820] glDeleteTransformFeedbacks successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:929  load_extensions                  [   1.49821] glGenTransformFeedbacks successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:930  load_extensions                  [   1.49822] glIsTransformFeedback successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:931  load_extensions                  [   1.49823] glPauseTransformFeedback successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:932  load_extensions                  [   1.49824] glResumeTransformFeedback successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:933  load_extensions                  [   1.49825] glDrawTransformFeedback successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:937  load_extensions                  [   1.49826] glDrawTransformFeedbackStream successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:938  load_extensions                  [   1.49827] glBeginQueryIndexed successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:939  load_extensions                  [   1.49828] glEndQueryIndexed successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:940  load_extensions                  [   1.49829] glGetQueryIndexediv successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:948  load_extensions                  [   1.49829] glBlendColorEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:956  load_extensions                  [   1.49830] glTexImage3DEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:957  load_extensions                  [   1.49831] glTexSubImage3DEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:966  load_extensions                  [   1.49832] glTexSubImage1DEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:967  load_extensions                  [   1.49833] glTexSubImage2DEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:971  load_extensions                  [   1.49834] glCopyTexImage1DEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:972  load_extensions                  [   1.49835] glCopyTexImage2DEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:973  load_extensions                  [   1.49836] glCopyTexSubImage1DEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:974  load_extensions                  [   1.49837] glCopyTexSubImage2DEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:975  load_extensions                  [   1.49838] glCopyTexSubImage3DEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:1072 load_extensions                  [   1.49847] glBlendEquationEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:1174 load_extensions                  [   1.49851] glLockArraysEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:1175 load_extensions                  [   1.49852] glUnlockArraysEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:1205 load_extensions                  [   1.49854] glDrawRangeElementsEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:1238 load_extensions                  [   1.49856] glSecondaryColor3bEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:1239 load_extensions                  [   1.49857] glSecondaryColor3bvEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:1240 load_extensions                  [   1.49858] glSecondaryColor3dEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:1241 load_extensions                  [   1.49859] glSecondaryColor3dvEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:1242 load_extensions                  [   1.49860] glSecondaryColor3fEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:1243 load_extensions                  [   1.49861] glSecondaryColor3fvEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:1244 load_extensions                  [   1.49862] glSecondaryColor3iEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:1245 load_extensions                  [   1.49863] glSecondaryColor3ivEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:1246 load_extensions                  [   1.49864] glSecondaryColor3sEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:1247 load_extensions                  [   1.49865] glSecondaryColor3svEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:1248 load_extensions                  [   1.49866] glSecondaryColor3ubEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:1249 load_extensions                  [   1.49867] glSecondaryColor3ubvEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:1250 load_extensions                  [   1.49868] glSecondaryColor3uiEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:1251 load_extensions                  [   1.49869] glSecondaryColor3uivEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:1252 load_extensions                  [   1.49870] glSecondaryColor3usEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:1253 load_extensions                  [   1.49871] glSecondaryColor3usvEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:1254 load_extensions                  [   1.49872] glSecondaryColorPointerEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:1262 load_extensions                  [   1.49874] glMultiDrawArraysEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:1263 load_extensions                  [   1.49875] glMultiDrawElementsEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:1267 load_extensions                  [   1.49876] glFogCoordfEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:1268 load_extensions                  [   1.49877] glFogCoordfvEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:1269 load_extensions                  [   1.49878] glFogCoorddEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:1270 load_extensions                  [   1.49879] glFogCoorddvEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:1271 load_extensions                  [   1.49880] glFogCoordPointerEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:1368 load_extensions                  [   1.49884] glBlendFuncSeparateEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:1723 load_extensions                  [   1.49898] glActiveStencilFaceEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:1826 load_extensions                  [   1.49903] glPrimitiveRestartNV successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:1827 load_extensions                  [   1.49904] glPrimitiveRestartIndexNV successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:1847 load_extensions                  [   1.49906] glVertex2bOES successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:1848 load_extensions                  [   1.49907] glVertex3bOES successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:1849 load_extensions                  [   1.49908] glVertex4bOES successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:1850 load_extensions                  [   1.49909] glVertex2bvOES successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:1851 load_extensions                  [   1.49910] glVertex3bvOES successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:1852 load_extensions                  [   1.49911] glVertex4bvOES successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:1854 load_extensions                  [   1.49912] glTexCoord2bOES successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:1855 load_extensions                  [   1.49913] glTexCoord3bOES successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:1856 load_extensions                  [   1.49914] glTexCoord4bOES successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:1858 load_extensions                  [   1.49915] glTexCoord2bvOES successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:1859 load_extensions                  [   1.49916] glTexCoord3bvOES successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:1860 load_extensions                  [   1.49916] glTexCoord4bvOES successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:1861 load_extensions                  [   1.49917] glMultiTexCoord1bOES successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:1862 load_extensions                  [   1.49918] glMultiTexCoord2bOES successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:1863 load_extensions                  [   1.49919] glMultiTexCoord3bOES successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:1864 load_extensions                  [   1.49920] glMultiTexCoord4bOES successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:1865 load_extensions                  [   1.49921] glMultiTexCoord1bvOES successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:1866 load_extensions                  [   1.49922] glMultiTexCoord2bvOES successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:1867 load_extensions                  [   1.49923] glMultiTexCoord3bvOES successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:1868 load_extensions                  [   1.49924] glMultiTexCoord4bvOES successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:1914 load_extensions                  [   1.49928] glTexGenxOES successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:1915 load_extensions                  [   1.49929] glTexGenxvOES successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:1916 load_extensions                  [   1.49930] glGetTexGenxvOES successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:1978 load_extensions                  [   1.49934] glDepthRangefOES successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:1979 load_extensions                  [   1.49935] glFrustumfOES successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:1980 load_extensions                  [   1.49936] glOrthofOES successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:1981 load_extensions                  [   1.49937] glClipPlanefOES successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:1982 load_extensions                  [   1.49938] glGetClipPlanefOES successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:1983 load_extensions                  [   1.49939] glClearDepthfOES successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:1996 load_extensions                  [   1.49940] glBlendEquationSeparateEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:2001 load_extensions                  [   1.49941] glIsRenderbufferEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:2002 load_extensions                  [   1.49942] glBindRenderbufferEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:2003 load_extensions                  [   1.49943] glDeleteRenderbuffersEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:2004 load_extensions                  [   1.49944] glGenRenderbuffersEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:2005 load_extensions                  [   1.49945] glRenderbufferStorageEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:2006 load_extensions                  [   1.49946] glGetRenderbufferParameterivEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:2007 load_extensions                  [   1.49947] glIsFramebufferEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:2008 load_extensions                  [   1.49948] glBindFramebufferEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:2009 load_extensions                  [   1.49949] glDeleteFramebuffersEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:2010 load_extensions                  [   1.49950] glGenFramebuffersEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:2011 load_extensions                  [   1.49951] glCheckFramebufferStatusEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:2012 load_extensions                  [   1.49952] glFramebufferTexture1DEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:2013 load_extensions                  [   1.49953] glFramebufferTexture2DEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:2014 load_extensions                  [   1.49954] glFramebufferTexture3DEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:2015 load_extensions                  [   1.49955] glFramebufferRenderbufferEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:2016 load_extensions                  [   1.49956] glGetFramebufferAttachmentParameterivEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:2017 load_extensions                  [   1.49957] glGenerateMipmapEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:2029 load_extensions                  [   1.49958] glBlitFramebufferEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:2033 load_extensions                  [   1.49959] glRenderbufferStorageMultisampleEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:2042 load_extensions                  [   1.49960] glProgramEnvParameters4fvEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:2043 load_extensions                  [   1.49962] glProgramLocalParameters4fvEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:2058 load_extensions                  [   1.49963] glColorMaskIndexedEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:2059 load_extensions                  [   1.49964] glGetBooleanIndexedvEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:2060 load_extensions                  [   1.49965] glGetIntegerIndexedvEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:2061 load_extensions                  [   1.49966] glEnableIndexedEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:2062 load_extensions                  [   1.49967] glDisableIndexedEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:2063 load_extensions                  [   1.49968] glIsEnabledIndexedEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:2081 load_extensions                  [   1.49969] glVertexAttribI1iEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:2082 load_extensions                  [   1.49970] glVertexAttribI2iEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:2083 load_extensions                  [   1.49971] glVertexAttribI3iEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:2084 load_extensions                  [   1.49972] glVertexAttribI4iEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:2085 load_extensions                  [   1.49973] glVertexAttribI1uiEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:2086 load_extensions                  [   1.49974] glVertexAttribI2uiEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:2087 load_extensions                  [   1.49975] glVertexAttribI3uiEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:2088 load_extensions                  [   1.49976] glVertexAttribI4uiEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:2089 load_extensions                  [   1.49977] glVertexAttribI1ivEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:2090 load_extensions                  [   1.49978] glVertexAttribI2ivEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:2091 load_extensions                  [   1.49979] glVertexAttribI3ivEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:2092 load_extensions                  [   1.49980] glVertexAttribI4ivEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:2093 load_extensions                  [   1.49981] glVertexAttribI1uivEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:2094 load_extensions                  [   1.49982] glVertexAttribI2uivEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:2095 load_extensions                  [   1.49983] glVertexAttribI3uivEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:2096 load_extensions                  [   1.49984] glVertexAttribI4uivEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:2097 load_extensions                  [   1.49985] glVertexAttribI4bvEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:2098 load_extensions                  [   1.49986] glVertexAttribI4svEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:2099 load_extensions                  [   1.49987] glVertexAttribI4ubvEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:2100 load_extensions                  [   1.49988] glVertexAttribI4usvEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:2101 load_extensions                  [   1.49989] glVertexAttribIPointerEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:2102 load_extensions                  [   1.49990] glGetVertexAttribIivEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:2103 load_extensions                  [   1.49991] glGetVertexAttribIuivEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:2104 load_extensions                  [   1.49992] glUniform1uiEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:2105 load_extensions                  [   1.49993] glUniform2uiEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:2106 load_extensions                  [   1.49994] glUniform3uiEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:2107 load_extensions                  [   1.49995] glUniform4uiEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:2108 load_extensions                  [   1.49996] glUniform1uivEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:2109 load_extensions                  [   1.49997] glUniform2uivEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:2110 load_extensions                  [   1.49998] glUniform3uivEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:2111 load_extensions                  [   1.49999] glUniform4uivEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:2112 load_extensions                  [   1.50000] glGetUniformuivEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:2113 load_extensions                  [   1.50001] glBindFragDataLocationEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:2114 load_extensions                  [   1.50002] glGetFragDataLocationEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:2118 load_extensions                  [   1.50003] glFramebufferTextureLayerEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:2238 load_extensions                  [   1.50006] glBeginConditionalRenderNV successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:2239 load_extensions                  [   1.50007] glEndConditionalRenderNV successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:2243 load_extensions                  [   1.50008] glBeginTransformFeedbackEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:2244 load_extensions                  [   1.50009] glEndTransformFeedbackEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:2245 load_extensions                  [   1.50010] glBindBufferRangeEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:2246 load_extensions                  [   1.50011] glBindBufferOffsetEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:2247 load_extensions                  [   1.50012] glBindBufferBaseEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:2248 load_extensions                  [   1.50013] glTransformFeedbackVaryingsEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:2249 load_extensions                  [   1.50014] glGetTransformFeedbackVaryingEXT successfully loaded
+opengl   D allegro5/opengl/GLext/gl_ext_api.h:2477 load_extensions                  [   1.50025] glProvokingVertexEXT successfully loaded
+opengl   D allegro5/opengl/GLext/wgl_ext_api.h:2    load_extensions                  [   1.50030] wglCreateBufferRegionARB successfully loaded
+opengl   D allegro5/opengl/GLext/wgl_ext_api.h:3    load_extensions                  [   1.50031] wglDeleteBufferRegionARB successfully loaded
+opengl   D allegro5/opengl/GLext/wgl_ext_api.h:4    load_extensions                  [   1.50032] wglSaveBufferRegionARB successfully loaded
+opengl   D allegro5/opengl/GLext/wgl_ext_api.h:5    load_extensions                  [   1.50033] wglRestoreBufferRegionARB successfully loaded
+opengl   D allegro5/opengl/GLext/wgl_ext_api.h:8    load_extensions                  [   1.50034] wglGetExtensionsStringARB successfully loaded
+opengl   D allegro5/opengl/GLext/wgl_ext_api.h:11   load_extensions                  [   1.50035] wglGetPixelFormatAttribivARB successfully loaded
+opengl   D allegro5/opengl/GLext/wgl_ext_api.h:12   load_extensions                  [   1.50036] wglGetPixelFormatAttribfvARB successfully loaded
+opengl   D allegro5/opengl/GLext/wgl_ext_api.h:13   load_extensions                  [   1.50037] wglChoosePixelFormatARB successfully loaded
+opengl   D allegro5/opengl/GLext/wgl_ext_api.h:16   load_extensions                  [   1.50038] wglMakeContextCurrentARB successfully loaded
+opengl   D allegro5/opengl/GLext/wgl_ext_api.h:17   load_extensions                  [   1.50038] wglGetCurrentReadDCARB successfully loaded
+opengl   D allegro5/opengl/GLext/wgl_ext_api.h:20   load_extensions                  [   1.50039] wglCreatePbufferARB successfully loaded
+opengl   D allegro5/opengl/GLext/wgl_ext_api.h:21   load_extensions                  [   1.50040] wglGetPbufferDCARB successfully loaded
+opengl   D allegro5/opengl/GLext/wgl_ext_api.h:22   load_extensions                  [   1.50041] wglReleasePbufferDCARB successfully loaded
+opengl   D allegro5/opengl/GLext/wgl_ext_api.h:23   load_extensions                  [   1.50042] wglDestroyPbufferARB successfully loaded
+opengl   D allegro5/opengl/GLext/wgl_ext_api.h:24   load_extensions                  [   1.50043] wglQueryPbufferARB successfully loaded
+opengl   D allegro5/opengl/GLext/wgl_ext_api.h:32   load_extensions                  [   1.50044] wglCreateContextAttribsARB successfully loaded
+opengl   D allegro5/opengl/GLext/wgl_ext_api.h:41   load_extensions                  [   1.50046] wglGetExtensionsStringEXT successfully loaded
+opengl   D allegro5/opengl/GLext/wgl_ext_api.h:60   load_extensions                  [   1.50047] wglSwapIntervalEXT successfully loaded
+opengl   D allegro5/opengl/GLext/wgl_ext_api.h:61   load_extensions                  [   1.50048] wglGetSwapIntervalEXT successfully loaded
+opengl   I         extensions.c:829  _al_ogl_manage_extensions        [   1.51308] Packed Pixels formats available
+opengl   I         extensions.c:875  _al_ogl_manage_extensions        [   1.51311] Use of non-power-of-two textures enabled.
+opengl   I         extensions.c:886  _al_ogl_manage_extensions        [   1.51312] Use of FBO to draw to textures enabled.
+opengl   D        ogl_display.c:433  _al_ogl_create_backbuffer        [   1.51317] Creating backbuffer
+display  I        ogl_display.c:455  _al_ogl_create_backbuffer        [   1.51319] Deduced format ARGB_8888 for backbuffer.
+opengl   D        ogl_display.c:464  _al_ogl_create_backbuffer        [   1.51320] Creating backbuffer bitmap
+opengl   D         ogl_bitmap.c:1129 _al_ogl_create_bitmap            [   1.51322] Creating OpenGL bitmap
+opengl   D         ogl_bitmap.c:1151 _al_ogl_create_bitmap            [   1.51323] Using dimensions: 1280 720
+opengl   D         ogl_bitmap.c:1160 _al_ogl_create_bitmap            [   1.51324] Chose format ARGB_8888 for OpenGL bitmap
+display  I        ogl_display.c:475  _al_ogl_create_backbuffer        [   1.51325] Created backbuffer bitmap (actual format: ARGB_8888)
+display  I           wgl_disp.c:1067 wgl_create_display               [   1.51455] OpenGL Version: 3.0.0 - Build 9.17.10.2867
+display  I           wgl_disp.c:1068 wgl_create_display               [   1.51459] Vendor: Intel
+display  I           wgl_disp.c:1069 wgl_create_display               [   1.51461] Renderer: Intel(R) HD Graphics 4000
+
+dtor     D               dtor.c:184  _al_register_destructor          [   1.85652] added dtor for object 011054C8, func 0FBE27AC
