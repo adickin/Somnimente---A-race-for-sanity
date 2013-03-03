@@ -1,6 +1,6 @@
 //Maya ASCII 2013 scene
 //Name: W - Destructible 2.ma
-//Last modified: Sun, Feb 17, 2013 12:31:13 PM
+//Last modified: Thu, Feb 28, 2013 02:38:22 PM
 //Codeset: UTF-8
 requires maya "2013";
 requires "stereoCamera" "10.0";
@@ -458,6 +458,8 @@ createNode groupId -n "groupId17";
 createNode groupParts -n "groupParts11";
 	setAttr ".ihi" 0;
 	setAttr ".ic" -type "componentList" 1 "f[0:29]";
+createNode polyTriangulate -n "polyTriangulate1";
+	setAttr ".ics" -type "componentList" 1 "f[*]";
 select -ne :time1;
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
@@ -520,7 +522,7 @@ connectAttr ":initialShadingGroup.mwc" "polySurfaceShape6.iog.og[0].gco";
 connectAttr "groupParts5.og" "polySurfaceShape1.i";
 connectAttr "groupId11.id" "polySurfaceShape1.iog.og[0].gid";
 connectAttr ":initialShadingGroup.mwc" "polySurfaceShape1.iog.og[0].gco";
-connectAttr "groupParts11.og" "polySurfaceShape7.i";
+connectAttr "polyTriangulate1.out" "polySurfaceShape7.i";
 connectAttr "groupId17.id" "polySurfaceShape7.iog.og[0].gid";
 connectAttr ":initialShadingGroup.mwc" "polySurfaceShape7.iog.og[0].gco";
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
@@ -572,6 +574,7 @@ connectAttr "polySurfaceShape5.wm" "polyUnite2.im[3]";
 connectAttr "polySurfaceShape6.wm" "polyUnite2.im[4]";
 connectAttr "polyUnite2.out" "groupParts11.ig";
 connectAttr "groupId17.id" "groupParts11.gi";
+connectAttr "groupParts11.og" "polyTriangulate1.ip";
 connectAttr "pCubeShape1.iog.og[0]" ":initialShadingGroup.dsm" -na;
 connectAttr "pCubeShape1.ciog.cog[0]" ":initialShadingGroup.dsm" -na;
 connectAttr "pCubeShape2.iog.og[0]" ":initialShadingGroup.dsm" -na;

@@ -1,6 +1,6 @@
 //Maya ASCII 2013 scene
 //Name: M - Spiral Finish.ma
-//Last modified: Fri, Feb 15, 2013 04:42:01 PM
+//Last modified: Thu, Feb 28, 2013 01:58:21 PM
 //Codeset: UTF-8
 requires maya "2013";
 requires "stereoCamera" "10.0";
@@ -2322,6 +2322,8 @@ createNode groupId -n "groupId29";
 createNode groupParts -n "groupParts17";
 	setAttr ".ihi" 0;
 	setAttr ".ic" -type "componentList" 1 "f[0:429]";
+createNode polyTriangulate -n "polyTriangulate1";
+	setAttr ".ics" -type "componentList" 1 "f[*]";
 select -ne :time1;
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
@@ -2345,8 +2347,6 @@ select -ne :hardwareRenderGlobals;
 select -ne :defaultHardwareRenderGlobals;
 	setAttr ".fn" -type "string" "im";
 	setAttr ".res" -type "string" "ntsc_4d 646 485 1.333";
-select -ne :ikSystem;
-	setAttr -s 4 ".sol";
 connectAttr "L___Spiral:groupId1.id" "L___Spiral:pPipeShape1.iog.og[0].gid";
 connectAttr ":initialShadingGroup.mwc" "L___Spiral:pPipeShape1.iog.og[0].gco";
 connectAttr "L___Spiral:groupParts1.og" "L___Spiral:pPipeShape1.i";
@@ -2471,7 +2471,7 @@ connectAttr "groupId27.id" "pPipeShape6.ciog.cog[0].cgid";
 connectAttr "deleteComponent2.og" "polySurfaceShape10.i";
 connectAttr "groupId28.id" "polySurfaceShape10.iog.og[0].gid";
 connectAttr ":initialShadingGroup.mwc" "polySurfaceShape10.iog.og[0].gco";
-connectAttr "groupParts17.og" "polySurfaceShape11.i";
+connectAttr "polyTriangulate1.out" "polySurfaceShape11.i";
 connectAttr "groupId29.id" "polySurfaceShape11.iog.og[0].gid";
 connectAttr ":initialShadingGroup.mwc" "polySurfaceShape11.iog.og[0].gco";
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
@@ -2604,6 +2604,7 @@ connectAttr "polySurfaceShape2.wm" "polyUnite4.im[6]";
 connectAttr "polySurfaceShape10.wm" "polyUnite4.im[7]";
 connectAttr "polyUnite4.out" "groupParts17.ig";
 connectAttr "groupId29.id" "groupParts17.gi";
+connectAttr "groupParts17.og" "polyTriangulate1.ip";
 connectAttr "L___Spiral:pPipeShape1.iog.og[0]" ":initialShadingGroup.dsm" -na;
 connectAttr "L___Spiral:pPipeShape1.ciog.cog[0]" ":initialShadingGroup.dsm" -na;
 connectAttr "L___Spiral:pPipeShape2.iog.og[0]" ":initialShadingGroup.dsm" -na;

@@ -1,6 +1,6 @@
 //Maya ASCII 2013 scene
 //Name: E - Sharp R.ma
-//Last modified: Sun, Feb 17, 2013 12:22:51 PM
+//Last modified: Thu, Feb 28, 2013 02:05:29 PM
 //Codeset: UTF-8
 requires maya "2013";
 requires "stereoCamera" "10.0";
@@ -557,6 +557,8 @@ createNode groupId -n "groupId20";
 createNode groupParts -n "groupParts11";
 	setAttr ".ihi" 0;
 	setAttr ".ic" -type "componentList" 1 "f[0:32]";
+createNode polyTriangulate -n "polyTriangulate1";
+	setAttr ".ics" -type "componentList" 1 "f[*]";
 select -ne :time1;
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
@@ -580,8 +582,6 @@ select -ne :hardwareRenderGlobals;
 select -ne :defaultHardwareRenderGlobals;
 	setAttr ".fn" -type "string" "im";
 	setAttr ".res" -type "string" "ntsc_4d 646 485 1.333";
-select -ne :ikSystem;
-	setAttr -s 4 ".sol";
 connectAttr "groupParts1.og" "D___Straight_6:A___Start:pCubeShape1.i";
 connectAttr "groupId1.id" "D___Straight_6:A___Start:pCubeShape1.iog.og[0].gid";
 connectAttr ":initialShadingGroup.mwc" "D___Straight_6:A___Start:pCubeShape1.iog.og[0].gco"
@@ -636,7 +636,7 @@ connectAttr ":initialShadingGroup.mwc" "polySurfaceShape7.iog.og[0].gco";
 connectAttr "groupParts4.og" "polySurfaceShape1.i";
 connectAttr "groupId13.id" "polySurfaceShape1.iog.og[0].gid";
 connectAttr ":initialShadingGroup.mwc" "polySurfaceShape1.iog.og[0].gco";
-connectAttr "groupParts11.og" "polySurfaceShape8.i";
+connectAttr "polyTriangulate1.out" "polySurfaceShape8.i";
 connectAttr "groupId20.id" "polySurfaceShape8.iog.og[0].gid";
 connectAttr ":initialShadingGroup.mwc" "polySurfaceShape8.iog.og[0].gco";
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
@@ -697,6 +697,7 @@ connectAttr "polySurfaceShape6.wm" "polyUnite2.im[4]";
 connectAttr "polySurfaceShape7.wm" "polyUnite2.im[5]";
 connectAttr "polyUnite2.out" "groupParts11.ig";
 connectAttr "groupId20.id" "groupParts11.gi";
+connectAttr "groupParts11.og" "polyTriangulate1.ip";
 connectAttr "D___Straight_6:A___Start:pCubeShape1.iog.og[0]" ":initialShadingGroup.dsm"
 		 -na;
 connectAttr "D___Straight_6:A___Start:pCubeShape1.ciog.cog[0]" ":initialShadingGroup.dsm"

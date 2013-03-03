@@ -1,6 +1,6 @@
 //Maya ASCII 2013 scene
 //Name: N - Straight Down.ma
-//Last modified: Sun, Feb 17, 2013 02:25:51 PM
+//Last modified: Thu, Feb 28, 2013 01:58:39 PM
 //Codeset: UTF-8
 requires maya "2013";
 requires "stereoCamera" "10.0";
@@ -12,7 +12,7 @@ fileInfo "cutIdentifier" "201202220220-825135";
 fileInfo "osv" "Mac OS X 10.8.2";
 createNode transform -s -n "persp";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -451.20474772386206 624.28845718100899 464.64612141273699 ;
+	setAttr ".t" -type "double3" -451.20474772386206 624.28845718100899 464.64612141273693 ;
 	setAttr ".r" -type "double3" -51.938352729595429 -41.000000000000625 4.2142762789955894e-15 ;
 createNode camera -s -n "perspShape" -p "persp";
 	setAttr -k off ".v" no;
@@ -617,6 +617,8 @@ createNode script -n "uiConfigurationScriptNode";
 createNode script -n "sceneConfigurationScriptNode";
 	setAttr ".b" -type "string" "playbackOptions -min 1 -max 24 -ast 1 -aet 48 ";
 	setAttr ".st" 6;
+createNode polyTriangulate -n "polyTriangulate1";
+	setAttr ".ics" -type "componentList" 1 "f[*]";
 select -ne :time1;
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
@@ -668,7 +670,7 @@ connectAttr "groupId13.id" "pCubeShape3.ciog.cog[0].cgid";
 connectAttr "groupParts6.og" "polySurfaceShape2.i";
 connectAttr "groupId14.id" "polySurfaceShape2.iog.og[0].gid";
 connectAttr ":initialShadingGroup.mwc" "polySurfaceShape2.iog.og[0].gco";
-connectAttr "groupParts7.og" "polySurfaceShape3.i";
+connectAttr "polyTriangulate1.out" "polySurfaceShape3.i";
 connectAttr "groupId15.id" "polySurfaceShape3.iog.og[0].gid";
 connectAttr ":initialShadingGroup.mwc" "polySurfaceShape3.iog.og[0].gco";
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
@@ -709,6 +711,7 @@ connectAttr "polySurfaceShape1.wm" "polyUnite3.im[0]";
 connectAttr "polySurfaceShape2.wm" "polyUnite3.im[1]";
 connectAttr "polyUnite3.out" "groupParts7.ig";
 connectAttr "groupId15.id" "groupParts7.gi";
+connectAttr "groupParts7.og" "polyTriangulate1.ip";
 connectAttr "pPipeShape1.iog.og[0]" ":initialShadingGroup.dsm" -na;
 connectAttr "pPipeShape1.ciog.cog[0]" ":initialShadingGroup.dsm" -na;
 connectAttr "pPipeShape2.iog.og[0]" ":initialShadingGroup.dsm" -na;

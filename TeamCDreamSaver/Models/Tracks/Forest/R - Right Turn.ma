@@ -1,6 +1,6 @@
 //Maya ASCII 2013 scene
 //Name: R - Right Turn.ma
-//Last modified: Sun, Feb 17, 2013 02:27:27 PM
+//Last modified: Thu, Feb 28, 2013 02:00:01 PM
 //Codeset: UTF-8
 requires maya "2013";
 requires "stereoCamera" "10.0";
@@ -362,6 +362,8 @@ createNode groupId -n "groupId4";
 createNode groupParts -n "groupParts4";
 	setAttr ".ihi" 0;
 	setAttr ".ic" -type "componentList" 1 "f[0:59]";
+createNode polyTriangulate -n "polyTriangulate1";
+	setAttr ".ics" -type "componentList" 1 "f[*]";
 select -ne :time1;
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
@@ -385,8 +387,6 @@ select -ne :hardwareRenderGlobals;
 select -ne :defaultHardwareRenderGlobals;
 	setAttr ".fn" -type "string" "im";
 	setAttr ".res" -type "string" "ntsc_4d 646 485 1.333";
-select -ne :ikSystem;
-	setAttr -s 4 ".sol";
 connectAttr "G___Left_Turn:groupParts1.og" "G___Left_Turn:J___Left_turn:pPipeShape2.i"
 		;
 connectAttr "G___Left_Turn:groupId1.id" "G___Left_Turn:J___Left_turn:pPipeShape2.iog.og[0].gid"
@@ -425,7 +425,7 @@ connectAttr "G___Left_Turn:groupId7.id" "G___Left_Turn:polySurfaceShape1.iog.og[
 		;
 connectAttr ":initialShadingGroup.mwc" "G___Left_Turn:polySurfaceShape1.iog.og[0].gco"
 		;
-connectAttr "groupParts4.og" "polySurfaceShape4.i";
+connectAttr "polyTriangulate1.out" "polySurfaceShape4.i";
 connectAttr "groupId4.id" "polySurfaceShape4.iog.og[0].gid";
 connectAttr ":initialShadingGroup.mwc" "polySurfaceShape4.iog.og[0].gco";
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
@@ -488,6 +488,7 @@ connectAttr "polySurfaceShape2.wm" "polyUnite1.im[1]";
 connectAttr "polySurfaceShape3.wm" "polyUnite1.im[2]";
 connectAttr "polyUnite1.out" "groupParts4.ig";
 connectAttr "groupId4.id" "groupParts4.gi";
+connectAttr "groupParts4.og" "polyTriangulate1.ip";
 connectAttr "G___Left_Turn:J___Left_turn:pPipeShape2.iog.og[0]" ":initialShadingGroup.dsm"
 		 -na;
 connectAttr "G___Left_Turn:J___Left_turn:pPipeShape2.ciog.cog[0]" ":initialShadingGroup.dsm"

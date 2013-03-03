@@ -1,6 +1,6 @@
 //Maya ASCII 2013 scene
 //Name: M - Sharp No walls.ma
-//Last modified: Wed, Feb 13, 2013 11:12:47 AM
+//Last modified: Thu, Feb 28, 2013 02:19:51 PM
 //Codeset: UTF-8
 requires maya "2013";
 requires "stereoCamera" "10.0";
@@ -285,12 +285,12 @@ createNode groupId -n "groupId6";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts4";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 6 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]";
+	setAttr ".ic" -type "componentList" 1 "f[0:5]";
 createNode groupId -n "groupId7";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts5";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 6 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]";
+	setAttr ".ic" -type "componentList" 1 "f[0:5]";
 createNode polyUnite -n "polyUnite2";
 	setAttr -s 2 ".ip";
 	setAttr -s 2 ".im";
@@ -299,6 +299,8 @@ createNode groupId -n "groupId8";
 createNode groupParts -n "groupParts6";
 	setAttr ".ihi" 0;
 	setAttr ".ic" -type "componentList" 1 "f[0:11]";
+createNode polyTriangulate -n "polyTriangulate1";
+	setAttr ".ics" -type "componentList" 1 "f[*]";
 select -ne :time1;
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
@@ -322,8 +324,6 @@ select -ne :hardwareRenderGlobals;
 select -ne :defaultHardwareRenderGlobals;
 	setAttr ".fn" -type "string" "im";
 	setAttr ".res" -type "string" "ntsc_4d 646 485 1.333";
-select -ne :ikSystem;
-	setAttr -s 4 ".sol";
 connectAttr "groupParts1.og" "G___Sharp_L:D___Straight_6:A___Start:pCubeShape1.i"
 		;
 connectAttr "groupId1.id" "G___Sharp_L:D___Straight_6:A___Start:pCubeShape1.iog.og[0].gid"
@@ -349,7 +349,7 @@ connectAttr ":initialShadingGroup.mwc" "polySurfaceShape3.iog.og[0].gco";
 connectAttr "groupParts3.og" "polySurfaceShape1.i";
 connectAttr "groupId5.id" "polySurfaceShape1.iog.og[0].gid";
 connectAttr ":initialShadingGroup.mwc" "polySurfaceShape1.iog.og[0].gco";
-connectAttr "groupParts6.og" "polySurfaceShape4.i";
+connectAttr "polyTriangulate1.out" "polySurfaceShape4.i";
 connectAttr "groupId8.id" "polySurfaceShape4.iog.og[0].gid";
 connectAttr ":initialShadingGroup.mwc" "polySurfaceShape4.iog.og[0].gco";
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
@@ -385,6 +385,7 @@ connectAttr "polySurfaceShape2.wm" "polyUnite2.im[0]";
 connectAttr "polySurfaceShape3.wm" "polyUnite2.im[1]";
 connectAttr "polyUnite2.out" "groupParts6.ig";
 connectAttr "groupId8.id" "groupParts6.gi";
+connectAttr "groupParts6.og" "polyTriangulate1.ip";
 connectAttr "G___Sharp_L:D___Straight_6:A___Start:pCubeShape1.iog.og[0]" ":initialShadingGroup.dsm"
 		 -na;
 connectAttr "G___Sharp_L:D___Straight_6:A___Start:pCubeShape1.ciog.cog[0]" ":initialShadingGroup.dsm"

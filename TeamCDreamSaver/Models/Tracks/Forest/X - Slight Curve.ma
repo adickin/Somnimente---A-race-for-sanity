@@ -1,6 +1,6 @@
 //Maya ASCII 2013 scene
 //Name: X - Slight Curve.ma
-//Last modified: Tue, Feb 12, 2013 12:09:37 AM
+//Last modified: Sun, Mar 03, 2013 01:22:26 PM
 //Codeset: UTF-8
 requires maya "2013";
 requires "stereoCamera" "10.0";
@@ -12,13 +12,13 @@ fileInfo "cutIdentifier" "201202220220-825135";
 fileInfo "osv" "Mac OS X 10.8.2";
 createNode transform -s -n "persp";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 86.910158460128329 23.851349899608817 -440.60684761839593 ;
-	setAttr ".r" -type "double3" -2.9999999999999152 168.79999999999742 0 ;
-	setAttr ".rpt" -type "double3" 2.1951589968838392e-18 1.2848990830376866e-17 -3.8930823007261497e-17 ;
+	setAttr ".t" -type "double3" -51.516815012569737 1374.9193700606954 302.66947379318395 ;
+	setAttr ".r" -type "double3" -77.40000000000002 350.39999999998548 0 ;
+	setAttr ".rpt" -type "double3" 2.1951589968838392e-18 1.2848990830376863e-17 -3.8930823007261497e-17 ;
 createNode camera -s -n "perspShape" -p "persp";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999979;
-	setAttr ".coi" 449.48603034816637;
+	setAttr ".coi" 1408.5138763745297;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -360,6 +360,818 @@ createNode mesh -n "polySurfaceShape5" -p "polySurface5";
 	setAttr ".cdvm[0]"  0 1 1;
 	setAttr ".db" yes;
 	setAttr ".bw" 4;
+createNode transform -n "tree_circle:pCube1";
+	setAttr ".t" -type "double3" 0 1.5 -5 ;
+createNode transform -n "transform23" -p "tree_circle:pCube1";
+	setAttr ".v" no;
+createNode mesh -n "tree_circle:pCubeShape1" -p "transform23";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr -s 2 ".iog[0].og";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr ".db" yes;
+	setAttr ".bw" 4;
+createNode transform -n "tree_circle:pCube2";
+	setAttr ".t" -type "double3" 0 1.5 5 ;
+createNode mesh -n "tree_circle:polySurfaceShape1" -p "tree_circle:pCube2";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
+		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
+		 0.875 0.25 0.125 0 0.125 0.25;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 8 ".vt[0:7]"  -0.25 -1.5 0.25 0.25 -1.5 0.25 -0.25 1.5 0.25
+		 0.25 1.5 0.25 -0.25 1.5 -0.25 0.25 1.5 -0.25 -0.25 -1.5 -0.25 0.25 -1.5 -0.25;
+	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
+		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
+	setAttr -s 6 -ch 24 ".fc[0:5]" -type "polyFaces" 
+		f 4 0 5 -2 -5
+		mu 0 4 0 1 3 2
+		f 4 1 7 -3 -7
+		mu 0 4 2 3 5 4
+		f 4 2 9 -4 -9
+		mu 0 4 4 5 7 6
+		f 4 3 11 -1 -11
+		mu 0 4 6 7 9 8
+		f 4 -12 -10 -8 -6
+		mu 0 4 1 10 11 3
+		f 4 10 4 6 8
+		mu 0 4 12 0 2 13;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".db" yes;
+	setAttr ".bw" 4;
+createNode transform -n "transform22" -p "tree_circle:pCube2";
+	setAttr ".v" no;
+createNode mesh -n "tree_circle:pCubeShape2" -p "transform22";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr -s 2 ".iog[0].og";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr ".db" yes;
+	setAttr ".bw" 4;
+createNode transform -n "tree_circle:pCube3";
+	setAttr ".t" -type "double3" -5 1.5 0 ;
+createNode mesh -n "tree_circle:polySurfaceShape2" -p "tree_circle:pCube3";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
+		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
+		 0.875 0.25 0.125 0 0.125 0.25;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 8 ".vt[0:7]"  -0.25 -1.5 0.25 0.25 -1.5 0.25 -0.25 1.5 0.25
+		 0.25 1.5 0.25 -0.25 1.5 -0.25 0.25 1.5 -0.25 -0.25 -1.5 -0.25 0.25 -1.5 -0.25;
+	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
+		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
+	setAttr -s 6 -ch 24 ".fc[0:5]" -type "polyFaces" 
+		f 4 0 5 -2 -5
+		mu 0 4 0 1 3 2
+		f 4 1 7 -3 -7
+		mu 0 4 2 3 5 4
+		f 4 2 9 -4 -9
+		mu 0 4 4 5 7 6
+		f 4 3 11 -1 -11
+		mu 0 4 6 7 9 8
+		f 4 -12 -10 -8 -6
+		mu 0 4 1 10 11 3
+		f 4 10 4 6 8
+		mu 0 4 12 0 2 13;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".db" yes;
+	setAttr ".bw" 4;
+createNode transform -n "transform21" -p "tree_circle:pCube3";
+	setAttr ".v" no;
+createNode mesh -n "tree_circle:pCubeShape3" -p "transform21";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr -s 2 ".iog[0].og";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr ".db" yes;
+	setAttr ".bw" 4;
+createNode transform -n "tree_circle:pCube4";
+	setAttr ".t" -type "double3" 5 1.5 0 ;
+createNode mesh -n "tree_circle:polySurfaceShape3" -p "tree_circle:pCube4";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
+		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
+		 0.875 0.25 0.125 0 0.125 0.25;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 8 ".vt[0:7]"  -0.25 -1.5 0.25 0.25 -1.5 0.25 -0.25 1.5 0.25
+		 0.25 1.5 0.25 -0.25 1.5 -0.25 0.25 1.5 -0.25 -0.25 -1.5 -0.25 0.25 -1.5 -0.25;
+	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
+		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
+	setAttr -s 6 -ch 24 ".fc[0:5]" -type "polyFaces" 
+		f 4 0 5 -2 -5
+		mu 0 4 0 1 3 2
+		f 4 1 7 -3 -7
+		mu 0 4 2 3 5 4
+		f 4 2 9 -4 -9
+		mu 0 4 4 5 7 6
+		f 4 3 11 -1 -11
+		mu 0 4 6 7 9 8
+		f 4 -12 -10 -8 -6
+		mu 0 4 1 10 11 3
+		f 4 10 4 6 8
+		mu 0 4 12 0 2 13;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".db" yes;
+	setAttr ".bw" 4;
+createNode transform -n "transform20" -p "tree_circle:pCube4";
+	setAttr ".v" no;
+createNode mesh -n "tree_circle:pCubeShape4" -p "transform20";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr -s 2 ".iog[0].og";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr ".db" yes;
+	setAttr ".bw" 4;
+createNode transform -n "tree_circle:pCube5";
+	setAttr ".t" -type "double3" -4.5 1.5 -2 ;
+createNode mesh -n "tree_circle:polySurfaceShape4" -p "tree_circle:pCube5";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
+		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
+		 0.875 0.25 0.125 0 0.125 0.25;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 8 ".vt[0:7]"  -0.25 -1.5 0.25 0.25 -1.5 0.25 -0.25 1.5 0.25
+		 0.25 1.5 0.25 -0.25 1.5 -0.25 0.25 1.5 -0.25 -0.25 -1.5 -0.25 0.25 -1.5 -0.25;
+	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
+		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
+	setAttr -s 6 -ch 24 ".fc[0:5]" -type "polyFaces" 
+		f 4 0 5 -2 -5
+		mu 0 4 0 1 3 2
+		f 4 1 7 -3 -7
+		mu 0 4 2 3 5 4
+		f 4 2 9 -4 -9
+		mu 0 4 4 5 7 6
+		f 4 3 11 -1 -11
+		mu 0 4 6 7 9 8
+		f 4 -12 -10 -8 -6
+		mu 0 4 1 10 11 3
+		f 4 10 4 6 8
+		mu 0 4 12 0 2 13;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".db" yes;
+	setAttr ".bw" 4;
+createNode transform -n "transform19" -p "tree_circle:pCube5";
+	setAttr ".v" no;
+createNode mesh -n "tree_circle:pCubeShape5" -p "transform19";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr -s 2 ".iog[0].og";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr ".db" yes;
+	setAttr ".bw" 4;
+createNode transform -n "tree_circle:pCube6";
+	setAttr ".t" -type "double3" -4.5 1.5 2 ;
+createNode mesh -n "tree_circle:polySurfaceShape5" -p "tree_circle:pCube6";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
+		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
+		 0.875 0.25 0.125 0 0.125 0.25;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 8 ".vt[0:7]"  -0.25 -1.5 0.25 0.25 -1.5 0.25 -0.25 1.5 0.25
+		 0.25 1.5 0.25 -0.25 1.5 -0.25 0.25 1.5 -0.25 -0.25 -1.5 -0.25 0.25 -1.5 -0.25;
+	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
+		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
+	setAttr -s 6 -ch 24 ".fc[0:5]" -type "polyFaces" 
+		f 4 0 5 -2 -5
+		mu 0 4 0 1 3 2
+		f 4 1 7 -3 -7
+		mu 0 4 2 3 5 4
+		f 4 2 9 -4 -9
+		mu 0 4 4 5 7 6
+		f 4 3 11 -1 -11
+		mu 0 4 6 7 9 8
+		f 4 -12 -10 -8 -6
+		mu 0 4 1 10 11 3
+		f 4 10 4 6 8
+		mu 0 4 12 0 2 13;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".db" yes;
+	setAttr ".bw" 4;
+createNode transform -n "transform18" -p "tree_circle:pCube6";
+	setAttr ".v" no;
+createNode mesh -n "tree_circle:pCubeShape6" -p "transform18";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr -s 2 ".iog[0].og";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr ".db" yes;
+	setAttr ".bw" 4;
+createNode transform -n "tree_circle:pCube7";
+	setAttr ".t" -type "double3" 4.5 1.5 -2 ;
+createNode mesh -n "tree_circle:polySurfaceShape6" -p "tree_circle:pCube7";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
+		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
+		 0.875 0.25 0.125 0 0.125 0.25;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 8 ".vt[0:7]"  -0.25 -1.5 0.25 0.25 -1.5 0.25 -0.25 1.5 0.25
+		 0.25 1.5 0.25 -0.25 1.5 -0.25 0.25 1.5 -0.25 -0.25 -1.5 -0.25 0.25 -1.5 -0.25;
+	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
+		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
+	setAttr -s 6 -ch 24 ".fc[0:5]" -type "polyFaces" 
+		f 4 0 5 -2 -5
+		mu 0 4 0 1 3 2
+		f 4 1 7 -3 -7
+		mu 0 4 2 3 5 4
+		f 4 2 9 -4 -9
+		mu 0 4 4 5 7 6
+		f 4 3 11 -1 -11
+		mu 0 4 6 7 9 8
+		f 4 -12 -10 -8 -6
+		mu 0 4 1 10 11 3
+		f 4 10 4 6 8
+		mu 0 4 12 0 2 13;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".db" yes;
+	setAttr ".bw" 4;
+createNode transform -n "transform17" -p "tree_circle:pCube7";
+	setAttr ".v" no;
+createNode mesh -n "tree_circle:pCubeShape7" -p "transform17";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr -s 2 ".iog[0].og";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr ".db" yes;
+	setAttr ".bw" 4;
+createNode transform -n "tree_circle:pCube8";
+	setAttr ".t" -type "double3" 4.5 1.5 2 ;
+createNode mesh -n "tree_circle:polySurfaceShape7" -p "tree_circle:pCube8";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
+		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
+		 0.875 0.25 0.125 0 0.125 0.25;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 8 ".vt[0:7]"  -0.25 -1.5 0.25 0.25 -1.5 0.25 -0.25 1.5 0.25
+		 0.25 1.5 0.25 -0.25 1.5 -0.25 0.25 1.5 -0.25 -0.25 -1.5 -0.25 0.25 -1.5 -0.25;
+	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
+		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
+	setAttr -s 6 -ch 24 ".fc[0:5]" -type "polyFaces" 
+		f 4 0 5 -2 -5
+		mu 0 4 0 1 3 2
+		f 4 1 7 -3 -7
+		mu 0 4 2 3 5 4
+		f 4 2 9 -4 -9
+		mu 0 4 4 5 7 6
+		f 4 3 11 -1 -11
+		mu 0 4 6 7 9 8
+		f 4 -12 -10 -8 -6
+		mu 0 4 1 10 11 3
+		f 4 10 4 6 8
+		mu 0 4 12 0 2 13;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".db" yes;
+	setAttr ".bw" 4;
+createNode transform -n "transform16" -p "tree_circle:pCube8";
+	setAttr ".v" no;
+createNode mesh -n "tree_circle:pCubeShape8" -p "transform16";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr -s 2 ".iog[0].og";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr ".db" yes;
+	setAttr ".bw" 4;
+createNode transform -n "tree_circle:pCube9";
+	setAttr ".t" -type "double3" 2 1.5 4.5 ;
+createNode mesh -n "tree_circle:polySurfaceShape8" -p "tree_circle:pCube9";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
+		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
+		 0.875 0.25 0.125 0 0.125 0.25;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 8 ".vt[0:7]"  -0.25 -1.5 0.25 0.25 -1.5 0.25 -0.25 1.5 0.25
+		 0.25 1.5 0.25 -0.25 1.5 -0.25 0.25 1.5 -0.25 -0.25 -1.5 -0.25 0.25 -1.5 -0.25;
+	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
+		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
+	setAttr -s 6 -ch 24 ".fc[0:5]" -type "polyFaces" 
+		f 4 0 5 -2 -5
+		mu 0 4 0 1 3 2
+		f 4 1 7 -3 -7
+		mu 0 4 2 3 5 4
+		f 4 2 9 -4 -9
+		mu 0 4 4 5 7 6
+		f 4 3 11 -1 -11
+		mu 0 4 6 7 9 8
+		f 4 -12 -10 -8 -6
+		mu 0 4 1 10 11 3
+		f 4 10 4 6 8
+		mu 0 4 12 0 2 13;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".db" yes;
+	setAttr ".bw" 4;
+createNode transform -n "transform15" -p "tree_circle:pCube9";
+	setAttr ".v" no;
+createNode mesh -n "tree_circle:pCubeShape9" -p "transform15";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr -s 2 ".iog[0].og";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr ".db" yes;
+	setAttr ".bw" 4;
+createNode transform -n "tree_circle:pCube10";
+	setAttr ".t" -type "double3" -2 1.5 4.5 ;
+createNode mesh -n "tree_circle:polySurfaceShape9" -p "tree_circle:pCube10";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
+		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
+		 0.875 0.25 0.125 0 0.125 0.25;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 8 ".vt[0:7]"  -0.25 -1.5 0.25 0.25 -1.5 0.25 -0.25 1.5 0.25
+		 0.25 1.5 0.25 -0.25 1.5 -0.25 0.25 1.5 -0.25 -0.25 -1.5 -0.25 0.25 -1.5 -0.25;
+	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
+		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
+	setAttr -s 6 -ch 24 ".fc[0:5]" -type "polyFaces" 
+		f 4 0 5 -2 -5
+		mu 0 4 0 1 3 2
+		f 4 1 7 -3 -7
+		mu 0 4 2 3 5 4
+		f 4 2 9 -4 -9
+		mu 0 4 4 5 7 6
+		f 4 3 11 -1 -11
+		mu 0 4 6 7 9 8
+		f 4 -12 -10 -8 -6
+		mu 0 4 1 10 11 3
+		f 4 10 4 6 8
+		mu 0 4 12 0 2 13;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".db" yes;
+	setAttr ".bw" 4;
+createNode transform -n "transform14" -p "tree_circle:pCube10";
+	setAttr ".v" no;
+createNode mesh -n "tree_circle:pCubeShape10" -p "transform14";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr -s 2 ".iog[0].og";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr ".db" yes;
+	setAttr ".bw" 4;
+createNode transform -n "tree_circle:pCube11";
+	setAttr ".t" -type "double3" 2 1.5 -4.5 ;
+createNode mesh -n "tree_circle:polySurfaceShape10" -p "tree_circle:pCube11";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
+		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
+		 0.875 0.25 0.125 0 0.125 0.25;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 8 ".vt[0:7]"  -0.25 -1.5 0.25 0.25 -1.5 0.25 -0.25 1.5 0.25
+		 0.25 1.5 0.25 -0.25 1.5 -0.25 0.25 1.5 -0.25 -0.25 -1.5 -0.25 0.25 -1.5 -0.25;
+	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
+		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
+	setAttr -s 6 -ch 24 ".fc[0:5]" -type "polyFaces" 
+		f 4 0 5 -2 -5
+		mu 0 4 0 1 3 2
+		f 4 1 7 -3 -7
+		mu 0 4 2 3 5 4
+		f 4 2 9 -4 -9
+		mu 0 4 4 5 7 6
+		f 4 3 11 -1 -11
+		mu 0 4 6 7 9 8
+		f 4 -12 -10 -8 -6
+		mu 0 4 1 10 11 3
+		f 4 10 4 6 8
+		mu 0 4 12 0 2 13;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".db" yes;
+	setAttr ".bw" 4;
+createNode transform -n "transform13" -p "tree_circle:pCube11";
+	setAttr ".v" no;
+createNode mesh -n "tree_circle:pCubeShape11" -p "transform13";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr -s 2 ".iog[0].og";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr ".db" yes;
+	setAttr ".bw" 4;
+createNode transform -n "tree_circle:pCube12";
+	setAttr ".t" -type "double3" -2 1.5 -4.5 ;
+createNode mesh -n "tree_circle:polySurfaceShape11" -p "tree_circle:pCube12";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
+		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
+		 0.875 0.25 0.125 0 0.125 0.25;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 8 ".vt[0:7]"  -0.25 -1.5 0.25 0.25 -1.5 0.25 -0.25 1.5 0.25
+		 0.25 1.5 0.25 -0.25 1.5 -0.25 0.25 1.5 -0.25 -0.25 -1.5 -0.25 0.25 -1.5 -0.25;
+	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
+		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
+	setAttr -s 6 -ch 24 ".fc[0:5]" -type "polyFaces" 
+		f 4 0 5 -2 -5
+		mu 0 4 0 1 3 2
+		f 4 1 7 -3 -7
+		mu 0 4 2 3 5 4
+		f 4 2 9 -4 -9
+		mu 0 4 4 5 7 6
+		f 4 3 11 -1 -11
+		mu 0 4 6 7 9 8
+		f 4 -12 -10 -8 -6
+		mu 0 4 1 10 11 3
+		f 4 10 4 6 8
+		mu 0 4 12 0 2 13;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".db" yes;
+	setAttr ".bw" 4;
+createNode transform -n "transform12" -p "tree_circle:pCube12";
+	setAttr ".v" no;
+createNode mesh -n "tree_circle:pCubeShape12" -p "transform12";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr -s 2 ".iog[0].og";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr ".db" yes;
+	setAttr ".bw" 4;
+createNode transform -n "tree_circle:pCube13";
+	setAttr ".t" -type "double3" 3.5 1.5 -3.5 ;
+createNode mesh -n "tree_circle:polySurfaceShape12" -p "tree_circle:pCube13";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
+		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
+		 0.875 0.25 0.125 0 0.125 0.25;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 8 ".vt[0:7]"  -0.25 -1.5 0.25 0.25 -1.5 0.25 -0.25 1.5 0.25
+		 0.25 1.5 0.25 -0.25 1.5 -0.25 0.25 1.5 -0.25 -0.25 -1.5 -0.25 0.25 -1.5 -0.25;
+	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
+		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
+	setAttr -s 6 -ch 24 ".fc[0:5]" -type "polyFaces" 
+		f 4 0 5 -2 -5
+		mu 0 4 0 1 3 2
+		f 4 1 7 -3 -7
+		mu 0 4 2 3 5 4
+		f 4 2 9 -4 -9
+		mu 0 4 4 5 7 6
+		f 4 3 11 -1 -11
+		mu 0 4 6 7 9 8
+		f 4 -12 -10 -8 -6
+		mu 0 4 1 10 11 3
+		f 4 10 4 6 8
+		mu 0 4 12 0 2 13;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".db" yes;
+	setAttr ".bw" 4;
+createNode transform -n "transform11" -p "tree_circle:pCube13";
+	setAttr ".v" no;
+createNode mesh -n "tree_circle:pCubeShape13" -p "transform11";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr -s 2 ".iog[0].og";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr ".db" yes;
+	setAttr ".bw" 4;
+createNode transform -n "tree_circle:pCube14";
+	setAttr ".t" -type "double3" -3.5 1.5 3.5 ;
+createNode mesh -n "tree_circle:polySurfaceShape13" -p "tree_circle:pCube14";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
+		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
+		 0.875 0.25 0.125 0 0.125 0.25;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 8 ".vt[0:7]"  -0.25 -1.5 0.25 0.25 -1.5 0.25 -0.25 1.5 0.25
+		 0.25 1.5 0.25 -0.25 1.5 -0.25 0.25 1.5 -0.25 -0.25 -1.5 -0.25 0.25 -1.5 -0.25;
+	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
+		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
+	setAttr -s 6 -ch 24 ".fc[0:5]" -type "polyFaces" 
+		f 4 0 5 -2 -5
+		mu 0 4 0 1 3 2
+		f 4 1 7 -3 -7
+		mu 0 4 2 3 5 4
+		f 4 2 9 -4 -9
+		mu 0 4 4 5 7 6
+		f 4 3 11 -1 -11
+		mu 0 4 6 7 9 8
+		f 4 -12 -10 -8 -6
+		mu 0 4 1 10 11 3
+		f 4 10 4 6 8
+		mu 0 4 12 0 2 13;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".db" yes;
+	setAttr ".bw" 4;
+createNode transform -n "transform10" -p "tree_circle:pCube14";
+	setAttr ".v" no;
+createNode mesh -n "tree_circle:pCubeShape14" -p "transform10";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr -s 2 ".iog[0].og";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr ".db" yes;
+	setAttr ".bw" 4;
+createNode transform -n "tree_circle:pCube15";
+	setAttr ".t" -type "double3" 3.5 1.5 3.5 ;
+createNode mesh -n "tree_circle:polySurfaceShape14" -p "tree_circle:pCube15";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
+		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
+		 0.875 0.25 0.125 0 0.125 0.25;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 8 ".vt[0:7]"  -0.25 -1.5 0.25 0.25 -1.5 0.25 -0.25 1.5 0.25
+		 0.25 1.5 0.25 -0.25 1.5 -0.25 0.25 1.5 -0.25 -0.25 -1.5 -0.25 0.25 -1.5 -0.25;
+	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
+		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
+	setAttr -s 6 -ch 24 ".fc[0:5]" -type "polyFaces" 
+		f 4 0 5 -2 -5
+		mu 0 4 0 1 3 2
+		f 4 1 7 -3 -7
+		mu 0 4 2 3 5 4
+		f 4 2 9 -4 -9
+		mu 0 4 4 5 7 6
+		f 4 3 11 -1 -11
+		mu 0 4 6 7 9 8
+		f 4 -12 -10 -8 -6
+		mu 0 4 1 10 11 3
+		f 4 10 4 6 8
+		mu 0 4 12 0 2 13;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".db" yes;
+	setAttr ".bw" 4;
+createNode transform -n "transform9" -p "tree_circle:pCube15";
+	setAttr ".v" no;
+createNode mesh -n "tree_circle:pCubeShape15" -p "transform9";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr -s 2 ".iog[0].og";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr ".db" yes;
+	setAttr ".bw" 4;
+createNode transform -n "tree_circle:pCube16";
+	setAttr ".t" -type "double3" -3.5 1.5 -3.5 ;
+createNode mesh -n "tree_circle:polySurfaceShape15" -p "tree_circle:pCube16";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
+		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
+		 0.875 0.25 0.125 0 0.125 0.25;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 8 ".vt[0:7]"  -0.25 -1.5 0.25 0.25 -1.5 0.25 -0.25 1.5 0.25
+		 0.25 1.5 0.25 -0.25 1.5 -0.25 0.25 1.5 -0.25 -0.25 -1.5 -0.25 0.25 -1.5 -0.25;
+	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
+		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
+	setAttr -s 6 -ch 24 ".fc[0:5]" -type "polyFaces" 
+		f 4 0 5 -2 -5
+		mu 0 4 0 1 3 2
+		f 4 1 7 -3 -7
+		mu 0 4 2 3 5 4
+		f 4 2 9 -4 -9
+		mu 0 4 4 5 7 6
+		f 4 3 11 -1 -11
+		mu 0 4 6 7 9 8
+		f 4 -12 -10 -8 -6
+		mu 0 4 1 10 11 3
+		f 4 10 4 6 8
+		mu 0 4 12 0 2 13;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".db" yes;
+	setAttr ".bw" 4;
+createNode transform -n "transform8" -p "tree_circle:pCube16";
+	setAttr ".v" no;
+createNode mesh -n "tree_circle:pCubeShape16" -p "transform8";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr -s 2 ".iog[0].og";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr ".db" yes;
+	setAttr ".bw" 4;
+createNode transform -n "polySurface6";
+	setAttr ".t" -type "double3" 0 0 -193.23852649009683 ;
+	setAttr ".s" -type "double3" 20 20 20 ;
+createNode mesh -n "polySurfaceShape6" -p "polySurface6";
+	setAttr -k off ".v";
+	setAttr -s 2 ".iog[0].og";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr ".db" yes;
+	setAttr ".bw" 4;
 createNode lightLinker -s -n "lightLinker1";
 	setAttr -s 2 ".lnk";
 	setAttr -s 2 ".slnk";
@@ -469,17 +1281,17 @@ createNode groupId -n "groupId8";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts4";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 49 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]";
+	setAttr ".ic" -type "componentList" 1 "f[0:48]";
 createNode groupId -n "groupId9";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts5";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 49 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]";
+	setAttr ".ic" -type "componentList" 1 "f[0:48]";
 createNode groupId -n "groupId10";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts6";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 49 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]" "f[22]" "f[23]" "f[24]" "f[25]" "f[26]" "f[27]" "f[28]" "f[29]" "f[30]" "f[31]" "f[32]" "f[33]" "f[34]" "f[35]" "f[36]" "f[37]" "f[38]" "f[39]" "f[40]" "f[41]" "f[42]" "f[43]" "f[44]" "f[45]" "f[46]" "f[47]" "f[48]";
+	setAttr ".ic" -type "componentList" 1 "f[0:48]";
 createNode polyUnite -n "polyUnite2";
 	setAttr -s 3 ".ip";
 	setAttr -s 3 ".im";
@@ -556,15 +1368,174 @@ createNode script -n "uiConfigurationScriptNode";
 createNode script -n "sceneConfigurationScriptNode";
 	setAttr ".b" -type "string" "playbackOptions -min 1 -max 24 -ast 1 -aet 48 ";
 	setAttr ".st" 6;
+createNode polyTriangulate -n "polyTriangulate1";
+	setAttr ".ics" -type "componentList" 1 "f[*]";
+createNode polyCube -n "tree_circle:polyCube1";
+	setAttr ".w" 0.5;
+	setAttr ".h" 3;
+	setAttr ".d" 0.5;
+	setAttr ".cuv" 4;
+createNode polyTriangulate -n "tree_circle:polyTriangulate1";
+	setAttr ".ics" -type "componentList" 1 "f[*]";
+createNode polyTriangulate -n "tree_circle:polyTriangulate2";
+	setAttr ".ics" -type "componentList" 1 "f[*]";
+createNode polyTriangulate -n "tree_circle:polyTriangulate3";
+	setAttr ".ics" -type "componentList" 1 "f[*]";
+createNode polyTriangulate -n "tree_circle:polyTriangulate4";
+	setAttr ".ics" -type "componentList" 1 "f[*]";
+createNode polyTriangulate -n "tree_circle:polyTriangulate5";
+	setAttr ".ics" -type "componentList" 1 "f[*]";
+createNode polyTriangulate -n "tree_circle:polyTriangulate6";
+	setAttr ".ics" -type "componentList" 1 "f[*]";
+createNode polyTriangulate -n "tree_circle:polyTriangulate7";
+	setAttr ".ics" -type "componentList" 1 "f[*]";
+createNode polyTriangulate -n "tree_circle:polyTriangulate8";
+	setAttr ".ics" -type "componentList" 1 "f[*]";
+createNode polyTriangulate -n "tree_circle:polyTriangulate9";
+	setAttr ".ics" -type "componentList" 1 "f[*]";
+createNode polyTriangulate -n "tree_circle:polyTriangulate10";
+	setAttr ".ics" -type "componentList" 1 "f[*]";
+createNode polyTriangulate -n "tree_circle:polyTriangulate11";
+	setAttr ".ics" -type "componentList" 1 "f[*]";
+createNode polyTriangulate -n "tree_circle:polyTriangulate12";
+	setAttr ".ics" -type "componentList" 1 "f[*]";
+createNode polyTriangulate -n "tree_circle:polyTriangulate13";
+	setAttr ".ics" -type "componentList" 1 "f[*]";
+createNode polyTriangulate -n "tree_circle:polyTriangulate14";
+	setAttr ".ics" -type "componentList" 1 "f[*]";
+createNode polyTriangulate -n "tree_circle:polyTriangulate15";
+	setAttr ".ics" -type "componentList" 1 "f[*]";
+createNode polyTriangulate -n "tree_circle:polyTriangulate16";
+	setAttr ".ics" -type "componentList" 1 "f[*]";
+createNode polyUnite -n "polyUnite3";
+	setAttr -s 16 ".ip";
+	setAttr -s 16 ".im";
+createNode groupId -n "groupId12";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts8";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "f[0:11]";
+createNode groupId -n "groupId13";
+	setAttr ".ihi" 0;
+createNode groupId -n "groupId14";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts9";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "f[0:11]";
+createNode groupId -n "groupId15";
+	setAttr ".ihi" 0;
+createNode groupId -n "groupId16";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts10";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "f[0:11]";
+createNode groupId -n "groupId17";
+	setAttr ".ihi" 0;
+createNode groupId -n "groupId18";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts11";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "f[0:11]";
+createNode groupId -n "groupId19";
+	setAttr ".ihi" 0;
+createNode groupId -n "groupId20";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts12";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "f[0:11]";
+createNode groupId -n "groupId21";
+	setAttr ".ihi" 0;
+createNode groupId -n "groupId22";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts13";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "f[0:11]";
+createNode groupId -n "groupId23";
+	setAttr ".ihi" 0;
+createNode groupId -n "groupId24";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts14";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "f[0:11]";
+createNode groupId -n "groupId25";
+	setAttr ".ihi" 0;
+createNode groupId -n "groupId26";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts15";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "f[0:11]";
+createNode groupId -n "groupId27";
+	setAttr ".ihi" 0;
+createNode groupId -n "groupId28";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts16";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "f[0:11]";
+createNode groupId -n "groupId29";
+	setAttr ".ihi" 0;
+createNode groupId -n "groupId30";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts17";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "f[0:11]";
+createNode groupId -n "groupId31";
+	setAttr ".ihi" 0;
+createNode groupId -n "groupId32";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts18";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "f[0:11]";
+createNode groupId -n "groupId33";
+	setAttr ".ihi" 0;
+createNode groupId -n "groupId34";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts19";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "f[0:11]";
+createNode groupId -n "groupId35";
+	setAttr ".ihi" 0;
+createNode groupId -n "groupId36";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts20";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "f[0:11]";
+createNode groupId -n "groupId37";
+	setAttr ".ihi" 0;
+createNode groupId -n "groupId38";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts21";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "f[0:11]";
+createNode groupId -n "groupId39";
+	setAttr ".ihi" 0;
+createNode groupId -n "groupId40";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts22";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "f[0:11]";
+createNode groupId -n "groupId41";
+	setAttr ".ihi" 0;
+createNode groupId -n "groupId42";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts23";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "f[0:11]";
+createNode groupId -n "groupId43";
+	setAttr ".ihi" 0;
+createNode groupId -n "groupId44";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts24";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "f[0:191]";
 select -ne :time1;
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
 select -ne :renderPartition;
 	setAttr -s 2 ".st";
 select -ne :initialShadingGroup;
-	setAttr -s 11 ".dsm";
+	setAttr -s 44 ".dsm";
 	setAttr ".ro" yes;
-	setAttr -s 11 ".gn";
+	setAttr -s 44 ".gn";
 select -ne :initialParticleSE;
 	setAttr ".ro" yes;
 select -ne :defaultShaderList1;
@@ -579,8 +1550,6 @@ select -ne :hardwareRenderGlobals;
 select -ne :defaultHardwareRenderGlobals;
 	setAttr ".fn" -type "string" "im";
 	setAttr ".res" -type "string" "ntsc_4d 646 485 1.333";
-select -ne :ikSystem;
-	setAttr -s 4 ".sol";
 connectAttr "groupId1.id" "pCubeShape1.iog.og[0].gid";
 connectAttr ":initialShadingGroup.mwc" "pCubeShape1.iog.og[0].gco";
 connectAttr "groupParts1.og" "pCubeShape1.i";
@@ -604,9 +1573,76 @@ connectAttr ":initialShadingGroup.mwc" "polySurfaceShape4.iog.og[0].gco";
 connectAttr "deleteComponent1.og" "polySurfaceShape1.i";
 connectAttr "groupId7.id" "polySurfaceShape1.iog.og[0].gid";
 connectAttr ":initialShadingGroup.mwc" "polySurfaceShape1.iog.og[0].gco";
-connectAttr "groupParts7.og" "polySurfaceShape5.i";
+connectAttr "polyTriangulate1.out" "polySurfaceShape5.i";
 connectAttr "groupId11.id" "polySurfaceShape5.iog.og[0].gid";
 connectAttr ":initialShadingGroup.mwc" "polySurfaceShape5.iog.og[0].gco";
+connectAttr "groupParts8.og" "tree_circle:pCubeShape1.i";
+connectAttr "groupId12.id" "tree_circle:pCubeShape1.iog.og[0].gid";
+connectAttr ":initialShadingGroup.mwc" "tree_circle:pCubeShape1.iog.og[0].gco";
+connectAttr "groupId13.id" "tree_circle:pCubeShape1.ciog.cog[0].cgid";
+connectAttr "groupParts9.og" "tree_circle:pCubeShape2.i";
+connectAttr "groupId14.id" "tree_circle:pCubeShape2.iog.og[0].gid";
+connectAttr ":initialShadingGroup.mwc" "tree_circle:pCubeShape2.iog.og[0].gco";
+connectAttr "groupId15.id" "tree_circle:pCubeShape2.ciog.cog[0].cgid";
+connectAttr "groupParts10.og" "tree_circle:pCubeShape3.i";
+connectAttr "groupId16.id" "tree_circle:pCubeShape3.iog.og[0].gid";
+connectAttr ":initialShadingGroup.mwc" "tree_circle:pCubeShape3.iog.og[0].gco";
+connectAttr "groupId17.id" "tree_circle:pCubeShape3.ciog.cog[0].cgid";
+connectAttr "groupParts11.og" "tree_circle:pCubeShape4.i";
+connectAttr "groupId18.id" "tree_circle:pCubeShape4.iog.og[0].gid";
+connectAttr ":initialShadingGroup.mwc" "tree_circle:pCubeShape4.iog.og[0].gco";
+connectAttr "groupId19.id" "tree_circle:pCubeShape4.ciog.cog[0].cgid";
+connectAttr "groupParts12.og" "tree_circle:pCubeShape5.i";
+connectAttr "groupId20.id" "tree_circle:pCubeShape5.iog.og[0].gid";
+connectAttr ":initialShadingGroup.mwc" "tree_circle:pCubeShape5.iog.og[0].gco";
+connectAttr "groupId21.id" "tree_circle:pCubeShape5.ciog.cog[0].cgid";
+connectAttr "groupParts13.og" "tree_circle:pCubeShape6.i";
+connectAttr "groupId22.id" "tree_circle:pCubeShape6.iog.og[0].gid";
+connectAttr ":initialShadingGroup.mwc" "tree_circle:pCubeShape6.iog.og[0].gco";
+connectAttr "groupId23.id" "tree_circle:pCubeShape6.ciog.cog[0].cgid";
+connectAttr "groupParts14.og" "tree_circle:pCubeShape7.i";
+connectAttr "groupId24.id" "tree_circle:pCubeShape7.iog.og[0].gid";
+connectAttr ":initialShadingGroup.mwc" "tree_circle:pCubeShape7.iog.og[0].gco";
+connectAttr "groupId25.id" "tree_circle:pCubeShape7.ciog.cog[0].cgid";
+connectAttr "groupParts15.og" "tree_circle:pCubeShape8.i";
+connectAttr "groupId26.id" "tree_circle:pCubeShape8.iog.og[0].gid";
+connectAttr ":initialShadingGroup.mwc" "tree_circle:pCubeShape8.iog.og[0].gco";
+connectAttr "groupId27.id" "tree_circle:pCubeShape8.ciog.cog[0].cgid";
+connectAttr "groupParts16.og" "tree_circle:pCubeShape9.i";
+connectAttr "groupId28.id" "tree_circle:pCubeShape9.iog.og[0].gid";
+connectAttr ":initialShadingGroup.mwc" "tree_circle:pCubeShape9.iog.og[0].gco";
+connectAttr "groupId29.id" "tree_circle:pCubeShape9.ciog.cog[0].cgid";
+connectAttr "groupParts17.og" "tree_circle:pCubeShape10.i";
+connectAttr "groupId30.id" "tree_circle:pCubeShape10.iog.og[0].gid";
+connectAttr ":initialShadingGroup.mwc" "tree_circle:pCubeShape10.iog.og[0].gco";
+connectAttr "groupId31.id" "tree_circle:pCubeShape10.ciog.cog[0].cgid";
+connectAttr "groupParts18.og" "tree_circle:pCubeShape11.i";
+connectAttr "groupId32.id" "tree_circle:pCubeShape11.iog.og[0].gid";
+connectAttr ":initialShadingGroup.mwc" "tree_circle:pCubeShape11.iog.og[0].gco";
+connectAttr "groupId33.id" "tree_circle:pCubeShape11.ciog.cog[0].cgid";
+connectAttr "groupParts19.og" "tree_circle:pCubeShape12.i";
+connectAttr "groupId34.id" "tree_circle:pCubeShape12.iog.og[0].gid";
+connectAttr ":initialShadingGroup.mwc" "tree_circle:pCubeShape12.iog.og[0].gco";
+connectAttr "groupId35.id" "tree_circle:pCubeShape12.ciog.cog[0].cgid";
+connectAttr "groupParts20.og" "tree_circle:pCubeShape13.i";
+connectAttr "groupId36.id" "tree_circle:pCubeShape13.iog.og[0].gid";
+connectAttr ":initialShadingGroup.mwc" "tree_circle:pCubeShape13.iog.og[0].gco";
+connectAttr "groupId37.id" "tree_circle:pCubeShape13.ciog.cog[0].cgid";
+connectAttr "groupParts21.og" "tree_circle:pCubeShape14.i";
+connectAttr "groupId38.id" "tree_circle:pCubeShape14.iog.og[0].gid";
+connectAttr ":initialShadingGroup.mwc" "tree_circle:pCubeShape14.iog.og[0].gco";
+connectAttr "groupId39.id" "tree_circle:pCubeShape14.ciog.cog[0].cgid";
+connectAttr "groupParts22.og" "tree_circle:pCubeShape15.i";
+connectAttr "groupId40.id" "tree_circle:pCubeShape15.iog.og[0].gid";
+connectAttr ":initialShadingGroup.mwc" "tree_circle:pCubeShape15.iog.og[0].gco";
+connectAttr "groupId41.id" "tree_circle:pCubeShape15.ciog.cog[0].cgid";
+connectAttr "groupParts23.og" "tree_circle:pCubeShape16.i";
+connectAttr "groupId42.id" "tree_circle:pCubeShape16.iog.og[0].gid";
+connectAttr ":initialShadingGroup.mwc" "tree_circle:pCubeShape16.iog.og[0].gco";
+connectAttr "groupId43.id" "tree_circle:pCubeShape16.ciog.cog[0].cgid";
+connectAttr "groupParts24.og" "polySurfaceShape6.i";
+connectAttr "groupId44.id" "polySurfaceShape6.iog.og[0].gid";
+connectAttr ":initialShadingGroup.mwc" "polySurfaceShape6.iog.og[0].gco";
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
@@ -642,6 +1678,96 @@ connectAttr "polySurfaceShape3.wm" "polyUnite2.im[1]";
 connectAttr "polySurfaceShape4.wm" "polyUnite2.im[2]";
 connectAttr "polyUnite2.out" "groupParts7.ig";
 connectAttr "groupId11.id" "groupParts7.gi";
+connectAttr "groupParts7.og" "polyTriangulate1.ip";
+connectAttr "tree_circle:polyCube1.out" "tree_circle:polyTriangulate1.ip";
+connectAttr "tree_circle:polySurfaceShape1.o" "tree_circle:polyTriangulate2.ip";
+connectAttr "tree_circle:polySurfaceShape2.o" "tree_circle:polyTriangulate3.ip";
+connectAttr "tree_circle:polySurfaceShape3.o" "tree_circle:polyTriangulate4.ip";
+connectAttr "tree_circle:polySurfaceShape4.o" "tree_circle:polyTriangulate5.ip";
+connectAttr "tree_circle:polySurfaceShape5.o" "tree_circle:polyTriangulate6.ip";
+connectAttr "tree_circle:polySurfaceShape6.o" "tree_circle:polyTriangulate7.ip";
+connectAttr "tree_circle:polySurfaceShape7.o" "tree_circle:polyTriangulate8.ip";
+connectAttr "tree_circle:polySurfaceShape8.o" "tree_circle:polyTriangulate9.ip";
+connectAttr "tree_circle:polySurfaceShape9.o" "tree_circle:polyTriangulate10.ip"
+		;
+connectAttr "tree_circle:polySurfaceShape10.o" "tree_circle:polyTriangulate11.ip"
+		;
+connectAttr "tree_circle:polySurfaceShape11.o" "tree_circle:polyTriangulate12.ip"
+		;
+connectAttr "tree_circle:polySurfaceShape12.o" "tree_circle:polyTriangulate13.ip"
+		;
+connectAttr "tree_circle:polySurfaceShape13.o" "tree_circle:polyTriangulate14.ip"
+		;
+connectAttr "tree_circle:polySurfaceShape14.o" "tree_circle:polyTriangulate15.ip"
+		;
+connectAttr "tree_circle:polySurfaceShape15.o" "tree_circle:polyTriangulate16.ip"
+		;
+connectAttr "tree_circle:pCubeShape1.o" "polyUnite3.ip[0]";
+connectAttr "tree_circle:pCubeShape2.o" "polyUnite3.ip[1]";
+connectAttr "tree_circle:pCubeShape3.o" "polyUnite3.ip[2]";
+connectAttr "tree_circle:pCubeShape4.o" "polyUnite3.ip[3]";
+connectAttr "tree_circle:pCubeShape5.o" "polyUnite3.ip[4]";
+connectAttr "tree_circle:pCubeShape6.o" "polyUnite3.ip[5]";
+connectAttr "tree_circle:pCubeShape7.o" "polyUnite3.ip[6]";
+connectAttr "tree_circle:pCubeShape8.o" "polyUnite3.ip[7]";
+connectAttr "tree_circle:pCubeShape9.o" "polyUnite3.ip[8]";
+connectAttr "tree_circle:pCubeShape10.o" "polyUnite3.ip[9]";
+connectAttr "tree_circle:pCubeShape11.o" "polyUnite3.ip[10]";
+connectAttr "tree_circle:pCubeShape12.o" "polyUnite3.ip[11]";
+connectAttr "tree_circle:pCubeShape13.o" "polyUnite3.ip[12]";
+connectAttr "tree_circle:pCubeShape14.o" "polyUnite3.ip[13]";
+connectAttr "tree_circle:pCubeShape15.o" "polyUnite3.ip[14]";
+connectAttr "tree_circle:pCubeShape16.o" "polyUnite3.ip[15]";
+connectAttr "tree_circle:pCubeShape1.wm" "polyUnite3.im[0]";
+connectAttr "tree_circle:pCubeShape2.wm" "polyUnite3.im[1]";
+connectAttr "tree_circle:pCubeShape3.wm" "polyUnite3.im[2]";
+connectAttr "tree_circle:pCubeShape4.wm" "polyUnite3.im[3]";
+connectAttr "tree_circle:pCubeShape5.wm" "polyUnite3.im[4]";
+connectAttr "tree_circle:pCubeShape6.wm" "polyUnite3.im[5]";
+connectAttr "tree_circle:pCubeShape7.wm" "polyUnite3.im[6]";
+connectAttr "tree_circle:pCubeShape8.wm" "polyUnite3.im[7]";
+connectAttr "tree_circle:pCubeShape9.wm" "polyUnite3.im[8]";
+connectAttr "tree_circle:pCubeShape10.wm" "polyUnite3.im[9]";
+connectAttr "tree_circle:pCubeShape11.wm" "polyUnite3.im[10]";
+connectAttr "tree_circle:pCubeShape12.wm" "polyUnite3.im[11]";
+connectAttr "tree_circle:pCubeShape13.wm" "polyUnite3.im[12]";
+connectAttr "tree_circle:pCubeShape14.wm" "polyUnite3.im[13]";
+connectAttr "tree_circle:pCubeShape15.wm" "polyUnite3.im[14]";
+connectAttr "tree_circle:pCubeShape16.wm" "polyUnite3.im[15]";
+connectAttr "tree_circle:polyTriangulate1.out" "groupParts8.ig";
+connectAttr "groupId12.id" "groupParts8.gi";
+connectAttr "tree_circle:polyTriangulate2.out" "groupParts9.ig";
+connectAttr "groupId14.id" "groupParts9.gi";
+connectAttr "tree_circle:polyTriangulate3.out" "groupParts10.ig";
+connectAttr "groupId16.id" "groupParts10.gi";
+connectAttr "tree_circle:polyTriangulate4.out" "groupParts11.ig";
+connectAttr "groupId18.id" "groupParts11.gi";
+connectAttr "tree_circle:polyTriangulate5.out" "groupParts12.ig";
+connectAttr "groupId20.id" "groupParts12.gi";
+connectAttr "tree_circle:polyTriangulate6.out" "groupParts13.ig";
+connectAttr "groupId22.id" "groupParts13.gi";
+connectAttr "tree_circle:polyTriangulate7.out" "groupParts14.ig";
+connectAttr "groupId24.id" "groupParts14.gi";
+connectAttr "tree_circle:polyTriangulate8.out" "groupParts15.ig";
+connectAttr "groupId26.id" "groupParts15.gi";
+connectAttr "tree_circle:polyTriangulate9.out" "groupParts16.ig";
+connectAttr "groupId28.id" "groupParts16.gi";
+connectAttr "tree_circle:polyTriangulate10.out" "groupParts17.ig";
+connectAttr "groupId30.id" "groupParts17.gi";
+connectAttr "tree_circle:polyTriangulate11.out" "groupParts18.ig";
+connectAttr "groupId32.id" "groupParts18.gi";
+connectAttr "tree_circle:polyTriangulate12.out" "groupParts19.ig";
+connectAttr "groupId34.id" "groupParts19.gi";
+connectAttr "tree_circle:polyTriangulate13.out" "groupParts20.ig";
+connectAttr "groupId36.id" "groupParts20.gi";
+connectAttr "tree_circle:polyTriangulate14.out" "groupParts21.ig";
+connectAttr "groupId38.id" "groupParts21.gi";
+connectAttr "tree_circle:polyTriangulate15.out" "groupParts22.ig";
+connectAttr "groupId40.id" "groupParts22.gi";
+connectAttr "tree_circle:polyTriangulate16.out" "groupParts23.ig";
+connectAttr "groupId42.id" "groupParts23.gi";
+connectAttr "polyUnite3.out" "groupParts24.ig";
+connectAttr "groupId44.id" "groupParts24.gi";
 connectAttr "pCubeShape1.iog.og[0]" ":initialShadingGroup.dsm" -na;
 connectAttr "pCubeShape1.ciog.cog[0]" ":initialShadingGroup.dsm" -na;
 connectAttr "pCubeShape2.iog.og[0]" ":initialShadingGroup.dsm" -na;
@@ -653,6 +1779,55 @@ connectAttr "polySurfaceShape2.iog.og[0]" ":initialShadingGroup.dsm" -na;
 connectAttr "polySurfaceShape3.iog.og[0]" ":initialShadingGroup.dsm" -na;
 connectAttr "polySurfaceShape4.iog.og[0]" ":initialShadingGroup.dsm" -na;
 connectAttr "polySurfaceShape5.iog.og[0]" ":initialShadingGroup.dsm" -na;
+connectAttr "tree_circle:pCubeShape1.iog.og[0]" ":initialShadingGroup.dsm" -na;
+connectAttr "tree_circle:pCubeShape1.ciog.cog[0]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "tree_circle:pCubeShape2.iog.og[0]" ":initialShadingGroup.dsm" -na;
+connectAttr "tree_circle:pCubeShape2.ciog.cog[0]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "tree_circle:pCubeShape3.iog.og[0]" ":initialShadingGroup.dsm" -na;
+connectAttr "tree_circle:pCubeShape3.ciog.cog[0]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "tree_circle:pCubeShape4.iog.og[0]" ":initialShadingGroup.dsm" -na;
+connectAttr "tree_circle:pCubeShape4.ciog.cog[0]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "tree_circle:pCubeShape5.iog.og[0]" ":initialShadingGroup.dsm" -na;
+connectAttr "tree_circle:pCubeShape5.ciog.cog[0]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "tree_circle:pCubeShape6.iog.og[0]" ":initialShadingGroup.dsm" -na;
+connectAttr "tree_circle:pCubeShape6.ciog.cog[0]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "tree_circle:pCubeShape7.iog.og[0]" ":initialShadingGroup.dsm" -na;
+connectAttr "tree_circle:pCubeShape7.ciog.cog[0]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "tree_circle:pCubeShape8.iog.og[0]" ":initialShadingGroup.dsm" -na;
+connectAttr "tree_circle:pCubeShape8.ciog.cog[0]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "tree_circle:pCubeShape9.iog.og[0]" ":initialShadingGroup.dsm" -na;
+connectAttr "tree_circle:pCubeShape9.ciog.cog[0]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "tree_circle:pCubeShape10.iog.og[0]" ":initialShadingGroup.dsm" -na;
+connectAttr "tree_circle:pCubeShape10.ciog.cog[0]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "tree_circle:pCubeShape11.iog.og[0]" ":initialShadingGroup.dsm" -na;
+connectAttr "tree_circle:pCubeShape11.ciog.cog[0]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "tree_circle:pCubeShape12.iog.og[0]" ":initialShadingGroup.dsm" -na;
+connectAttr "tree_circle:pCubeShape12.ciog.cog[0]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "tree_circle:pCubeShape13.iog.og[0]" ":initialShadingGroup.dsm" -na;
+connectAttr "tree_circle:pCubeShape13.ciog.cog[0]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "tree_circle:pCubeShape14.iog.og[0]" ":initialShadingGroup.dsm" -na;
+connectAttr "tree_circle:pCubeShape14.ciog.cog[0]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "tree_circle:pCubeShape15.iog.og[0]" ":initialShadingGroup.dsm" -na;
+connectAttr "tree_circle:pCubeShape15.ciog.cog[0]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "tree_circle:pCubeShape16.iog.og[0]" ":initialShadingGroup.dsm" -na;
+connectAttr "tree_circle:pCubeShape16.ciog.cog[0]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "polySurfaceShape6.iog.og[0]" ":initialShadingGroup.dsm" -na;
 connectAttr "groupId1.msg" ":initialShadingGroup.gn" -na;
 connectAttr "groupId2.msg" ":initialShadingGroup.gn" -na;
 connectAttr "groupId3.msg" ":initialShadingGroup.gn" -na;
@@ -664,5 +1839,38 @@ connectAttr "groupId8.msg" ":initialShadingGroup.gn" -na;
 connectAttr "groupId9.msg" ":initialShadingGroup.gn" -na;
 connectAttr "groupId10.msg" ":initialShadingGroup.gn" -na;
 connectAttr "groupId11.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId12.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId13.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId14.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId15.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId16.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId17.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId18.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId19.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId20.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId21.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId22.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId23.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId24.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId25.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId26.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId27.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId28.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId29.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId30.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId31.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId32.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId33.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId34.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId35.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId36.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId37.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId38.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId39.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId40.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId41.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId42.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId43.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId44.msg" ":initialShadingGroup.gn" -na;
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
 // End of X - Slight Curve.ma

@@ -1,6 +1,6 @@
 //Maya ASCII 2013 scene
 //Name: T - Destructible 1.ma
-//Last modified: Sun, Feb 17, 2013 12:29:41 PM
+//Last modified: Thu, Feb 28, 2013 02:37:25 PM
 //Codeset: UTF-8
 requires maya "2013";
 requires "stereoCamera" "10.0";
@@ -15,7 +15,7 @@ createNode transform -s -n "persp";
 	setAttr ".t" -type "double3" 361.8753141860376 45.017678770063917 168.74091712534829 ;
 	setAttr ".r" -type "double3" -10.200000000000005 -2.3999999999994466 4.9739797150817057e-17 ;
 	setAttr ".rp" -type "double3" 1.7763568394002505e-15 0 0 ;
-	setAttr ".rpt" -type "double3" -5.7477244498395104e-17 2.4184732603131939e-16 9.7645611311422742e-16 ;
+	setAttr ".rpt" -type "double3" -5.7477244498395104e-17 2.4184732603131944e-16 9.7645611311422742e-16 ;
 createNode camera -s -n "perspShape" -p "persp";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999979;
@@ -473,6 +473,8 @@ createNode groupId -n "groupId17";
 createNode groupParts -n "groupParts10";
 	setAttr ".ihi" 0;
 	setAttr ".ic" -type "componentList" 1 "f[0:29]";
+createNode polyTriangulate -n "polyTriangulate1";
+	setAttr ".ics" -type "componentList" 1 "f[*]";
 select -ne :time1;
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
@@ -534,7 +536,7 @@ connectAttr ":initialShadingGroup.mwc" "polySurfaceShape6.iog.og[0].gco";
 connectAttr "groupParts4.og" "polySurfaceShape1.i";
 connectAttr "groupId11.id" "polySurfaceShape1.iog.og[0].gid";
 connectAttr ":initialShadingGroup.mwc" "polySurfaceShape1.iog.og[0].gco";
-connectAttr "groupParts10.og" "polySurfaceShape7.i";
+connectAttr "polyTriangulate1.out" "polySurfaceShape7.i";
 connectAttr "groupId17.id" "polySurfaceShape7.iog.og[0].gid";
 connectAttr ":initialShadingGroup.mwc" "polySurfaceShape7.iog.og[0].gco";
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
@@ -584,6 +586,7 @@ connectAttr "polySurfaceShape5.wm" "polyUnite2.im[3]";
 connectAttr "polySurfaceShape6.wm" "polyUnite2.im[4]";
 connectAttr "polyUnite2.out" "groupParts10.ig";
 connectAttr "groupId17.id" "groupParts10.gi";
+connectAttr "groupParts10.og" "polyTriangulate1.ip";
 connectAttr "pCubeShape1.iog.og[0]" ":initialShadingGroup.dsm" -na;
 connectAttr "pCubeShape1.ciog.cog[0]" ":initialShadingGroup.dsm" -na;
 connectAttr "pCubeShape2.iog.og[0]" ":initialShadingGroup.dsm" -na;

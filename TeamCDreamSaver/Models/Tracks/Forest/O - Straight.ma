@@ -1,6 +1,6 @@
 //Maya ASCII 2013 scene
 //Name: O - Straight.ma
-//Last modified: Mon, Feb 11, 2013 11:27:30 PM
+//Last modified: Thu, Feb 28, 2013 01:58:59 PM
 //Codeset: UTF-8
 requires maya "2013";
 requires "stereoCamera" "10.0";
@@ -12,7 +12,7 @@ fileInfo "cutIdentifier" "201202220220-825135";
 fileInfo "osv" "Mac OS X 10.8.2";
 createNode transform -s -n "persp";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -1.8698628453194031 1.7088627891333057 35.679108538735903 ;
+	setAttr ".t" -type "double3" -1.8698628453194033 1.7088627891333057 35.679108538735903 ;
 	setAttr ".r" -type "double3" -2.7383527296254795 -3.0000000000077507 1.2441091808405525e-17 ;
 createNode camera -s -n "perspShape" -p "persp";
 	setAttr -k off ".v" no;
@@ -396,6 +396,8 @@ createNode groupId -n "groupId14";
 createNode groupParts -n "groupParts6";
 	setAttr ".ihi" 0;
 	setAttr ".ic" -type "componentList" 1 "f[0:17]";
+createNode polyTriangulate -n "polyTriangulate1";
+	setAttr ".ics" -type "componentList" 1 "f[*]";
 select -ne :time1;
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
@@ -452,7 +454,7 @@ connectAttr "groupId11.id" "pCubeShape2.ciog.cog[0].cgid";
 connectAttr "groupId12.id" "pCubeShape3.iog.og[0].gid";
 connectAttr ":initialShadingGroup.mwc" "pCubeShape3.iog.og[0].gco";
 connectAttr "groupId13.id" "pCubeShape3.ciog.cog[0].cgid";
-connectAttr "groupParts6.og" "polySurfaceShape2.i";
+connectAttr "polyTriangulate1.out" "polySurfaceShape2.i";
 connectAttr "groupId14.id" "polySurfaceShape2.iog.og[0].gid";
 connectAttr ":initialShadingGroup.mwc" "polySurfaceShape2.iog.og[0].gco";
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
@@ -485,6 +487,7 @@ connectAttr "polyCube2.out" "groupParts5.ig";
 connectAttr "groupId10.id" "groupParts5.gi";
 connectAttr "polyUnite2.out" "groupParts6.ig";
 connectAttr "groupId14.id" "groupParts6.gi";
+connectAttr "groupParts6.og" "polyTriangulate1.ip";
 connectAttr "D___Straight_6:A___Start:pCubeShape1.iog.og[0]" ":initialShadingGroup.dsm"
 		 -na;
 connectAttr "D___Straight_6:A___Start:pCubeShape1.ciog.cog[0]" ":initialShadingGroup.dsm"

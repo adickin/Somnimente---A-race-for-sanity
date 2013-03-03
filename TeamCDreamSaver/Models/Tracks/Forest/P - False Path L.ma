@@ -1,6 +1,6 @@
 //Maya ASCII 2013 scene
 //Name: P - False Path L.ma
-//Last modified: Sun, Feb 17, 2013 01:59:12 PM
+//Last modified: Thu, Feb 28, 2013 01:59:27 PM
 //Codeset: UTF-8
 requires maya "2013";
 requires "stereoCamera" "10.0";
@@ -2120,6 +2120,10 @@ createNode materialInfo -n "materialInfo3";
 createNode file -n "file3";
 	setAttr ".ftn" -type "string" "/Users/jpiers/Desktop/Tracks/wood.jpeg";
 createNode place2dTexture -n "place2dTexture3";
+createNode polyTriangulate -n "polyTriangulate1";
+	setAttr ".ics" -type "componentList" 1 "f[*]";
+createNode polyTriangulate -n "polyTriangulate2";
+	setAttr ".ics" -type "componentList" 1 "f[*]";
 select -ne :time1;
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
@@ -2147,8 +2151,6 @@ select -ne :hardwareRenderGlobals;
 select -ne :defaultHardwareRenderGlobals;
 	setAttr ".fn" -type "string" "im";
 	setAttr ".res" -type "string" "ntsc_4d 646 485 1.333";
-select -ne :ikSystem;
-	setAttr -s 4 ".sol";
 connectAttr "groupId1.id" "pCubeShape1.iog.og[0].gid";
 connectAttr ":initialShadingGroup.mwc" "pCubeShape1.iog.og[0].gco";
 connectAttr "groupParts1.og" "pCubeShape1.i";
@@ -2359,7 +2361,7 @@ connectAttr "groupId68.id" "polySurfaceShape46.iog.og[0].gid";
 connectAttr ":initialShadingGroup.mwc" "polySurfaceShape46.iog.og[0].gco";
 connectAttr "groupId69.id" "polySurfaceShape46.iog.og[1].gid";
 connectAttr "lambert2SG.mwc" "polySurfaceShape46.iog.og[1].gco";
-connectAttr "groupParts69.og" "polySurfaceShape59.i";
+connectAttr "polyTriangulate1.out" "polySurfaceShape59.i";
 connectAttr "groupId82.id" "polySurfaceShape59.iog.og[0].gid";
 connectAttr ":initialShadingGroup.mwc" "polySurfaceShape59.iog.og[0].gco";
 connectAttr "sign:groupId1.id" "sign:pCylinderShape1.iog.og[0].gid";
@@ -2374,7 +2376,7 @@ connectAttr "sign:groupId5.id" "sign:pPrismShape1.iog.og[0].gid";
 connectAttr ":initialShadingGroup.mwc" "sign:pPrismShape1.iog.og[0].gco";
 connectAttr "sign:groupParts3.og" "sign:pPrismShape1.i";
 connectAttr "sign:groupId6.id" "sign:pPrismShape1.ciog.cog[0].cgid";
-connectAttr "sign:polyUnite1.out" "sign:polySurfaceShape1.i";
+connectAttr "polyTriangulate2.out" "sign:polySurfaceShape1.i";
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" "lambert2SG.message" ":defaultLightSet.message";
@@ -2784,6 +2786,8 @@ connectAttr "place2dTexture3.vt3" "file3.vt3";
 connectAttr "place2dTexture3.vc1" "file3.vc1";
 connectAttr "place2dTexture3.o" "file3.uv";
 connectAttr "place2dTexture3.ofs" "file3.fs";
+connectAttr "groupParts69.og" "polyTriangulate1.ip";
+connectAttr "sign:polyUnite1.out" "polyTriangulate2.ip";
 connectAttr "lambert2SG.pa" ":renderPartition.st" -na;
 connectAttr "lambert3SG.pa" ":renderPartition.st" -na;
 connectAttr "lambert4SG.pa" ":renderPartition.st" -na;

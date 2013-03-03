@@ -1,6 +1,6 @@
 //Maya ASCII 2013 scene
 //Name: D - Uturn L.ma
-//Last modified: Sun, Feb 10, 2013 03:06:42 PM
+//Last modified: Thu, Feb 28, 2013 01:55:00 PM
 //Codeset: UTF-8
 requires maya "2013";
 requires "stereoCamera" "10.0";
@@ -13,7 +13,7 @@ fileInfo "osv" "Mac OS X 10.8.2";
 createNode transform -s -n "persp";
 	setAttr ".v" no;
 	setAttr ".t" -type "double3" -264.5922710127773 150.1752405557541 221.63919374964487 ;
-	setAttr ".r" -type "double3" -33.338352729604608 -11.000000000000167 4.0501051915310625e-16 ;
+	setAttr ".r" -type "double3" -33.338352729604608 -11.000000000000169 4.0501051915310625e-16 ;
 createNode camera -s -n "perspShape" -p "persp";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999986;
@@ -259,6 +259,8 @@ createNode deleteComponent -n "deleteComponent1";
 	setAttr ".dc" -type "componentList" 12 "f[16:30]" "f[48:62]" "f[80:94]" "f[112:126]" "f[144:158]" "f[176:190]" "f[208:222]" "f[240:254]" "f[272:286]" "f[304:318]" "f[336:350]" "f[368:382]";
 createNode deleteComponent -n "deleteComponent2";
 	setAttr ".dc" -type "componentList" 12 "f[16]" "f[33]" "f[50]" "f[67]" "f[84]" "f[101]" "f[118]" "f[135]" "f[152]" "f[169]" "f[186]" "f[203]";
+createNode polyTriangulate -n "polyTriangulate1";
+	setAttr ".ics" -type "componentList" 1 "f[*]";
 select -ne :time1;
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
@@ -296,7 +298,7 @@ connectAttr "groupId5.id" "pPipeShape3.iog.og[0].gid";
 connectAttr ":initialShadingGroup.mwc" "pPipeShape3.iog.og[0].gco";
 connectAttr "groupParts3.og" "pPipeShape3.i";
 connectAttr "groupId6.id" "pPipeShape3.ciog.cog[0].cgid";
-connectAttr "deleteComponent2.og" "polySurfaceShape1.i";
+connectAttr "polyTriangulate1.out" "polySurfaceShape1.i";
 connectAttr "groupId7.id" "polySurfaceShape1.iog.og[0].gid";
 connectAttr ":initialShadingGroup.mwc" "polySurfaceShape1.iog.og[0].gco";
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
@@ -321,6 +323,7 @@ connectAttr "polyUnite1.out" "groupParts4.ig";
 connectAttr "groupId7.id" "groupParts4.gi";
 connectAttr "groupParts4.og" "deleteComponent1.ig";
 connectAttr "deleteComponent1.og" "deleteComponent2.ig";
+connectAttr "deleteComponent2.og" "polyTriangulate1.ip";
 connectAttr "pPipeShape1.iog.og[0]" ":initialShadingGroup.dsm" -na;
 connectAttr "pPipeShape1.ciog.cog[0]" ":initialShadingGroup.dsm" -na;
 connectAttr "pPipeShape2.iog.og[0]" ":initialShadingGroup.dsm" -na;

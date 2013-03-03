@@ -24,7 +24,7 @@ Track piece.PieceFile
 		- EG:
 			- Straight piece = no orientation change
 			- 90* turn piece = 90 rotation around y axis. (eg: (0, 90, 0) )
-			- 45* trun piece = 45 rotation around y axis. (eg: (0, 45, 0) )
+			- 45* turn piece = 45 rotation around y axis. (eg: (0, 45, 0) )
 			- floor to wall transition = 90 rotation around x axis( eg: (90, 0, 0) ) 
 
 			

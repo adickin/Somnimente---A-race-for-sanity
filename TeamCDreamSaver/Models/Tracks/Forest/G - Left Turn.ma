@@ -1,6 +1,6 @@
 //Maya ASCII 2013 scene
 //Name: G - Left Turn.ma
-//Last modified: Sun, Feb 17, 2013 02:24:00 PM
+//Last modified: Thu, Feb 28, 2013 01:56:11 PM
 //Codeset: UTF-8
 requires maya "2013";
 requires "stereoCamera" "10.0";
@@ -271,6 +271,8 @@ createNode groupId -n "groupId7";
 createNode groupParts -n "groupParts4";
 	setAttr ".ihi" 0;
 	setAttr ".ic" -type "componentList" 1 "f[0:59]";
+createNode polyTriangulate -n "polyTriangulate1";
+	setAttr ".ics" -type "componentList" 1 "f[*]";
 select -ne :time1;
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
@@ -311,7 +313,7 @@ connectAttr "groupId5.id" "J___Left_turn:pPipeShape4.iog.og[0].gid";
 connectAttr ":initialShadingGroup.mwc" "J___Left_turn:pPipeShape4.iog.og[0].gco"
 		;
 connectAttr "groupId6.id" "J___Left_turn:pPipeShape4.ciog.cog[0].cgid";
-connectAttr "groupParts4.og" "polySurfaceShape1.i";
+connectAttr "polyTriangulate1.out" "polySurfaceShape1.i";
 connectAttr "groupId7.id" "polySurfaceShape1.iog.og[0].gid";
 connectAttr ":initialShadingGroup.mwc" "polySurfaceShape1.iog.og[0].gco";
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
@@ -347,6 +349,7 @@ connectAttr "J___Left_turn:deleteComponent8.og" "groupParts3.ig";
 connectAttr "groupId5.id" "groupParts3.gi";
 connectAttr "polyUnite1.out" "groupParts4.ig";
 connectAttr "groupId7.id" "groupParts4.gi";
+connectAttr "groupParts4.og" "polyTriangulate1.ip";
 connectAttr "J___Left_turn:pPipeShape2.iog.og[0]" ":initialShadingGroup.dsm" -na
 		;
 connectAttr "J___Left_turn:pPipeShape2.ciog.cog[0]" ":initialShadingGroup.dsm" -na
