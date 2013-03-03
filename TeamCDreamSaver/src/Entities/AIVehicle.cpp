@@ -28,6 +28,12 @@ void AIVehicle::updateVehicleHealthText()
 	vehicleHealthText_.Initialize(vehHealth, vec3(-0.1, 0.8, 0), 0.2);
 }
 
+void AIVehicle::applyDamageToCar(float damageApplied)
+{
+	vehicleHealth_ -= damageApplied;
+	updateVehicleHealthText();
+}
+
 void AIVehicle::addActorToDetectCollisionsWith(PxRigidDynamic* actor)
 {
 	actorsToCollideWith_.push_back(actor);
