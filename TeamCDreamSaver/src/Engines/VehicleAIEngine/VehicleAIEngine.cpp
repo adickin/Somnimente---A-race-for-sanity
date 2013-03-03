@@ -152,7 +152,7 @@ void VehicleAIEngine::determineAcceleration(float turnValue)
 
 	float accelerationValue = glm::max((maxAccelerationValue * (1.0f - abs(turnValue))), 50.0f);
 
-	vehicleBeingControlled_->Accelerate(-accelerationValue);
+	vehicleBeingControlled_->Accelerate(accelerationValue);
 }
 
 /*

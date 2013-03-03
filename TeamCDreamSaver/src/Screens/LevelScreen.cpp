@@ -91,6 +91,7 @@ void LevelScreen::Enter()
 	ai->addWaypointFileForAI("src//Engines//VehicleAIEngine//level1CenterLaneWaypointFile.txt");
 	ai->addWaypointFileForAI("src//Engines//VehicleAIEngine//level1LeftLaneWaypointFile.txt");
 	ai->addWaypointFileForAI("src//Engines//VehicleAIEngine//level1RightLaneWaypointFile.txt");
+	ai->getAIVehicle()->addActorToDetectCollisionsWith(vehicle.chassis);
 	//ai->activateWriterMode(true);
 	//ai->changeVehicleToWorkOn(&vehicle);
 
