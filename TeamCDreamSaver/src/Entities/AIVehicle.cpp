@@ -51,7 +51,7 @@ bool AIVehicle::isVehicleStillAlive()
 			PxShape** shapes = new PxShape*[numberOfShapes];
 			actorsToCollideWith_[actors]->getShapes(shapes, numberOfShapes);
 
-			for(int j = 0; j < numberOfShapes; j++)
+			for(unsigned int j = 0; j < numberOfShapes; j++)
 			{
 				if(shapes[j] == collisionShape)
 				{

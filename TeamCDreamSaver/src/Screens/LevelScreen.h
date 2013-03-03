@@ -18,6 +18,7 @@
 #include <Entities\Triggers\SleepingPillPowerup.h>
 #include <Utilities\LevelLoader.h>
 #include <Entities\RoadBlockObstacle.h>
+#include <Entities\Triggers\Rocket.h>
 #include <Utilities\VarLoader.h>
 #include <LineGL3.h>
 

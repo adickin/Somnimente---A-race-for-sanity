@@ -83,10 +83,10 @@
     <Filter Include="Models\Tracks\Childhood">
       <UniqueIdentifier>{b94eb33e-9be1-41af-bc62-dc52cfc9dd39}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Triggers">
+    <Filter Include="Source Files\Entities\Triggers">
       <UniqueIdentifier>{eff0181b-f7f3-4582-8743-f41292c47690}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Triggers">
+    <Filter Include="Header Files\Entities\Triggers">
       <UniqueIdentifier>{b4f41252-efbf-4014-94b3-9b896c2118f3}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -185,10 +185,10 @@
       <Filter>Source Files\Utilities</Filter>
     </ClCompile>
     <ClCompile Include="src\Entities\Triggers\FinishTrigger.cpp">
-      <Filter>Source Files\Triggers</Filter>
+      <Filter>Source Files\Entities\Triggers</Filter>
     </ClCompile>
     <ClCompile Include="src\Entities\Triggers\I_Trigger.cpp">
-      <Filter>Source Files\Triggers</Filter>
+      <Filter>Source Files\Entities\Triggers</Filter>
     </ClCompile>
     <ClCompile Include="src\Engines\VehicleAIEngine\VehicleAIEngine.cpp">
       <Filter>Source Files\Engines\AIEngine</Filter>
@@ -203,10 +203,10 @@
       <Filter>Source Files\Screens</Filter>
     </ClCompile>
     <ClCompile Include="src\Entities\Triggers\SleepingPillPowerup.cpp">
-      <Filter>Source Files\Triggers</Filter>
+      <Filter>Source Files\Entities\Triggers</Filter>
     </ClCompile>
     <ClCompile Include="src\Entities\Triggers\Powerup.cpp">
-      <Filter>Source Files\Triggers</Filter>
+      <Filter>Source Files\Entities\Triggers</Filter>
     </ClCompile>
     <ClCompile Include="src\Entities\Obstacle.cpp">
       <Filter>Source Files\Entities</Filter>
@@ -221,7 +221,7 @@
       <Filter>Source Files\Utilities</Filter>
     </ClCompile>
     <ClCompile Include="src\Entities\Triggers\EnergyDrink.cpp">
-      <Filter>Source Files\Triggers</Filter>
+      <Filter>Source Files\Entities\Triggers</Filter>
     </ClCompile>
     <ClCompile Include="src\Engines\VehicleAIEngine\WaypointInterpreter.cpp">
       <Filter>Source Files</Filter>
@@ -237,6 +237,9 @@
     </ClCompile>
     <ClCompile Include="src\Entities\AIVehicle.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Entities\Triggers\Rocket.cpp">
+      <Filter>Source Files\Entities\Triggers</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -471,10 +474,10 @@
       <Filter>Header Files\Utilities</Filter>
     </ClInclude>
     <ClInclude Include="src\Entities\Triggers\I_Trigger.h">
-      <Filter>Header Files\Triggers</Filter>
+      <Filter>Header Files\Entities\Triggers</Filter>
     </ClInclude>
     <ClInclude Include="src\Entities\Triggers\FinishTrigger.h">
-      <Filter>Header Files\Triggers</Filter>
+      <Filter>Header Files\Entities\Triggers</Filter>
     </ClInclude>
     <ClInclude Include="src\Utilities\TriggerManager.h">
       <Filter>Header Files\Utilities</Filter>
@@ -492,10 +495,10 @@
       <Filter>Header Files\Screens</Filter>
     </ClInclude>
     <ClInclude Include="src\Entities\Triggers\SleepingPillPowerup.h">
-      <Filter>Header Files\Triggers</Filter>
+      <Filter>Header Files\Entities\Triggers</Filter>
     </ClInclude>
     <ClInclude Include="src\Entities\Triggers\Powerup.h">
-      <Filter>Header Files\Triggers</Filter>
+      <Filter>Header Files\Entities\Triggers</Filter>
     </ClInclude>
     <ClInclude Include="src\Entities\Obstacle.h">
       <Filter>Header Files\Entities</Filter>
@@ -510,7 +513,7 @@
       <Filter>Header Files\Utilities</Filter>
     </ClInclude>
     <ClInclude Include="src\Entities\Triggers\EnergyDrink.h">
-      <Filter>Header Files\Triggers</Filter>
+      <Filter>Header Files\Entities\Triggers</Filter>
     </ClInclude>
     <ClInclude Include="src\Engines\RenderEngine\LineGL3.h">
       <Filter>Header Files</Filter>
@@ -526,6 +529,9 @@
     </ClInclude>
     <ClInclude Include="src\Entities\AIVehicle.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Entities\Triggers\Rocket.h">
+      <Filter>Header Files\Entities\Triggers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
