@@ -11,6 +11,7 @@
 #include <Engines\PhysicsEngine\PhysicsEngine.h>
 #include <Engines\RenderEngine\ParticleEmitter.h>
 #include <Engines\AIEngine\IAIThing.h>
+#include <Engines\AudioEngine\AudioEngine.h>
 
 class Vehicle : public PhysicsObject, public IRenderable, public IAIThing
 {
@@ -33,6 +34,7 @@ public:
 	void TurnLeft(float turnSpeed);
 	void TurnRight(float turnSpeed);
 	void Turn(float turnSpeed);
+	void PlayCrashSF(bool isCarHit);
 
 	physx::PxRigidDynamic* chassis;
 	physx::PxGeometry* geometries;
