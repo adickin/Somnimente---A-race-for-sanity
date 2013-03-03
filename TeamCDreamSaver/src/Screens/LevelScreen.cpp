@@ -163,14 +163,14 @@ bool LevelScreen::HandleEvents()
 	cam->MoveForward(InputEngine::GetInstance()->GetCameraZoom());
 
 #if _DEBUG
-	
-	if(InputEngine::GetInstance()->IsKeyDown(ALLEGRO_KEY_SPACE))
+
+	/*if(InputEngine::GetInstance()->IsKeyDown(ALLEGRO_KEY_SPACE))
 	{
 		RocketWeapon *r = new RocketWeapon(&this->vehicle.position, VehicleAIEngine::GetInstance()->getAIVehicle());
 		TriggerManager::GetInstance()->addTriggerToManager(r);
 		level.triggers.push_back(r);
-	}
-
+	}*/
+	
 	if(InputEngine::GetInstance()->IsKeyDown(ALLEGRO_KEY_R))
 	{
 		RenderEngine::GetInstance()->ReadParameterFile();
@@ -218,7 +218,6 @@ bool LevelScreen::HandleEvents()
 		if(!InputEngine::GetInstance()->isKeyRepeat(ALLEGRO_KEY_O))
 		{
 			printf("x: %f, y: %f, z: %f\n", vehiclePosition->x, vehiclePosition->y, vehiclePosition->z);
-			//VehicleAIEngine::GetInstance()->writeWaypointToFile(*vehiclePosition);
 		}
 	}
 #endif 
@@ -226,6 +225,16 @@ bool LevelScreen::HandleEvents()
 	if(InputEngine::GetInstance()->IsActionTriggered(BACK))
 	{
 		this->SetScreen(new LevelSelectScreen(this->manager));
+	}
+
+	if(InputEngine::GetInstance()->IsActionTriggered(SHOOT))
+	{
+		if(vehicle.CanFire())
+		{
+			RocketWeapon *r = new RocketWeapon(&this->vehicle.position, VehicleAIEngine::GetInstance()->getAIVehicle());
+			TriggerManager::GetInstance()->addTriggerToManager(r);
+			level.triggers.push_back(r);
+		}
 	}
 
 	return true;
@@ -258,6 +267,8 @@ void LevelScreen::Update(float elapsedMilliseconds)
 				//damage the ai car.
 				v->applyDamageToCar(25.0f);
 
+				AudioEngine::GetInstance()->PlaySoundEffect(EXPLOSION);
+
 				delete level.triggers[i];
 				level.triggers.erase(level.triggers.begin() + i);
 			}
@@ -289,6 +300,13 @@ void LevelScreen::Update(float elapsedMilliseconds)
 			else if (t == ENERGY_DRINK)
 			{
 				awakeness += 0.25f;
+
+				delete level.powerups[i];
+				level.powerups.erase(level.powerups.begin() + i);
+			}
+			else if (t == ROCKET_PICKUP)
+			{
+				vehicle.AddRocket();
 
 				delete level.powerups[i];
 				level.powerups.erase(level.powerups.begin() + i);

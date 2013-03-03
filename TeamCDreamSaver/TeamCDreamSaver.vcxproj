@@ -113,6 +113,7 @@
     <ClCompile Include="src\Entities\Triggers\Powerup.cpp" />
     <ClCompile Include="src\Entities\Triggers\RocketWeapon.cpp" />
     <ClCompile Include="src\Entities\Triggers\SleepingPillPowerup.cpp" />
+    <ClCompile Include="src\Entities\Triggers\RocketTrigger.cpp" />
     <ClCompile Include="src\Entities\Vehicle.cpp" />
     <ClCompile Include="src\Entities\Skybox.cpp" />
     <ClCompile Include="src\Screens\DemoScreen.cpp" />
@@ -233,6 +234,7 @@
     <ClInclude Include="src\Entities\Skybox.h" />
     <ClInclude Include="src\Entities\Triggers\I_Trigger.h" />
     <ClInclude Include="src\Entities\Triggers\Powerup.h" />
+    <ClInclude Include="src\Entities\Triggers\RocketTrigger.h" />
     <ClInclude Include="src\Entities\Triggers\RocketWeapon.h" />
     <ClInclude Include="src\Entities\Triggers\SleepingPillPowerup.h" />
     <ClInclude Include="src\Entities\Vehicle.h" />

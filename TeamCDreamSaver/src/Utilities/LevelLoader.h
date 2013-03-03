@@ -13,6 +13,7 @@
 #include <Entities\RoadBlockObstacle.h>
 #include <Entities\Triggers\FinishTrigger.h>
 #include <Entities\TrackSection.h>
+#include <Entities\Triggers\RocketTrigger.h>
 #include <glm\gtc\quaternion.hpp>
 
 struct Level

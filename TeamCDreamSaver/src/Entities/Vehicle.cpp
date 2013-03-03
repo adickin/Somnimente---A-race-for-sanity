@@ -33,6 +33,11 @@ Vehicle::Vehicle(void)
 	PhysicsEngine::GetInstance()->addVehicle(this);
 
 	this->wheelsLocked = false;
+
+	rockets = 1;
+	std::stringstream ss;
+	ss << "Rockets: " << rockets;
+	rocketCount.Initialize(ss.str(), glm::vec3(-0.9f, 0.9f, 0.0f), 0.2f);
 }
 
 
@@ -60,8 +65,12 @@ Vehicle::Vehicle(vec3 initialPosition, fquat initialOrient, vec3 boxDimensions)
 	PhysicsEngine::GetInstance()->addVehicle(this);
 
 	this->wheelsLocked = false;
-
-
+	
+	rockets = 1;
+	
+	std::stringstream ss;
+	ss << "Rockets: " << rockets;
+	rocketCount.Initialize(ss.str(), glm::vec3(-0.9f, 0.9f, 0.0f), 0.2f);
 }
 
 
@@ -134,6 +143,10 @@ void Vehicle::Update(float milliseconds)
 		glm::vec4 pos = rot * glm::vec4(0, 5.0f, -boxDimensions.z/2.0f, 1.0f);
 		emitter.CreateSmoke(position + vec3(pos));
 	}
+
+	std::stringstream ss;
+	ss << "Rockets: " << rockets;
+	rocketCount.Initialize(ss.str(), glm::vec3(-0.9f, 0.9f, 0.0f), 0.2f);
 }
 
 void Vehicle::PlayCrashSF(bool isCarHit)
@@ -145,4 +158,21 @@ void Vehicle::PlayCrashSF(bool isCarHit)
 glm::vec3 *Vehicle::GetPosition()
 {
 	return getPosition();
+}
+
+
+bool Vehicle::CanFire()
+{
+	if(rockets > 0)
+	{
+		rockets --;
+		return true;
+	}
+	return false;
+}
+
+
+void Vehicle::AddRocket()
+{
+	rockets++;
 }

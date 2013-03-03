@@ -112,4 +112,3 @@ void RocketWeapon::Update(float elaspedMilliseconds)
 		yoff -= 250 * (elaspedMilliseconds / 1000.0f);
 	}
 }
-

@@ -241,6 +241,9 @@
     <ClCompile Include="src\Entities\Triggers\RocketWeapon.cpp">
       <Filter>Source Files\Entities\Triggers</Filter>
     </ClCompile>
+    <ClCompile Include="src\Entities\Triggers\RocketTrigger.cpp">
+      <Filter>Source Files\Entities\Triggers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Images\rainbow.jpg">
@@ -531,6 +534,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\Entities\Triggers\RocketWeapon.h">
+      <Filter>Header Files\Entities\Triggers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Entities\Triggers\RocketTrigger.h">
       <Filter>Header Files\Entities\Triggers</Filter>
     </ClInclude>
   </ItemGroup>
