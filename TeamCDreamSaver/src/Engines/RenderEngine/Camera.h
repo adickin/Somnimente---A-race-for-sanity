@@ -44,6 +44,7 @@ private:
 	glm::vec3 oldTarget;
 	glm::vec3 moveDir;
 	glm::vec3 goalPosition;
+	glm::vec3 prevMovement;
 	float goalDistance;
 	float goalHeight;
 	float movePercentage;

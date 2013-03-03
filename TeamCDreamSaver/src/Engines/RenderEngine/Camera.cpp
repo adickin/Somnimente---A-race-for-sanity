@@ -91,7 +91,7 @@ void Camera::Update(float elapsedMilliseconds)
 	goalPosition.y += goalHeight;
 
 	glm::vec3 offset = goalPosition - position;
-	
+		
 	position += offset * movePercentage * (elapsedMilliseconds / 1000.0f);
 }
 
