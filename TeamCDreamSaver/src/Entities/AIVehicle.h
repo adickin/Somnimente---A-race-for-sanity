@@ -20,6 +20,8 @@ public:
 private:
 	float vehicleHealth_;
 	std::vector<PxRigidDynamic*> actorsToCollideWith_;
+	bool carCurrentlyHit_;
 
+	float lastHitTimeInMs_;
 };
 
