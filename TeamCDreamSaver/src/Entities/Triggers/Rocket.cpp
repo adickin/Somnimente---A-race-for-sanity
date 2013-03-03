@@ -5,6 +5,9 @@ Rocket::Rocket(glm::vec3 *source, Vehicle *vehicle)
 {
 	this->source = source;
 	this->target = &vehicle->position;
+	this->usePos = source;
+	this->rising = true;
+
 	this->model.SetMesh(ModelManager::LoadMeshs("Models/Powerup/Rocket.obj"));
 	this->type = ROCKET;
 
@@ -19,7 +22,10 @@ Rocket::Rocket(glm::vec3 *source, Vehicle *vehicle)
 	orient.z = 0;
 	orient.w = 1;
 
-	this->position = *source + glm::vec3(0, 40, 0);
+	this->yoff = 40;
+	this->yvelocity = 50;
+
+	this->position = *source + glm::vec3(0, yoff, 0);
 
 	this->boxDimensions = size;
 	this->updateTransform(position, orient);
@@ -28,6 +34,8 @@ Rocket::Rocket(glm::vec3 *source, Vehicle *vehicle)
 	this->model.SetRotation(glm::vec3(0));
 
 	this->addActorToTriggerWith(vehicle->chassis);
+
+	this->timeSinceLastEmit = 0;
 }
 
 Rocket::~Rocket()
@@ -62,7 +70,33 @@ bool Rocket::checkOnTrigger(PxTriggerPair* pairs, PxU32 count)
 
 void Rocket::Update(float elaspedMilliseconds)
 {
-	this->position = *source + glm::vec3(0, 40, 0);
+	if(rising && yoff > 500)
+	{
+		usePos = target;
+		rising = false;
+		this->model.SetRotation(glm::vec3(180, 0, 0));
+	}
+
+	this->position = *usePos + glm::vec3(0, yoff, 0);
 	this->model.SetPosition(this->position);
+
+	timeSinceLastEmit += elaspedMilliseconds;
+	if(timeSinceLastEmit > 50)
+	{
+		timeSinceLastEmit = 0;
+		glm::mat4 rot = glm::mat4_cast(orientation);
+		glm::vec4 pos = rot * glm::vec4(0, rising?-15.0f:15.0f, 0, 1.0f);
+		emitter.CreateSmoke(position + vec3(pos));
+	}
+
+	if(rising)
+	{
+		yoff += yvelocity * (elaspedMilliseconds / 1000.0f);
+		yvelocity += 10;
+	}
+	else
+	{
+		yoff -= 200 * (elaspedMilliseconds / 1000.0f);
+	}
 }
 

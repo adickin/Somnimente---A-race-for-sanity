@@ -19,5 +19,9 @@ protected:
 	StaticProp model;
 
 private:
-	glm::vec3 *source, *target;
+	glm::vec3 *source, *target, *usePos;
+	bool rising;
+	float yoff, yvelocity;
+	ParticleEmitter emitter;
+	float timeSinceLastEmit;
 };

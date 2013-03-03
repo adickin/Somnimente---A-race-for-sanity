@@ -91,7 +91,7 @@ void main()
 	vec4 texel = texture(textureMap, passTexCoord);
 	vec4 color = texel + passColor;
 	
-	float inShadow = 1.0f;
+	float inShadow = 1.0;
 
 	if(passShadowPos.w > 0.0)
 	{
