@@ -83,7 +83,7 @@ void LevelScreen::Enter()
 	for(unsigned int i = 0; i < level.powerups.size(); ++i)
 	{
 		TriggerManager::GetInstance()->addTriggerToManager (level.powerups[i]);
-		level.powerups[i]->addActorToTriggerWith(vehicle.chassis);
+		level.powerups[i]->addActorToTriggerWith(vehicle.chassis);	
 	}
 
 	VehicleAIEngine* ai = VehicleAIEngine::GetInstance();
@@ -233,7 +233,7 @@ bool LevelScreen::HandleEvents()
 
 void LevelScreen::Update(float elapsedMilliseconds)
 {
-	for(unsigned int i = 0; i < level.triggers.size(); ++i)
+	for(unsigned int i = 0; i < level.triggers.size();)
 	{
 		if (level.triggers[i]->hasTriggerBeenActivated())
 		{
@@ -243,6 +243,26 @@ void LevelScreen::Update(float elapsedMilliseconds)
 				//do finish line stuff.
 
 			}
+			else if(t == ROCKET)
+			{
+				//Create an explostin effect.
+
+				//apply a force to the car.
+
+				//damage the ai car.
+
+
+				delete level.triggers[i];
+				level.triggers.erase(level.triggers.begin() + i);
+			}
+			else
+			{
+				 ++i;
+			}
+		}
+		else
+		{
+			 ++i;
 		}
 	}
 	
