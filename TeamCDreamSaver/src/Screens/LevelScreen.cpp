@@ -245,12 +245,17 @@ void LevelScreen::Update(float elapsedMilliseconds)
 			}
 			else if(t == ROCKET)
 			{
-				//Create an explostin effect.
+				AIVehicle* v = VehicleAIEngine::GetInstance()->getAIVehicle();
+
+				//Create an explosion effect.
 
 				//apply a force to the car.
+				float x = (float)((float)(rand() / (float)RAND_MAX) - 0.5f) * 200.0f;
+				float z = (float)((float)(rand() / (float)RAND_MAX) - 0.5f) * 200.0f;
+				v->chassis->addForce(PxVec3(x, 0, z), PxForceMode::eIMPULSE);
 
 				//damage the ai car.
-
+				//VehicleAIEngine::GetInstance()->getAIVehicle()->
 
 				delete level.triggers[i];
 				level.triggers.erase(level.triggers.begin() + i);

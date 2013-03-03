@@ -54,5 +54,5 @@ private:
 
 	float awakeness;
 	float awakenessNormalizeSpeed;
-
+	ParticleEmitter emitter;
 };
