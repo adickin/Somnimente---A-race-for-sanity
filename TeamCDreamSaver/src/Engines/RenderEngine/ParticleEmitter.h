@@ -34,8 +34,9 @@ class ParticleEmitter: public IRenderable, public IAIThing
 public:
 	ParticleEmitter();
 	virtual ~ParticleEmitter(){RenderEngine::GetInstance()->RemoveRenderable(this);};
-
+	
 	void CreateSmoke(glm::vec3 pos);
+	void CreateExplosion(glm::vec3 pos);
 
 	void Update(float elapsedMilliseconds);
 	void Render();
@@ -43,7 +44,7 @@ public:
 	glm::vec3 *GetPosition();
 
 private:
-	void AddParticle(glm::vec3 pos, glm::vec3 speed, glm::vec3 grav, float life, float decay, float variance, bool incXneg, bool incYneg, bool incZneg, bool fade);
+	void AddParticle(glm::vec3 pos, glm::vec3 speed, glm::vec3 grav, float life, float decay, float variance, bool incXneg, bool incYneg, bool incZneg, bool fade, float scale);
 
 	std::vector<std::shared_ptr<ObjectMesh>> mesh;
 	Shader *shader;

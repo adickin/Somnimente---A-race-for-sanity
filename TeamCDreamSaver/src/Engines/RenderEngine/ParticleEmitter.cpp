@@ -136,7 +136,7 @@ void ParticleEmitter::Render()
 }
 
 
-void ParticleEmitter::AddParticle(glm::vec3 pos, glm::vec3 speed, glm::vec3 grav, float life, float decay, float variance, bool incXneg, bool incYneg, bool incZneg, bool fade)
+void ParticleEmitter::AddParticle(glm::vec3 pos, glm::vec3 speed, glm::vec3 grav, float life, float decay, float variance, bool incXneg, bool incYneg, bool incZneg, bool fade, float scale = 5.0f)
 {
 	float delta = ( ((float)rand()) / (float)RAND_MAX) * variance;
 	delta -= variance / 2.0f;
@@ -172,7 +172,7 @@ void ParticleEmitter::AddParticle(glm::vec3 pos, glm::vec3 speed, glm::vec3 grav
 				d,
 				fade);
 	float s = (((float)rand()) / (float)RAND_MAX) * 0.5f + 0.5f;
-	s *= 5.0f;
+	s *= scale;
 	p.scale = glm::scale(s, s, s);
 
 	particles.push_back(p);
@@ -204,6 +204,16 @@ void ParticleEmitter::CreateSmoke(glm::vec3 pos)
 	for(int i = 0; i < 7; ++i)
 	{
 		AddParticle(pos, glm::vec3(0.05f, 0.05f, 0.05f), glm::vec3(0), 2, 2, 2, true, false, true, true);
+	}
+}
+
+
+void ParticleEmitter::CreateExplosion(glm::vec3 pos)
+{
+	this->textureId = TextureManager::LoadTexture("Images/smoke2.png");
+	for(int i = 0; i < 20; ++i)
+	{
+		AddParticle(pos, glm::vec3(1.0f, 1.0f, 1.0f), glm::vec3(0), 2, 2, 2, true, true, true, true, 20.0f);
 	}
 }
 
