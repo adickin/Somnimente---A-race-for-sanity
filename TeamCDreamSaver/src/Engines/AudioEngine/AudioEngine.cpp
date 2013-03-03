@@ -98,7 +98,7 @@ void	AudioEngine::PlaySoundEffect(eSOUNDEFFECT SF)
 			break;
 	};
 
-	BASS_ChannelSetAttribute(Sf_Channel, BASS_ATTRIB_VOL, (Mute) ? 0.0 : 0.2f);
+	BASS_ChannelSetAttribute(Sf_Channel, BASS_ATTRIB_VOL, (Mute) ? 0.0f : 0.2f);
 	BASS_ChannelSetAttribute(Sf_Channel,BASS_ATTRIB_PAN,((rand()%201)-100)/100.f);
 	BASS_ChannelSetAttribute(Sf_Channel,BASS_ATTRIB_MUSIC_AMPLIFY, 22.0f);
 	BASS_ChannelPlay(Sf_Channel, FALSE);

@@ -57,6 +57,88 @@
       <Position x="500" y="0" z="12600"></Position>
       <Orientation x="0" y="00" z="0"></Orientation>
     </StaticProp>
+    
+    <Powerup>
+      <Type>Rocket</Type>
+      <Position x="0" y="10" z="2529"></Position>
+    </Powerup>
+    <Powerup>
+      <Type>Rocket</Type>
+      <Position x="0" y="50" z="6500"></Position>
+    </Powerup>
+    <Powerup>
+      <Type>Rocket</Type>
+      <Position x="-1722" y="10" z="7095"></Position>
+    </Powerup>
+    <Powerup>
+      <Type>Rocket</Type>
+      <Position x="-3348" y="10" z="10031"></Position>
+    </Powerup>
+    <Powerup>
+      <Type>Rocket</Type>
+      <Position x="-3570" y="10" z="12186"></Position>
+    </Powerup>
+    <Powerup>
+      <Type>Rocket</Type>
+      <Position x="-4500" y="10" z="14552"></Position>
+    </Powerup>
+    <Powerup>
+      <Type>Rocket</Type>
+      <Position x="809" y="10" z="15833"></Position>
+    </Powerup>
+    <Powerup>
+      <Type>Rocket</Type>
+      <Position x="2451" y="10" z="11093"></Position>
+    </Powerup>
+    <Powerup>
+      <Type>Rocket</Type>
+      <Position x="3431" y="10" z="10450"></Position>
+    </Powerup>
+    <Powerup>
+      <Type>Rocket</Type>
+      <Position x="3471" y="10" z="10450"></Position>
+    </Powerup>
+    <Powerup>
+      <Type>Rocket</Type>
+      <Position x="3511" y="10" z="10450"></Position>
+    </Powerup>
+    <Powerup>
+      <Type>Rocket</Type>
+      <Position x="3551" y="10" z="10450"></Position>
+    </Powerup>
+    <Powerup>
+      <Type>Rocket</Type>
+      <Position x="3591" y="10" z="10450"></Position>
+    </Powerup>
+    <Powerup>
+      <Type>Rocket</Type>
+      <Position x="3631" y="10" z="10450"></Position>
+    </Powerup>
+    <Powerup>
+      <Type>Rocket</Type>
+      <Position x="3671" y="10" z="10450"></Position>
+    </Powerup>
+    <Powerup>
+      <Type>Rocket</Type>
+      <Position x="3711" y="10" z="10450"></Position>
+    </Powerup>
+    <Powerup>
+      <Type>Rocket</Type>
+      <Position x="3751" y="10" z="10450"></Position>
+    </Powerup>
+    <Powerup>
+      <Type>Rocket</Type>
+      <Position x="3791" y="10" z="10450"></Position>
+    </Powerup>
+    <Powerup>
+      <Type>Rocket</Type>
+      <Position x="3831" y="10" z="10450"></Position>
+    </Powerup>
+    <Powerup>
+      <Type>Rocket</Type>
+      <Position x="3871" y="10" z="10450"></Position>
+    </Powerup>
+    
     <Powerup>
       <Type>SleepingPill</Type>
       <Position x="-50" y="10" z="750"></Position>

@@ -252,9 +252,13 @@ Powerup* LevelLoader::GetPowerup(rapidxml::xml_node<>* node)
 	{
 		prop = new SleepingPillPowerup(position);
 	}
-	if(type.compare("EnergyDrink") == 0)
+	else if(type.compare("EnergyDrink") == 0)
 	{
 		prop = new EnergyDrink(position);
+	}
+	else if(type.compare("Rocket") == 0)
+	{
+		prop = new RocketTrigger(position);
 	}
 
 	return prop;

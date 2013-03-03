@@ -5,7 +5,7 @@
 AIVehicle::AIVehicle(vec3 initialPosition, fquat initialOrient, vec3 boxDimensions)
 	:Vehicle(initialPosition, initialOrient, boxDimensions)
 {
-	vehicleHealth_ = 200.0f;
+	vehicleHealth_ = 100.0f;
 	carCurrentlyHit_ = false;
 
 	lastHitTimeInMs_ = (float)al_get_time() * 1000.0f;

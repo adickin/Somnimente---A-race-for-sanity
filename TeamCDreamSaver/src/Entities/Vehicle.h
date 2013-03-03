@@ -12,6 +12,7 @@
 #include <Engines\RenderEngine\ParticleEmitter.h>
 #include <Engines\AIEngine\IAIThing.h>
 #include <Engines\AudioEngine\AudioEngine.h>
+#include <Entities\StaticText.h>
 
 class Vehicle : public PhysicsObject, public IRenderable, public IAIThing
 {
@@ -43,9 +44,16 @@ public:
 
 	glm::vec3* GetPosition();
 
+	bool CanFire();
+	void AddRocket();
+
 private:
 	std::vector<std::shared_ptr<ObjectMesh>> mesh;
 	ParticleEmitter emitter;
 	float timeSinceLastEmit;
+
+	StaticText rocketCount;
+
+	int rockets;
 };
 
