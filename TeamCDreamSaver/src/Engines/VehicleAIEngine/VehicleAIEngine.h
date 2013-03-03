@@ -30,6 +30,11 @@ public:
 		//vehicleBeingControlled_ = veh;
 	}
 
+	AIVehicle* getAIVehicle()
+	{
+		return vehicleBeingControlled_;
+	}
+
 private:
 	VehicleAIEngine();
 	virtual ~VehicleAIEngine();
@@ -44,8 +49,8 @@ private:
 	void incrementCurrentWaypointIfVehicleHasPassedCurrentWaypoint(glm::vec3& currentVehicleDirection);
 	unsigned int pickANewRandomLane();
 	void incrementWaypoints();
-
 	AIVehicle* vehicleBeingControlled_;
+	
 	bool drivingBackwards_;
 	
 	vector<AIDrivingLane*> lanes_;

@@ -93,7 +93,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="AIVehicle.cpp" />
+    <ClCompile Include="src\Entities\AIVehicle.cpp" />
     <ClCompile Include="src\Engines\RenderEngine\LineGL3.cpp" />
     <ClCompile Include="src\Engines\VehicleAIEngine\AIDrivingLane.cpp" />
     <ClCompile Include="src\Entities\Obstacle.cpp" />
@@ -214,7 +214,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AIVehicle.h" />
+    <ClInclude Include="src\Entities\AIVehicle.h" />
     <ClInclude Include="src\Engines\RenderEngine\LineGL3.h" />
     <ClInclude Include="src\Engines\VehicleAIEngine\AIDrivingLane.h" />
     <ClInclude Include="src\Entities\Obstacle.h" />

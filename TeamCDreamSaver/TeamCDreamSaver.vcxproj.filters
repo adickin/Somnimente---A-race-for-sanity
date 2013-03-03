@@ -235,7 +235,7 @@
     <ClCompile Include="src\Engines\VehicleAIEngine\AIDrivingLane.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="AIVehicle.cpp">
+    <ClCompile Include="src\Entities\AIVehicle.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\Entities\Triggers\Rocket.cpp">
@@ -527,7 +527,7 @@
     <ClInclude Include="src\Engines\VehicleAIEngine\WaypointInterpreter.h">
       <Filter>Header Files\Utilities</Filter>
     </ClInclude>
-    <ClInclude Include="AIVehicle.h">
+    <ClInclude Include="src\Entities\AIVehicle.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\Entities\Triggers\Rocket.h">

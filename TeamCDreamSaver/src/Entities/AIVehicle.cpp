@@ -32,7 +32,7 @@ bool AIVehicle::isVehicleStillAlive()
 	PxU32 bufferSize = 256;
 	PxShape* hitBuffer[256];
 
-	PxBoxGeometry box(10, 10, 10);
+	PxBoxGeometry box(28/2, 24/2, 58/2);
 
 	PxI32 numHits = PhysicsEngine::GetInstance()->computeOverlapSceneQuery(box
 									, pose, bufferSize, hitBuffer);
@@ -43,7 +43,18 @@ bool AIVehicle::isVehicleStillAlive()
 		{
 			PxShape* collisionShape = hitBuffer[i];
 
-			//PxU32 numberOfShapes = ac
+			PxU32 numberOfShapes = actorsToCollideWith_[actors]->getNbShapes();
+
+			PxShape** shapes = new PxShape*[numberOfShapes];
+			actorsToCollideWith_[actors]->getShapes(shapes, numberOfShapes);
+
+			for(int j = 0; j < numberOfShapes; j++)
+			{
+				if(shapes[j] == collisionShape)
+				{
+					printf("car on car detected\n");
+				}
+			}
 		}
 	}
 
