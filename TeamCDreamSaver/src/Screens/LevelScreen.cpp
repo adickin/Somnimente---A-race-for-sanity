@@ -252,6 +252,7 @@ void LevelScreen::Update(float elapsedMilliseconds)
 			{
 				//do finish line stuff.
 				al_start_timer(endLevelTimer_);
+				i++;
 			}
 			else if(t == ROCKET)
 			{
