@@ -3,6 +3,7 @@
 #include "Vehicle.h"
 #include <vector>
 #include <PxRigidDynamic.h>
+#include "StaticText.h"
 
 #include <Engines\PhysicsEngine\PhysicsEngine.h>
 
@@ -16,6 +17,7 @@ public:
 
 	bool isVehicleStillAlive();
 	void addActorToDetectCollisionsWith(PxRigidDynamic* actor);
+	void updateVehicleHealthText();
 
 private:
 	float vehicleHealth_;
@@ -23,5 +25,6 @@ private:
 	bool carCurrentlyHit_;
 
 	float lastHitTimeInMs_;
+	StaticText vehicleHealthText_;
 };
 

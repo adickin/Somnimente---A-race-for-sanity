@@ -1,4 +1,5 @@
 #include "AIVehicle.h"
+#include <sstream>
 
 
 AIVehicle::AIVehicle(vec3 initialPosition, fquat initialOrient, vec3 boxDimensions)
@@ -6,12 +7,25 @@ AIVehicle::AIVehicle(vec3 initialPosition, fquat initialOrient, vec3 boxDimensio
 {
 	vehicleHealth_ = 200.0f;
 	carCurrentlyHit_ = false;
+
 	lastHitTimeInMs_ = (float)al_get_time() * 1000.0f;
+	updateVehicleHealthText();
 }
 
 
 AIVehicle::~AIVehicle(void)
 {
+}
+
+void AIVehicle::updateVehicleHealthText()
+{
+	ostringstream buffer;
+	buffer << vehicleHealth_;
+	string str = buffer.str();
+
+	string vehHealth = "Vehicle Health: ";
+	vehHealth.append(str);
+	vehicleHealthText_.Initialize(vehHealth, vec3(-0.1, 0.8, 0), 0.2);
 }
 
 void AIVehicle::addActorToDetectCollisionsWith(PxRigidDynamic* actor)
@@ -60,11 +74,13 @@ bool AIVehicle::isVehicleStillAlive()
 						vehicleHealth_ -= 25.0f;
 						carCurrentlyHit_ = true;
 						hitTime = (float)al_get_time() * 1000.0f;
+						updateVehicleHealthText();
 					}
 					else
 					{
 						hitTime = (float)al_get_time() * 1000.0f;
 						vehicleHealth_ -= 0.1;
+						updateVehicleHealthText();
 					}
 				}
 			}
