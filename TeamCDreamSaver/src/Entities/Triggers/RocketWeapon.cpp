@@ -1,6 +1,6 @@
-#include "Rocket.h"
+#include "RocketWeapon.h"
 
-Rocket::Rocket(glm::vec3 *source, Vehicle *vehicle)
+RocketWeapon::RocketWeapon(glm::vec3 *source, Vehicle *vehicle)
 	: I_Trigger(), IAIThing()
 {
 	this->source = source;
@@ -38,13 +38,13 @@ Rocket::Rocket(glm::vec3 *source, Vehicle *vehicle)
 	this->timeSinceLastEmit = 0;
 }
 
-Rocket::~Rocket()
+RocketWeapon::~RocketWeapon()
 {
 
 
 }
 
-bool Rocket::checkOnTrigger(PxTriggerPair* pairs, PxU32 count)
+bool RocketWeapon::checkOnTrigger(PxTriggerPair* pairs, PxU32 count)
 {
 	for(PxU32 pairsIndex=0; pairsIndex < count; pairsIndex++)
 	{
@@ -55,12 +55,14 @@ bool Rocket::checkOnTrigger(PxTriggerPair* pairs, PxU32 count)
 		}
 		for(unsigned int actorIndex = 0; actorIndex < actorsToTriggerWith_.size(); actorIndex++)
 		{
-			if(( &pairs[pairsIndex].otherShape->getActor() == actorsToTriggerWith_[actorIndex]) &&
-				(&pairs[pairsIndex].triggerShape->getActor() == triggerActor_))
+			if (&pairs[pairsIndex].triggerShape->getActor() == triggerActor_)
 			{
-				triggered_ = true;
-				std::cout<<"Rocket Hit its target!!! Hopefully."<<std::endl;
-				return true;
+				if( &pairs[pairsIndex].otherShape->getActor() == actorsToTriggerWith_[actorIndex]) 
+				{
+					triggered_ = true;
+					std::cout<<"Rocket Hit its target!!! Hopefully."<<std::endl;
+					return true;
+				}
 			}
 		}
 	}
@@ -68,7 +70,7 @@ bool Rocket::checkOnTrigger(PxTriggerPair* pairs, PxU32 count)
 }
 
 
-void Rocket::Update(float elaspedMilliseconds)
+void RocketWeapon::Update(float elaspedMilliseconds)
 {
 	if(rising && yoff > 500)
 	{
@@ -79,7 +81,17 @@ void Rocket::Update(float elaspedMilliseconds)
 
 	this->position = *usePos + glm::vec3(0, yoff, 0);
 	this->model.SetPosition(this->position);
-	this->updateTransform(this->position, orientation);
+	PxTransform pose;
+	pose.p.x = this->position.x;
+	pose.p.y = this->position.y;
+	pose.p.z = this->position.z;
+
+	pose.q.x = this->orientation.x;
+	pose.q.y = this->orientation.y;
+	pose.q.z = this->orientation.z;
+	pose.q.w = this->orientation.w;
+
+	triggerActor()->setGlobalPose(pose);
 
 	timeSinceLastEmit += elaspedMilliseconds;
 	if(timeSinceLastEmit > 50)
@@ -97,7 +109,7 @@ void Rocket::Update(float elaspedMilliseconds)
 	}
 	else
 	{
-		yoff -= 200 * (elaspedMilliseconds / 1000.0f);
+		yoff -= 250 * (elaspedMilliseconds / 1000.0f);
 	}
 }
 
