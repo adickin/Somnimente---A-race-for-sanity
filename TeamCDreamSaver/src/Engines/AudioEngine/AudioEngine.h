@@ -16,7 +16,8 @@ enum	eSOUNDEFFECT
 	GAMEWON				= 7,
 	MENUSELECTION		= 8,
 	ENTER_MENU			= 9,
-	MAXSFCOUNT			= 10,
+	NUKELAUNCH			= 10,
+	MAXSFCOUNT
 };
 
 enum	eTRACKLEVEL
@@ -32,39 +33,39 @@ enum	eTRACKLEVEL
 
 class	AudioEngine
 {
-	public:
-		bool	Initialize();
-		bool	LoadAudioSample();
-		void	PlayBg_Audio(eTRACKLEVEL BG);
-		void	PlaySoundEffect(eSOUNDEFFECT);
-		void	PlayBg_racingAudio();
-		void	PauseBackground();
-		void	ResumeBackground();
-		void	Mute_UnMuteAll();
+public:
+	bool	Initialize();
+	bool	LoadAudioSample();
+	void	PlayBg_Audio(eTRACKLEVEL BG);
+	void	PlaySoundEffect(eSOUNDEFFECT);
+	void	PlayBg_racingAudio();
+	void	PauseBackground();
+	void	ResumeBackground();
+	void	Mute_UnMuteAll();
 
-		static	AudioEngine* GetInstance()
+	static	AudioEngine* GetInstance()
+	{
+		if(Instance == nullptr)
 		{
-			if(Instance == nullptr)
-			{
-				Instance = new AudioEngine();
-			}
-
-			return Instance;
+			Instance = new AudioEngine();
 		}
-	protected:
-		AudioEngine();
-		~AudioEngine();
 
-	private:
-		static	AudioEngine* Instance;
+		return Instance;
+	}
+protected:
+	AudioEngine();
+	~AudioEngine();
 
-		HSAMPLE		Audio_bg[MAXBGCOUNT];
-		HSAMPLE		Audio_sf[MAXSFCOUNT+1];
-		HCHANNEL	Bg_Channel;
-		HCHANNEL	Sf_Channel;
+private:
+	static	AudioEngine* Instance;
 
-		bool	Mute;
-		float	MasterVolume;
+	HSAMPLE		Audio_bg[MAXBGCOUNT];
+	HSAMPLE		Audio_sf[MAXSFCOUNT+1];
+	HCHANNEL	Bg_Channel;
+	HCHANNEL	Sf_Channel;
+
+	bool	Mute;
+	float	MasterVolume;
 };
 
 #endif

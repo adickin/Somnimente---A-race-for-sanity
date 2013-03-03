@@ -50,6 +50,7 @@ private:
 	unsigned int pickANewRandomLane();
 	void incrementWaypoints();
 	AIVehicle* vehicleBeingControlled_;
+	bool isVehicleAlive_;
 	
 	bool drivingBackwards_;
 	

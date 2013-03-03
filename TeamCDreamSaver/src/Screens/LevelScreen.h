@@ -56,5 +56,6 @@ private:
 	float awakenessNormalizeSpeed;
 
 	ALLEGRO_TIMER* endLevelTimer_;
+	StaticText endGameConditionText_;
 	ParticleEmitter emitter;
 };

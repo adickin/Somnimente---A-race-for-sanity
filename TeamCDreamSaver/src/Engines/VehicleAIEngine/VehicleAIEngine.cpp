@@ -14,6 +14,7 @@ VehicleAIEngine::VehicleAIEngine(void)
 	centerLaneWriter_ = NULL;
 
 	lineDrawer_.Clear();
+	isVehicleAlive_ = true;
 }
 
 
@@ -125,7 +126,7 @@ void VehicleAIEngine::writeWaypointToFile(glm::vec3 waypoint)
 
 void VehicleAIEngine::updateDrivingActions(float elapsedMilliseconds)
 {
-	if(lanes_.size() > 0 && vehicleBeingControlled_)
+	if(lanes_.size() > 0 && vehicleBeingControlled_ && isVehicleAlive_)
 	{
 		if(currentLane_ == -1)
 		{
@@ -135,7 +136,7 @@ void VehicleAIEngine::updateDrivingActions(float elapsedMilliseconds)
 		vehicleBeingControlled_->Turn(turnValue);
 		determineAcceleration(turnValue);
 
-		bool alive = vehicleBeingControlled_->isVehicleStillAlive();
+		isVehicleAlive_ = vehicleBeingControlled_->isVehicleStillAlive();
 	}
 }
 

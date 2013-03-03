@@ -235,6 +235,7 @@ bool LevelScreen::HandleEvents()
 			RocketWeapon *r = new RocketWeapon(&this->vehicle.position, VehicleAIEngine::GetInstance()->getAIVehicle());
 			TriggerManager::GetInstance()->addTriggerToManager(r);
 			level.triggers.push_back(r);
+			AudioEngine::GetInstance()->PlaySoundEffect(NUKELAUNCH);
 		}
 	}
 
@@ -354,6 +355,11 @@ void LevelScreen::Update(float elapsedMilliseconds)
 	AIEngine::GetInstance()->Update(elapsedMilliseconds);
 	VehicleAIEngine::GetInstance()->updateDrivingActions(elapsedMilliseconds);
 
+	if(!VehicleAIEngine::GetInstance()->getAIVehicle()->isVehicleStillAlive())
+	{
+		al_start_timer(endLevelTimer_);
+		endGameConditionText_.Initialize("Dream Invader Vanquished", vec3(-0.7,0,0), 0.5);
+	}
 
 	//END THE LEVEL
 	int64_t timerCount = al_get_timer_count(endLevelTimer_);
