@@ -14,7 +14,8 @@ enum TRIGGER_TYPE
 {
 	SLEEPING_PILL,
 	FINISH_LINE,
-	ENERGY_DRINK
+	ENERGY_DRINK,
+	ROCKET
 };
 
 class I_Trigger : public PhysicsObject

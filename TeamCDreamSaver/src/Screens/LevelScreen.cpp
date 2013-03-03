@@ -166,7 +166,7 @@ bool LevelScreen::HandleEvents()
 	
 	if(InputEngine::GetInstance()->IsKeyDown(ALLEGRO_KEY_SPACE))
 	{
-		Rocket *r = new Rocket(&this->vehicle.position, VehicleAIEngine::GetInstance()->vehicleBeingControlled_);
+		Rocket *r = new Rocket(&this->vehicle.position, VehicleAIEngine::GetInstance()->getAIVehicle());
 		level.triggers.push_back(r);
 	}
 
