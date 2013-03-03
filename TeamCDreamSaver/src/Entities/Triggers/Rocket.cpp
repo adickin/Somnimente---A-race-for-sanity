@@ -12,9 +12,9 @@ Rocket::Rocket(glm::vec3 *source, Vehicle *vehicle)
 	this->type = ROCKET;
 
 	vec3 size;
-	size.x = 20;
-	size.y = 20;
-	size.z = 20;
+	size.x = 10;
+	size.y = 30;
+	size.z = 10;
 
 	fquat orient;
 	orient.x = 0;
@@ -22,13 +22,13 @@ Rocket::Rocket(glm::vec3 *source, Vehicle *vehicle)
 	orient.z = 0;
 	orient.w = 1;
 
-	this->yoff = 40;
-	this->yvelocity = 50;
-
 	this->position = *source + glm::vec3(0, yoff, 0);
 
 	this->boxDimensions = size;
-	this->updateTransform(position, orient);
+	this->updateTransform(this->position, orient);
+	
+	this->yoff = 40;
+	this->yvelocity = 50;
 
 	this->model.SetPosition(position);
 	this->model.SetRotation(glm::vec3(0));
@@ -79,6 +79,7 @@ void Rocket::Update(float elaspedMilliseconds)
 
 	this->position = *usePos + glm::vec3(0, yoff, 0);
 	this->model.SetPosition(this->position);
+	this->updateTransform(this->position, orientation);
 
 	timeSinceLastEmit += elaspedMilliseconds;
 	if(timeSinceLastEmit > 50)
