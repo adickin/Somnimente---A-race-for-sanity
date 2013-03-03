@@ -93,9 +93,18 @@ void LevelScreen::Enter()
 	ai->addWaypointFileForAI("src//Engines//VehicleAIEngine//level1LeftLaneWaypointFile.txt");
 	ai->addWaypointFileForAI("src//Engines//VehicleAIEngine//level1RightLaneWaypointFile.txt");
 	ai->getAIVehicle()->addActorToDetectCollisionsWith(vehicle.chassis);
-	//ai->activateWriterMode(true);
-	//ai->changeVehicleToWorkOn(&vehicle);
 	
+	for(unsigned int i = 0; i < level.triggers.size(); i++)
+	{
+		TRIGGER_TYPE t = level.triggers[i]->GetType();
+		if (t == FINISH_LINE)
+		{
+			level.triggers[i]->addActorToTriggerWith(ai->getAIVehicle()->chassis);
+			FinishTrigger* trigger = (FinishTrigger*) level.triggers[i];
+			trigger->setAiVehicleActor(ai->getAIVehicle()->chassis);
+		}
+	}
+
 	//This is just to preload the rocket model.
 	ModelManager::LoadMeshs("Models/Powerup/Rocket.obj");
 }

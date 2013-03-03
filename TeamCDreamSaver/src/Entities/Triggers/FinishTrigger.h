@@ -11,7 +11,12 @@ public:
 	virtual ~FinishTrigger();
 
 	virtual bool checkOnTrigger(PxTriggerPair* pairs, PxU32 count);
+	void setAiVehicleActor(PxRigidDynamic* aiActor);
+
+	void checkAIWinCondition();
+	void checkPlayerWinCondition();
 
 private:
 	StaticText message;
+	PxRigidDynamic* aiVehicle_;
 };
