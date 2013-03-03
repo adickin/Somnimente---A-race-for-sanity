@@ -31,6 +31,8 @@ bool	AudioEngine::LoadAudioSample()
 	SFSample[SLEEPINGPILL] = BASS_SampleLoad(FALSE, "Audio\\SleepingPill.mp3", 0, 0, 3, BASS_SAMPLE_MONO);
 	SFSample[GAMEWON] = BASS_SampleLoad(FALSE, "Audio\\FinishLineTrigger.wav", 0, 0, 3, BASS_SAMPLE_MONO);
 	SFSample[CRASH] = BASS_SampleLoad(FALSE, "Audio\\Car2Car_Crash.wav", 0, 0, 3, BASS_SAMPLE_MONO);
+	SFSample[ENTER_MENU] = BASS_SampleLoad(FALSE, "Audio\\SelectedMenu.mp3", 0, 0, 3, BASS_SAMPLE_MONO);
+	SFSample[MENUSELECTION] = BASS_SampleLoad(FALSE, "Audio\\ChooseMenu.wav", 0, 0, 3, BASS_SAMPLE_MONO);
 
 	for(int i = 0; i < MAXBGCOUNT; i++)
 	{
@@ -88,11 +90,17 @@ void	AudioEngine::PlaySoundEffect(eSOUNDEFFECT SF)
 		case SLEEPINGPILL:
 			Sf_Channel = BASS_SampleGetChannel(Audio_sf[SLEEPINGPILL], TRUE);
 			break;
+		case MENUSELECTION:
+			Sf_Channel = BASS_SampleGetChannel(Audio_sf[MENUSELECTION], TRUE);
+			break;
+		case ENTER_MENU:
+			Sf_Channel = BASS_SampleGetChannel(Audio_sf[ENTER_MENU], TRUE);
+			break;
 	};
 
-	BASS_ChannelSetAttribute(Sf_Channel, BASS_ATTRIB_VOL, (Mute) ? 0 : 0.4f);
+	BASS_ChannelSetAttribute(Sf_Channel, BASS_ATTRIB_VOL, (Mute) ? 0.0 : 0.2f);
 	BASS_ChannelSetAttribute(Sf_Channel,BASS_ATTRIB_PAN,((rand()%201)-100)/100.f);
-	BASS_ChannelSetAttribute(Sf_Channel,BASS_ATTRIB_MUSIC_AMPLIFY, 85.5f);
+	BASS_ChannelSetAttribute(Sf_Channel,BASS_ATTRIB_MUSIC_AMPLIFY, 22.0f);
 	BASS_ChannelPlay(Sf_Channel, FALSE);
 
 	return;

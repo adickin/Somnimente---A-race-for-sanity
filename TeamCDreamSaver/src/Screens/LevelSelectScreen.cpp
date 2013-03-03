@@ -141,6 +141,7 @@ bool LevelSelectScreen::HandleEvents()
 		downKeyHeld = true;
 		currentSelection++;
 		currentSelection %= numSelections;
+		AudioEngine::GetInstance()->PlaySoundEffect(eSOUNDEFFECT::MENUSELECTION);
 	}
 	else if(!inputEngine->isDownkeyPressed()) 
 	{
@@ -153,6 +154,7 @@ bool LevelSelectScreen::HandleEvents()
 		upKeyHeld = true;
 		currentSelection--;
 		currentSelection = (currentSelection + numSelections) % numSelections;
+		AudioEngine::GetInstance()->PlaySoundEffect(eSOUNDEFFECT::MENUSELECTION);
 	}
 	else if(!inputEngine->isUpkeyPressed())
 	{
@@ -179,6 +181,8 @@ bool LevelSelectScreen::HandleEvents()
 
 	if(inputEngine->IsActionTriggered(ACCEPT))
 	{
+		AudioEngine::GetInstance()->PlaySoundEffect(eSOUNDEFFECT::ENTER_MENU);
+
 		if(currentSelection == numSelections - 1)
 		{
 			this->SetScreen(new MenuScreen(manager));

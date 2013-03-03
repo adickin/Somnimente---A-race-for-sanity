@@ -1,4 +1,5 @@
 #include "MenuScreen.h"
+#include "..\Engines\AudioEngine\AudioEngine.h"
 
 
 MenuScreen::MenuScreen(ScreenManager* manager)
@@ -57,6 +58,7 @@ bool MenuScreen::HandleEvents()
 		downKeyHeld = true;
 		currentSelection++;
 		currentSelection %= numSelections;
+		AudioEngine::GetInstance()->PlaySoundEffect(eSOUNDEFFECT::MENUSELECTION);
 	}
 	else if(!inputEngine->isDownkeyPressed()) 
 	{
@@ -68,6 +70,7 @@ bool MenuScreen::HandleEvents()
 		upKeyHeld = true;
 		currentSelection--;
 		currentSelection = (currentSelection + numSelections) % numSelections;
+		AudioEngine::GetInstance()->PlaySoundEffect(eSOUNDEFFECT::MENUSELECTION);
 	}
 	else if(!inputEngine->isUpkeyPressed())
 	{
@@ -76,6 +79,8 @@ bool MenuScreen::HandleEvents()
 
 	if(inputEngine->IsActionTriggered(ACCEPT))
 	{
+		AudioEngine::GetInstance()->PlaySoundEffect(eSOUNDEFFECT::ENTER_MENU);
+
 		switch(currentSelection)
 		{
 		case 0: //Play game

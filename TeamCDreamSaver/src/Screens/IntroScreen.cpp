@@ -1,5 +1,6 @@
 
 #include "IntroScreen.h"
+#include "..\Engines\AudioEngine\AudioEngine.h"
 
 
 IntroScreen::IntroScreen(ScreenManager* manager)
@@ -44,6 +45,7 @@ bool IntroScreen::HandleEvents()
 	if(inputEngine->IsActionTriggered(ACCEPT))
 	{
 		this->SetScreen(new MenuScreen(this->manager));
+		AudioEngine::GetInstance()->PlaySoundEffect(eSOUNDEFFECT::ENTER_MENU);
 	}
 
 	return true;
