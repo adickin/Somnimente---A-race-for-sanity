@@ -238,7 +238,7 @@
     <ClCompile Include="src\Entities\AIVehicle.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Entities\Triggers\Rocket.cpp">
+    <ClCompile Include="src\Entities\Triggers\RocketWeapon.cpp">
       <Filter>Source Files\Entities\Triggers</Filter>
     </ClCompile>
   </ItemGroup>
@@ -530,7 +530,7 @@
     <ClInclude Include="src\Entities\AIVehicle.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Entities\Triggers\Rocket.h">
+    <ClInclude Include="src\Entities\Triggers\RocketWeapon.h">
       <Filter>Header Files\Entities\Triggers</Filter>
     </ClInclude>
   </ItemGroup>

@@ -18,7 +18,7 @@
 #include <Entities\Triggers\SleepingPillPowerup.h>
 #include <Utilities\LevelLoader.h>
 #include <Entities\RoadBlockObstacle.h>
-#include <Entities\Triggers\Rocket.h>
+#include <Entities\Triggers\RocketWeapon.h>
 #include <Utilities\VarLoader.h>
 #include <LineGL3.h>
 
@@ -54,5 +54,5 @@ private:
 
 	float awakeness;
 	float awakenessNormalizeSpeed;
-
+	ParticleEmitter emitter;
 };

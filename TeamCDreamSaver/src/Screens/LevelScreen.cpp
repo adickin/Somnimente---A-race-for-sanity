@@ -166,7 +166,7 @@ bool LevelScreen::HandleEvents()
 	
 	if(InputEngine::GetInstance()->IsKeyDown(ALLEGRO_KEY_SPACE))
 	{
-		Rocket *r = new Rocket(&this->vehicle.position, VehicleAIEngine::GetInstance()->getAIVehicle());
+		RocketWeapon *r = new RocketWeapon(&this->vehicle.position, VehicleAIEngine::GetInstance()->getAIVehicle());
 		TriggerManager::GetInstance()->addTriggerToManager(r);
 		level.triggers.push_back(r);
 	}
@@ -245,12 +245,18 @@ void LevelScreen::Update(float elapsedMilliseconds)
 			}
 			else if(t == ROCKET)
 			{
-				//Create an explostin effect.
+				AIVehicle* v = VehicleAIEngine::GetInstance()->getAIVehicle();
+
+				//Create an explosion effect.
+				emitter.CreateExplosion(*level.triggers[i]->getPosition());
 
 				//apply a force to the car.
+				float x = (float)((float)(rand() / (float)RAND_MAX) - 0.5f) * 50000.0f;
+				float z = (float)((float)(rand() / (float)RAND_MAX) - 0.5f) * 50000.0f;
+				v->chassis->addForce(PxVec3(x, 0, z), PxForceMode::eACCELERATION);
 
 				//damage the ai car.
-
+				v->applyDamageToCar(25.0f);
 
 				delete level.triggers[i];
 				level.triggers.erase(level.triggers.begin() + i);
