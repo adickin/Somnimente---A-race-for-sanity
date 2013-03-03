@@ -1,3 +1,14 @@
+
+#################
+## PROJECT SPECIFIC SETTINGS
+#################
+
+TeamCDreamSaver/allegro.log
+TeamCDreamSaver/assimp_log.txt
+
+TeamCDreamSaver/Debug
+TeamCDreamSaver/Release
+
 #################
 ## Eclipse
 #################
@@ -48,7 +59,8 @@ local.properties
 *_p.c
 *.ilk
 *.meta
-*.obj
+PUT BACK IN IF WE HAVE ALOT OF .OBJ FILES PUSHED UP
+#*.obj
 *.pch
 *.pdb
 *.pgc
