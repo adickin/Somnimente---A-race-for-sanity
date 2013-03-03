@@ -25,7 +25,7 @@ void AIVehicle::updateVehicleHealthText()
 
 	string vehHealth = "Vehicle Health: ";
 	vehHealth.append(str);
-	vehicleHealthText_.Initialize(vehHealth, vec3(-0.1, 0.8, 0), 0.2);
+	vehicleHealthText_.Initialize(vehHealth, vec3(-0.2, 0.8, 0), 0.2);
 }
 
 void AIVehicle::applyDamageToCar(float damageApplied)
@@ -81,12 +81,14 @@ bool AIVehicle::isVehicleStillAlive()
 						carCurrentlyHit_ = true;
 						hitTime = (float)al_get_time() * 1000.0f;
 						updateVehicleHealthText();
+						PlayCrashSF(true);
 					}
 					else
 					{
 						hitTime = (float)al_get_time() * 1000.0f;
 						vehicleHealth_ -= 0.1;
 						updateVehicleHealthText();
+						PlayCrashSF(true);
 					}
 				}
 			}

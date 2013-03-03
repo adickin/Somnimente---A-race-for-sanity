@@ -45,6 +45,8 @@ FinishTrigger::FinishTrigger(glm::vec3 position)
 
 	this->boxDimensions = size;
 	this->updateTransform(position, orient);
+
+	this->type = FINISH_LINE;
 }
 
 

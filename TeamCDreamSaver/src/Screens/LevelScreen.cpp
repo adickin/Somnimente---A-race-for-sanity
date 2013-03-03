@@ -11,6 +11,7 @@ LevelScreen::LevelScreen(ScreenManager* manager, std::string levelFile)
 	this->levelFile = levelFile;
 	this->awakeness = 0;
 	this->awakenessNormalizeSpeed = 0.025f;
+	endLevelTimer_ = al_create_timer(0.01);
 }
 
 
@@ -192,23 +193,23 @@ bool LevelScreen::HandleEvents()
 
 	if(InputEngine::GetInstance()->IsKeyDown(ALLEGRO_KEY_U))
 	{
-		PxRigidBodyExt::addForceAtLocalPos(*vehicle.chassis, PxVec3(0.0f, 1000.0f,0.0f), PxVec3(0, 0, 0));
+		PxRigidBodyExt::addForceAtLocalPos(*vehicle.chassis, PxVec3(0.0f, 1000000.0f,0.0f), PxVec3(0, 0, 0));
 	}
 	if(InputEngine::GetInstance()->IsKeyDown(ALLEGRO_KEY_H))
 	{
-		PxRigidBodyExt::addForceAtLocalPos(*vehicle.chassis, PxVec3(1000.0f, 0.0f,0.0f), PxVec3(0, 0, 0));
+		PxRigidBodyExt::addForceAtLocalPos(*vehicle.chassis, PxVec3(1000000.0f, 0.0f,0.0f), PxVec3(0, 0, 0));
 	}
 	if(InputEngine::GetInstance()->IsKeyDown(ALLEGRO_KEY_K))
 	{
-		PxRigidBodyExt::addForceAtLocalPos(*vehicle.chassis, PxVec3(-1000.0f, 0.0f,0.0f), PxVec3(0, 0, 0));
+		PxRigidBodyExt::addForceAtLocalPos(*vehicle.chassis, PxVec3(-1000000.0f, 0.0f,0.0f), PxVec3(0, 0, 0));
 	}
 	if(InputEngine::GetInstance()->IsKeyDown(ALLEGRO_KEY_J))
 	{
-		PxRigidBodyExt::addLocalForceAtLocalPos(*vehicle.chassis, PxVec3(0.0f, -1000.0f,0.0f), PxVec3(0, 0, 0));
+		PxRigidBodyExt::addLocalForceAtLocalPos(*vehicle.chassis, PxVec3(0.0f, -1000000.0f,0.0f), PxVec3(0, 0, 0));
 	}
 	if(InputEngine::GetInstance()->IsKeyDown(ALLEGRO_KEY_I))
 	{
-		PxRigidBodyExt::addLocalForceAtLocalPos(*vehicle.chassis, PxVec3(0.0f, 0.0f,1000.0f), PxVec3(0, 0, 0));
+		PxRigidBodyExt::addLocalForceAtLocalPos(*vehicle.chassis, PxVec3(0.0f, 0.0f,1000000.0f), PxVec3(0, 0, 0));
 	}
 
 	if(InputEngine::GetInstance()->IsKeyDown(ALLEGRO_KEY_O))
@@ -241,7 +242,7 @@ void LevelScreen::Update(float elapsedMilliseconds)
 			if (t == FINISH_LINE)
 			{
 				//do finish line stuff.
-
+				al_start_timer(endLevelTimer_);
 			}
 			else if(t == ROCKET)
 			{
@@ -327,6 +328,15 @@ void LevelScreen::Update(float elapsedMilliseconds)
 
 	AIEngine::GetInstance()->Update(elapsedMilliseconds);
 	VehicleAIEngine::GetInstance()->updateDrivingActions(elapsedMilliseconds);
+
+
+	//END THE LEVEL
+	int64_t timerCount = al_get_timer_count(endLevelTimer_);
+
+	if(timerCount > 750.0)
+	{
+		this->SetScreen(new LevelSelectScreen(this->manager));
+	}
 }
 
 void LevelScreen::Render()

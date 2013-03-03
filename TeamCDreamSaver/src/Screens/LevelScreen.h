@@ -55,4 +55,6 @@ private:
 	float awakeness;
 	float awakenessNormalizeSpeed;
 
+	ALLEGRO_TIMER* endLevelTimer_;
+
 };
