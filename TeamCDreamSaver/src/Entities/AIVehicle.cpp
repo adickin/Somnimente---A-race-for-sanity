@@ -4,6 +4,9 @@
 AIVehicle::AIVehicle(vec3 initialPosition, fquat initialOrient, vec3 boxDimensions)
 	:Vehicle(initialPosition, initialOrient, boxDimensions)
 {
+	vehicleHealth_ = 200.0f;
+	carCurrentlyHit_ = false;
+	lastHitTimeInMs_ = (float)al_get_time() * 1000.0f;
 }
 
 
@@ -36,7 +39,7 @@ bool AIVehicle::isVehicleStillAlive()
 
 	PxI32 numHits = PhysicsEngine::GetInstance()->computeOverlapSceneQuery(box
 									, pose, bufferSize, hitBuffer);
-
+	float hitTime = -1.0f;
 	for(int i = 0; i < numHits; i++)
 	{
 		for(unsigned int actors = 0; actors < actorsToCollideWith_.size(); actors++)
@@ -52,11 +55,35 @@ bool AIVehicle::isVehicleStillAlive()
 			{
 				if(shapes[j] == collisionShape)
 				{
-					printf("car on car detected\n");
+					if(!carCurrentlyHit_)
+					{
+						vehicleHealth_ -= 25.0f;
+						carCurrentlyHit_ = true;
+						hitTime = (float)al_get_time() * 1000.0f;
+					}
+					else
+					{
+						hitTime = (float)al_get_time() * 1000.0f;
+						vehicleHealth_ -= 0.1;
+					}
 				}
 			}
 		}
 	}
 
+	if(hitTime > 0.0f)
+	{
+		float timeBetweenHits = hitTime - lastHitTimeInMs_;
+		if(timeBetweenHits > 3000.0f)
+		{
+			carCurrentlyHit_ = false;
+		}
+		lastHitTimeInMs_ = hitTime;
+	}
+
+	if(vehicleHealth_ > 0.0f)
+	{
+		return true;
+	}
 	return false;
 }
