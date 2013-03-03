@@ -18,6 +18,7 @@ public:
 	bool isVehicleStillAlive();
 	void addActorToDetectCollisionsWith(PxRigidDynamic* actor);
 	void updateVehicleHealthText();
+	void applyDamageToCar(float damageApplied);
 
 private:
 	float vehicleHealth_;
