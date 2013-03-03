@@ -34,6 +34,7 @@ bool	AudioEngine::LoadAudioSample()
 	SFSample[ENTER_MENU] = BASS_SampleLoad(FALSE, "Audio\\SelectedMenu.mp3", 0, 0, 3, BASS_SAMPLE_MONO);
 	SFSample[MENUSELECTION] = BASS_SampleLoad(FALSE, "Audio\\ChooseMenu.wav", 0, 0, 3, BASS_SAMPLE_MONO);
 	SFSample[NUKELAUNCH] = BASS_SampleLoad(FALSE, "Audio\\NUKELAUNC.wav", 0, 0, 3, BASS_SAMPLE_MONO);
+	SFSample[LOSEGAME] = BASS_SampleLoad(FALSE, "Audio\\AiWin.mp3", 0, 0, 3, BASS_SAMPLE_MONO);
 
 	for(int i = 0; i < MAXBGCOUNT; i++)
 	{
@@ -98,6 +99,9 @@ void	AudioEngine::PlaySoundEffect(eSOUNDEFFECT SF)
 		break;
 	case NUKELAUNCH:
 		Sf_Channel = BASS_SampleGetChannel(Audio_sf[NUKELAUNCH], TRUE);
+		break;
+	case LOSEGAME:
+		Sf_Channel = BASS_SampleGetChannel(Audio_sf[LOSEGAME], TRUE);
 		break;
 
 	};

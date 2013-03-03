@@ -76,18 +76,19 @@ bool FinishTrigger::checkOnTrigger(PxTriggerPair* pairs, PxU32 count)
 			if(( &pairs[pairsIndex].otherShape->getActor() == actorsToTriggerWith_[actorIndex]) &&
 				(&pairs[pairsIndex].triggerShape->getActor() == triggerActor_))
 			{
-				triggered_ = true;
-
-				if(actorsToTriggerWith_[actorIndex] == aiVehicle_)
+				if(actorsToTriggerWith_[actorIndex] == aiVehicle_ && !triggered_)
 				{
 					message.Initialize("Invasion Successful, You Lose!", glm::vec3(-0.95f, -0.0f, 0.0f), 0.5f);
+					AudioEngine::GetInstance()->PlaySoundEffect(eSOUNDEFFECT::LOSEGAME);
 				}
-				else
+				else if(!triggered_)
 				{
 					message.Initialize("Track Complete!!!", glm::vec3(-0.45f, -0.0f, 0.0f), 0.5f);
 					//UPDATE CODE
 					AudioEngine::GetInstance()->PlaySoundEffect(eSOUNDEFFECT::GAMEWON);
+					
 				}
+				triggered_ = true;
 				break;
 			}
 		}

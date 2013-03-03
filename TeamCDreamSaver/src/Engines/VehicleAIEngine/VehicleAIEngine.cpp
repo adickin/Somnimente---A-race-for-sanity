@@ -187,7 +187,7 @@ glm::vec3 VehicleAIEngine::getVectorFromVehicleToNextWaypoint()
 					destPoint->y - currentPosition->y,
 					destPoint->z - currentPosition->z);
 	
-	drawCurrentIntendedDirection(*currentPosition, *destPoint);
+	//drawCurrentIntendedDirection(*currentPosition, *destPoint);
 
 	desVector = glm::normalize(desVector);
 
