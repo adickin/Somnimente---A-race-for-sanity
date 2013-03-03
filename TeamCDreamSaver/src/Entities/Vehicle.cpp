@@ -136,6 +136,11 @@ void Vehicle::Update(float milliseconds)
 	}
 }
 
+void Vehicle::PlayCrashSF(bool isCarHit)
+{
+	(isCarHit) ? AudioEngine::GetInstance()->PlaySoundEffect(eSOUNDEFFECT::CRASH) : NULL;
+	return;
+}
 
 glm::vec3 *Vehicle::GetPosition()
 {
