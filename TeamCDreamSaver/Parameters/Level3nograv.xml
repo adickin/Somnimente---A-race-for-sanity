@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <Start x="0" y="0" z="0"></Start>
+  <Orientation x="0" y="0" z="0"></Orientation>
+  <Track>
+      <Piece path="Models/Tracks/Cabin/A.xml"></Piece>
+      <Piece path="Models/Tracks/Cabin/D.xml"></Piece>
+      <Piece path="Models/Tracks/Cabin/D.xml"></Piece>
+      <Piece path="Models/Tracks/Cabin/D.xml"></Piece>
+      <Piece path="Models/Tracks/Cabin/D.xml"></Piece>
+      <Piece path="Models/Tracks/Cabin/D.xml"></Piece>
+      <Piece path="Models/Tracks/Cabin/D.xml"></Piece>
+      <Piece path="Models/Tracks/Cabin/E.xml"></Piece>
+      <Piece path="Models/Tracks/Cabin/D.xml"></Piece>
+      <Piece path="Models/Tracks/Cabin/D.xml"></Piece>
+      <Piece path="Models/Tracks/Cabin/D.xml"></Piece>
+      <Piece path="Models/Tracks/Cabin/F.xml"></Piece>
+      <Piece path="Models/Tracks/Cabin/D.xml"></Piece>
+      <Piece path="Models/Tracks/Cabin/D.xml"></Piece>
+      <Piece path="Models/Tracks/Cabin/D.xml"></Piece>
+      <Piece path="Models/Tracks/Cabin/C.xml"></Piece>
+      <Piece path="Models/Tracks/Cabin/G.xml"></Piece>
+      <Piece path="Models/Tracks/Cabin/H.xml"></Piece>
+      <Piece path="Models/Tracks/Cabin/D.xml"></Piece>
+      <Piece path="Models/Tracks/Cabin/D.xml"></Piece>
+      <Piece path="Models/Tracks/Cabin/I.xml"></Piece>
+      <Piece path="Models/Tracks/Cabin/J.xml"></Piece>
+      <Piece path="Models/Tracks/Cabin/J.xml"></Piece>
+      <Piece path="Models/Tracks/Cabin/L.xml"></Piece>
+      <Piece path="Models/Tracks/Cabin/D.xml"></Piece>
+      <Piece path="Models/Tracks/Cabin/C.xml"></Piece>
+      <Piece path="Models/Tracks/Cabin/G.xml"></Piece>
+      <Piece path="Models/Tracks/Cabin/C.xml"></Piece>
+      <Piece path="Models/Tracks/Cabin/D.xml"></Piece>
+      <Piece path="Models/Tracks/Cabin/D.xml"></Piece>
+      <Piece path="Models/Tracks/Cabin/M.xml"></Piece>
+      <Piece path="Models/Tracks/Cabin/M.xml"></Piece>
+      <Piece path="Models/Tracks/Cabin/N.xml"></Piece>
+      <Piece path="Models/Tracks/Cabin/O.xml"></Piece>
+      <Piece path="Models/Tracks/Cabin/O.xml"></Piece>
+      <Piece path="Models/Tracks/Cabin/Q.xml"></Piece>
+      <Piece path="Models/Tracks/Cabin/D.xml"></Piece>
+      <Piece path="Models/Tracks/Cabin/D.xml"></Piece>
+      <Piece path="Models/Tracks/Cabin/D.xml"></Piece>
+      <Piece path="Models/Tracks/Cabin/C.xml"></Piece>
+      <Piece path="Models/Tracks/Cabin/R.xml"></Piece>
+      <Piece path="Models/Tracks/Cabin/D.xml"></Piece>
+      <Piece path="Models/Tracks/Cabin/D.xml"></Piece>
+      <Piece path="Models/Tracks/Cabin/D.xml"></Piece>
+      <Piece path="Models/Tracks/Cabin/D.xml"></Piece>
+      <Piece path="Models/Tracks/Cabin/P.xml"></Piece>
+      <Piece path="Models/Tracks/Cabin/K.xml"></Piece>
+      <Piece path="Models/Tracks/Cabin/P.xml"></Piece>
+      <Piece path="Models/Tracks/Cabin/D.xml"></Piece>
+      <Piece path="Models/Tracks/Cabin/S.xml"></Piece>
+      <Piece path="Models/Tracks/Cabin/D.xml"></Piece>
+      <Piece path="Models/Tracks/Cabin/D.xml"></Piece>
+      <Piece path="Models/Tracks/Cabin/T.xml"></Piece>
+      <Piece path="Models/Tracks/Cabin/D.xml"></Piece>
+      <Piece path="Models/Tracks/Cabin/D.xml"></Piece>
+      <Piece path="Models/Tracks/Cabin/U.xml"></Piece>
+      <Piece path="Models/Tracks/Cabin/C.xml"></Piece>
+      <Piece path="Models/Tracks/Cabin/G.xml"></Piece>
+      <Piece path="Models/Tracks/Cabin/D.xml"></Piece>
+      <Piece path="Models/Tracks/Cabin/V.xml"></Piece>
+      <Piece path="Models/Tracks/Cabin/D.xml"></Piece>
+      <Piece path="Models/Tracks/Cabin/D.xml"></Piece>
+      <Piece path="Models/Tracks/Cabin/E.xml"></Piece>
+      <Piece path="Models/Tracks/Cabin/W.xml"></Piece>
+      <Piece path="Models/Tracks/Cabin/D.xml"></Piece>
+      <Piece path="Models/Tracks/Cabin/D.xml"></Piece>
+      <Piece path="Models/Tracks/Cabin/D.xml"></Piece>
+      <Piece path="Models/Tracks/Cabin/E.xml"></Piece>
+      <Piece path="Models/Tracks/Cabin/C.xml"></Piece>
+      <Piece path="Models/Tracks/Cabin/D.xml"></Piece>
+      <Piece path="Models/Tracks/Cabin/P.xml"></Piece>
+      <Piece path="Models/Tracks/Cabin/X.xml"></Piece>
+      <Piece path="Models/Tracks/Cabin/E.xml"></Piece>
+      <Piece path="Models/Tracks/Cabin/D.xml"></Piece>
+      <Piece path="Models/Tracks/Cabin/D.xml"></Piece>
+      <Piece path="Models/Tracks/Cabin/D.xml"></Piece>
+      <Piece path="Models/Tracks/Cabin/Y.xml"></Piece>
+  </Track>
+  <Triggers>
+  </Triggers>
+  <Props>
+      <StaticProp>
+          <Path>Models/Scenes/3.1 window/2-1 window.obj</Path>
+          <Position x="0" y="0" z="-8000"></Position>
+          <Orientation x="0" y="0" z="0"></Orientation>
+      </StaticProp>
+      <StaticProp>
+          <Path>Models/Scenes/3.2 clock/2-2 clock.obj</Path>
+          <Position x="0" y="0" z="-7000"></Position>
+          <Orientation x="0" y="0" z="0"></Orientation>
+      </StaticProp>
+      <StaticProp>
+          <Path>Models/Scenes/3.3 desk/2-3 desk.obj</Path>
+          <Position x="0" y="0" z="-12600"></Position>
+          <Orientation x="0" y="00" z="0"></Orientation>
+      </StaticProp>
+  </Props>
+</root>
