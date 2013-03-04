@@ -379,14 +379,26 @@
     <None Include="Parameters\LevelSelectData.xml">
       <Filter>Parameters</Filter>
     </None>
-    <None Include="Level2.xml">
-      <Filter>Parameters</Filter>
-    </None>
     <None Include="Parameters\TuningVars.ini" />
     <None Include="src\Engines\VehicleAIEngine\vehicleLocations.txt" />
     <None Include="src\Engines\VehicleAIEngine\level1CenterLaneWaypointFile.txt" />
     <None Include="src\Engines\VehicleAIEngine\level1RightLaneWaypointFile.txt" />
     <None Include="src\Engines\VehicleAIEngine\level1LeftLaneWaypointFile.txt" />
+    <None Include="Parameters\Level2.xml">
+      <Filter>Parameters</Filter>
+    </None>
+    <None Include="Parameters\Level2nograv.xml">
+      <Filter>Parameters</Filter>
+    </None>
+    <None Include="Parameters\Level3.xml">
+      <Filter>Parameters</Filter>
+    </None>
+    <None Include="Parameters\Level3nograv.xml">
+      <Filter>Parameters</Filter>
+    </None>
+    <None Include="Parameters\Level4.xml">
+      <Filter>Parameters</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Engines\AIEngine\AIEngine.h">

@@ -26,7 +26,7 @@ struct Particle
 
 	void Update(float elapsedMilliseconds);
 
-	void SetMVMatrix(Shader *shader, glm::mat4 &viewMatrix);
+	void SetPosition(Shader *shader, glm::mat4 pos);
 };
 
 class ParticleEmitter: public IRenderable, public IAIThing

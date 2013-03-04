@@ -36,35 +36,15 @@ void Particle::Update(float elapsedMilliseconds)
 }
 
 
-void Particle::SetMVMatrix(Shader *shader, glm::mat4 &viewMatrix)
-{	
-	Camera *c = RenderEngine::GetInstance()->GetCamera();
-	glm::vec3 viewVec = c->position - position;
-	viewVec = glm::normalize(viewVec);
-	glm::vec3 right = glm::cross(glm::vec3(0.0f, 1.0f,0.0f), viewVec);
-	glm::vec3 up = glm::cross(viewVec, right);
+void Particle::SetPosition(Shader *shader, glm::mat4 pos)
+{			
+	pos[3][0] = position.x;
+	pos[3][1] = position.y;
+	pos[3][2] = position.z;
 
-	glm::mat4 mat(1);
-	mat[0][0] = right.x;
-	mat[0][1] = right.y;
-	mat[0][2] = right.z;
-
-	mat[1][0] = up.x;
-	mat[1][1] = up.y;
-	mat[1][2] = up.z;
-
-	mat[2][0] = viewVec.x;
-	mat[2][1] = viewVec.y;
-	mat[2][2] = viewVec.z;
-		
-	mat[3][0] = position.x;
-	mat[3][1] = position.y;
-	mat[3][2] = position.z;
-
-
-	glm::mat4 mvMatrix = viewMatrix * mat * scale;
+	pos = pos * scale;
 	
- 	glUniformMatrix4fv(shader->Uniform(MODELVIEW_MATRIX), 1, false, &mvMatrix[0][0]);
+ 	glUniformMatrix4fv(shader->Uniform(MODEL_MATRIX), 1, false, &pos[0][0]);
 	glUniform1f(shader->Uniform(ALPHA), alpha);
 }
 
@@ -106,7 +86,7 @@ void ParticleEmitter::Render()
 	
 	RenderInfo *info = RenderEngine::GetInstance()->GetRenderInfo();
 
-	if(info->camera != 0)
+	if(info->camera != 0 && particles.size() > 0)
 	{
 		c = info->camera;
 		std::sort(particles.begin(), particles.end(), comparator); 
@@ -117,14 +97,30 @@ void ParticleEmitter::Render()
 		shader->Bind();
 	
 		glUniformMatrix4fv(shader->Uniform(PROJECTION_MATRIX), 1, false, &projection[0][0]);
+		glUniformMatrix4fv(shader->Uniform(VIEW_MATRIX), 1, false, &viewMatrix[0][0]);
 	
 		glUniform1i(shader->Uniform(RENDERED_TEXTURE), 0);
 		glActiveTexture(GL_TEXTURE0);
 		glBindTexture(GL_TEXTURE_2D, this->textureId);
 
+		Camera *c = RenderEngine::GetInstance()->GetCamera();
+		glm::vec3 viewVec = c->position - particles[0].position;
+		viewVec = glm::normalize(viewVec);
+		glm::vec3 right = glm::cross(glm::vec3(0.0f, 1.0f,0.0f), viewVec);
+		glm::vec3 up = glm::cross(viewVec, right);
+
+		glm::mat4 mat(1);
+		mat[0][0] = right.x;
+		mat[0][1] = right.y;
+		mat[0][2] = right.z;
+
+		mat[1][0] = up.x;
+		mat[1][1] = up.y;
+		mat[1][2] = up.z;
+		
 		for(int i = 0, e = particles.size(); i < e; ++i)
 		{
-			particles[i].SetMVMatrix(shader, viewMatrix);
+			particles[i].SetPosition(shader, mat);
 		
 			glBindVertexArray(vaoId);
 			glDrawArrays(GL_TRIANGLES, 0, 6);

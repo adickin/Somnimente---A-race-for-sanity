@@ -167,7 +167,6 @@
     <None Include="Images\rainbow.jpg" />
     <None Include="Images\smoke.png" />
     <None Include="Images\smoke2.png" />
-    <None Include="Level2.xml" />
     <None Include="Models\Tracks\Childhood\A.xml" />
     <None Include="Models\Tracks\Childhood\B.xml" />
     <None Include="Models\Tracks\Childhood\C.xml">
@@ -190,6 +189,11 @@
     <None Include="Parameters\Level1.xml">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Parameters\Level2.xml" />
+    <None Include="Parameters\Level2nograv.xml" />
+    <None Include="Parameters\Level3.xml" />
+    <None Include="Parameters\Level3nograv.xml" />
+    <None Include="Parameters\Level4.xml" />
     <None Include="Parameters\LevelSelectData.xml" />
     <None Include="Parameters\RenderEngine.ini" />
     <None Include="Parameters\TuningVars.ini" />

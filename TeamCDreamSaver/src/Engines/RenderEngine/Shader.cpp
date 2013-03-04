@@ -300,6 +300,9 @@ unsigned int Shader::Uniform(UNIFORMS uni)
 		case LIGHT_POSITION:
 			name = "light1.position";
 			break;
+		case MODEL_MATRIX:
+			name = "modelMatrix";
+			break;
 		default:
 			break;
 		}

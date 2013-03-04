@@ -96,7 +96,7 @@ void LevelSelectScreen::ReadParameterFile()
 		}
 	}
 	//Change this to correspond with the number of levels + 1.
-	numSelections = 2;
+	numSelections = 3;
 }
 
 
