@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <Path>Models/Tracks/Forest/S - Forest Path 2.obj</Path>
+    <Scale>1.0</Scale>
+    <Start x="0" y="0" z="0"></Start>
+    <End x="-608.3" y="13.9" z="-785.2 "></End>
+    <Orientation x="0" y="90" z="0"></Orientation>
+</root>

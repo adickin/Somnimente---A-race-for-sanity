@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <Start x="0" y="0" z="0"></Start>
+  <Orientation x="0" y="0" z="0"></Orientation>
+  <Track>
+      <Piece path="Models/Tracks/The Closet/A.xml"></Piece>
+      <Piece path="Models/Tracks/The Closet/B.xml"></Piece>
+      <Piece path="Models/Tracks/The Closet/C.xml"></Piece>
+      <Piece path="Models/Tracks/The Closet/C.xml"></Piece>
+      <Piece path="Models/Tracks/The Closet/C.xml"></Piece>
+      <Piece path="Models/Tracks/The Closet/C.xml"></Piece>
+      <Piece path="Models/Tracks/The Closet/C.xml"></Piece>
+      <Piece path="Models/Tracks/The Closet/C.xml"></Piece>
+      <Piece path="Models/Tracks/The Closet/C.xml"></Piece>
+  </Track>
+  <Triggers>
+  </Triggers>
+  <Props>
+  </Props>
+</root>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <Start x="0" y="0" z="0"></Start>
+  <Orientation x="0" y="0" z="0"></Orientation>
+  <Track>
+      <Piece path="Models/Tracks/Forest/A.xml"></Piece>
+      <Piece path="Models/Tracks/Forest/B.xml"></Piece>
+      <Piece path="Models/Tracks/Forest/B.xml"></Piece>
+      <Piece path="Models/Tracks/Forest/O.xml"></Piece>
+      <Piece path="Models/Tracks/Forest/C.xml"></Piece>
+      <Piece path="Models/Tracks/Forest/D.xml"></Piece>
+      <Piece path="Models/Tracks/Forest/E.xml"></Piece>
+      <Piece path="Models/Tracks/Forest/F.xml"></Piece>
+      <Piece path="Models/Tracks/Forest/E.xml"></Piece>
+      <Piece path="Models/Tracks/Forest/G.xml"></Piece>
+      <Piece path="Models/Tracks/Forest/E.xml"></Piece>
+      <Piece path="Models/Tracks/Forest/I.xml"></Piece>
+      <Piece path="Models/Tracks/Forest/G.xml"></Piece>
+      <Piece path="Models/Tracks/Forest/E.xml"></Piece>
+      <Piece path="Models/Tracks/Forest/O.xml"></Piece>
+      <Piece path="Models/Tracks/Forest/G.xml"></Piece>
+      <Piece path="Models/Tracks/Forest/E.xml"></Piece>
+      <Piece path="Models/Tracks/Forest/L.xml"></Piece>
+      <Piece path="Models/Tracks/Forest/L.xml"></Piece>
+      <Piece path="Models/Tracks/Forest/M.xml"></Piece>
+      <Piece path="Models/Tracks/Forest/O.xml"></Piece>
+      <Piece path="Models/Tracks/Forest/H.xml"></Piece>
+      <Piece path="Models/Tracks/Forest/P.xml"></Piece>
+      <Piece path="Models/Tracks/Forest/Q.xml"></Piece>
+      <Piece path="Models/Tracks/Forest/R.xml"></Piece>
+      <Piece path="Models/Tracks/Forest/S.xml"></Piece>
+      <Piece path="Models/Tracks/Forest/Q.xml"></Piece>
+      <Piece path="Models/Tracks/Forest/P.xml"></Piece>
+      <Piece path="Models/Tracks/Forest/O.xml"></Piece>
+      <Piece path="Models/Tracks/Forest/T.xml"></Piece>
+      <Piece path="Models/Tracks/Forest/U.xml"></Piece>
+      <Piece path="Models/Tracks/Forest/T.xml"></Piece>
+      <Piece path="Models/Tracks/Forest/O.xml"></Piece>
+      <Piece path="Models/Tracks/Forest/P.xml"></Piece>
+      <Piece path="Models/Tracks/Forest/Q.xml"></Piece>
+      <Piece path="Models/Tracks/Forest/Q.xml"></Piece>
+      <Piece path="Models/Tracks/Forest/P.xml"></Piece>
+      <Piece path="Models/Tracks/Forest/Q.xml"></Piece>
+      <Piece path="Models/Tracks/Forest/V.xml"></Piece>
+      <Piece path="Models/Tracks/Forest/W.xml"></Piece>
+      <Piece path="Models/Tracks/Forest/X.xml"></Piece>
+      <Piece path="Models/Tracks/Forest/E.xml"></Piece>
+      <Piece path="Models/Tracks/Forest/Y.xml"></Piece>
+  </Track>
+  <Triggers>
+  </Triggers>
+  <Props>
+      <StaticProp>
+          <Path>Models/Scenes/2.1 bridge/2-1 bridge.obj</Path>
+          <Position x="0" y="0" z="-8000"></Position>
+          <Orientation x="0" y="0" z="0"></Orientation>
+      </StaticProp>
+      <StaticProp>
+          <Path>Models/Scenes/2.2 well/2-2 well.obj</Path>
+          <Position x="0" y="0" z="-7000"></Position>
+          <Orientation x="0" y="0" z="0"></Orientation>
+      </StaticProp>
+      <StaticProp>
+          <Path>Models/Scenes/2.3 driveway/2-3 driveway.obj</Path>
+          <Position x="0" y="0" z="-12600"></Position>
+          <Orientation x="0" y="00" z="0"></Orientation>
+      </StaticProp>
+
+  </Props>
+</root>

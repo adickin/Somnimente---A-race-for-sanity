@@ -1,6 +1,6 @@
 //Maya ASCII 2013 scene
-//Name: X - Straight 7.5.ma
-//Last modified: Thu, Feb 28, 2013 02:38:36 PM
+//Name: X - Straight 2.ma
+//Last modified: Sun, Mar 03, 2013 04:54:49 PM
 //Codeset: UTF-8
 requires maya "2013";
 requires "stereoCamera" "10.0";
@@ -12,12 +12,12 @@ fileInfo "cutIdentifier" "201202220220-825135";
 fileInfo "osv" "Mac OS X 10.8.2";
 createNode transform -s -n "persp";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 7.1463337069763675 229.00199144332723 88.820574055391774 ;
-	setAttr ".r" -type "double3" -68.738352729601914 4.5999999999999135 0 ;
+	setAttr ".t" -type "double3" -1.4385225840635936 318.86937951377394 58.860620669402209 ;
+	setAttr ".r" -type "double3" -79.538352729602096 -1.4000000000000015 -1.9884402456475315e-16 ;
 createNode camera -s -n "perspShape" -p "persp";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999986;
-	setAttr ".coi" 245.72764709326236;
+	setAttr ".coi" 324.25965398783222;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -202,6 +202,80 @@ createNode mesh -n "polySurfaceShape1" -p "transform4";
 	setAttr ".cdvm[0]"  0 1 1;
 	setAttr ".db" yes;
 	setAttr ".bw" 4;
+createNode transform -n "pCube4";
+	setAttr ".t" -type "double3" 0 -0.25 -0.75 ;
+createNode transform -n "transform10" -p "pCube4";
+	setAttr ".v" no;
+createNode mesh -n "pCubeShape4" -p "transform10";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr -s 2 ".iog[0].og";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr ".db" yes;
+	setAttr ".bw" 4;
+createNode transform -n "pCube5";
+	setAttr ".t" -type "double3" 1.375 0.25 -0.75 ;
+createNode transform -n "transform9" -p "pCube5";
+	setAttr ".v" no;
+createNode mesh -n "pCubeShape5" -p "transform9";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr -s 2 ".iog[0].og";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr ".db" yes;
+	setAttr ".bw" 4;
+createNode transform -n "pCube6";
+	setAttr ".t" -type "double3" -1.375 0.25 -0.75 ;
+createNode transform -n "transform8" -p "pCube6";
+	setAttr ".v" no;
+createNode mesh -n "pCubeShape6" -p "transform8";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:5]";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
+		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
+		 0.875 0.25 0.125 0 0.125 0.25;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 8 ".vt[0:7]"  -0.125 -0.25 0.75 0.125 -0.25 0.75 -0.125 0.25 0.75
+		 0.125 0.25 0.75 -0.125 0.25 -0.75 0.125 0.25 -0.75 -0.125 -0.25 -0.75 0.125 -0.25 -0.75;
+	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
+		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
+	setAttr -s 6 -ch 24 ".fc[0:5]" -type "polyFaces" 
+		f 4 0 5 -2 -5
+		mu 0 4 0 1 3 2
+		f 4 1 7 -3 -7
+		mu 0 4 2 3 5 4
+		f 4 2 9 -4 -9
+		mu 0 4 4 5 7 6
+		f 4 3 11 -1 -11
+		mu 0 4 6 7 9 8
+		f 4 -12 -10 -8 -6
+		mu 0 4 1 10 11 3
+		f 4 10 4 6 8
+		mu 0 4 12 0 2 13;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".db" yes;
+	setAttr ".bw" 4;
 createNode transform -n "polySurface5";
 	setAttr ".s" -type "double3" 20 20 20 ;
 createNode mesh -n "polySurfaceShape5" -p "polySurface5";
@@ -346,12 +420,40 @@ createNode groupId -n "groupId10";
 createNode groupParts -n "groupParts6";
 	setAttr ".ihi" 0;
 	setAttr ".ic" -type "componentList" 1 "f[0:5]";
+createNode polyCube -n "polyCube3";
+	setAttr ".w" 3;
+	setAttr ".h" 0.5;
+	setAttr ".d" 1.5;
+	setAttr ".cuv" 4;
+createNode polyCube -n "polyCube4";
+	setAttr ".w" 0.25;
+	setAttr ".h" 0.5;
+	setAttr ".d" 1.5;
+	setAttr ".cuv" 4;
 createNode polyUnite -n "polyUnite2";
 	setAttr -s 3 ".ip";
 	setAttr -s 3 ".im";
 createNode groupId -n "groupId11";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts7";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "f[0:5]";
+createNode groupId -n "groupId12";
+	setAttr ".ihi" 0;
+createNode groupId -n "groupId13";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts8";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "f[0:5]";
+createNode groupId -n "groupId14";
+	setAttr ".ihi" 0;
+createNode groupId -n "groupId15";
+	setAttr ".ihi" 0;
+createNode groupId -n "groupId16";
+	setAttr ".ihi" 0;
+createNode groupId -n "groupId17";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts9";
 	setAttr ".ihi" 0;
 	setAttr ".ic" -type "componentList" 1 "f[0:17]";
 createNode polyTriangulate -n "polyTriangulate1";
@@ -362,9 +464,9 @@ select -ne :time1;
 select -ne :renderPartition;
 	setAttr -s 2 ".st";
 select -ne :initialShadingGroup;
-	setAttr -s 11 ".dsm";
+	setAttr -s 17 ".dsm";
 	setAttr ".ro" yes;
-	setAttr -s 11 ".gn";
+	setAttr -s 17 ".gn";
 select -ne :initialParticleSE;
 	setAttr ".ro" yes;
 select -ne :defaultShaderList1;
@@ -379,6 +481,8 @@ select -ne :hardwareRenderGlobals;
 select -ne :defaultHardwareRenderGlobals;
 	setAttr ".fn" -type "string" "im";
 	setAttr ".res" -type "string" "ntsc_4d 646 485 1.333";
+select -ne :ikSystem;
+	setAttr -s 4 ".sol";
 connectAttr "groupParts1.og" "pCubeShape1.i";
 connectAttr "groupId1.id" "pCubeShape1.iog.og[0].gid";
 connectAttr ":initialShadingGroup.mwc" "pCubeShape1.iog.og[0].gco";
@@ -402,8 +506,19 @@ connectAttr ":initialShadingGroup.mwc" "polySurfaceShape4.iog.og[0].gco";
 connectAttr "groupParts3.og" "polySurfaceShape1.i";
 connectAttr "groupId7.id" "polySurfaceShape1.iog.og[0].gid";
 connectAttr ":initialShadingGroup.mwc" "polySurfaceShape1.iog.og[0].gco";
+connectAttr "groupId11.id" "pCubeShape4.iog.og[0].gid";
+connectAttr ":initialShadingGroup.mwc" "pCubeShape4.iog.og[0].gco";
+connectAttr "groupParts7.og" "pCubeShape4.i";
+connectAttr "groupId12.id" "pCubeShape4.ciog.cog[0].cgid";
+connectAttr "groupId13.id" "pCubeShape5.iog.og[0].gid";
+connectAttr ":initialShadingGroup.mwc" "pCubeShape5.iog.og[0].gco";
+connectAttr "groupParts8.og" "pCubeShape5.i";
+connectAttr "groupId14.id" "pCubeShape5.ciog.cog[0].cgid";
+connectAttr "groupId15.id" "pCubeShape6.iog.og[0].gid";
+connectAttr ":initialShadingGroup.mwc" "pCubeShape6.iog.og[0].gco";
+connectAttr "groupId16.id" "pCubeShape6.ciog.cog[0].cgid";
 connectAttr "polyTriangulate1.out" "polySurfaceShape5.i";
-connectAttr "groupId11.id" "polySurfaceShape5.iog.og[0].gid";
+connectAttr "groupId17.id" "polySurfaceShape5.iog.og[0].gid";
 connectAttr ":initialShadingGroup.mwc" "polySurfaceShape5.iog.og[0].gco";
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
@@ -430,15 +545,19 @@ connectAttr "polySeparate1.out[1]" "groupParts5.ig";
 connectAttr "groupId9.id" "groupParts5.gi";
 connectAttr "polySeparate1.out[2]" "groupParts6.ig";
 connectAttr "groupId10.id" "groupParts6.gi";
-connectAttr "polySurfaceShape2.o" "polyUnite2.ip[0]";
-connectAttr "polySurfaceShape3.o" "polyUnite2.ip[1]";
-connectAttr "polySurfaceShape4.o" "polyUnite2.ip[2]";
-connectAttr "polySurfaceShape2.wm" "polyUnite2.im[0]";
-connectAttr "polySurfaceShape3.wm" "polyUnite2.im[1]";
-connectAttr "polySurfaceShape4.wm" "polyUnite2.im[2]";
-connectAttr "polyUnite2.out" "groupParts7.ig";
+connectAttr "pCubeShape4.o" "polyUnite2.ip[0]";
+connectAttr "pCubeShape5.o" "polyUnite2.ip[1]";
+connectAttr "pCubeShape6.o" "polyUnite2.ip[2]";
+connectAttr "pCubeShape4.wm" "polyUnite2.im[0]";
+connectAttr "pCubeShape5.wm" "polyUnite2.im[1]";
+connectAttr "pCubeShape6.wm" "polyUnite2.im[2]";
+connectAttr "polyCube3.out" "groupParts7.ig";
 connectAttr "groupId11.id" "groupParts7.gi";
-connectAttr "groupParts7.og" "polyTriangulate1.ip";
+connectAttr "polyCube4.out" "groupParts8.ig";
+connectAttr "groupId13.id" "groupParts8.gi";
+connectAttr "polyUnite2.out" "groupParts9.ig";
+connectAttr "groupId17.id" "groupParts9.gi";
+connectAttr "groupParts9.og" "polyTriangulate1.ip";
 connectAttr "pCubeShape1.iog.og[0]" ":initialShadingGroup.dsm" -na;
 connectAttr "pCubeShape1.ciog.cog[0]" ":initialShadingGroup.dsm" -na;
 connectAttr "pCubeShape2.iog.og[0]" ":initialShadingGroup.dsm" -na;
@@ -449,6 +568,12 @@ connectAttr "polySurfaceShape1.iog.og[0]" ":initialShadingGroup.dsm" -na;
 connectAttr "polySurfaceShape2.iog.og[0]" ":initialShadingGroup.dsm" -na;
 connectAttr "polySurfaceShape3.iog.og[0]" ":initialShadingGroup.dsm" -na;
 connectAttr "polySurfaceShape4.iog.og[0]" ":initialShadingGroup.dsm" -na;
+connectAttr "pCubeShape4.iog.og[0]" ":initialShadingGroup.dsm" -na;
+connectAttr "pCubeShape4.ciog.cog[0]" ":initialShadingGroup.dsm" -na;
+connectAttr "pCubeShape5.iog.og[0]" ":initialShadingGroup.dsm" -na;
+connectAttr "pCubeShape5.ciog.cog[0]" ":initialShadingGroup.dsm" -na;
+connectAttr "pCubeShape6.iog.og[0]" ":initialShadingGroup.dsm" -na;
+connectAttr "pCubeShape6.ciog.cog[0]" ":initialShadingGroup.dsm" -na;
 connectAttr "polySurfaceShape5.iog.og[0]" ":initialShadingGroup.dsm" -na;
 connectAttr "groupId1.msg" ":initialShadingGroup.gn" -na;
 connectAttr "groupId2.msg" ":initialShadingGroup.gn" -na;
@@ -461,5 +586,11 @@ connectAttr "groupId8.msg" ":initialShadingGroup.gn" -na;
 connectAttr "groupId9.msg" ":initialShadingGroup.gn" -na;
 connectAttr "groupId10.msg" ":initialShadingGroup.gn" -na;
 connectAttr "groupId11.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId12.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId13.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId14.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId15.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId16.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId17.msg" ":initialShadingGroup.gn" -na;
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
-// End of X - Straight 7.5.ma
+// End of X - Straight 2.ma
