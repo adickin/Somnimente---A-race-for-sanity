@@ -3,6 +3,6 @@
     <Path>Models/Tracks/Cabin/M - Sharp No Walls.obj</Path>
     <Scale>1.0</Scale>
     <Start x="0" y="0" z="0"></Start>
-    <End x="-150" y="0" z="-150 "></End>
+    <End x="1050" y="0" z="1050 "></End>
     <Orientation x="0" y="90" z="0"></Orientation>
 </root>

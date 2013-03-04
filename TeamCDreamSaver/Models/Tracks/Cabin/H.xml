@@ -3,6 +3,6 @@
     <Path>Models/Tracks/Cabin/H - Floor 1.obj</Path>
     <Scale>1.0</Scale>
     <Start x="0" y="0" z="0"></Start>
-    <End x="240" y="0" z="-450 "></End>
+    <End x="-1680" y="0" z="3150 "></End>
     <Orientation x="0" y="0" z="0"></Orientation>
 </root>

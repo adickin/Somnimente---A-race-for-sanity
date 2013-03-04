@@ -3,6 +3,6 @@
     <Path>Models/Tracks/Forest/M - Spiral Finish.obj</Path>
     <Scale>1.0</Scale>
     <Start x="0" y="0" z="0"></Start>
-    <End x="-170" y="50" z="80 "></End>
+    <End x="1190" y="350" z="560 "></End>
     <Orientation x="0" y="0" z="0"></Orientation>
 </root>

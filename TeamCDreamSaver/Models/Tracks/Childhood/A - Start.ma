@@ -1,6 +1,6 @@
 //Maya ASCII 2013 scene
 //Name: A - Start.ma
-//Last modified: Sun, Feb 17, 2013 05:25:16 PM
+//Last modified: Sun, Mar 03, 2013 05:36:41 PM
 //Codeset: UTF-8
 requires maya "2013";
 requires "stereoCamera" "10.0";
@@ -13,11 +13,11 @@ fileInfo "osv" "Mac OS X 10.8.2";
 createNode transform -s -n "persp";
 	setAttr ".v" no;
 	setAttr ".t" -type "double3" -27.887670723374001 166.69343173104835 390.9146500759577 ;
-	setAttr ".r" -type "double3" -22.538352729608981 -4.2000000000008209 -2.1925194043022416e-15 ;
+	setAttr ".r" -type "double3" -22.538352729608981 -4.2000000000008209 -2.192519404302242e-15 ;
 createNode camera -s -n "perspShape" -p "persp";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999986;
-	setAttr ".coi" 431.93110663771563;
+	setAttr ".coi" 431.93110663771557;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -385,22 +385,22 @@ createNode groupId -n "groupId10";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts5";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 6 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]";
+	setAttr ".ic" -type "componentList" 1 "f[0:5]";
 createNode groupId -n "groupId11";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts6";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 6 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]";
+	setAttr ".ic" -type "componentList" 1 "f[0:5]";
 createNode groupId -n "groupId12";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts7";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 6 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]";
+	setAttr ".ic" -type "componentList" 1 "f[0:5]";
 createNode groupId -n "groupId13";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts8";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 5 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]";
+	setAttr ".ic" -type "componentList" 1 "f[0:4]";
 createNode polyUnite -n "polyUnite2";
 	setAttr -s 4 ".ip";
 	setAttr -s 4 ".im";

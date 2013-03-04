@@ -3,6 +3,6 @@
     <Path>Models/Tracks/Cabin/O - Outside Window Middle.obj</Path>
     <Scale>1.0</Scale>
     <Start x="0" y="0" z="0"></Start>
-    <End x="-390" y="0" z="-360 "></End>
+    <End x="2730" y="0" z="2730 "></End>
     <Orientation x="0" y="90" z="0"></Orientation>
 </root>
