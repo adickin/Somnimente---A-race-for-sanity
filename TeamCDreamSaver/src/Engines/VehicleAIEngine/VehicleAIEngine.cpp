@@ -29,6 +29,7 @@ VehicleAIEngine::~VehicleAIEngine(void)
 	delete rightLaneWriter_;
 
 	lineDrawer_.Clear();
+
 }
 
 /*
@@ -55,6 +56,7 @@ void VehicleAIEngine::createNewAIVehicle()
 	orient.w = 1;
 
 	vehicleBeingControlled_ = new AIVehicle(pos, orient, vec3());
+	isVehicleAlive_ = true;
 }
 
 /*
@@ -83,6 +85,7 @@ void VehicleAIEngine::addWaypointFileForAI(char* fileName)
 */
 void VehicleAIEngine::removeAI()
 {
+	printf("removing AI\n");
 	lanes_.clear();
 	currentLane_ = -1;
 	delete vehicleBeingControlled_;
