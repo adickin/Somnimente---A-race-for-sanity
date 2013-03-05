@@ -4,7 +4,7 @@
   <Orientation x="0" y="0" z="0"></Orientation>
   <Track>
       <Piece path="Models/Tracks/Cabin/A.xml"></Piece>
-      <Piece path="Models/Tracks/Cabin/B.xml"></Piece>
+      <Piece path="Models/Tracks/Cabin/Z.xml"></Piece>
       <Piece path="Models/Tracks/Cabin/D.xml"></Piece>
       <Piece path="Models/Tracks/Cabin/D.xml"></Piece>
       <Piece path="Models/Tracks/Cabin/D.xml"></Piece>

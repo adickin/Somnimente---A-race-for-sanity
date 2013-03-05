@@ -3,6 +3,6 @@
     <Path>Models/Tracks/Cabin/T - Destructible 1.obj</Path>
     <Scale>1.0</Scale>
     <Start x="0" y="0" z="0"></Start>
-    <End x="-2502.5" y="0" z="0 "></End>
+    <End x="-2522.5" y="0" z="10 "></End>
     <Orientation x="0" y="180" z="0"></Orientation>
 </root>
