@@ -1,9 +1,8 @@
 #pragma once
 
 #include <vector>
-#include "Dependencies/glm/glm.hpp"
-#include "../../../../Dependencies/glm/gtc/quaternion.hpp"
-#include "RenderEngine.h"
+#include <glm/glm.hpp>
+#include <glm/gtc/quaternion.hpp>
 #include "Shader.h"
 
 //class RenderEngine;
@@ -54,6 +53,10 @@ public:
 	void RenderShadow(glm::vec3 &position, glm::mat4 &rotation);
 	void RenderShadow(glm::vec3 &position, glm::fquat &rotation);
 	void RenderNoShader();
+
+	void SetShader(Shader* shader);
+
+	void SetAlpha(float a);
 
 private:
 	std::vector<Vertex> vertices;

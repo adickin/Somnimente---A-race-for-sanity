@@ -5,6 +5,10 @@
       <Configuration>Debug</Configuration>
       <Platform>Win32</Platform>
     </ProjectConfiguration>
+    <ProjectConfiguration Include="Release64|Win32">
+      <Configuration>Release64</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
     <ProjectConfiguration Include="Release|Win32">
       <Configuration>Release</Configuration>
       <Platform>Win32</Platform>
@@ -30,6 +34,12 @@
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release64|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
   </ImportGroup>
@@ -37,6 +47,9 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release64|Win32'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
@@ -51,6 +64,23 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>
+      </AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>
+      </AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release64|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>MaxSpeed</Optimization>
@@ -602,6 +632,40 @@
     <Library Include="bass\lib\bass.lib" />
     <Library Include="FreeImage\lib\FreeImage.lib" />
     <Library Include="FreeImage\lib\FreeImagePlus.lib" />
+    <Library Include="PhysX\Lib\win32\PhysX3CharacterKinematicCHECKED_x86.lib" />
+    <Library Include="PhysX\Lib\win32\PhysX3CharacterKinematicPROFILE_x86.lib" />
+    <Library Include="PhysX\Lib\win32\PhysX3CharacterKinematic_x86.lib" />
+    <Library Include="PhysX\Lib\win32\PhysX3CHECKED_x86.lib" />
+    <Library Include="PhysX\Lib\win32\PhysX3CommonCHECKED_x86.lib" />
+    <Library Include="PhysX\Lib\win32\PhysX3CommonDEBUG_x86.lib" />
+    <Library Include="PhysX\Lib\win32\PhysX3CommonPROFILE_x86.lib" />
+    <Library Include="PhysX\Lib\win32\PhysX3Common_x86.lib" />
+    <Library Include="PhysX\Lib\win32\PhysX3CookingCHECKED_x86.lib" />
+    <Library Include="PhysX\Lib\win32\PhysX3CookingPROFILE_x86.lib" />
+    <Library Include="PhysX\Lib\win32\PhysX3Cooking_x86.lib" />
+    <Library Include="PhysX\Lib\win32\PhysX3Extensions.lib" />
+    <Library Include="PhysX\Lib\win32\PhysX3ExtensionsCHECKED.lib" />
+    <Library Include="PhysX\Lib\win32\PhysX3ExtensionsPROFILE.lib" />
+    <Library Include="PhysX\Lib\win32\PhysX3PROFILE_x86.lib" />
+    <Library Include="PhysX\Lib\win32\PhysX3Vehicle.lib" />
+    <Library Include="PhysX\Lib\win32\PhysX3VehicleCHECKED.lib" />
+    <Library Include="PhysX\Lib\win32\PhysX3VehiclePROFILE.lib" />
+    <Library Include="PhysX\Lib\win32\PhysX3_x86.lib" />
+    <Library Include="PhysX\Lib\win32\PhysXProfileSDK.lib" />
+    <Library Include="PhysX\Lib\win32\PhysXProfileSDKCHECKED.lib" />
+    <Library Include="PhysX\Lib\win32\PhysXProfileSDKPROFILE.lib" />
+    <Library Include="PhysX\Lib\win32\PhysXVisualDebuggerSDK.lib" />
+    <Library Include="PhysX\Lib\win32\PhysXVisualDebuggerSDKCHECKED.lib" />
+    <Library Include="PhysX\Lib\win32\PhysXVisualDebuggerSDKPROFILE.lib" />
+    <Library Include="PhysX\Lib\win32\PxTask.lib" />
+    <Library Include="PhysX\Lib\win32\PxTaskCHECKED.lib" />
+    <Library Include="PhysX\Lib\win32\PxTaskPROFILE.lib" />
+    <Library Include="PhysX\Lib\win32\RepX3.lib" />
+    <Library Include="PhysX\Lib\win32\RepX3CHECKED.lib" />
+    <Library Include="PhysX\Lib\win32\RepX3PROFILE.lib" />
+    <Library Include="PhysX\Lib\win32\RepXUpgrader3.lib" />
+    <Library Include="PhysX\Lib\win32\RepXUpgrader3CHECKED.lib" />
+    <Library Include="PhysX\Lib\win32\RepXUpgrader3PROFILE.lib" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

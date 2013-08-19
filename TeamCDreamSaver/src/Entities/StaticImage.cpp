@@ -1,5 +1,6 @@
 #include "StaticImage.h"
-
+#include <Utilities\ShaderManager.h>
+#include "TextureManager.h"
 
 StaticImage::StaticImage(void)
 {
@@ -52,7 +53,9 @@ StaticImage::StaticImage(void)
 
 	orthoMatrix = glm::ortho(-1.0f, 1.0f, -1.0f, 1.0f, -5.0f, 5.0f);
 	viewMatrix = glm::lookAt(glm::vec3(0,0,5), glm::vec3(0), glm::vec3(0.0f, 1.0f, 0.0f));
-	scale = 1.0f;
+	scale = glm::vec3(1.0f);
+
+	alpha = 1.0f;
 }
 
 
@@ -81,7 +84,7 @@ glm::vec3 *StaticImage::GetPosition()
 
 void StaticImage::Render()
 {
-	glm::mat4 mv = viewMatrix * glm::scale(glm::translate(position), glm::vec3(scale));
+	glm::mat4 mv = viewMatrix * glm::scale(glm::translate(position), scale);
 
 	shader->Bind();
 	
@@ -89,7 +92,11 @@ void StaticImage::Render()
 	glUniformMatrix4fv(shader->Uniform(VIEW_MATRIX), 1, false, &viewMatrix[0][0]);
 	glUniformMatrix4fv(shader->Uniform(MODELVIEW_MATRIX), 1, false, &mv[0][0]);	
 
+	glUniform1f(shader->Uniform(ALPHA), alpha);
+
 	plane->RenderNoShader();
+
+	glUniform1f(shader->Uniform(ALPHA), 1.0f);
 
 	shader->UnBind();
 }
@@ -97,5 +104,18 @@ void StaticImage::Render()
 
 void StaticImage::SetScale(float scale)
 {
-	this->scale = scale;
+	this->scale = glm::vec3(scale);
+}
+
+void StaticImage::SetScale(float sx, float sy, float sz)
+{
+	this->scale.x = sx;
+	this->scale.y = sy;
+	this->scale.z = sz;
+}
+
+
+void StaticImage::SetAlpha(float a)
+{
+	this->alpha = a;
 }

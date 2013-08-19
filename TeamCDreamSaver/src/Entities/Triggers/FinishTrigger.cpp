@@ -3,7 +3,7 @@
 FinishTrigger::FinishTrigger()
 	:I_Trigger()
 {
-	vec3 size;
+	glm::vec3 size;
 	size.x = 300;
 	size.y = 200;
 	size.z = 300;
@@ -11,12 +11,12 @@ FinishTrigger::FinishTrigger()
 	//x: 2546
 	//y: -0.2147
 	//z: 1444
-	vec3 pos;
+	glm::vec3 pos;
 	pos.x = 2500;
 	pos.y = -50;
 	pos.z = 3000;
 
-	fquat orient;
+	glm::fquat orient;
 	orient.x = 0;
 	orient.y = 0;
 	orient.z = 0;
@@ -33,12 +33,12 @@ FinishTrigger::FinishTrigger()
 FinishTrigger::FinishTrigger(glm::vec3 position)
 	:I_Trigger()
 {
-	vec3 size;
+	glm::vec3 size;
 	size.x = 300;
 	size.y = 200;
 	size.z = 300;
 
-	fquat orient;
+	glm::fquat orient;
 	orient.x = 0;
 	orient.y = 0;
 	orient.z = 0;
@@ -79,13 +79,13 @@ bool FinishTrigger::checkOnTrigger(PxTriggerPair* pairs, PxU32 count)
 				if(actorsToTriggerWith_[actorIndex] == aiVehicle_ && !triggered_)
 				{
 					message.Initialize("Invasion Successful, You Lose!", glm::vec3(-0.95f, -0.0f, 0.0f), 0.5f);
-					AudioEngine::GetInstance()->PlaySoundEffect(eSOUNDEFFECT::LOSEGAME);
+					//AudioEngine::GetInstance()->PlaySoundEffect(LOSEGAME);
 				}
 				else if(!triggered_)
 				{
 					message.Initialize("Track Complete!!!", glm::vec3(-0.45f, -0.0f, 0.0f), 0.5f);
 					//UPDATE CODE
-					AudioEngine::GetInstance()->PlaySoundEffect(eSOUNDEFFECT::GAMEWON);
+					//AudioEngine::GetInstance()->PlaySoundEffect(GAMEWON);
 					
 				}
 				triggered_ = true;
@@ -94,14 +94,4 @@ bool FinishTrigger::checkOnTrigger(PxTriggerPair* pairs, PxU32 count)
 		}
 	}
 	return triggered_;
-}
-
-void FinishTrigger::checkAIWinCondition()
-{
-	
-}
-
-void FinishTrigger::checkPlayerWinCondition()
-{
-
 }

@@ -11,17 +11,17 @@ public:
 	~AIDrivingLane();
 
 	WaypointInterpreter* getWaypointInterpreter();
-	Waypoint* getCurrentWaypoint();
-	unsigned int getCurrentWaypointIndex();
-	Waypoint* getWaypointAtIndex(unsigned int index);
+	Waypoint* currentWaypoint();
+	unsigned int index();
+	Waypoint* waypointAt(unsigned int index);
 
-	void nextWaypoint();
-
+	bool endOfLane();
+	void increment();
 private:
-	LineGL3* lineDrawer_;
-
 	std::vector<Waypoint> waypoints_;
+	LineGL3* lineDrawer_;
 	unsigned int currentWaypoint_;
+	bool trackFinished_;
 
 	WaypointInterpreter waypointInterpreter_;
 };

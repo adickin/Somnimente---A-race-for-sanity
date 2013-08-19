@@ -3,65 +3,68 @@
 #include <vector>
 #include <AIVehicle.h>
 #include "AIDrivingLane.h"
+#include "QuadraticBezierCurve.h"
+#include <Entities\Triggers\FallenOffTrackTrigger.h>
+
+enum DrivingState
+{
+	FORWARDS,
+	BACKWARDS
+};
 
 class VehicleAIEngine
 {
 public:
-	static VehicleAIEngine* GetInstance()
-	{
-		if (singleton_ == nullptr)
-			singleton_ = new VehicleAIEngine();
+	static VehicleAIEngine* GetInstance();
 
-		return singleton_;
-	}
-
-	void createNewAIVehicle();
+	void createNewAIVehicle(AIVehicle* vehicle);
 	void removeAI();
-	void updateDrivingActions(float elapsedMilliseconds);
+	void setOffTrackCenterPoint(glm::vec3 point);
 	void addWaypointFileForAI(char* fileName);
-	
+	void updateDrivingActions(float elapsedMilliseconds);
+	DrivingState currentDrivingState();
+
 	//FOR WAYPOINT GENERATION ONLY
 	void writeWaypointToFile(glm::vec3 waypoint);
 	void activateWriterMode(bool enable);
 
-	void changeVehicleToWorkOn(Vehicle* veh)
-	{
-		delete vehicleBeingControlled_;
-		//vehicleBeingControlled_ = veh;
-	}
+	AIVehicle* getAIVehicle();
 
-	AIVehicle* getAIVehicle()
-	{
-		return vehicleBeingControlled_;
-	}
-
-private:
-	VehicleAIEngine();
-	virtual ~VehicleAIEngine();
-
-	static VehicleAIEngine* singleton_;
+private://functions
 	void determineAcceleration(float turnValue);
-	float determineTurnAngle();
-	glm::vec3 getVectorFromVehicleToNextWaypoint();
-	glm::vec3 getVehicleDirectionVector();
+	float determineTurnValue();
 	float determineVehicleTurnValue(glm::vec3& vehicleDirection, glm::vec3& waypointDirection);
-	float determineDistanceToNextRoutePoint();
-	void incrementCurrentWaypointIfVehicleHasPassedCurrentWaypoint(glm::vec3& currentVehicleDirection);
+	void incrementCurrentWaypointIfVehicleHasPassedCurrentWaypoint();
 	unsigned int pickANewRandomLane();
 	void incrementWaypoints();
+	void getBezierCurvePoints();
+	void toggleDrivingState();
+	void determineIfReversingAIShouldDriveForwardsAgain();
+
+private://members
 	AIVehicle* vehicleBeingControlled_;
 	bool isVehicleAlive_;
-	
-	bool drivingBackwards_;
+	DrivingState drivingState_;
+	bool allowedToToggleDrivingState;
 	
 	vector<AIDrivingLane*> lanes_;
-	int currentLane_;
+	int laneIndex_;
+	float lastTurnValue_;
+	vector<vec3> turnAveragingPoints_;
+	QuadraticBezierCurve* curve_;
+	FallenOffTrackTrigger* offTrackTrigger_;
+
+	LineGL3 lineDrawer_;
+	void drawCurrentIntendedDirection(glm::vec3 point1, glm::vec3 point2);
+
+	float justResetCount_;
 
 	WaypointInterpreter* leftLaneWriter_;
 	WaypointInterpreter* centerLaneWriter_;
 	WaypointInterpreter* rightLaneWriter_;
 
-	LineGL3 lineDrawer_;
-	void drawCurrentIntendedDirection(vec3 point1, vec3 point2);
+	VehicleAIEngine();
+	virtual ~VehicleAIEngine();
+	static VehicleAIEngine* singleton_;
 };
 

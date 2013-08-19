@@ -1,9 +1,16 @@
 #include "LevelLoader.h"
-
+#include <Triggers\FullScreenImageTrigger.h>
+#include <Triggers\FullScreenFinalImageTrigger.h>
 
 Level LevelLoader::LoadTrack(std::string file)
 {
 	Level level;
+
+	StaticText text;
+	std::stringstream ss;
+	ss << "Loading";
+	text.Initialize(ss.str(),glm::vec3(-0.9f, 0.0f, 1.0f), 0.15f);
+	RenderEngine::GetInstance()->Render(false, false, false);
 
 	std::ifstream fin(file);
 	if(!fin.is_open())
@@ -24,6 +31,16 @@ Level LevelLoader::LoadTrack(std::string file)
 
 	for(; current != 0; current = current->next_sibling())
 	{
+		ss << ".";
+		text.Initialize(ss.str(),glm::vec3(-0.9f, 0.0f, 1.0f), 0.15f);
+		RenderEngine::GetInstance()->Render(false, false, false);
+
+		if(strcmp(current->name(), "Number") == 0)
+		{
+			int n;
+			n = (int)atoi(current->first_attribute("n", 1, false)->value());
+			level.number = n;
+		}
 		if(strcmp(current->name(), "Start") == 0)
 		{
 			glm::vec3 p;
@@ -42,16 +59,44 @@ Level LevelLoader::LoadTrack(std::string file)
 		}
 		else if (strcmp(current->name(), "Track") == 0)
 		{
+			glm::vec3 minimumTrackPieceLocation;
+			glm::vec3 maximumTrackPieceLocation;
 			rapidxml::xml_node<> *trackRoot = current;
 			rapidxml::xml_node<> *trackpiece = trackRoot->first_node();
 			for(; trackpiece != 0; trackpiece = trackpiece->next_sibling())
 			{
+				
+				ss << ".";
+				text.Initialize(ss.str(),glm::vec3(-0.9f, 0.0f, 1.0f), 0.15f);
+				RenderEngine::GetInstance()->Render(false, false, false);
+
 				TrackSection *p = GetTrackPieceData(trackpiece, position, rotation);
 				if(p != nullptr)
 				{
 					level.tracks.push_back(p);
+
+					glm::vec3 piecePosition = *p->GetPosition();
+					
+					//find the minimum track location 
+					minimumTrackPieceLocation.x = glm::min(piecePosition.x, minimumTrackPieceLocation.x);
+					minimumTrackPieceLocation.y = glm::min(piecePosition.y, minimumTrackPieceLocation.y);
+					minimumTrackPieceLocation.z = glm::min(piecePosition.z, minimumTrackPieceLocation.z);
+
+					//find the maximum track location
+					maximumTrackPieceLocation.x = glm::max(piecePosition.x, maximumTrackPieceLocation.x);
+					maximumTrackPieceLocation.y = glm::max(piecePosition.y, maximumTrackPieceLocation.y);
+					maximumTrackPieceLocation.z = glm::max(piecePosition.z, maximumTrackPieceLocation.z);
 				}
 			}
+
+			glm::vec3 bottomOfTrackPosition;
+			bottomOfTrackPosition.x = (maximumTrackPieceLocation.x - minimumTrackPieceLocation.x)/2.0f;
+			bottomOfTrackPosition.y = minimumTrackPieceLocation.y - 200.0f;
+			bottomOfTrackPosition.z = (maximumTrackPieceLocation.z - minimumTrackPieceLocation.z)/2.0f;
+			I_Trigger* trigger = new FallenOffTrackTrigger(bottomOfTrackPosition);
+			level.minimumTrackPoint = bottomOfTrackPosition;
+			level.triggers.push_back(trigger);
+
 		}
 		else if (strcmp(current->name(), "Triggers") == 0)
 		{
@@ -59,6 +104,11 @@ Level LevelLoader::LoadTrack(std::string file)
 			rapidxml::xml_node<> *prop = propsRoot->first_node();
 			for(; prop != 0; prop = prop->next_sibling())
 			{
+				
+				ss << ".";
+				text.Initialize(ss.str(),glm::vec3(-0.9f, 0.0f, 1.0f), 0.15f);
+				RenderEngine::GetInstance()->Render(false, false, false);
+
 				I_Trigger* trigger = GetTrigger(prop);
 				if(trigger != nullptr)
 				{
@@ -72,6 +122,10 @@ Level LevelLoader::LoadTrack(std::string file)
 			rapidxml::xml_node<> *prop = propsRoot->first_node();
 			for(; prop != 0; prop = prop->next_sibling())
 			{
+				ss << ".";
+				text.Initialize(ss.str(),glm::vec3(-0.9f, 0.0f, 1.0f), 0.15f);
+				RenderEngine::GetInstance()->Render(false, false, false);
+
 				if(strcmp(prop->name(), "StaticProp") == 0)
 				{
 					StaticProp *p = GetStaticProp(prop);
@@ -265,7 +319,6 @@ Powerup* LevelLoader::GetPowerup(rapidxml::xml_node<>* node)
 }
 
 
-
 Obstacle* LevelLoader::GetObstacle(rapidxml::xml_node<>* node)
 {
 	rapidxml::xml_node<> *current = node->first_node();
@@ -342,6 +395,16 @@ I_Trigger* LevelLoader::GetTrigger(rapidxml::xml_node<>* node)
 		rot = glm::rotate(rot, rotation.y, glm::vec3(0.0f, 1.0f, 0.0f));
 		rot = glm::rotate(rot, rotation.z, glm::vec3(0.0f, 0.0f, 1.0f));
 		trigger = new FinishTrigger(position);
+	}
+	else if (type.compare("FullScreenImage") == 0)
+	{
+		std::string image = node->first_node("Image")->value();
+		trigger = new FullScreenImageTrigger(image, position);
+	}
+	else if (type.compare("FullScreenImageFinal") == 0)
+	{
+		std::string image = node->first_node("Image")->value();
+		trigger = new FullScreenFinalImageTrigger(image, position);
 	}
 
 	return trigger;

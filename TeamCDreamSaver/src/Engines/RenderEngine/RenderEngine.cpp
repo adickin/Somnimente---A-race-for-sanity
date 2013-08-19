@@ -1,6 +1,12 @@
 
 #include "RenderEngine.h"
 #include <algorithm>
+#include "Dependencies/allegro-5.0.8-msvc-10.0/include/allegro.h"
+#include "Dependencies/allegro-5.0.8-msvc-10.0/include/allegro_opengl.h"
+#include <ShaderManager.h>
+#include <vector>
+#include <iostream>
+#include <fstream>
 
 static const float vertices[] = {
     -1.0f, -1.0f, 0.0f,
@@ -21,6 +27,7 @@ glm::mat4 RenderEngine::BiasMatrix = glm::mat4(
 
 
 RenderEngine::RenderEngine()
+	: tree(10, 5, glm::vec3(-20000), glm::vec3(20000)), viewArea(glm::vec3(-5000, -5000, -5000), glm::vec3(5000, 5000, 5000))
 {
 	this->camera = nullptr;
 	this->light = nullptr;
@@ -62,6 +69,8 @@ RenderEngine::RenderEngine()
 	CreateBlurHFramebuffers();
 	CreateBlurVFramebuffers();
 	CreateCombineFramebuffer();
+
+	skybox = nullptr;
 }
 
 
@@ -76,6 +85,24 @@ RenderEngine::~RenderEngine()
 	{
 		delete light;
 	}
+}
+
+
+void RenderEngine::ResetTree()
+{
+	tree.Clear(5, glm::vec3(-20000), glm::vec3(20000));
+}
+
+
+void RenderEngine::CreateTree()
+{
+	tree.CreateTree();
+}
+
+
+void RenderEngine::SetSkybox(Skybox *skybox)
+{
+	this->skybox = skybox;
 }
 
 
@@ -359,7 +386,14 @@ void RenderEngine::AddRenderable(IRenderable* entity)
 	}
 	else
 	{
-		entities.push_back(entity);
+		if(entity->isStatic)
+		{
+			tree.Insert(entity);
+		}
+		else
+		{
+			entities.push_back(entity);
+		}
 	}
 }
 
@@ -376,10 +410,17 @@ void RenderEngine::RemoveRenderable(IRenderable* entity)
 	}
 	else
 	{
-		auto elem = std::find(entities.begin(), entities.end(), entity);
-		if(elem != entities.end())
+		if(entity->isStatic)
 		{
-			entities.erase(elem);
+			tree.Remove(entity);
+		}
+		else
+		{
+			auto elem = std::find(entities.begin(), entities.end(), entity);
+			if(elem != entities.end())
+			{
+				entities.erase(elem);
+			}
 		}
 	}
 }
@@ -407,10 +448,11 @@ RenderInfo *RenderEngine::GetRenderInfo()
 }
 
 
-void RenderEngine::RenderShadow()
+void RenderEngine::RenderShadow(std::deque<IRenderable*> &ent)
 {
 	glm::mat4 oldPersp = camera->perspective;
 	glm::vec3 cameraDir = *camera->target - camera->position;
+
 	cameraDir.y = 0;
 	cameraDir = glm::normalize(cameraDir);
 
@@ -446,8 +488,8 @@ void RenderEngine::RenderShadow()
 		left = -1000;
 		right = 1000;
 	}
-	camera->perspective = glm::ortho(left, right, bottom, top, -500.0f, 5000.0f);
-	info.shadowViewProj = camera->perspective * glm::lookAt(glm::vec3(light->position) + *camera->target, glm::vec3(0) + *camera->target, glm::vec3(0.0f, 1.0f, 0.0f));
+	camera->perspective = glm::ortho(left, right, bottom, top, -1000.0f, 5000.0f);
+	info.shadowViewProj = camera->perspective * glm::lookAt(glm::vec3(light->position) + *camera->target, *camera->target, glm::vec3(0.0f, 1.0f, 0.0f));
 
 	glBindFramebuffer(GL_FRAMEBUFFER, shadowFramebuffer);
 	glViewport(0,0,ppfxWidth,ppfxHeight);
@@ -455,6 +497,11 @@ void RenderEngine::RenderShadow()
 	glClear(GL_DEPTH_BUFFER_BIT | GL_COLOR_BUFFER_BIT);	
 
 	glCullFace(GL_FRONT);
+
+	for(unsigned int i =0, e = ent.size(); i < e; ++i)
+	{
+		ent[i]->RenderShadow();
+	}
 
 	for(int i = 0; i < (int)entities.size(); ++i)
 	{
@@ -469,7 +516,7 @@ void RenderEngine::RenderShadow()
 }
 
 
-void RenderEngine::Render(bool shadows, bool bloom, bool fog)
+void RenderEngine::Render(bool shadows, bool bloom, bool fog, bool clearScreen)
 {
 	info.camera = camera;
 	info.light = light;
@@ -480,19 +527,28 @@ void RenderEngine::Render(bool shadows, bool bloom, bool fog)
 	info.width = this->width;
 	info.height = this->height;
 
+	BoundingBox bb = viewArea;
+
+	if(info.camera != nullptr)
+	{
+		bb.min += info.camera->position;
+		bb.max += info.camera->position;
+	}
+
+	std::deque<IRenderable*> ent = tree.GetIntersection(bb);
 
 	///////////////////////////////////////////////////////
 	//	Render objects
 	///////////////////////////////////////////////////////
 	if(shadows)
 	{
-		RenderShadow();
+		RenderShadow(ent);
 	}
 	else
 	{
 	}
 
-	RenderAllEntities();
+	RenderAllEntities(ent);
 
 	Bloom();
 	
@@ -513,15 +569,22 @@ void RenderEngine::Render(bool shadows, bool bloom, bool fog)
 }
 
 
-void RenderEngine::RenderAllEntities()
+void RenderEngine::RenderAllEntities(std::deque<IRenderable*> &ent)
 {
 	glBindFramebuffer(GL_FRAMEBUFFER, ppfxFramebuffer);
 	glViewport(0,0,ppfxWidth,ppfxHeight);
 	glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
 	glClear(GL_DEPTH_BUFFER_BIT | GL_COLOR_BUFFER_BIT);
-
-	//Need to fix this so that particles get rendered last.
 	
+	if(skybox != nullptr)
+		skybox->Render();
+
+
+	for(unsigned int i =0, e = ent.size(); i < e; ++i)
+	{
+		ent[i]->Render();
+	}
+
 	for(int i = 0; i < (int)entities.size(); ++i)
 	{
 		entities[i]->Render();

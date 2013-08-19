@@ -27,7 +27,7 @@ void AIEngine::RemoveAIThing(IAIThing* entity)
 
 void AIEngine::Update(float elapsedMilliseconds)
 {
-	for(int i = 0, e = entities.size(); i < e; ++i)
+	for(int i = 0; i < entities.size(); ++i)
 	{
 		entities[i]->Update(elapsedMilliseconds);
 	}

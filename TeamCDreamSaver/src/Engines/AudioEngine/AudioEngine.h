@@ -18,8 +18,10 @@ enum	eSOUNDEFFECT
 	ENTER_MENU			= 9,
 	NUKELAUNCH			= 10,
 	LOSEGAME			= 11,
+	GUNSHOT,
 	MAXSFCOUNT
 };
+
 
 enum	eTRACKLEVEL
 {
@@ -37,12 +39,16 @@ class	AudioEngine
 public:
 	bool	Initialize();
 	bool	LoadAudioSample();
-	void	PlayBg_Audio(eTRACKLEVEL BG);
+	void	PlayBg_Audio();
 	void	PlaySoundEffect(eSOUNDEFFECT);
 	void	PlayBg_racingAudio();
+	void	PlayTrackAudio(int);
+	void	PlayFlatLineWAV();
+	void	StopFlatLineWAV();
 	void	PauseBackground();
 	void	ResumeBackground();
 	void	Mute_UnMuteAll();
+	void	AdujstBackgroundMusicVol(float);
 
 	static	AudioEngine* GetInstance()
 	{
@@ -64,6 +70,7 @@ private:
 	HSAMPLE		Audio_sf[MAXSFCOUNT+1];
 	HCHANNEL	Bg_Channel;
 	HCHANNEL	Sf_Channel;
+	HCHANNEL	FL_Channel;
 
 	bool	Mute;
 	float	MasterVolume;

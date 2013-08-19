@@ -40,3 +40,8 @@ TRIGGER_TYPE I_Trigger::GetType()
 {
 	return this->type;
 }
+
+void I_Trigger::reset()
+{
+	triggered_ = false;
+}

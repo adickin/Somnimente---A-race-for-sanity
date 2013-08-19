@@ -89,6 +89,9 @@
     <Filter Include="Header Files\Entities\Triggers">
       <UniqueIdentifier>{b4f41252-efbf-4014-94b3-9b896c2118f3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Models\Tracks\Forest">
+      <UniqueIdentifier>{0abbed4a-6d77-46ce-8f3d-48f4754c98a9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Engines\AIEngine\AIEngine.cpp">
@@ -96,9 +99,6 @@
     </ClCompile>
     <ClCompile Include="src\Engines\RenderEngine\Camera.cpp">
       <Filter>Source Files\Engines\RenderEngine</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Screens\DemoScreen.cpp">
-      <Filter>Source Files\Screens</Filter>
     </ClCompile>
     <ClCompile Include="src\Engines\AIEngine\IAIThing.cpp">
       <Filter>Source Files\Engines\AIEngine</Filter>
@@ -116,9 +116,6 @@
       <Filter>Source Files\Engines\RenderEngine</Filter>
     </ClCompile>
     <ClCompile Include="src\Screens\IScreen.cpp">
-      <Filter>Source Files\Screens</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Screens\LoadingScreen.cpp">
       <Filter>Source Files\Screens</Filter>
     </ClCompile>
     <ClCompile Include="src\Utilities\ModelManager.cpp">
@@ -235,14 +232,38 @@
     <ClCompile Include="src\Engines\VehicleAIEngine\AIDrivingLane.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Entities\AIVehicle.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\Entities\Triggers\RocketWeapon.cpp">
       <Filter>Source Files\Entities\Triggers</Filter>
     </ClCompile>
     <ClCompile Include="src\Entities\Triggers\RocketTrigger.cpp">
       <Filter>Source Files\Entities\Triggers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Screens\CutScene.cpp">
+      <Filter>Source Files\Screens</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engines\RenderEngine\Octree.cpp">
+      <Filter>Source Files\Engines\RenderEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engines\VehicleAIEngine\QuadraticBezierCurve.cpp">
+      <Filter>Source Files\Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Entities\Triggers\FallenOffTrackTrigger.cpp">
+      <Filter>Source Files\Entities\Triggers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Entities\AIVehicle.cpp">
+      <Filter>Source Files\Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Entities\Triggers\FullScreenImageTrigger.cpp">
+      <Filter>Source Files\Entities\Triggers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Entities\Triggers\FullScreenFinalImageTrigger.cpp">
+      <Filter>Source Files\Entities\Triggers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engines\PhysicsEngine\PhysicsVehicle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Screens\ForwardScreen.cpp">
+      <Filter>Source Files\Screens</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -379,7 +400,6 @@
     <None Include="Parameters\LevelSelectData.xml">
       <Filter>Parameters</Filter>
     </None>
-    <None Include="Parameters\TuningVars.ini" />
     <None Include="src\Engines\VehicleAIEngine\vehicleLocations.txt" />
     <None Include="src\Engines\VehicleAIEngine\level1CenterLaneWaypointFile.txt" />
     <None Include="src\Engines\VehicleAIEngine\level1RightLaneWaypointFile.txt" />
@@ -390,15 +410,105 @@
     <None Include="Parameters\Level2nograv.xml">
       <Filter>Parameters</Filter>
     </None>
-    <None Include="Parameters\Level3.xml">
-      <Filter>Parameters</Filter>
-    </None>
-    <None Include="Parameters\Level3nograv.xml">
-      <Filter>Parameters</Filter>
-    </None>
     <None Include="Parameters\Level4.xml">
       <Filter>Parameters</Filter>
     </None>
+    <None Include="Parameters\TuningVars.ini">
+      <Filter>Parameters</Filter>
+    </None>
+    <None Include="fShaderNPR.glsl">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="LevelScreenData.ini">
+      <Filter>Parameters</Filter>
+    </None>
+    <None Include="Models\Tracks\Forest\A.xml">
+      <Filter>Models\Tracks\Forest</Filter>
+    </None>
+    <None Include="Models\Tracks\Forest\B.xml">
+      <Filter>Models\Tracks\Forest</Filter>
+    </None>
+    <None Include="Models\Tracks\Forest\C.xml">
+      <Filter>Models\Tracks\Forest</Filter>
+    </None>
+    <None Include="Models\Tracks\Forest\D.xml">
+      <Filter>Models\Tracks\Forest</Filter>
+    </None>
+    <None Include="Models\Tracks\Forest\E.xml">
+      <Filter>Models\Tracks\Forest</Filter>
+    </None>
+    <None Include="Models\Tracks\Forest\F.xml">
+      <Filter>Models\Tracks\Forest</Filter>
+    </None>
+    <None Include="Models\Tracks\Forest\G.xml">
+      <Filter>Models\Tracks\Forest</Filter>
+    </None>
+    <None Include="Models\Tracks\Forest\H.xml">
+      <Filter>Models\Tracks\Forest</Filter>
+    </None>
+    <None Include="Models\Tracks\Forest\I.xml">
+      <Filter>Models\Tracks\Forest</Filter>
+    </None>
+    <None Include="Models\Tracks\Forest\K.xml">
+      <Filter>Models\Tracks\Forest</Filter>
+    </None>
+    <None Include="Models\Tracks\Forest\L.xml">
+      <Filter>Models\Tracks\Forest</Filter>
+    </None>
+    <None Include="Models\Tracks\Forest\M.xml">
+      <Filter>Models\Tracks\Forest</Filter>
+    </None>
+    <None Include="Models\Tracks\Forest\N.xml">
+      <Filter>Models\Tracks\Forest</Filter>
+    </None>
+    <None Include="Models\Tracks\Forest\O.xml">
+      <Filter>Models\Tracks\Forest</Filter>
+    </None>
+    <None Include="Models\Tracks\Forest\P.xml">
+      <Filter>Models\Tracks\Forest</Filter>
+    </None>
+    <None Include="Models\Tracks\Forest\Q.xml">
+      <Filter>Models\Tracks\Forest</Filter>
+    </None>
+    <None Include="Models\Tracks\Forest\R.xml">
+      <Filter>Models\Tracks\Forest</Filter>
+    </None>
+    <None Include="Models\Tracks\Forest\S.xml">
+      <Filter>Models\Tracks\Forest</Filter>
+    </None>
+    <None Include="Models\Tracks\Forest\T.xml">
+      <Filter>Models\Tracks\Forest</Filter>
+    </None>
+    <None Include="Models\Tracks\Forest\U.xml">
+      <Filter>Models\Tracks\Forest</Filter>
+    </None>
+    <None Include="Models\Tracks\Forest\V.xml">
+      <Filter>Models\Tracks\Forest</Filter>
+    </None>
+    <None Include="Models\Tracks\Forest\W.xml">
+      <Filter>Models\Tracks\Forest</Filter>
+    </None>
+    <None Include="Models\Tracks\Forest\X.xml">
+      <Filter>Models\Tracks\Forest</Filter>
+    </None>
+    <None Include="Models\Tracks\Forest\Y.xml">
+      <Filter>Models\Tracks\Forest</Filter>
+    </None>
+    <None Include="Models\Tracks\Forest\LA.xml">
+      <Filter>Models\Tracks\Forest</Filter>
+    </None>
+    <None Include="Models\Tracks\Forest\LB.xml">
+      <Filter>Models\Tracks\Forest</Filter>
+    </None>
+    <None Include="Parameters\Level3grav.xml">
+      <Filter>Parameters</Filter>
+    </None>
+    <None Include="Parameters\Level3.xml">
+      <Filter>Parameters</Filter>
+    </None>
+    <None Include="src\Engines\VehicleAIEngine\level2CenterLaneWaypoint.txt" />
+    <None Include="src\Engines\VehicleAIEngine\level1CenterLaneWaypoint.txt" />
+    <None Include="src\Engines\VehicleAIEngine\level3CenterLaneWaypoint.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Engines\AIEngine\AIEngine.h">
@@ -406,9 +516,6 @@
     </ClInclude>
     <ClInclude Include="src\Engines\RenderEngine\Camera.h">
       <Filter>Header Files\Engines\RenderEngine</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Screens\DemoScreen.h">
-      <Filter>Header Files\Screens</Filter>
     </ClInclude>
     <ClInclude Include="src\Engines\AIEngine\IAIThing.h">
       <Filter>Header Files\Engines\AIEngine</Filter>
@@ -426,9 +533,6 @@
       <Filter>Header Files\Engines\RenderEngine</Filter>
     </ClInclude>
     <ClInclude Include="src\Screens\IScreen.h">
-      <Filter>Header Files\Screens</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Screens\LoadingScreen.h">
       <Filter>Header Files\Screens</Filter>
     </ClInclude>
     <ClInclude Include="src\Utilities\ModelManager.h">
@@ -530,9 +634,6 @@
     <ClInclude Include="src\Entities\Triggers\EnergyDrink.h">
       <Filter>Header Files\Entities\Triggers</Filter>
     </ClInclude>
-    <ClInclude Include="src\Engines\RenderEngine\LineGL3.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="src\Engines\VehicleAIEngine\AIDrivingLane.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -542,14 +643,44 @@
     <ClInclude Include="src\Engines\VehicleAIEngine\WaypointInterpreter.h">
       <Filter>Header Files\Utilities</Filter>
     </ClInclude>
-    <ClInclude Include="src\Entities\AIVehicle.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="src\Entities\Triggers\RocketWeapon.h">
       <Filter>Header Files\Entities\Triggers</Filter>
     </ClInclude>
     <ClInclude Include="src\Entities\Triggers\RocketTrigger.h">
       <Filter>Header Files\Entities\Triggers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Screens\CutScene.h">
+      <Filter>Header Files\Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Engines\RenderEngine\Octree.h">
+      <Filter>Header Files\Engines\RenderEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Utilities\BoundingBox.h">
+      <Filter>Header Files\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Engines\RenderEngine\LineGL3.h">
+      <Filter>Header Files\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Engines\VehicleAIEngine\QuadraticBezierCurve.h">
+      <Filter>Header Files\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Entities\Triggers\FallenOffTrackTrigger.h">
+      <Filter>Header Files\Entities\Triggers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Entities\AIVehicle.h">
+      <Filter>Header Files\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Entities\Triggers\FullScreenImageTrigger.h">
+      <Filter>Header Files\Entities\Triggers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Entities\Triggers\FullScreenFinalImageTrigger.h">
+      <Filter>Header Files\Entities\Triggers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Engines\PhysicsEngine\PhysicsVehicle.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Screens\ForwardScreen.h">
+      <Filter>Header Files\Screens</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

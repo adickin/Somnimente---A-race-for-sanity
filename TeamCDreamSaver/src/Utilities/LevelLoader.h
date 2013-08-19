@@ -12,6 +12,7 @@
 #include <Entities\Obstacle.h>
 #include <Entities\RoadBlockObstacle.h>
 #include <Entities\Triggers\FinishTrigger.h>
+#include <Entities\Triggers\FallenOffTrackTrigger.h>
 #include <Entities\TrackSection.h>
 #include <Entities\Triggers\RocketTrigger.h>
 #include <glm\gtc\quaternion.hpp>
@@ -23,6 +24,8 @@ struct Level
 	std::vector<Powerup*> powerups;
 	std::vector<I_Trigger*> triggers;
 	std::vector<Obstacle*> obstacles;
+	int number;
+	glm::vec3 minimumTrackPoint;
 };
 
 class LevelLoader

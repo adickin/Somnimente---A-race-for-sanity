@@ -10,12 +10,12 @@
 #include <sstream>
 #include "ScreenManager.h"
 #include "IScreen.h"
-#include "DemoScreen.h"
 #include "IntroScreen.h"
 #include "InputEngine.h"
 #include "AudioEngine.h"
 #include <Engines\PhysicsEngine\PhysicsEngine.h>
 #include <time.h>
+#include <Utilities\TextureManager.h>
 
 
 ScreenManager screenManager;
@@ -47,7 +47,7 @@ int main()
 	
 	al_set_new_display_option(ALLEGRO_DEPTH_SIZE, 32, ALLEGRO_SUGGEST);
 	al_set_new_display_option(ALLEGRO_RENDER_METHOD, 1, ALLEGRO_SUGGEST);
-	al_set_new_display_option(ALLEGRO_VSYNC, 1, ALLEGRO_SUGGEST);	
+	al_set_new_display_option(ALLEGRO_VSYNC, 0, ALLEGRO_SUGGEST);	
 
 	window = al_create_display(1280, 720);
 	if( !window ) {
@@ -102,7 +102,7 @@ int main()
 	/////////////////////////////////////////////////////////////////////////////////////
 	bool running = true;
 	
-	const int FRAMES_PER_SECOND = 30;	//do updates at 30 frames per second
+	const int FRAMES_PER_SECOND = 35;	//do updates at 30 frames per second
 	const double SKIP_FRAMES = 1.0 / FRAMES_PER_SECOND;
 	const int MAX_FRAME_SKIP = 15;		//maximum render frames that can be skipped
 
@@ -115,12 +115,13 @@ int main()
 	double lastUpdate = al_get_time();
 	float lastFrame = (float)al_get_time() * 1000.0f;
 	bool	MuteHold = false;
+	float physAccum = 0;
 
 	//time vars for physics
 	clock_t lastTime, elapsedTime, currentTime;
 	lastTime = clock();
 
-	AudioEngine::GetInstance()->PlayBg_Audio(eTRACKLEVEL::DEFAULT);
+	AudioEngine::GetInstance()->PlayBg_Audio();
 
 	bool isGamePaused = false;
 	bool pauseKeyHeld = false;
@@ -168,33 +169,49 @@ int main()
 			//////////////////////////////////////////////////////////////////////////////
 			//	Handle the Game logic
 			//////////////////////////////////////////////////////////////////////////////
-			float diff = (float)al_get_time()*1000.0f - lastFrame;
+			float now = (float)al_get_time()*1000.0f;
+			float diff = now - lastFrame;
+			lastFrame = now;
+
+			if(diff > 100)
+				diff = 100;
+
 			if(!isGamePaused)
 				screenManager.Update(diff);
-			lastFrame += diff;
+
+			if(!isGamePaused)
+			{
+				physAccum += (diff / 1000.0f);
+				while(physAccum > STEPSIZE)
+				{
+					physAccum -= STEPSIZE;
+					if (PhysicsEngine::GetInstance()->simulate(STEPSIZE))
+					{
+						PhysicsEngine::GetInstance()->simulationIsComplete(true);
+						PhysicsEngine::GetInstance()->updateMovedObjects();
+					}
+				}
+			}
 
 			++frames;
 			++frameSkip;
 			nextFrame += SKIP_FRAMES;
 		}
 
-		
-
 		float interp = (float)((al_get_time() + SKIP_FRAMES - nextFrame) / SKIP_FRAMES);
 
 
 		//Find time elapsed
-			currentTime = clock();
+			currentTime = al_get_time() * 1000.0f;
 			elapsedTime = currentTime - lastTime;
 			lastTime = currentTime;
 
+		//This is so that when the level loads and takes 3+ seconds the physics engine doesnt take a long time to try and catch up.
+		if(elapsedTime > 35)
+			elapsedTime = 35;
+
 		//Update physics
-			if(!isGamePaused)
-				if (PhysicsEngine::GetInstance()->simulate((float)elapsedTime/CLOCKS_PER_SEC))
-				{
-					PhysicsEngine::GetInstance()->simulationIsComplete(true);
-					PhysicsEngine::GetInstance()->updateMovedObjects();
-				}
+			
 
 		
 		//////////////////////////////////////////////////////////////////////////////

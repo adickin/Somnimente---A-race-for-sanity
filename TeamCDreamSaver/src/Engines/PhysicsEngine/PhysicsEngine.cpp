@@ -1,7 +1,9 @@
 #include <Engines\PhysicsEngine\PhysicsEngine.h>
 #include <iostream>
 #include <Entities\Triggers\I_Trigger.h>
+#include <Entities\Obstacle.h>
 #include <TriggerManager.h>
+
 
 using namespace std;
 
@@ -22,6 +24,31 @@ PhysicsEngine::PhysicsEngine(void)
 		cerr<<"PhysX ERROR!!! Physics engine not initialized!"<<endl;
 	else
 		cout<<"PhysX Physics engine initialization complete"<<endl;
+}
+
+PxFilterFlags PhysicsCollisionFilter(
+	PxFilterObjectAttributes attributes0, PxFilterData filterData0,
+	PxFilterObjectAttributes attributes1, PxFilterData filterData1,
+	PxPairFlags& pairFlags, const void* constantBlock, PxU32 constantBlockSize)
+{
+	pairFlags = PxPairFlag::eRESOLVE_CONTACTS | PxPairFlag::eTRIGGER_DEFAULT;
+	return PxFilterFlag::eDEFAULT;
+}
+
+void PhysicsEvent::onContact(const PxContactPairHeader& pairHeader, const PxContactPair* pairs, PxU32 nbPairs)
+{
+	PhysicsObject* obj1 = static_cast<PhysicsObject*>(pairHeader.actors[0]->userData);
+	PhysicsObject* obj2 = static_cast<PhysicsObject*>(pairHeader.actors[1]->userData);
+
+	if (obj1 != nullptr)
+		obj1->handleContacts(pairHeader.actors[0], pairHeader.actors[1], pairs->events);
+	if (obj2 != nullptr)
+		obj2->handleContacts(pairHeader.actors[0], pairHeader.actors[1], pairs->events);
+}
+
+void PhysicsEvent::onTrigger(PxTriggerPair* pairs, PxU32 count)
+{
+	TriggerManager::GetInstance()->onTrigger(pairs, count);
 }
 
 
@@ -82,10 +109,11 @@ bool PhysicsEngine::init(void)
 		sceneDesc.filterShader    = &PxDefaultSimulationFilterShader;
 
 	sceneDesc.flags |= PxSceneFlag::eENABLE_ACTIVETRANSFORMS;
+	sceneDesc.filterShader = PhysicsCollisionFilter;
 
+	sceneDesc.simulationEventCallback = new PhysicsEvent();
 		
 	mScene = mPhysics->createScene(sceneDesc);
-	mScene->setSimulationEventCallback(TriggerManager::GetInstance());
 	if (!mScene)
 	{
 		cerr<<"PhysX FAILED to initialize a PhysX scene!!!"<<endl;
@@ -98,12 +126,22 @@ bool PhysicsEngine::init(void)
 	if (!mCooking)
 		std::cerr<<"PhysX Failed to initialize cooking"<<std::endl;
 	
+	const PxMaterial* roadMat = mPhysics->createMaterial(0.6f, 0.6f, 0.0f);
+	PxVehicleDrivableSurfaceType type;
+	type.mType = 1;
 
+	wheelFrictionPairs=PxVehicleDrivableSurfaceToTireFrictionPairs::create(1,1,&roadMat,&type);
+
+
+	PxInitVehicleSDK(*mPhysics);
 	//*******************************************************************************************************************
 	//SETTING UP PHYSICS DEBUGGER. REMOVE IN RELEASE VERSION
 	//*******************************************************************************************************************
 
 #if _DEBUG
+
+
+
 	// check if PvdConnection manager is available on this platform
 	if(mPhysics->getPvdConnectionManager() != NULL)
 	{
@@ -113,14 +151,21 @@ bool PhysicsEngine::init(void)
 		int             port        = 5425;         // TCP port to connect to, where PVD is listening
 		unsigned int    timeout     = 100;          // timeout in milliseconds to wait for PVD to respond,
 		// consoles and remote PCs need a higher timeout.
+
+		mPhysics->getVisualDebugger()->setVisualizeConstraints(true);
+		mPhysics->getVisualDebugger()->setVisualDebuggerFlag(PxVisualDebuggerFlags::eTRANSMIT_CONTACTS, true);
+		mScene->setVisualizationParameter(PxVisualizationParameter::eSCALE, 1.0f);
+		mScene->setVisualizationParameter(PxVisualizationParameter::eJOINT_LOCAL_FRAMES, true);
+		mScene->setVisualizationParameter(PxVisualizationParameter::eJOINT_LIMITS, true);
+		mScene->setVisualizationParameter(PxVisualizationParameter::eBODY_JOINT_GROUPS, true);
+
 		PxVisualDebuggerConnectionFlags connectionFlags = PxVisualDebuggerExt::getAllConnectionFlags();
 
 		// and now try to connect
 		theConnection = PxVisualDebuggerExt::createConnection(mPhysics->getPvdConnectionManager(),
 			pvd_host_ip, port, timeout, connectionFlags);
 
-		mPhysics->getVisualDebugger()->setVisualizeConstraints(true);
-		mPhysics->getVisualDebugger()->setVisualDebuggerFlag(PxVisualDebuggerFlags::eTRANSMIT_CONTACTS, true);
+		
 
 	}
 	if (theConnection == nullptr)
@@ -136,89 +181,35 @@ bool PhysicsEngine::init(void)
 //positive acceleration goes forward
 void PhysicsEngine::applyAccelerationToCar(Vehicle* car, float accelerationForce)
 {
-	accelerationForce *= VarLoader::GetDouble("accelerationMultiplier");
-	PxVec3 forwardVector = car->chassis->getGlobalPose().q.rotateInv(car->chassis->getLinearVelocity());
-	if (accelerationForce * forwardVector.z < 0 && abs(forwardVector.z) > 5) //if true, we are breaking, not driving. When speed is low enough, we can start driving again
+	PxVec3 leftSideVector = car->frontLeftWheel->getGlobalPose().q.rotate(PxVec3(1, 0, 0));
+	car->frontLeftWheel->addTorque(leftSideVector * accelerationForce * VarLoader::GetDouble("accelerationMultiplier"));
+
+	PxVec3 rightSideVector = car->frontRightWheel->getGlobalPose().q.rotate(PxVec3(1, 0, 0));
+	car->frontRightWheel->addTorque(rightSideVector * accelerationForce * VarLoader::GetDouble("accelerationMultiplier"));
+
+	PxVec3 vel = car->chassis->getLinearVelocity();
+	if(vel.magnitude() > 340)
 	{
-		car->wheelsLocked = true;
+		vel.normalizeFast();
+		car->chassis->setLinearVelocity(vel * 340);
 	}
-	else
-	{
-		car->wheelsLocked = false;
-
-		PxReal speedDif = VarLoader::GetDouble("topSpeed") - abs(forwardVector.z);
-		if (speedDif < 0)
-			speedDif = 0;
-		accelerationForce *= speedDif;
-		//PxVec3 frontAcceleration = PxQuat(PxPi * VarLoader::GetDouble("turnAngle") * car->turnFraction, PxVec3(0, 1, 0)).rotate(PxVec3(0, 0, accelerationForce));
-
-
-		//Apply front wheels first
-		PxRigidBodyExt::addLocalForceAtLocalPos(*car->chassis, PxVec3(0, 0, accelerationForce) / 2, PxVec3(0, 0, 40));
-
-		//Now rear wheels pushing in a straight line
-		PxRigidBodyExt::addLocalForceAtLocalPos(*car->chassis, PxVec3(0, 0, accelerationForce) / 2, PxVec3(0, 0, -40));
-	}
-
 }
 
 //positive steering in the right direction
-void PhysicsEngine::applyRightSteeringToCar(Vehicle* car)
+void PhysicsEngine::applyRightSteeringToCar(Vehicle* car, float turn)
 {
-	//Get a vector for front wheels based on turning value
-	PxReal turnAngle = -PxPi * VarLoader::GetDouble("turnAngle") * car->turnFraction;
-
-	PxVec3 forwardVector = car->chassis->getGlobalPose().q.rotate(PxVec3(0, 0, 1));
-	PxVec3 linearVelocity = car->chassis->getLinearVelocity();	
-	PxReal totalSpeed = linearVelocity.magnitude();
-	PxReal forwardSpeed = linearVelocity.dot(forwardVector);
-
-	PxReal turnForce = VarLoader::GetDouble("turningForceMultiplier");
-	PxVec3 forwardForce = PxQuat(turnAngle, PxVec3(0, -1, 0)).rotate(PxVec3(0, 0, forwardSpeed / 2 * turnForce));
 	
-	PxRigidBodyExt::addLocalForceAtLocalPos(*car->chassis, forwardForce, PxVec3(0, 0, 40));
-	PxRigidBodyExt::addLocalForceAtLocalPos(*car->chassis, PxVec3(0, 0, -forwardSpeed)/2 * turnForce, PxVec3(0, 0, 40));
+	PxReal turnAngle = PxPi * VarLoader::GetDouble("turnAngle") * car->turnFraction;
+	car->leftJoint->setLocalPose(PxJointActorIndex::eACTOR1, PxTransform(PxVec3(-7, 6, 20), PxQuat(turnAngle, PxVec3(0, 1, 0))));
+	car->rightJoint->setLocalPose(PxJointActorIndex::eACTOR1, PxTransform(PxVec3(7, 6, 20), PxQuat(turnAngle, PxVec3(0, 1, 0))));
 }
 
 
 void PhysicsEngine::applyFrictionToCar(Vehicle* car)
 {
-	//Get car's global linear velocity
-	PxVec3 linearVelocity = car->chassis->getLinearVelocity();
 
-	//Nowe we get its angularSpeed. That is, how fast is each end of the car moving in the local x-coord due to rotation
-	//Positive speed is counter-clockwise. That is, the front is moving at a -angularSpeed speed.
-	PxReal angularSpeed = car->chassis->getAngularVelocity().y;
-
-	//Rotate that local x vector to global coords
-	PxVec3 angularVector = car->chassis->getGlobalPose().q.rotate(PxVec3(angularSpeed, 0, 0));
-	
-	//Now we know that the front is moving at -angularVector due to rotation, and rear is moving at angularVector due to rotation
-	//Let's add the rotational vector to the linear one to get the total front and rear movement
-	PxVec3 frontVector = linearVelocity + angularVector;
-	PxVec3 rearVector = linearVelocity - angularVector;
-	
-	
-	//if wheels are locked, we must apply friction directly against the vector of wheel's velocity
-	if (car->wheelsLocked)
-	{
-		PxRigidBodyExt::addForceAtLocalPos(*car->chassis, -frontVector * VarLoader::GetDouble("slidingFriction"), PxVec3(0, 0, 40));
-		PxRigidBodyExt::addForceAtLocalPos(*car->chassis, -rearVector * VarLoader::GetDouble("slidingFriction"), PxVec3(0, 0, -40));
-	}
-	else //if wheels are not locked, they are rolling and have no friction in the local z-coord, only the local x-coord
-	{
-		//First let's get the sideVector that tells us which way the left side of the car is pointing
-		PxVec3 sideVector = car->chassis->getGlobalPose().q.rotate(PxVec3(-1, 0, 0));
-
-		//Get the components of front and rear velocity vectors that correspond to side movement
-		PxReal frontSideComp = frontVector.dot(sideVector);
-		PxReal rearSideComp = rearVector.dot(sideVector);
-
-		//And now apply the force to front and rear
-		PxRigidBodyExt::addLocalForceAtLocalPos(*car->chassis, PxVec3(frontSideComp, 0, 0) * VarLoader::GetDouble("slidingFriction"), PxVec3(0, 0, 40));
-		PxRigidBodyExt::addLocalForceAtLocalPos(*car->chassis, PxVec3(rearSideComp, 0, 0) * VarLoader::GetDouble("slidingFriction"), PxVec3(0, 0, -40));
-	}
 }
+
 
 
 bool PhysicsEngine::simulate(PxReal timeElapsed) 
@@ -227,9 +218,9 @@ bool PhysicsEngine::simulate(PxReal timeElapsed)
     if(mAccumulator < STEPSIZE)
         return false;
 
-    mAccumulator -= STEPSIZE;
+	mAccumulator -= STEPSIZE;
 
-    mScene->simulate(STEPSIZE);
+	mScene->simulate(STEPSIZE);
     return true;
 }
 
@@ -274,7 +265,8 @@ void PhysicsEngine::clearScene()
 	{	
 		actorBuffer[i]->release();
 	}
-	delete actorBuffer;
+	delete[] actorBuffer;
+	mScene->flush();
 }
 
 
@@ -315,23 +307,24 @@ void PhysicsEngine::updateMovedObjects()
 	for (PxU32 i=0; i < nbActiveTransforms; ++i)
 	{
 		PhysicsObject* object = static_cast<PhysicsObject*>(activeTransforms[i].userData);
+		if (object != nullptr)
+		{
+			PxTransform transform = activeTransforms[i].actor2World;
 
+			glm::fquat orientation;
+			orientation.x = transform.q.x;
+			orientation.y = transform.q.y;
+			orientation.z = transform.q.z;
+			orientation.w = transform.q.w;
 
-		PxTransform transform = activeTransforms[i].actor2World;
+			glm::vec3 position;
+			position.x = transform.p.x;
+			position.y = transform.p.y;
+			position.z = transform.p.z;
 
-		fquat orientation;
-		orientation.x = transform.q.x;
-		orientation.y = transform.q.y;
-		orientation.z = transform.q.z;
-		orientation.w = transform.q.w;
-
-		vec3 position;
-		position.x = transform.p.x;
-		position.y = transform.p.y;
-		position.z = transform.p.z;
-
-		object->updateTransform(position, orientation);
-		object->updateForces();
+			object->updateTransform(position, orientation);
+			object->updateForces(activeTransforms[i].actor);
+		}
 	}
 }
 
@@ -399,7 +392,7 @@ void PhysicsEngine::addTrackSection(TrackSection *obj)
 		return;
 	}
 	
-	PxMaterial* material = mPhysics->createMaterial(0.6f, 0.6f, 0.0f);    //static friction, dynamic friction, restitution
+	PxMaterial* material = mPhysics->createMaterial(1.0f, 1.0f, 0.0f);    //static friction, dynamic friction, restitution
 	PxRigidStatic* mesh = mPhysics->createRigidStatic(pose);
 	PxShape* meshShape;
 	if(mesh)
@@ -414,11 +407,10 @@ void PhysicsEngine::addTrackSection(TrackSection *obj)
 		cerr<<"PhysX failed to create track setion"<<endl;
 }
 
-
 void PhysicsEngine::addVehicle(Vehicle* car)
 {
 	cout<<"PhysX adding a vehicle"<<endl;
-	PxMaterial* material = mPhysics->createMaterial(0.1f, 0.1f, 0.0f);    //static friction, dynamic friction, restitution
+	PxMaterial* material = mPhysics->createMaterial(VarLoader::GetDouble("tireFriction"), VarLoader::GetDouble("tireFriction"), 0.0f);    //static friction, dynamic friction, restitution
 
 	PxTransform pose;
 	pose.p.x = car->getPosition()->x;
@@ -444,26 +436,159 @@ void PhysicsEngine::addVehicle(Vehicle* car)
 		cout<<"PhysX created physical car chassis"<<endl;
 	car->chassis->userData = car;
 		
+	pose.p.z += 20;
+	pose.p.x -= 7;
+	car->frontLeftWheel = mPhysics->createRigidDynamic(pose);
+	car->frontLeftSteering = mPhysics->createRigidDynamic(pose);
+
+	pose.p.x += 14;
+	car->frontRightWheel = mPhysics->createRigidDynamic(pose);
+	car->frontRightSteering = mPhysics->createRigidDynamic(pose);
+
+
+	car->frontLeftWheel->setMaxAngularVelocity(400);
+	car->frontRightWheel->setMaxAngularVelocity(400);
+
+
+
+	pose.p.z -= 40;
+	car->rearRightWheel = mPhysics->createRigidDynamic(pose);
+
+	pose.p.x -= 14;
+	car->rearLeftWheel = mPhysics->createRigidDynamic(pose);
+
+	car->rearLeftWheel->setMaxAngularVelocity(400);
+	car->rearRightWheel->setMaxAngularVelocity(400);
+
+	//car->rearWheels = mPhysics->createRigidDynamic(pose);
+
+
+	car->chassis->setContactReportThreshold(1);
+//	car->frontWheels->setContactReportThreshold(1);
+//	car->rearWheels->setContactReportThreshold(1);
+
+	PxReal wheelRadius = 6;
+	//PxReal chassisHeight = wheelRadius * 2;
+	//PxReal suspensionHeight = car->size.y - wheelRadius * 2 - chassisHeight - 10;
+
+	PxTransform chassisPose = PxTransform::createIdentity();
+	PxTransform wheelPose = PxTransform::createIdentity();
+
+
+	chassisPose.p.y = 15;
+	wheelPose.p.y = wheelRadius;
+	
+	car->chassis->createShape(PxBoxGeometry(14, 3, 20), *material, chassisPose);	
+	
+	//PxShape* frontLeft = car->frontLeftWheel->createShape(PxCapsuleGeometry(wheelRadius, 2), *material, wheelPose);
+	//PxShape* frontRight = car->frontRightWheel->createShape(PxCapsuleGeometry(wheelRadius, 2), *material, wheelPose);
+	//PxShape* rearRight = car->rearRightWheel->createShape(PxCapsuleGeometry(wheelRadius, 2), *material, wheelPose);
+	//PxShape* rearLeft = car->rearLeftWheel->createShape(PxCapsuleGeometry(wheelRadius, 2), *material, wheelPose);
+	
+	PxShape* frontLeft = car->frontLeftWheel->createShape(PxSphereGeometry(wheelRadius), *material, wheelPose);
+	PxShape* frontRight = car->frontRightWheel->createShape(PxSphereGeometry(wheelRadius), *material, wheelPose);
+	PxShape* rearRight = car->rearRightWheel->createShape(PxSphereGeometry(wheelRadius), *material, wheelPose);
+	PxShape* rearLeft = car->rearLeftWheel->createShape(PxSphereGeometry(wheelRadius), *material, wheelPose);
+
+	//PxShape* leftSteer = car->frontLeftSteering->createShape(PxBoxGeometry(3, 3, 3), *material, wheelPose);
+	//PxShape* rightSteer = car->frontRightSteering->createShape(PxBoxGeometry(3, 3, 3), *material, wheelPose);
+	//car->rearWheels->createShape(PxCapsuleGeometry(wheelRadius, car->size.x / 2.0f - wheelRadius), *material, wheelPose);
 	
 
-	PxTransform localGeometryPose = PxTransform::createIdentity();
-	localGeometryPose.p.y = 13.5f;
-	for (int i = 0; i < car->geometryCount; i++)
+	//PxRevoluteJoint* leftJoint = PxRevoluteJointCreate(*mPhysics, car->frontLeftWheel, PxTransform(PxVec3(0, 9, 0)), car->frontLeftSteering, PxTransform(PxVec3(0, 9, 0)));
+	//PxRevoluteJoint* rightJoint = PxRevoluteJointCreate(*mPhysics, car->frontRightWheel, PxTransform(PxVec3(0, 9, 0)), car->frontRightSteering, PxTransform(PxVec3(0, 9, 0)));
+
+
+	for (int i = 0, j = -1; i < 4; i++, j=-j)
 	{
-		car->chassis->createShape(car->geometries[i], *material, localGeometryPose);
+		PxRigidDynamic* wheels = car->frontLeftWheel;
+		int z = 20;
+		int x = -7;
+		if (i == 1)
+		{
+			z = 20;
+			wheels = car->frontRightWheel;
+			x = 7;
+		}
+		if (i == 2)
+		{
+			wheels = car->rearRightWheel;
+			z = -20;
+			x = 7;
+		}
+		if (i == 3)
+		{
+			wheels = car->rearLeftWheel;
+			z = -20;
+			x = -7;
+		}
+
+
+		
+		//PxRevoluteJoint* jointer = PxRevoluteJointCreate(*mPhysics, wheels, PxTransform(PxVec3(0, 4.5, 0)), car->chassis,wheel);
+
+
+		PxD6Joint* suspension = PxD6JointCreate(*mPhysics, wheels, PxTransform(PxVec3(0, 6, 0)), car->chassis, PxTransform(PxVec3(x, 6, z)));
+		if (i == 0)
+		{
+			car->leftJoint = suspension;
+			//suspension->setMotion(PxD6Axis::eSWING1, PxD6Motion::eLIMITED);
+			//suspension->setSwingLimit(PxJointLimitCone(0, PxPi * VarLoader::GetDouble("turnAngle"), 1));
+		}
+		if (i == 1)
+			car->rightJoint = suspension;
+		
+		suspension->setMotion(PxD6Axis::eTWIST, PxD6Motion::eFREE);
+			
+		
+		
+		
+		//suspension->setConstraintFlag(PxConstraintFlag::eVISUALIZATION, true);
+		//suspension->setMotion(PxD6Axis::eY, PxD6Motion::eLIMITED);
+		//suspension->setDrive(PxD6Drive::eY, PxD6JointDrive(1000000, 1000000, 200000));
+		/*suspension->setMotion(PxD6Axis::eZ, PxD6Motion::eFREE);
+		suspension->setMotion(PxD6Axis::eX, PxD6Motion::eFREE);
+		suspension->setDrive(PxD6Drive::eX, PxD6JointDrive(10, 10, PX_MAX_F32));
+		suspension->setDrive(PxD6Drive::eZ, PxD6JointDrive(10, 10, PX_MAX_F32));*/
+			
+		
+		
+
+		//suspension->setConstraintFlag(PxConstraintFlag::eCOLLISION_ENABLED, true);
 	}
 
+	
 	PxRigidBodyExt::updateMassAndInertia(*car->chassis, VarLoader::GetDouble("carDensity"));
+	PxRigidBodyExt::updateMassAndInertia(*car->frontLeftWheel, VarLoader::GetDouble("carDensity")*2);
+	PxRigidBodyExt::updateMassAndInertia(*car->frontRightWheel, VarLoader::GetDouble("carDensity")*2);
+	PxRigidBodyExt::updateMassAndInertia(*car->rearLeftWheel, VarLoader::GetDouble("carDensity"));
+	PxRigidBodyExt::updateMassAndInertia(*car->rearRightWheel, VarLoader::GetDouble("carDensity"));
 
-	car->chassis->setCMassLocalPose(PxTransform(PxVec3(0, 0, 0)));
+	car->chassis->setCMassLocalPose(PxTransform(PxVec3(0, -5, 0)));
+
+	//car->frontLeftWheel->userData = car;
+	//car->frontRightWheel->userData = car;
+	//car->rearLeftWheel->userData = car;
+	//car->rearRightWheel->userData = car;
+	//car->rearWheels->userData = car;
+	car->chassis->userData = car;
+	
 
 	mScene->addActor(*car->chassis);
+	mScene->addActor(*car->frontLeftWheel);
+	mScene->addActor(*car->frontRightWheel);
+	mScene->addActor(*car->rearLeftWheel);
+	mScene->addActor(*car->rearRightWheel);
+	//mScene->addActor(*car->frontLeftSteering);
+	//mScene->addActor(*car->frontRightSteering);
+	//mScene->addActor(*car->rearWheels);
+	playerCar = car;
 }
 
 
-void PhysicsEngine::addRectangularObject(PhysicsObject* object)
+void PhysicsEngine::addRectangularObject(Obstacle* object)
 {
-	PxMaterial* material = mPhysics->createMaterial(0.5f, 0.5f, 0.1f);    //static friction, dynamic friction, restitution
+	PxMaterial* material = mPhysics->createMaterial(0.5f, 0.5f, 0.001f);    //static friction, dynamic friction, restitution
 
 	PxTransform pose;
 	pose.p.x = object->getPosition()->x;
@@ -479,16 +604,18 @@ void PhysicsEngine::addRectangularObject(PhysicsObject* object)
 	PxReal halfY = object->getDimensions().y/2.0;
 	PxReal halfZ = object->getDimensions().z/2.0;
 
-	PxRigidDynamic* rectActor = mPhysics->createRigidDynamic(pose);
+	object->physBox = mPhysics->createRigidDynamic(pose);
 
-	if (!rectActor)
+	if (!object->physBox)
 		cerr<<"FAILED to create a rectangular physics object!"<<endl;
 	else
 		cout<<"Created a rectangular physics object"<<endl;
-	rectActor->userData = object;
+	object->physBox->userData = object;
+	object->physBox->setContactReportThreshold(0);
+	object->physBox->createShape(PxBoxGeometry(halfX, halfY, halfZ), *material);
 
-	rectActor->createShape(PxBoxGeometry(halfX, halfY, halfZ), *material);
-	mScene->addActor(*rectActor);
+	PxRigidBodyExt::updateMassAndInertia(*object->physBox, 0.10);
+	mScene->addActor(*object->physBox);
 }
 
 

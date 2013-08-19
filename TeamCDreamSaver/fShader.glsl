@@ -77,6 +77,7 @@ void main()
 	//
 	//////////////////////////////////////////////////////////////////////////////////////
 	float diffuseValue = max(dot(passNormal, lightVec), 0.0);
+	//diffuseValue = (round(diffuseValue * 10.0f))/10.0f;
 	diffuseColor = light1.diffuseColor * diffuseValue;
 
 
@@ -85,8 +86,12 @@ void main()
 	//	Specular Lighting
 	//
 	//////////////////////////////////////////////////////////////////////////////////////
-	vec3 R = reflect(lightVec, passNormal);
-	specularColor = light1.specularColor * pow(max(dot(R, viewVec), 0.0), 32.0);
+	vec3 R = -reflect(lightVec, passNormal);
+	float specularVal = pow(max(dot(R, viewVec), 0.0), 32.0);
+	
+	//specularVal = (round(specularVal * 10.0f))/10.0f;
+
+	specularColor = light1.specularColor * specularVal;
 
 	vec4 texel = texture(textureMap, passTexCoord);
 	vec4 color = texel + passColor;
@@ -95,21 +100,22 @@ void main()
 
 	if(passShadowPos.w > 0.0)
 	{
-		for(int i = 0; i < 4; ++i)
+		for(int i = 0; i < 8; ++i)
 		{
 			float dot_product = dot(vec4(passShadowPos.xyy, i), vec4(12.9898,78.233,45.164,94.673));
 			int index = int( 15.0 * fract(sin(dot_product) * 43758.5453));
 			
-			if(texture(depthMap, passShadowPos.xy + poissonDisk[index] / 600.0 ).z < (passShadowPos.z - bias))
+			if(texture(depthMap, passShadowPos.xy + poissonDisk[index] / 750.0 ).z < (passShadowPos.z - bias))
 			{
-				inShadow -= 0.2;
+				inShadow -= 0.125;
 			}
 		}
 	}
 
 	outColor = ((inShadow) * useLights * (ambientColor + specularColor + diffuseColor) * color) + (1.0 - useLights) * color;
 
-	outColor.rgb = mix(outColor.rgb, fogColor, fogFactor * useFog);
-
 	outColor.a = texel.a + passColor.a;
+
+	outColor.a = mix(outColor.a, 0.0f, fogFactor * useFog);
+
 }

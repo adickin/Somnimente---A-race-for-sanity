@@ -16,7 +16,10 @@ enum TRIGGER_TYPE
 	FINISH_LINE,
 	ENERGY_DRINK,
 	ROCKET,
-	ROCKET_PICKUP
+	ROCKET_PICKUP,
+	OFF_TRACK,
+	CUT_SCENE_IMAGE,
+	FINAL_CUT_SCENE_IMAGE,
 };
 
 class I_Trigger : public PhysicsObject
@@ -30,6 +33,7 @@ public:
 	PxRigidDynamic* triggerActor();
 	void setTriggerActor(PxRigidDynamic* triggerActor);
 	bool hasTriggerBeenActivated();
+	void reset();
 
 	void addActorToTriggerWith(PxRigidDynamic* actor);
 	TRIGGER_TYPE GetType();

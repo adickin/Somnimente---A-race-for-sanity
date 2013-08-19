@@ -43,7 +43,7 @@ public:
 		-1.0 <--> 1.0
 	*/
 	float GetCameraZoom();
-
+	
 	/*
 		Gets how much turning is being applied. between -1.0 and 1.0
 		-1.0 = full left
@@ -51,6 +51,15 @@ public:
 		0.0  = none
 	*/
 	float GetTurnDirection();
+
+	
+	/*
+		Gets how much turning is being applied. between -1.0 and 1.0
+		-1.0 = full left
+		1.0 = full right.
+		0.0  = none
+	*/
+	float GetLeftYDirection();
 	
 	/*
 		Gets how much throttle is being applied. between 0 and 1.0
@@ -67,7 +76,9 @@ public:
 	float GetBrake();
 
 	bool isUpkeyPressed();
+	bool isLeftkeyPressed();
 	bool isDownkeyPressed();
+	bool isRightkeyPressed();
 	bool isMutekeyPressed();
 
 	void Update();

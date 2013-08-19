@@ -3,24 +3,13 @@
 
 #include "ScreenManager.h"
 #include "IScreen.h"
-#include "RenderEngine.h"
-#include "AIEngine.h"
-#include "StaticProp.h"
-#include "ModelManager.h"
-#include "InputEngine.h"
-#include "StaticText.h"
-#include "MenuScreen.h"
-#include "ParticleEmitter.h"
-#include "../Entities/Skybox.h"
-#include "../Entities/Vehicle.h"
-#include <Entities/Triggers/FinishTrigger.h>
-#include <Entities\Triggers\EnergyDrink.h>
-#include <Entities\Triggers\SleepingPillPowerup.h>
+#include <Entities/Skybox.h>
+#include <Entities/Vehicle.h>
+#include <Entities/AIVehicle.h>
 #include <Utilities\LevelLoader.h>
-#include <Entities\RoadBlockObstacle.h>
-#include <Entities\Triggers\RocketWeapon.h>
-#include <Utilities\VarLoader.h>
 #include <LineGL3.h>
+
+#define CAR_ACCELERATION 200
 
 class LevelScreen : public IScreen
 {
@@ -42,20 +31,37 @@ public:
 
 	void Render();
 	void RenderShadow();
+	
+	void LoadLevel();
+
+	bool loadDone;
 
 private:
+	
+	const float LOG2;
+	float rocketDamageFalloff;
+	float rocketMaxDamage;
+	StaticText rocketCount;
+
+	void ProcessTriggers();
+	void ProcessAwakenss(float elapsedMilliseconds);
 
 	std::string levelFile;
 	Camera *cam;
 	Level level;
-	Skybox skybox;
+	Skybox* skybox;
 
-	Vehicle vehicle;
+	Vehicle* vehicle;
+	AIVehicle* aiVehicle_;
 
 	float awakeness;
 	float awakenessNormalizeSpeed;
 
-	ALLEGRO_TIMER* endLevelTimer_;
+	ALLEGRO_TIMER* endLevelTimerLose_;
+	ALLEGRO_TIMER* endLevelTimerWin_;
 	StaticText endGameConditionText_;
 	ParticleEmitter emitter;
+	StaticText countDownText;
+	double countDownStart;
+	double countDownDuration;
 };

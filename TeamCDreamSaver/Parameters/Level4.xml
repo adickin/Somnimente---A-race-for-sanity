@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <root>
+  <Number n="4"></Number>
   <Start x="0" y="0" z="0"></Start>
   <Orientation x="0" y="0" z="0"></Orientation>
   <Track>
@@ -12,8 +13,29 @@
       <Piece path="Models/Tracks/The Closet/C.xml"></Piece>
       <Piece path="Models/Tracks/The Closet/C.xml"></Piece>
       <Piece path="Models/Tracks/The Closet/C.xml"></Piece>
+      <Piece path="Models/Tracks/The Closet/C.xml"></Piece>
   </Track>
   <Triggers>
+    <Trigger>
+      <Type>FullScreenImage</Type>
+      <Image>Images/4-1.png</Image>
+      <Position x="0" y="0" z="6000"></Position>
+    </Trigger>
+    <Trigger>
+      <Type>FullScreenImage</Type>
+      <Image>Images/4-2.png</Image>
+      <Position x="0" y="0" z="15000"></Position>
+    </Trigger>
+    <Trigger>
+      <Type>FullScreenImage</Type>
+      <Image>Images/4-3.png</Image>
+      <Position x="0" y="0" z="24000"></Position>
+    </Trigger>
+    <Trigger>
+      <Type>FullScreenImageFinal</Type>
+      <Image>Images/4-4.png</Image>
+      <Position x="0" y="0" z="35000"></Position>
+    </Trigger>
   </Triggers>
   <Props>
   </Props>

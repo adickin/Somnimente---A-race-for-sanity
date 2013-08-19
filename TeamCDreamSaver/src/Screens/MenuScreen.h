@@ -3,11 +3,8 @@
 
 #include "ScreenManager.h"
 #include "IScreen.h"
-#include "RenderEngine.h"
-#include "InputEngine.h"
 #include "StaticImage.h"
-#include "LevelSelectScreen.h"
-#include "LoadingScreen.h"
+#include <StaticText.h>
 
 class MenuScreen : public IScreen
 {
@@ -35,6 +32,6 @@ private:
 	int numSelections;
 	int currentSelection;
 	glm::vec4 selected, unSelected;
-	StaticText playText, exitText;
+	StaticText playText, exitText, instructionsText, selectText;
 	StaticImage img;
 };

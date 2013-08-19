@@ -1,6 +1,6 @@
 //Maya ASCII 2013 scene
-//Name: C - The Closet.ma
-//Last modified: Sun, Mar 03, 2013 09:38:54 PM
+//Name: C - The Closet2.ma
+//Last modified: Wed, Mar 20, 2013 08:08:08 AM
 //Codeset: UTF-8
 requires maya "2013";
 requires "stereoCamera" "10.0";
@@ -9,18 +9,20 @@ fileInfo "application" "maya";
 fileInfo "product" "Maya 2013";
 fileInfo "version" "2013 x64";
 fileInfo "cutIdentifier" "201202220220-825135";
-fileInfo "osv" "Mac OS X 10.8.2";
+fileInfo "osv" "Mac OS X 10.8.3";
 createNode transform -s -n "persp";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 5.303267598901634 278.66346288900434 1149.997912866882 ;
-	setAttr ".r" -type "double3" 354.86164727035396 -358.59999999997353 0 ;
+	setAttr ".t" -type "double3" 883.36677160737122 906.84690810210236 8609.8219118748329 ;
+	setAttr ".r" -type "double3" -7.7999999999992831 9.9999999999952536 -1.0092562075361863e-16 ;
+	setAttr ".rpt" -type "double3" 2.5291296758622654e-15 -5.3443409344976583e-15 -3.1024891455704914e-16 ;
 createNode camera -s -n "perspShape" -p "persp";
 	setAttr -k off ".v" no;
-	setAttr ".fl" 34.999999999999986;
-	setAttr ".coi" 3078.0868684561151;
+	setAttr ".fl" 34.999999999999979;
+	setAttr ".coi" 5134.6127463716757;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
+	setAttr ".tp" -type "double3" 1.385405916251275e-11 210 3600 ;
 	setAttr ".hc" -type "string" "viewSet -p %camera";
 createNode transform -s -n "top";
 	setAttr ".v" no;
@@ -395,7 +397,7 @@ createNode mesh -n "polySurfaceShape7" -p "transform12";
 	setAttr ".bw" 4;
 createNode transform -n "polySurface13";
 	setAttr ".r" -type "double3" 0 180 0 ;
-	setAttr ".s" -type "double3" 7 7 7 ;
+	setAttr ".s" -type "double3" 7 7 2 ;
 createNode mesh -n "polySurfaceShape13" -p "polySurface13";
 	setAttr -k off ".v";
 	setAttr -s 2 ".iog[0].og";
@@ -581,27 +583,27 @@ createNode groupId -n "groupId18";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts11";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 12 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]";
+	setAttr ".ic" -type "componentList" 1 "f[0:11]";
 createNode groupId -n "groupId19";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts12";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 12 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]";
+	setAttr ".ic" -type "componentList" 1 "f[0:11]";
 createNode groupId -n "groupId20";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts13";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 12 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]";
+	setAttr ".ic" -type "componentList" 1 "f[0:11]";
 createNode groupId -n "groupId21";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts14";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 12 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]";
+	setAttr ".ic" -type "componentList" 1 "f[0:11]";
 createNode groupId -n "groupId22";
 	setAttr ".ihi" 0;
 createNode groupParts -n "groupParts15";
 	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 12 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]";
+	setAttr ".ic" -type "componentList" 1 "f[0:11]";
 createNode polyUnite -n "polyUnite3";
 	setAttr -s 5 ".ip";
 	setAttr -s 5 ".im";
@@ -633,8 +635,6 @@ select -ne :hardwareRenderGlobals;
 select -ne :defaultHardwareRenderGlobals;
 	setAttr ".fn" -type "string" "im";
 	setAttr ".res" -type "string" "ntsc_4d 646 485 1.333";
-select -ne :ikSystem;
-	setAttr -s 4 ".sol";
 connectAttr "groupParts1.og" "A___Start:pCubeShape1.i";
 connectAttr "groupId1.id" "A___Start:pCubeShape1.iog.og[0].gid";
 connectAttr ":initialShadingGroup.mwc" "A___Start:pCubeShape1.iog.og[0].gco";
@@ -810,4 +810,4 @@ connectAttr "groupId21.msg" ":initialShadingGroup.gn" -na;
 connectAttr "groupId22.msg" ":initialShadingGroup.gn" -na;
 connectAttr "groupId23.msg" ":initialShadingGroup.gn" -na;
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
-// End of C - The Closet.ma
+// End of C - The Closet2.ma

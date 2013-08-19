@@ -181,7 +181,7 @@ bool InputEngine::IsActionTriggered(ACTIONS action)
 			if(IsKeyDown(ALLEGRO_KEY_ESCAPE) && !isKeyRepeat(ALLEGRO_KEY_ESCAPE))
 			{
 				//*UPDATECODE*
-				AudioEngine::GetInstance()->PlayBg_Audio(eTRACKLEVEL::DEFAULT);
+				AudioEngine::GetInstance()->PlayBg_Audio();
 				return true;
 			}
 			if(playerOneController_->isBButtonPressed(&isRepeat))
@@ -269,6 +269,29 @@ float InputEngine::GetTurnDirection()
 }
 
 
+float InputEngine::GetLeftYDirection()
+{
+	float dir = 0.0;
+	ThumbStick leftThumb = playerOneController_->getLeftThumbstick();
+	if(leftThumb.magnitude > 0.0)
+	{
+		//not sure why it needs to be negative since physics engine says right turn in positive direction.
+		dir = -leftThumb.yThumb * leftThumb.magnitude;
+	}
+
+	if(dir < -1.0f)
+	{
+		dir = -1.0f;
+	}
+	else if(dir > 1.0f)
+	{
+		dir = 1.0f;
+	}
+
+	return dir;
+}
+
+
 float InputEngine::GetThrottle()
 {
 	float amount = 0;
@@ -314,13 +337,25 @@ float InputEngine::GetBrake()
 
 bool InputEngine::isUpkeyPressed()
 {
-	bool depressed = IsKeyDown(ALLEGRO_KEY_W) || IsKeyDown(ALLEGRO_KEY_UP) || playerOneController_->isDPadUpPressed();
+	bool depressed = IsKeyDown(ALLEGRO_KEY_W) || IsKeyDown(ALLEGRO_KEY_UP) || playerOneController_->isDPadUpPressed() || GetLeftYDirection() < -0.5f;
 	return depressed;
 }
 
 bool InputEngine::isDownkeyPressed()
 {
-	bool depressed = IsKeyDown(ALLEGRO_KEY_S) || IsKeyDown(ALLEGRO_KEY_DOWN) || playerOneController_->isDPadDownPressed();
+	bool depressed = IsKeyDown(ALLEGRO_KEY_S) || IsKeyDown(ALLEGRO_KEY_DOWN) || playerOneController_->isDPadDownPressed() || GetLeftYDirection() > 0.5f;
+	return depressed;
+}
+
+bool InputEngine::isRightkeyPressed()
+{
+	bool depressed = IsKeyDown(ALLEGRO_KEY_D) || IsKeyDown(ALLEGRO_KEY_RIGHT) || playerOneController_->isDPadRightPressed() || GetTurnDirection() < -0.5f;
+	return depressed;
+}
+
+bool InputEngine::isLeftkeyPressed()
+{
+	bool depressed = IsKeyDown(ALLEGRO_KEY_A) || IsKeyDown(ALLEGRO_KEY_LEFT) || playerOneController_->isDPadLeftPressed() || GetTurnDirection() > 0.5f;
 	return depressed;
 }
 

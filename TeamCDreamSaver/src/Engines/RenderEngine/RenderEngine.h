@@ -1,19 +1,15 @@
 
 #pragma once
 
+#include "Octree.h"
 #include "IRenderable.h"
 #include "IHUDRenderable.h"
 #include "Camera.h"
 #include "Shader.h"
-#include "Dependencies/allegro-5.0.8-msvc-10.0/include/allegro.h"
-#include "Dependencies/allegro-5.0.8-msvc-10.0/include/allegro_opengl.h"
-#include <ShaderManager.h>
 #include <vector>
-#include <iostream>
-#include <fstream>
-#include "ObjectMesh.h"
+#include <Entities\Skybox.h>
 
-
+class Octree;
 class IRenderable;
 class IHUDRenderable;
 class ObjectMesh;
@@ -41,6 +37,7 @@ public:
 	void AddHUDRenderable(IHUDRenderable* entity);
 	void RemoveHUDRenderable(IHUDRenderable* entity);
 
+	void SetSkybox(Skybox *box);
 	void SetCamera(Camera* cam);
 	void SetLight(Light* light);
 
@@ -50,9 +47,12 @@ public:
 
 	RenderInfo *GetRenderInfo();
 
-	void Render(bool shadows, bool bloom, bool fog);
+	void Render(bool shadows, bool bloom, bool fog, bool clearScreen = false);
 
 	void SetWindow(ALLEGRO_DISPLAY *window);
+
+	void ResetTree();
+	void CreateTree();
 
 	static glm::mat4 BiasMatrix;
 
@@ -79,6 +79,9 @@ private:
 	void ReadParameterFile();
 #endif
 
+	Octree tree;
+	BoundingBox viewArea;
+
 	static RenderEngine* instance;
 
 	void CreateShadowFramebuffer();
@@ -92,15 +95,16 @@ private:
 	void BlurHorizontal();
 	void BlurVertical();
 	void Combine();
-	void RenderShadow();
+	void RenderShadow(std::deque<IRenderable*> &ent);
 	void RenderFinalImage();
-	void RenderAllEntities();
+	void RenderAllEntities(std::deque<IRenderable*> &ent);
 	
 	std::vector<IRenderable*> entities;
 	std::vector<IRenderable*> entitiesWithTransparency;
 	std::vector<IHUDRenderable*> hudEntities;
 
 	Camera* camera;
+	Skybox *skybox;
 
 	Light *light;
 

@@ -1,5 +1,11 @@
 #include "LevelSelectScreen.h"
 #include "../Engines/AudioEngine/AudioEngine.h"
+#include <RenderEngine.h>
+#include <InputEngine.h>
+#include <LevelScreen.h>
+#include <RapidXml\rapidxml.hpp>
+#include <CutScene.h>
+#include <MenuScreen.h>
 
 LevelSelectScreen::LevelSelectScreen(ScreenManager *manager)
 	: IScreen(manager)
@@ -19,7 +25,7 @@ LevelSelectScreen::~LevelSelectScreen()
 void LevelSelectScreen::Enter()
 {
 	bgImage.SetPosition(glm::vec3(0.0f, 0.0f, 0.0f));
-	bgImage.SetImage("Images/Level Select Screen.png");
+	bgImage.SetImage("Images/Level Select Screen 4.png");
 	
 	ReadParameterFile();
 } 
@@ -96,7 +102,7 @@ void LevelSelectScreen::ReadParameterFile()
 		}
 	}
 	//Change this to correspond with the number of levels + 1.
-	numSelections = 3;
+	numSelections = 5;
 }
 
 
@@ -133,30 +139,29 @@ bool LevelSelectScreen::HandleEvents()
 	InputEngine* inputEngine = InputEngine::GetInstance();
 	if(inputEngine->IsActionTriggered(BACK))
 	{
-		return false;
+		this->SetScreen(new MenuScreen(manager));
 	}
 	
-	if(inputEngine->isDownkeyPressed() && !downKeyHeld)
+	if((inputEngine->isDownkeyPressed() || inputEngine->isRightkeyPressed()) && !downKeyHeld)
 	{
 		downKeyHeld = true;
 		currentSelection++;
 		currentSelection %= numSelections;
-		AudioEngine::GetInstance()->PlaySoundEffect(eSOUNDEFFECT::MENUSELECTION);
+		AudioEngine::GetInstance()->PlaySoundEffect(MENUSELECTION);
 	}
-	else if(!inputEngine->isDownkeyPressed()) 
+	else if(!inputEngine->isDownkeyPressed() && !inputEngine->isRightkeyPressed()) 
 	{
 		downKeyHeld = false;
 	}
 
-
-	if(inputEngine->isUpkeyPressed() && !upKeyHeld)
+	if((inputEngine->isUpkeyPressed() || inputEngine->isLeftkeyPressed()) && !upKeyHeld)
 	{
 		upKeyHeld = true;
 		currentSelection--;
 		currentSelection = (currentSelection + numSelections) % numSelections;
-		AudioEngine::GetInstance()->PlaySoundEffect(eSOUNDEFFECT::MENUSELECTION);
+		AudioEngine::GetInstance()->PlaySoundEffect(MENUSELECTION);
 	}
-	else if(!inputEngine->isUpkeyPressed())
+	else if(!inputEngine->isUpkeyPressed() && !inputEngine->isLeftkeyPressed())
 	{
 		upKeyHeld = false;
 	}
@@ -181,21 +186,63 @@ bool LevelSelectScreen::HandleEvents()
 
 	if(inputEngine->IsActionTriggered(ACCEPT))
 	{
-		AudioEngine::GetInstance()->PlaySoundEffect(eSOUNDEFFECT::ENTER_MENU);
+		AudioEngine::GetInstance()->PlaySoundEffect(ENTER_MENU);
 
 		if(currentSelection == numSelections - 1)
 		{
 			this->SetScreen(new MenuScreen(manager));
 			//*UPDATECODE*
-			AudioEngine::GetInstance()->PlayBg_Audio(eTRACKLEVEL::DEFAULT);
+			AudioEngine::GetInstance()->PlayBg_Audio();
 		}
 		else 
 		{
 			std::stringstream ss;
 			ss << "Parameters/Level" << currentSelection + 1 << ".xml";
-			this->SetScreen(new LevelScreen(manager, ss.str()));
-			// This Audio should be play according to the proper track selection! *UPDATECODE*
-			AudioEngine::GetInstance()->PlayBg_Audio(eTRACKLEVEL::LEV1_TRACK);
+			std::vector<std::string> images;
+			std::vector<TextBox> text;
+			if(currentSelection == 0)
+			{
+				images.push_back("Images/1-0.png");
+
+				text.push_back(TextBox(BoundingBox(glm::vec3(-0.9f, -0.9f, 1.0f), glm::vec3(1.5f, -0.75f, 1.0f)), glm::vec4(1.0f), 0.25f));
+				text.back().text = ("Press enter to load...");
+			}
+			else if(currentSelection == 1)
+			{
+				images.push_back("Images/1-1.png");
+				images.push_back("Images/1-2.png");
+
+				text.push_back(TextBox(BoundingBox(glm::vec3(-0.9f, -0.9f, 1.0f), glm::vec3(1.5f, -0.75f, 1.0f)), glm::vec4(1.0f), 0.25f));
+				text.back().text = ("Press enter to continue...");
+
+				text.push_back(TextBox(BoundingBox(glm::vec3(-0.9f, -0.9f, 1.0f), glm::vec3(1.5f, -0.75f, 1.0f)), glm::vec4(1.0f), 0.25f));
+				text.back().text = ("Press enter to load...");
+			}
+			else if(currentSelection == 2)
+			{
+				images.push_back("Images/2-1.png");
+				images.push_back("Images/2-2.png");
+
+				text.push_back(TextBox(BoundingBox(glm::vec3(-0.9f, -0.9f, 1.0f), glm::vec3(1.5f, -0.75f, 1.0f)), glm::vec4(1.0f), 0.25f));
+				text.back().text = ("Press enter to continue...");
+
+				text.push_back(TextBox(BoundingBox(glm::vec3(-0.9f, -0.9f, 1.0f), glm::vec3(1.5f, -0.75f, 1.0f)), glm::vec4(1.0f), 0.25f));
+				text.back().text = ("Press enter to load...");
+			}
+			else if(currentSelection == 3)
+			{
+				images.push_back("Images/3-1.png");
+				images.push_back("Images/3-2.png");
+
+				text.push_back(TextBox(BoundingBox(glm::vec3(-0.9f, -0.9f, 1.0f), glm::vec3(1.5f, -0.75f, 1.0f)), glm::vec4(1.0f), 0.25f));
+				text.back().text = ("Press enter to continue...");
+
+				text.push_back(TextBox(BoundingBox(glm::vec3(-0.9f, -0.9f, 1.0f), glm::vec3(1.5f, -0.75f, 1.0f)), glm::vec4(1.0f), 0.25f));
+				text.back().text = ("Press enter to load...");
+			}
+            int SelectedTrack = currentSelection;
+			this->SetScreen(new CutScene(images, text, manager, new LevelScreen(manager, ss.str())));
+            AudioEngine::GetInstance()->PlayTrackAudio(SelectedTrack + 1);
 		}
 	}
 

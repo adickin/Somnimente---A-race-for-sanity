@@ -5,9 +5,25 @@
       <Configuration>Debug</Configuration>
       <Platform>Win32</Platform>
     </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release64|Win32">
+      <Configuration>Release64</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release64|x64">
+      <Configuration>Release64</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
     <ProjectConfiguration Include="Release|Win32">
       <Configuration>Release</Configuration>
       <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
@@ -24,8 +40,33 @@
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v100</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v100</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release64|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release64|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -37,19 +78,75 @@
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release64|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release64|x64'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(SolutionDir)TeamCDreamSaver\src\Engines\AudioEngine;$(SolutionDir)TeamCDreamSaver\src\Engines\RenderEngine;$(SolutionDir)TeamCDreamSaver\src\Engines\InputEngine;$(SolutionDir)TeamCDreamSaver\src\Engines\AIEngine;$(SolutionDir)TeamCDreamSaver\src\Utilities;$(SolutionDir)TeamCDreamSaver\src\Engines;$(SolutionDir)Dependencies\PhysX\Include;$(SolutionDir);$(SolutionDir)TeamCDreamSaver;$(SolutionDir)TeamCDreamSaver\src;$(SolutionDir)TeamCDreamSaver\src\Screens;$(SolutionDir)TeamCDreamSaver\src;$(SolutionDir)TeamCDreamSaver\src\Entities;$(SolutionDir);$(SolutionDir)Dependencies;$(IncludePath)</IncludePath>
+    <IncludePath>C:\Program Files %28x86%29\Microsoft Visual Studio 10.0\VC\include;C:\Program Files (x86)\boost\boost_1_51_0\boost_1_51_0;$(SolutionDir)TeamCDreamSaver\src\Engines\AudioEngine;$(SolutionDir)TeamCDreamSaver\src\Engines\RenderEngine;$(SolutionDir)TeamCDreamSaver\src\Engines\InputEngine;$(SolutionDir)TeamCDreamSaver\src\Engines\AIEngine;$(SolutionDir)TeamCDreamSaver\src\Utilities;$(SolutionDir)TeamCDreamSaver\src\Engines;$(SolutionDir)Dependencies\PhysX\Include;$(SolutionDir);$(SolutionDir)TeamCDreamSaver;$(SolutionDir)TeamCDreamSaver\src;$(SolutionDir)TeamCDreamSaver\src\Screens;$(SolutionDir)TeamCDreamSaver\src\Entities;$(SolutionDir)Dependencies;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Program Files %28x86%29\Microsoft Visual Studio 10.0\VC\lib;C:\Program Files (x86)\boost\boost_1_51_0\boost_1_51_0\stage\lib;$(LibraryPath)</LibraryPath>
+    <ExecutablePath>C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin;$(ExecutablePath)</ExecutablePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>C:\Program Files %28x86%29\Microsoft Visual Studio 10.0\VC\include;C:\Program Files (x86)\boost\boost_1_51_0\boost_1_51_0;$(SolutionDir)TeamCDreamSaver\src\Engines\AudioEngine;$(SolutionDir)TeamCDreamSaver\src\Engines\RenderEngine;$(SolutionDir)TeamCDreamSaver\src\Engines\InputEngine;$(SolutionDir)TeamCDreamSaver\src\Engines\AIEngine;$(SolutionDir)TeamCDreamSaver\src\Utilities;$(SolutionDir)TeamCDreamSaver\src\Engines;$(SolutionDir)Dependencies\PhysX\Include;$(SolutionDir);$(SolutionDir)TeamCDreamSaver;$(SolutionDir)TeamCDreamSaver\src;$(SolutionDir)TeamCDreamSaver\src\Screens;$(SolutionDir)TeamCDreamSaver\src\Entities;$(SolutionDir)Dependencies;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Program Files %28x86%29\Microsoft Visual Studio 10.0\VC\lib;C:\Program Files (x86)\boost\boost_1_51_0\boost_1_51_0\stage\lib;$(LibraryPath)</LibraryPath>
+    <ExecutablePath>C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin;$(ExecutablePath)</ExecutablePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <IncludePath>$(SolutionDir)TeamCDreamSaver\src\Engines\AudioEngine;$(SolutionDir)TeamCDreamSaver\src\Engines\RenderEngine;$(SolutionDir)TeamCDreamSaver\src\Engines\InputEngine;$(SolutionDir)TeamCDreamSaver\src\Engines\AIEngine;$(SolutionDir)TeamCDreamSaver\src\Utilities;$(SolutionDir)TeamCDreamSaver\src\Engines;$(SolutionDir)Dependencies\PhysX\Include;$(SolutionDir);$(SolutionDir)TeamCDreamSaver;$(SolutionDir)TeamCDreamSaver\src;$(SolutionDir)TeamCDreamSaver\src\Screens;$(SolutionDir)TeamCDreamSaver\src\Entities;$(SolutionDir);$(SolutionDir)Dependencies;$(IncludePath)</IncludePath>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(SolutionDir)TeamCDreamSaver\src\Engines\AudioEngine;$(SolutionDir)TeamCDreamSaver\src\Engines\RenderEngine;$(SolutionDir)TeamCDreamSaver\src\Engines\InputEngine;$(SolutionDir)TeamCDreamSaver\src\Engines\AIEngine;$(SolutionDir)TeamCDreamSaver\src\Utilities;$(SolutionDir)TeamCDreamSaver\src\Engines;$(SolutionDir)Dependencies\PhysX\Include;$(SolutionDir);$(SolutionDir)TeamCDreamSaver;$(SolutionDir)TeamCDreamSaver\src;$(SolutionDir)TeamCDreamSaver\src\Screens;$(SolutionDir)TeamCDreamSaver\src\Entities;$(SolutionDir);$(SolutionDir)Dependencies;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release64|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(SolutionDir)TeamCDreamSaver\src\Engines\AudioEngine;$(SolutionDir)TeamCDreamSaver\src\Engines\RenderEngine;$(SolutionDir)TeamCDreamSaver\src\Engines\InputEngine;$(SolutionDir)TeamCDreamSaver\src\Engines\AIEngine;$(SolutionDir)TeamCDreamSaver\src\Utilities;$(SolutionDir)TeamCDreamSaver\src\Engines;$(SolutionDir)Dependencies\PhysX\Include;$(SolutionDir);$(SolutionDir)TeamCDreamSaver;$(SolutionDir)TeamCDreamSaver\src;$(SolutionDir)TeamCDreamSaver\src\Screens;$(SolutionDir)TeamCDreamSaver\src\Entities;$(SolutionDir);$(SolutionDir)Dependencies;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release64|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(SolutionDir)TeamCDreamSaver\src\Engines\AudioEngine;$(SolutionDir)TeamCDreamSaver\src\Engines\RenderEngine;$(SolutionDir)TeamCDreamSaver\src\Engines\InputEngine;$(SolutionDir)TeamCDreamSaver\src\Engines\AIEngine;$(SolutionDir)TeamCDreamSaver\src\Utilities;$(SolutionDir)TeamCDreamSaver\src\Engines;$(SolutionDir)Dependencies\PhysX\Include;$(SolutionDir);$(SolutionDir)TeamCDreamSaver;$(SolutionDir)TeamCDreamSaver\src;$(SolutionDir)TeamCDreamSaver\src\Screens;$(SolutionDir)TeamCDreamSaver\src\Entities;$(SolutionDir);$(SolutionDir)Dependencies;$(IncludePath)</IncludePath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>../Dependencies/PhysX/Include</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <BrowseInformation>true</BrowseInformation>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>../Dependencies/bass/lib/bass.lib;../Dependencies/allegro-5.0.8-msvc-10.0/lib/allegro-5.0.8-monolith-md-debug.lib;opengl32.lib;../Dependencies/assimp/lib/assimpd.lib;../Dependencies/FreeImage/lib/FreeImage.lib;../Dependencies/FreeImage/lib/FreeImagePlus.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>../Dependencies/PhysX/Lib/win32</AdditionalLibraryDirectories>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <IgnoreSpecificDefaultLibraries>LIBCMT</IgnoreSpecificDefaultLibraries>
+      <Profile>false</Profile>
+    </Link>
+    <Bscmake>
+      <PreserveSBR>true</PreserveSBR>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <PrecompiledHeader>
       </PrecompiledHeader>
@@ -92,7 +189,68 @@
       <AdditionalLibraryDirectories>../Dependencies/PhysX/Lib/win32</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>../Dependencies/bass/lib/bass.lib;../Dependencies/allegro-5.0.8-msvc-10.0/lib/allegro-5.0.8-monolith-md.lib;opengl32.lib;../Dependencies/assimp/lib/assimpd.lib;../Dependencies/FreeImage/lib/FreeImage.lib;../Dependencies/FreeImage/lib/FreeImagePlus.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>../Dependencies/PhysX/Lib/win32</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release64|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>../Dependencies/bass/lib/bass.lib;../Dependencies/allegro-5.0.8-msvc-10.0/lib/allegro-5.0.8-monolith-md.lib;opengl32.lib;../Dependencies/assimp/lib/assimpd.lib;../Dependencies/FreeImage/lib/FreeImage.lib;../Dependencies/FreeImage/lib/FreeImagePlus.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>../Dependencies/PhysX/Lib/win32</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release64|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>../Dependencies/bass/lib/bass.lib;../Dependencies/allegro-5.0.8-msvc-10.0/lib/allegro-5.0.8-monolith-md.lib;opengl32.lib;../Dependencies/assimp/lib/assimpd.lib;../Dependencies/FreeImage/lib/FreeImage.lib;../Dependencies/FreeImage/lib/FreeImagePlus.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>../Dependencies/PhysX/Lib/win32</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Engines\PhysicsEngine\PhysicsVehicle.cpp" />
+    <ClCompile Include="src\Entities\Triggers\FallenOffTrackTrigger.cpp" />
+    <ClCompile Include="src\Engines\RenderEngine\Octree.cpp" />
+    <ClCompile Include="src\Engines\VehicleAIEngine\QuadraticBezierCurve.cpp" />
     <ClCompile Include="src\Entities\AIVehicle.cpp" />
     <ClCompile Include="src\Engines\RenderEngine\LineGL3.cpp" />
     <ClCompile Include="src\Engines\VehicleAIEngine\AIDrivingLane.cpp" />
@@ -109,6 +267,8 @@
     <ClCompile Include="src\Engines\AIEngine\IAIThing.cpp" />
     <ClCompile Include="src\Engines\RenderEngine\IHUDRenderable.cpp" />
     <ClCompile Include="src\Engines\InputEngine\InputEngine.cpp" />
+    <ClCompile Include="src\Entities\Triggers\FullScreenFinalImageTrigger.cpp" />
+    <ClCompile Include="src\Entities\Triggers\FullScreenImageTrigger.cpp" />
     <ClCompile Include="src\Entities\Triggers\I_Trigger.cpp" />
     <ClCompile Include="src\Entities\Triggers\Powerup.cpp" />
     <ClCompile Include="src\Entities\Triggers\RocketWeapon.cpp" />
@@ -116,12 +276,12 @@
     <ClCompile Include="src\Entities\Triggers\RocketTrigger.cpp" />
     <ClCompile Include="src\Entities\Vehicle.cpp" />
     <ClCompile Include="src\Entities\Skybox.cpp" />
-    <ClCompile Include="src\Screens\DemoScreen.cpp" />
+    <ClCompile Include="src\Screens\ForwardScreen.cpp" />
     <ClCompile Include="src\Screens\IntroScreen.cpp" />
     <ClCompile Include="src\Screens\IScreen.cpp" />
     <ClCompile Include="src\Screens\LevelScreen.cpp" />
     <ClCompile Include="src\Screens\LevelSelectScreen.cpp" />
-    <ClCompile Include="src\Screens\LoadingScreen.cpp" />
+    <ClCompile Include="src\Screens\CutScene.cpp" />
     <ClCompile Include="src\Screens\MenuScreen.cpp" />
     <ClCompile Include="src\Utilities\LevelLoader.cpp" />
     <ClCompile Include="src\Utilities\ModelManager.cpp" />
@@ -159,6 +319,7 @@
     <None Include="extractBloomFrag.glsl" />
     <None Include="FreeImage.dll" />
     <None Include="FreeImagePlus.dll" />
+    <None Include="fShaderNPR.glsl" />
     <None Include="gaussianBlurFrag.glsl" />
     <None Include="Images\font.png" />
     <None Include="Images\Intro Screen.jpg" />
@@ -171,6 +332,7 @@
     <None Include="Models\Tracks\Childhood\B.xml" />
     <None Include="Models\Tracks\Childhood\C.xml">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </None>
     <None Include="Models\Tracks\Childhood\D.xml" />
     <None Include="Models\Tracks\Childhood\E.xml" />
@@ -185,14 +347,40 @@
     <None Include="Models\Tracks\Childhood\L.xml" />
     <None Include="Models\Tracks\Childhood\M.xml" />
     <None Include="Models\Tracks\Childhood\N.xml" />
+    <None Include="Models\Tracks\Forest\A.xml" />
+    <None Include="Models\Tracks\Forest\B.xml" />
+    <None Include="Models\Tracks\Forest\C.xml" />
+    <None Include="Models\Tracks\Forest\D.xml" />
+    <None Include="Models\Tracks\Forest\E.xml" />
+    <None Include="Models\Tracks\Forest\F.xml" />
+    <None Include="Models\Tracks\Forest\G.xml" />
+    <None Include="Models\Tracks\Forest\H.xml" />
+    <None Include="Models\Tracks\Forest\I.xml" />
+    <None Include="Models\Tracks\Forest\K.xml" />
+    <None Include="Models\Tracks\Forest\L.xml" />
+    <None Include="Models\Tracks\Forest\LA.xml" />
+    <None Include="Models\Tracks\Forest\LB.xml" />
+    <None Include="Models\Tracks\Forest\M.xml" />
+    <None Include="Models\Tracks\Forest\N.xml" />
+    <None Include="Models\Tracks\Forest\O.xml" />
+    <None Include="Models\Tracks\Forest\P.xml" />
+    <None Include="Models\Tracks\Forest\Q.xml" />
+    <None Include="Models\Tracks\Forest\R.xml" />
+    <None Include="Models\Tracks\Forest\S.xml" />
+    <None Include="Models\Tracks\Forest\T.xml" />
+    <None Include="Models\Tracks\Forest\U.xml" />
+    <None Include="Models\Tracks\Forest\V.xml" />
+    <None Include="Models\Tracks\Forest\W.xml" />
+    <None Include="Models\Tracks\Forest\X.xml" />
+    <None Include="Models\Tracks\Forest\Y.xml" />
     <None Include="Parameters\Camera.ini" />
     <None Include="Parameters\Level1.xml">
       <SubType>Designer</SubType>
     </None>
     <None Include="Parameters\Level2.xml" />
     <None Include="Parameters\Level2nograv.xml" />
+    <None Include="Parameters\Level3grav.xml" />
     <None Include="Parameters\Level3.xml" />
-    <None Include="Parameters\Level3nograv.xml" />
     <None Include="Parameters\Level4.xml" />
     <None Include="Parameters\LevelSelectData.xml" />
     <None Include="Parameters\RenderEngine.ini" />
@@ -203,10 +391,14 @@
     <None Include="passthroughVert.glsl" />
     <None Include="skyboxFrag.glsl" />
     <None Include="skyboxVert.glsl" />
+    <None Include="src\Engines\VehicleAIEngine\level1CenterLaneWaypoint.txt" />
     <None Include="src\Engines\VehicleAIEngine\level1CenterLaneWaypointFile.txt" />
     <None Include="src\Engines\VehicleAIEngine\level1LeftLaneWaypointFile.txt" />
     <None Include="src\Engines\VehicleAIEngine\level1RightLaneWaypointFile.txt" />
+    <None Include="src\Engines\VehicleAIEngine\level2CenterLaneWaypoint.txt" />
+    <None Include="src\Engines\VehicleAIEngine\level3CenterLaneWaypoint.txt" />
     <None Include="src\Engines\VehicleAIEngine\vehicleLocations.txt" />
+    <None Include="LevelScreenData.ini" />
     <None Include="textFragShader.glsl" />
     <None Include="fShader.glsl">
       <DeploymentContent>true</DeploymentContent>
@@ -219,6 +411,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Engines\PhysicsEngine\PhysicsVehicle.h" />
+    <ClInclude Include="src\Entities\Triggers\FallenOffTrackTrigger.h" />
+    <ClInclude Include="src\Engines\RenderEngine\Octree.h" />
+    <ClInclude Include="src\Engines\VehicleAIEngine\QuadraticBezierCurve.h" />
     <ClInclude Include="src\Entities\AIVehicle.h" />
     <ClInclude Include="src\Engines\RenderEngine\LineGL3.h" />
     <ClInclude Include="src\Engines\VehicleAIEngine\AIDrivingLane.h" />
@@ -236,19 +432,22 @@
     <ClInclude Include="src\Engines\RenderEngine\IHUDRenderable.h" />
     <ClInclude Include="src\Engines\InputEngine\InputEngine.h" />
     <ClInclude Include="src\Entities\Skybox.h" />
+    <ClInclude Include="src\Entities\Triggers\FullScreenFinalImageTrigger.h" />
+    <ClInclude Include="src\Entities\Triggers\FullScreenImageTrigger.h" />
     <ClInclude Include="src\Entities\Triggers\I_Trigger.h" />
     <ClInclude Include="src\Entities\Triggers\Powerup.h" />
     <ClInclude Include="src\Entities\Triggers\RocketTrigger.h" />
     <ClInclude Include="src\Entities\Triggers\RocketWeapon.h" />
     <ClInclude Include="src\Entities\Triggers\SleepingPillPowerup.h" />
     <ClInclude Include="src\Entities\Vehicle.h" />
-    <ClInclude Include="src\Screens\DemoScreen.h" />
+    <ClInclude Include="src\Screens\ForwardScreen.h" />
     <ClInclude Include="src\Screens\IntroScreen.h" />
     <ClInclude Include="src\Screens\IScreen.h" />
     <ClInclude Include="src\Screens\LevelScreen.h" />
     <ClInclude Include="src\Screens\LevelSelectScreen.h" />
-    <ClInclude Include="src\Screens\LoadingScreen.h" />
+    <ClInclude Include="src\Screens\CutScene.h" />
     <ClInclude Include="src\Screens\MenuScreen.h" />
+    <ClInclude Include="src\Utilities\BoundingBox.h" />
     <ClInclude Include="src\Utilities\LevelLoader.h" />
     <ClInclude Include="src\Utilities\ModelManager.h" />
     <ClInclude Include="src\Engines\RenderEngine\ObjectMesh.h" />
